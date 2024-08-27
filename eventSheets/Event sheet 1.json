@@ -333,19 +333,19 @@
 										{
 											"id": "set-instvar-value",
 											"objectClass": "mg0_items",
-											"sid": 631169544790382,
+											"sid": 990214542046888,
 											"parameters": {
 												"instance-variable": "HorizontalMovement",
-												"value": "mg0_items.HorizontalMovement*0.975*(dt*60)"
+												"value": "(mg0_items.HorizontalMovement*0.98)*(dt*60)"
 											}
 										},
 										{
 											"id": "set-position",
 											"objectClass": "mg0_items",
-											"sid": 630259080639260,
+											"sid": 212030983474359,
 											"parameters": {
-												"x": "mg0_items.X + mg0_items.HorizontalMovement",
-												"y": "mg0_items.Y + mg0_items.VerticalMovement"
+												"x": "mg0_items.X + (mg0_items.HorizontalMovement*(dt*60))",
+												"y": "mg0_items.Y + (mg0_items.VerticalMovement*(dt*60))"
 											}
 										},
 										{
@@ -478,25 +478,25 @@
 								{
 									"id": "set-instvar-value",
 									"objectClass": "mg0_items",
-									"sid": 892837630976243,
+									"sid": 973482600951115,
 									"parameters": {
 										"instance-variable": "VerticalMovement",
-										"value": "(random(3,4)*(1+(ActiveMiniGameLevel/10)-0.1))*(dt*60)"
+										"value": "random(3,4)*(1+(ActiveMiniGameLevel/10)-0.1)"
 									}
 								},
 								{
 									"id": "set-instvar-value",
 									"objectClass": "mg0_items",
-									"sid": 170707764912374,
+									"sid": 845736672695169,
 									"parameters": {
 										"instance-variable": "HorizontalMovement",
-										"value": "(random(-3,3)*(1+(ActiveMiniGameLevel/10)-0.1))*(dt*60)"
+										"value": "random(-3,3)*(1+(ActiveMiniGameLevel/10)-0.1)"
 									}
 								},
 								{
 									"id": "set-instvar-value",
 									"objectClass": "mg0_items",
-									"sid": 542063070675082,
+									"sid": 136515366697911,
 									"parameters": {
 										"instance-variable": "Rotation",
 										"value": "mg0_items.HorizontalMovement * 2"
