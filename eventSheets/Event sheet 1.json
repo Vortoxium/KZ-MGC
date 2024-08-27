@@ -1,5 +1,636 @@
 {
 	"name": "Event sheet 1",
-	"events": [],
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "ActiveMiniGame",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 532551387881037
+		},
+		{
+			"eventType": "variable",
+			"name": "ActiveMiniGameLevel",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 512822517356273
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Minigame 0",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "variable",
+					"name": "ItemsToDrop",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"isStatic": true,
+					"isConstant": false,
+					"sid": 876640032539166
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 538518353883857,
+							"parameters": {
+								"variable": "ActiveMiniGame",
+								"comparison": 0,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 555615660317970,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "Setting Cursor Sprite"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 148715264688131
+								}
+							],
+							"actions": [
+								{
+									"id": "set-cursor-style",
+									"objectClass": "Mouse",
+									"sid": 636761547148805,
+									"parameters": {
+										"cursor-style": "none"
+									}
+								},
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 757265209261581,
+									"parameters": {
+										"object-to-create": "cursor",
+										"layer": "\"HUD\"",
+										"x": "0",
+										"y": "0",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								}
+							],
+							"sid": 998425120620862
+						},
+						{
+							"eventType": "comment",
+							"text": "Setting Cursor Position + Spawning Items"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "every-tick",
+									"objectClass": "System",
+									"sid": 979541570200130
+								}
+							],
+							"actions": [
+								{
+									"id": "set-position",
+									"objectClass": "cursor",
+									"sid": 616793037189024,
+									"parameters": {
+										"x": "Mouse.X",
+										"y": "Mouse.Y"
+									}
+								}
+							],
+							"sid": 308754209023684,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "for-each",
+											"objectClass": "System",
+											"sid": 563235141733949,
+											"parameters": {
+												"object": "mg0_items"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-instvar-value",
+											"objectClass": "mg0_items",
+											"sid": 631169544790382,
+											"parameters": {
+												"instance-variable": "SideMovement",
+												"value": "mg0_items.SideMovement*0.975*(dt*60)"
+											}
+										},
+										{
+											"id": "set-y",
+											"objectClass": "mg0_items",
+											"sid": 377020295668862,
+											"parameters": {
+												"y": "mg0_items.Y + mg0_items.FallSpeed"
+											}
+										},
+										{
+											"id": "set-x",
+											"objectClass": "mg0_items",
+											"sid": 557130453603038,
+											"parameters": {
+												"x": "mg0_items.X + mg0_items.SideMovement"
+											}
+										},
+										{
+											"id": "rotate-clockwise",
+											"objectClass": "mg0_items",
+											"sid": 522686778974228,
+											"parameters": {
+												"degrees": "mg0_items.Rotation"
+											}
+										}
+									],
+									"sid": 295352438594555,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "on-collision-with-another-object",
+													"objectClass": "mg0_items",
+													"sid": 619988335298778,
+													"parameters": {
+														"object": "border"
+													}
+												},
+												{
+													"id": "is-timer-running",
+													"objectClass": "mg0_items",
+													"sid": 824690219198927,
+													"behaviorType": "Timer",
+													"parameters": {
+														"tag": "\"NoBounce\""
+													},
+													"isInverted": true
+												}
+											],
+											"actions": [
+												{
+													"id": "start-timer",
+													"objectClass": "mg0_items",
+													"sid": 544385680948033,
+													"behaviorType": "Timer",
+													"parameters": {
+														"duration": "1.0",
+														"type": "once",
+														"tag": "\"NoBounce\""
+													}
+												},
+												{
+													"id": "set-instvar-value",
+													"objectClass": "mg0_items",
+													"sid": 781002180075714,
+													"parameters": {
+														"instance-variable": "SideMovement",
+														"value": "-mg0_items.SideMovement"
+													}
+												},
+												{
+													"id": "set-instvar-value",
+													"objectClass": "mg0_items",
+													"sid": 339653582287663,
+													"parameters": {
+														"instance-variable": "Rotation",
+														"value": "-mg0_items.Rotation"
+													}
+												}
+											],
+											"sid": 286644141340471
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-y",
+													"objectClass": "mg0_items",
+													"sid": 446141889955604,
+													"parameters": {
+														"comparison": 5,
+														"y-co-ordinate": "204"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "destroy",
+													"objectClass": "mg0_items",
+													"sid": 764965350628890
+												}
+											],
+											"sid": 884913386182958
+										}
+									]
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "every-x-seconds",
+									"objectClass": "System",
+									"sid": 411437951918317,
+									"parameters": {
+										"interval-seconds": "random(1,1.5) / ActiveMiniGameLevel+1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 907629043798058,
+									"parameters": {
+										"object-to-create": "mg0_items",
+										"layer": "0",
+										"x": "random(24,296)",
+										"y": "-24",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "mg0_items",
+									"sid": 148573840529510,
+									"parameters": {
+										"instance-variable": "FallSpeed",
+										"value": "random(3*(dt*60),3.75*(dt*60))"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "mg0_items",
+									"sid": 118984203890622,
+									"parameters": {
+										"instance-variable": "SideMovement",
+										"value": "random(-3*(dt*60),3*(dt*60))"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "mg0_items",
+									"sid": 542063070675082,
+									"parameters": {
+										"instance-variable": "Rotation",
+										"value": "mg0_items.SideMovement * 2"
+									}
+								}
+							],
+							"sid": 260472695412906
+						},
+						{
+							"eventType": "comment",
+							"text": "Slashing Logic"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "mouse-button-is-down",
+									"objectClass": "Mouse",
+									"sid": 236581930026435,
+									"parameters": {
+										"mouse-button": "left"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 508717393052673,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "trigger-once-while-true",
+											"objectClass": "System",
+											"sid": 360643092396811
+										}
+									],
+									"actions": [
+										{
+											"id": "create-object",
+											"objectClass": "System",
+											"sid": 386625634779520,
+											"parameters": {
+												"object-to-create": "slash_marker",
+												"layer": "\"HUD Below\"",
+												"x": "Mouse.X",
+												"y": "Mouse.Y",
+												"create-hierarchy": false,
+												"template-name": "\"\""
+											}
+										},
+										{
+											"id": "create-object",
+											"objectClass": "System",
+											"sid": 342010552300826,
+											"parameters": {
+												"object-to-create": "slash_marker",
+												"layer": "\"HUD Below\"",
+												"x": "Mouse.X",
+												"y": "Mouse.Y",
+												"create-hierarchy": false,
+												"template-name": "\"\""
+											}
+										},
+										{
+											"id": "set-animation-frame",
+											"objectClass": "slash_marker",
+											"sid": 631796636636983,
+											"parameters": {
+												"frame-number": "1"
+											}
+										},
+										{
+											"id": "create-object",
+											"objectClass": "System",
+											"sid": 134281783077250,
+											"parameters": {
+												"object-to-create": "slash_helper",
+												"layer": "\"HUD Below\"",
+												"x": "slash_marker.X",
+												"y": "slash_marker.Y",
+												"create-hierarchy": false,
+												"template-name": "\"\""
+											}
+										},
+										{
+											"id": "set-width",
+											"objectClass": "slash_helper",
+											"sid": 202260154699406,
+											"parameters": {
+												"width": "0"
+											}
+										},
+										{
+											"id": "move-to-bottom",
+											"objectClass": "slash_helper",
+											"sid": 326903325176490
+										}
+									],
+									"sid": 745016445937925
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "every-tick",
+											"objectClass": "System",
+											"sid": 625087120867054
+										}
+									],
+									"actions": [],
+									"sid": 220835646084088,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-animation-frame",
+													"objectClass": "slash_marker",
+													"sid": 537789914235001,
+													"parameters": {
+														"comparison": 0,
+														"number": "0"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-width",
+													"objectClass": "slash_helper",
+													"sid": 582492836901133,
+													"parameters": {
+														"width": "distance(slash_marker.X,slash_marker.Y,Mouse.X,Mouse.Y)"
+													}
+												},
+												{
+													"id": "set-angle-toward-position",
+													"objectClass": "slash_helper",
+													"sid": 982346330353947,
+													"parameters": {
+														"x": "Mouse.X",
+														"y": "Mouse.Y"
+													}
+												}
+											],
+											"sid": 775577450747805
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-animation-frame",
+													"objectClass": "slash_marker",
+													"sid": 574677096959292,
+													"parameters": {
+														"comparison": 0,
+														"number": "1"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-position",
+													"objectClass": "slash_marker",
+													"sid": 442842360103832,
+													"parameters": {
+														"x": "Mouse.X",
+														"y": "Mouse.Y"
+													}
+												}
+											],
+											"sid": 864101472820781
+										}
+									]
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-button-released",
+									"objectClass": "Mouse",
+									"sid": 951958246179679,
+									"parameters": {
+										"mouse-button": "left"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 502683192646870,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-animation-frame",
+											"objectClass": "slash_marker",
+											"sid": 119131288934749,
+											"parameters": {
+												"comparison": 0,
+												"number": "0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "create-object",
+											"objectClass": "System",
+											"sid": 684769273589719,
+											"parameters": {
+												"object-to-create": "slash",
+												"layer": "\"HUD Below\"",
+												"x": "slash_marker.x",
+												"y": "slash_marker.y",
+												"create-hierarchy": false,
+												"template-name": "\"\""
+											}
+										},
+										{
+											"id": "set-width",
+											"objectClass": "slash",
+											"sid": 992237889522630,
+											"parameters": {
+												"width": "distance(slash_marker.X,slash_marker.Y,Mouse.X,Mouse.Y)"
+											}
+										},
+										{
+											"id": "set-angle-toward-position",
+											"objectClass": "slash",
+											"sid": 859797359381188,
+											"parameters": {
+												"x": "Mouse.X",
+												"y": "Mouse.Y"
+											}
+										}
+									],
+									"sid": 135661011418603
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "for-each",
+											"objectClass": "System",
+											"sid": 610847731807552,
+											"parameters": {
+												"object": "slash_marker"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "destroy",
+											"objectClass": "slash_marker",
+											"sid": 534225124175623
+										}
+									],
+									"sid": 134993388754978
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "for-each",
+											"objectClass": "System",
+											"sid": 837562195614295,
+											"parameters": {
+												"object": "slash_helper"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "destroy",
+											"objectClass": "slash_helper",
+											"sid": 226221363138130
+										}
+									],
+									"sid": 255349668884272
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-animation-frame",
+									"objectClass": "slash",
+									"sid": 568583792074371,
+									"parameters": {
+										"comparison": 0,
+										"number": "4"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "slash",
+									"sid": 918255331746415
+								}
+							],
+							"sid": 528695228564735
+						},
+						{
+							"eventType": "comment",
+							"text": "Slashing Items"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-collision-with-another-object",
+									"objectClass": "slash",
+									"sid": 866834751680204,
+									"parameters": {
+										"object": "mg0_items"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "mg0_items",
+									"sid": 218811941785200
+								}
+							],
+							"sid": 742028561951940
+						}
+					]
+				}
+			],
+			"sid": 480137944952054
+		}
+	],
 	"sid": 901690877191249
 }

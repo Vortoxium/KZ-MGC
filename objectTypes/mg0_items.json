@@ -1,0 +1,66 @@
+{
+	"name": "mg0_items",
+	"plugin-id": "Sprite",
+	"sid": 265610377760401,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "FallSpeed",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 238256915195691
+		},
+		{
+			"name": "SideMovement",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 990901191745802
+		},
+		{
+			"name": "Rotation",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 109371776987089
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Timer",
+			"name": "Timer",
+			"sid": 395857946616573
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 24,
+						"height": 48,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 3980407,
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 424865918857196,
+				"name": "item_0",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			}
+		],
+		"subfolders": []
+	}
+}
