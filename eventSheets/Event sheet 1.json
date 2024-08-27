@@ -44,6 +44,20 @@
 							"sid": 332098207728353
 						},
 						{
+							"name": "ParticleFrameRange",
+							"type": "string",
+							"initialValue": "",
+							"comment": "",
+							"sid": 468502652709480
+						},
+						{
+							"name": "ParticleColour",
+							"type": "string",
+							"initialValue": "",
+							"comment": "",
+							"sid": 626396585930151
+						},
+						{
 							"name": "ParticleAmount",
 							"type": "number",
 							"initialValue": "0",
@@ -98,6 +112,14 @@
 									}
 								},
 								{
+									"id": "set-default-color",
+									"objectClass": "particles",
+									"sid": 674932255411357,
+									"parameters": {
+										"color": "rgb(\nint(tokenat(ParticleColour,0,\",\")),\nint(tokenat(ParticleColour,1,\",\")),\nint(tokenat(ParticleColour,2,\",\"))\n)"
+									}
+								},
+								{
 									"id": "set-animation",
 									"objectClass": "particles",
 									"sid": 775533281090751,
@@ -109,19 +131,36 @@
 								{
 									"id": "set-instvar-value",
 									"objectClass": "particles",
-									"sid": 233701745369643,
+									"sid": 193516698897492,
 									"parameters": {
 										"instance-variable": "HorizontalMovement",
-										"value": "random(-6*(dt*60),6*(dt*60))"
+										"value": "random(-6,6)"
 									}
 								},
 								{
 									"id": "set-instvar-value",
 									"objectClass": "particles",
-									"sid": 282049911023888,
+									"sid": 539910725687999,
 									"parameters": {
 										"instance-variable": "VerticalMovement",
-										"value": "random(-3*(dt*60),3*(dt*60))"
+										"value": "random(-6,6)"
+									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "particles",
+									"sid": 648503676480628,
+									"parameters": {
+										"frame-number": "random(int(tokenat(ParticleFrameRange,0,\",\")),int(tokenat(ParticleFrameRange,1,\",\")))"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "particles",
+									"sid": 997353467507116,
+									"parameters": {
+										"instance-variable": "Rotation",
+										"value": "particles.HorizontalMovement * 3"
 									}
 								}
 							],
@@ -157,28 +196,36 @@
 								{
 									"id": "set-instvar-value",
 									"objectClass": "particles",
-									"sid": 659108635896473,
+									"sid": 831250098682347,
 									"parameters": {
 										"instance-variable": "HorizontalMovement",
-										"value": "Particles.HorizontalMovement*0.98*(dt*60)"
+										"value": "Particles.HorizontalMovement*0.99"
 									}
 								},
 								{
 									"id": "set-instvar-value",
 									"objectClass": "particles",
-									"sid": 585279682055041,
+									"sid": 484731259086631,
 									"parameters": {
 										"instance-variable": "VerticalMovement",
-										"value": "(Particles.VerticalMovement+((3-Particles.VerticalMovement)*0.03))*(dt*60)"
+										"value": "Particles.VerticalMovement+(6-Particles.VerticalMovement)*0.06"
+									}
+								},
+								{
+									"id": "rotate-clockwise",
+									"objectClass": "particles",
+									"sid": 659987042724093,
+									"parameters": {
+										"degrees": "particles.Rotation * (dt*60)"
 									}
 								},
 								{
 									"id": "set-position",
 									"objectClass": "particles",
-									"sid": 917153373241685,
+									"sid": 309788127199534,
 									"parameters": {
-										"x": "Particles.X + Particles.HorizontalMovement",
-										"y": "Particles.Y + Particles.VerticalMovement"
+										"x": "Particles.X + (Particles.HorizontalMovement*(dt*60))",
+										"y": "Particles.Y + (Particles.VerticalMovement*(dt*60))"
 									}
 								}
 							],
@@ -188,12 +235,12 @@
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "compare-animation-frame",
+									"id": "compare-y",
 									"objectClass": "particles",
-									"sid": 905052382029879,
+									"sid": 778334843869559,
 									"parameters": {
-										"comparison": 0,
-										"number": "3"
+										"comparison": 5,
+										"y-co-ordinate": "204"
 									}
 								}
 							],
@@ -333,10 +380,10 @@
 										{
 											"id": "set-instvar-value",
 											"objectClass": "mg0_items",
-											"sid": 990214542046888,
+											"sid": 211632470548066,
 											"parameters": {
 												"instance-variable": "HorizontalMovement",
-												"value": "(mg0_items.HorizontalMovement*0.98)*(dt*60)"
+												"value": "mg0_items.HorizontalMovement*0.98"
 											}
 										},
 										{
@@ -351,9 +398,9 @@
 										{
 											"id": "rotate-clockwise",
 											"objectClass": "mg0_items",
-											"sid": 522686778974228,
+											"sid": 596270664623040,
 											"parameters": {
-												"degrees": "mg0_items.Rotation"
+												"degrees": "mg0_items.Rotation*(dt*60)"
 											}
 										}
 									],
@@ -832,6 +879,16 @@
 							"text": "Slashing Items"
 						},
 						{
+							"eventType": "variable",
+							"name": "mg0_item_0_colours",
+							"type": "string",
+							"initialValue": "84,71,54|239,146,0|92,233,120|216,150,89",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": true,
+							"sid": 331813277604339
+						},
+						{
 							"eventType": "block",
 							"conditions": [
 								{
@@ -846,10 +903,12 @@
 							"actions": [
 								{
 									"callFunction": "SpawnParticles",
-									"sid": 831190199776030,
+									"sid": 404799893834815,
 									"parameters": [
-										"\"mg0_particles_0\"",
-										"random(5,10)",
+										"\"mg0_item_particles_0\"",
+										"\"1,5\"",
+										"tokenat(mg0_item_0_colours,mg0_items.AnimationFrame,\"|\")",
+										"random(10,15)",
 										"SpawnsParticles.UID"
 									]
 								},
