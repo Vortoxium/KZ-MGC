@@ -37,6 +37,13 @@
 					"functionIsAsync": false,
 					"functionParameters": [
 						{
+							"name": "ParticleAnimation",
+							"type": "string",
+							"initialValue": "",
+							"comment": "",
+							"sid": 332098207728353
+						},
+						{
 							"name": "ParticleAmount",
 							"type": "number",
 							"initialValue": "0",
@@ -91,6 +98,15 @@
 									}
 								},
 								{
+									"id": "set-animation",
+									"objectClass": "particles",
+									"sid": 775533281090751,
+									"parameters": {
+										"animation": "ParticleAnimation",
+										"from": "beginning"
+									}
+								},
+								{
 									"id": "set-instvar-value",
 									"objectClass": "particles",
 									"sid": 233701745369643,
@@ -141,19 +157,19 @@
 								{
 									"id": "set-instvar-value",
 									"objectClass": "particles",
-									"sid": 522405019093440,
+									"sid": 659108635896473,
 									"parameters": {
 										"instance-variable": "HorizontalMovement",
-										"value": "Particles.HorizontalMovement*0.975*(dt*60)"
+										"value": "Particles.HorizontalMovement*0.98*(dt*60)"
 									}
 								},
 								{
 									"id": "set-instvar-value",
 									"objectClass": "particles",
-									"sid": 199501426709644,
+									"sid": 585279682055041,
 									"parameters": {
 										"instance-variable": "VerticalMovement",
-										"value": "(Particles.VerticalMovement+((3-Particles.VerticalMovement)*0.025))*(dt*60)"
+										"value": "(Particles.VerticalMovement+((3-Particles.VerticalMovement)*0.03))*(dt*60)"
 									}
 								},
 								{
@@ -204,7 +220,7 @@
 			"children": [
 				{
 					"eventType": "variable",
-					"name": "ItemsToDrop",
+					"name": "ItemToDrop",
 					"type": "number",
 					"initialValue": "0",
 					"comment": "",
@@ -422,9 +438,9 @@
 								{
 									"id": "every-x-seconds",
 									"objectClass": "System",
-									"sid": 172257247243291,
+									"sid": 913003483882505,
 									"parameters": {
-										"interval-seconds": "random(1,1.5) / ActiveMiniGameLevel"
+										"interval-seconds": "random(0.75,1.5*ActiveMiniGameLevel) / ActiveMiniGameLevel"
 									}
 								}
 							],
@@ -445,19 +461,19 @@
 								{
 									"id": "set-instvar-value",
 									"objectClass": "mg0_items",
-									"sid": 148573840529510,
+									"sid": 278898133390767,
 									"parameters": {
 										"instance-variable": "VerticalMovement",
-										"value": "random(3*(dt*60),3.75*(dt*60))"
+										"value": "(random(2,3)*(1+(ActiveMiniGameLevel/10)-0.1))*(dt*60)"
 									}
 								},
 								{
 									"id": "set-instvar-value",
 									"objectClass": "mg0_items",
-									"sid": 118984203890622,
+									"sid": 170707764912374,
 									"parameters": {
 										"instance-variable": "HorizontalMovement",
-										"value": "random(-3*(dt*60),3*(dt*60))"
+										"value": "(random(-3,3)*(1+(ActiveMiniGameLevel/10)-0.1))*(dt*60)"
 									}
 								},
 								{
@@ -787,9 +803,10 @@
 							"actions": [
 								{
 									"callFunction": "SpawnParticles",
-									"sid": 631862072277598,
+									"sid": 831190199776030,
 									"parameters": [
-										"random(4,8)",
+										"\"mg0_particles_0\"",
+										"random(5,10)",
 										"SpawnsParticles.UID"
 									]
 								},
