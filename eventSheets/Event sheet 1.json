@@ -279,6 +279,14 @@
 										"create-hierarchy": false,
 										"template-name": "\"\""
 									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "cursor",
+									"sid": 238859181276793,
+									"parameters": {
+										"frame-number": "0"
+									}
 								}
 							],
 							"sid": 998425120620862
@@ -459,12 +467,21 @@
 									}
 								},
 								{
+									"id": "set-animation",
+									"objectClass": "mg0_items",
+									"sid": 405277813527078,
+									"parameters": {
+										"animation": "\"item_\"&random(0,0)",
+										"from": "beginning"
+									}
+								},
+								{
 									"id": "set-instvar-value",
 									"objectClass": "mg0_items",
-									"sid": 278898133390767,
+									"sid": 892837630976243,
 									"parameters": {
 										"instance-variable": "VerticalMovement",
-										"value": "(random(2,3)*(1+(ActiveMiniGameLevel/10)-0.1))*(dt*60)"
+										"value": "(random(3,4)*(1+(ActiveMiniGameLevel/10)-0.1))*(dt*60)"
 									}
 								},
 								{
@@ -486,7 +503,33 @@
 									}
 								}
 							],
-							"sid": 260472695412906
+							"sid": 260472695412906,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-animation-playing",
+											"objectClass": "mg0_items",
+											"sid": 574409391304673,
+											"parameters": {
+												"animation": "\"item_0\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation-frame",
+											"objectClass": "mg0_items",
+											"sid": 669347997272258,
+											"parameters": {
+												"frame-number": "floor(random(0,3.99))"
+											}
+										}
+									],
+									"sid": 664381729974713
+								}
+							]
 						},
 						{
 							"eventType": "comment",
