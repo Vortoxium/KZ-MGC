@@ -51,7 +51,8 @@
 			"border",
 			"slash_marker",
 			"slash_helper",
-			"slash"
+			"slash",
+			"particles"
 		],
 		"subfolders": [
 			{
@@ -67,7 +68,9 @@
 	"autosaveData": null,
 	"containers": [],
 	"families": {
-		"items": [],
+		"items": [
+			"SpawnsParticles"
+		],
 		"subfolders": []
 	},
 	"layouts": {

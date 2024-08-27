@@ -1,0 +1,11 @@
+{
+	"name": "SpawnsParticles",
+	"plugin-id": "Sprite",
+	"sid": 225336540616279,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"mg0_items"
+	]
+}

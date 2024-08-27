@@ -5,14 +5,14 @@
 	"isGlobal": false,
 	"instanceVariables": [
 		{
-			"name": "FallSpeed",
+			"name": "VerticalMovement",
 			"type": "number",
 			"desc": "",
 			"show": true,
 			"sid": 238256915195691
 		},
 		{
-			"name": "SideMovement",
+			"name": "HorizontalMovement",
 			"type": "number",
 			"desc": "",
 			"show": true,
