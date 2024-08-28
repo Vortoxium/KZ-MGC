@@ -602,9 +602,9 @@
 										{
 											"id": "set-animation-frame",
 											"objectClass": "mg0_items",
-											"sid": 520079313816766,
+											"sid": 640645480683316,
 											"parameters": {
-												"frame-number": "floor(random(0,4.99))"
+												"frame-number": "floor(random(0,5.99))"
 											}
 										}
 									],
@@ -916,7 +916,7 @@
 							"eventType": "variable",
 							"name": "mg0_item_0_colours",
 							"type": "string",
-							"initialValue": "84,71,54|239,146,0|92,233,120|216,150,89|181,153,108",
+							"initialValue": "84,71,54|239,146,0|92,233,120|216,150,89|181,153,108|171,195,195",
 							"comment": "",
 							"isStatic": false,
 							"isConstant": true,
