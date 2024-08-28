@@ -26,13 +26,7 @@
 			"sid": 109371776987089
 		}
 	],
-	"behaviorTypes": [
-		{
-			"behaviorId": "Timer",
-			"name": "Timer",
-			"sid": 395857946616573
-		}
-	],
+	"behaviorTypes": [],
 	"effectTypes": [],
 	"animations": {
 		"items": [

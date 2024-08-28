@@ -416,50 +416,84 @@
 													"parameters": {
 														"object": "border"
 													}
-												},
-												{
-													"id": "is-timer-running",
-													"objectClass": "mg0_items",
-													"sid": 824690219198927,
-													"behaviorType": "Timer",
-													"parameters": {
-														"tag": "\"NoBounce\""
-													},
-													"isInverted": true
 												}
 											],
-											"actions": [
+											"actions": [],
+											"sid": 286644141340471,
+											"children": [
 												{
-													"id": "start-timer",
-													"objectClass": "mg0_items",
-													"sid": 544385680948033,
-													"behaviorType": "Timer",
-													"parameters": {
-														"duration": "1.0",
-														"type": "once",
-														"tag": "\"NoBounce\""
-													}
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-instance-variable",
+															"objectClass": "border",
+															"sid": 111833942050612,
+															"parameters": {
+																"instance-variable": "mode",
+																"comparison": 0,
+																"value": "\"pushRight\""
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-instvar-value",
+															"objectClass": "mg0_items",
+															"sid": 829637916142558,
+															"parameters": {
+																"instance-variable": "HorizontalMovement",
+																"value": "abs(mg0_items.HorizontalMovement)"
+															}
+														},
+														{
+															"id": "set-instvar-value",
+															"objectClass": "mg0_items",
+															"sid": 285411013416101,
+															"parameters": {
+																"instance-variable": "Rotation",
+																"value": "abs(mg0_items.Rotation)"
+															}
+														}
+													],
+													"sid": 988067769569185
 												},
 												{
-													"id": "set-instvar-value",
-													"objectClass": "mg0_items",
-													"sid": 781002180075714,
-													"parameters": {
-														"instance-variable": "HorizontalMovement",
-														"value": "-mg0_items.HorizontalMovement"
-													}
-												},
-												{
-													"id": "set-instvar-value",
-													"objectClass": "mg0_items",
-													"sid": 339653582287663,
-													"parameters": {
-														"instance-variable": "Rotation",
-														"value": "-mg0_items.Rotation"
-													}
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-instance-variable",
+															"objectClass": "border",
+															"sid": 601051344898024,
+															"parameters": {
+																"instance-variable": "mode",
+																"comparison": 0,
+																"value": "\"pushLeft\""
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-instvar-value",
+															"objectClass": "mg0_items",
+															"sid": 175093773585963,
+															"parameters": {
+																"instance-variable": "HorizontalMovement",
+																"value": "-(abs(mg0_items.HorizontalMovement))"
+															}
+														},
+														{
+															"id": "set-instvar-value",
+															"objectClass": "mg0_items",
+															"sid": 660695324053460,
+															"parameters": {
+																"instance-variable": "Rotation",
+																"value": "-(abs(mg0_items.Rotation))"
+															}
+														}
+													],
+													"sid": 833562435095652
 												}
-											],
-											"sid": 286644141340471
+											]
 										},
 										{
 											"eventType": "block",

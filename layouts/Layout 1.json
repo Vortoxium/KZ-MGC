@@ -45,7 +45,9 @@
 						"live-preview": false
 					},
 					"uid": 4,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"mode": "pushLeft"
+					},
 					"behaviors": {},
 					"world": {
 						"x": 328,
@@ -74,7 +76,9 @@
 						"live-preview": false
 					},
 					"uid": 6,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"mode": "pushRight"
+					},
 					"behaviors": {},
 					"world": {
 						"x": -8,

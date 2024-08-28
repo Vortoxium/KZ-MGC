@@ -33,13 +33,6 @@
 			"name": "Sprite",
 			"author": "Scirra",
 			"bundled": false
-		},
-		{
-			"type": "behavior",
-			"id": "Timer",
-			"name": "Timer",
-			"author": "Scirra",
-			"bundled": false
 		}
 	],
 	"uniqueId": "tqj16r1yvft",
