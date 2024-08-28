@@ -537,23 +537,14 @@
 								{
 									"id": "create-object",
 									"objectClass": "System",
-									"sid": 309210205673221,
+									"sid": 765056236012151,
 									"parameters": {
 										"object-to-create": "mg0_items",
 										"layer": "0",
-										"x": "0",
-										"y": "0",
+										"x": "random(0,320)",
+										"y": "-56",
 										"create-hierarchy": false,
 										"template-name": "\"\""
-									}
-								},
-								{
-									"id": "set-position",
-									"objectClass": "mg0_items",
-									"sid": 124078002313067,
-									"parameters": {
-										"x": "random(mg0_items.Width/2,320-(mg0_items.Width/2))",
-										"y": "-(mg0_items.Height/2)"
 									}
 								},
 								{
