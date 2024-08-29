@@ -635,9 +635,9 @@
 										{
 											"id": "set-animation-frame",
 											"objectClass": "mg0_items",
-											"sid": 126056797447650,
+											"sid": 105571371619832,
 											"parameters": {
-												"frame-number": "floor(random(0,2.99))"
+												"frame-number": "floor(random(1,2.99))"
 											}
 										}
 									],
@@ -1157,10 +1157,10 @@
 														{
 															"id": "set-instvar-value",
 															"objectClass": "mg0_items",
-															"sid": 488643634584172,
+															"sid": 472507766277456,
 															"parameters": {
 																"instance-variable": "VerticalMovement",
-																"value": "-(((360 - slash.Angle) / 10) * (1+(ActiveMiniGameLevel/10)-0.1))"
+																"value": "-(((360 - slash.Angle) / 7.5) * (1+(ActiveMiniGameLevel/10)-0.1))"
 															}
 														}
 													],
@@ -1192,10 +1192,10 @@
 														{
 															"id": "set-instvar-value",
 															"objectClass": "mg0_items",
-															"sid": 225479116941929,
+															"sid": 627705593562031,
 															"parameters": {
 																"instance-variable": "VerticalMovement",
-																"value": "-(((slash.Angle - 180) / 10) * (1+(ActiveMiniGameLevel/10)-0.1))"
+																"value": "-(((slash.Angle - 180) / 7.5) * (1+(ActiveMiniGameLevel/10)-0.1))"
 															}
 														}
 													],
@@ -1227,10 +1227,10 @@
 														{
 															"id": "set-instvar-value",
 															"objectClass": "mg0_items",
-															"sid": 984189116004180,
+															"sid": 362032241598352,
 															"parameters": {
 																"instance-variable": "VerticalMovement",
-																"value": "(((180 - slash.Angle) / 10) * (1+(ActiveMiniGameLevel/10)-0.1))"
+																"value": "(((180 - slash.Angle) / 7.5) * (1+(ActiveMiniGameLevel/10)-0.1))"
 															}
 														}
 													],
@@ -1262,10 +1262,10 @@
 														{
 															"id": "set-instvar-value",
 															"objectClass": "mg0_items",
-															"sid": 549341016243998,
+															"sid": 128801756209823,
 															"parameters": {
 																"instance-variable": "VerticalMovement",
-																"value": "(slash.Angle / 10) * (1+(ActiveMiniGameLevel/10)-0.1)"
+																"value": "(slash.Angle / 7.5) * (1+(ActiveMiniGameLevel/10)-0.1)"
 															}
 														}
 													],
