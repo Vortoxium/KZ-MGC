@@ -559,9 +559,9 @@
 								{
 									"id": "set-animation",
 									"objectClass": "mg0_items",
-									"sid": 587299487357071,
+									"sid": 446748857704063,
 									"parameters": {
-										"animation": "\"item_\"&floor(random(0,2.99))",
+										"animation": "\"item_\"&floor(random(0,1.99))",
 										"from": "beginning"
 									}
 								},
@@ -625,9 +625,9 @@
 										{
 											"id": "is-animation-playing",
 											"objectClass": "mg0_items",
-											"sid": 469275173492095,
+											"sid": 231495635880439,
 											"parameters": {
-												"animation": "\"item_2\""
+												"animation": "\"item_1\""
 											}
 										}
 									],
@@ -635,9 +635,9 @@
 										{
 											"id": "set-animation-frame",
 											"objectClass": "mg0_items",
-											"sid": 587835833205456,
+											"sid": 126056797447650,
 											"parameters": {
-												"frame-number": "floor(random(0,1.99))"
+												"frame-number": "floor(random(0,2.99))"
 											}
 										}
 									],
@@ -955,14 +955,6 @@
 									"parameters": {
 										"object": "mg0_items"
 									}
-								},
-								{
-									"id": "for-each",
-									"objectClass": "System",
-									"sid": 643641009245229,
-									"parameters": {
-										"object": "mg0_items"
-									}
 								}
 							],
 							"actions": [],
@@ -997,13 +989,13 @@
 									"actions": [
 										{
 											"callFunction": "SpawnParticles",
-											"sid": 303885679472704,
+											"sid": 683221664928378,
 											"parameters": [
 												"\"mg0_item_particles_0\"",
 												"\"1,5\"",
 												"tokenat(mg0_item_0_colours,mg0_items.AnimationFrame,\"|\")",
 												"random(10,15)",
-												"SpawnsParticles.UID"
+												"mg0_items.UID"
 											]
 										},
 										{
@@ -1016,7 +1008,7 @@
 								},
 								{
 									"eventType": "comment",
-									"text": "Bust"
+									"text": "Bust + Butcher Knife + Knife"
 								},
 								{
 									"eventType": "block",
@@ -1024,105 +1016,13 @@
 										{
 											"id": "is-animation-playing",
 											"objectClass": "mg0_items",
-											"sid": 645299711095574,
+											"sid": 359429364168170,
 											"parameters": {
 												"animation": "\"item_1\""
 											}
 										}
 									],
-									"actions": [
-										{
-											"callFunction": "SpawnParticles",
-											"sid": 668514874945077,
-											"parameters": [
-												"\"mg0_item_particles_0\"",
-												"\"1,5\"",
-												"\"255,255,255\"",
-												"random(5,10)+(mg0_items.AnimationFrame*5)",
-												"SpawnsParticles.UID"
-											]
-										}
-									],
-									"sid": 421462353107765,
-									"children": [
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "compare-animation-frame",
-													"objectClass": "mg0_items",
-													"sid": 597163471091559,
-													"parameters": {
-														"comparison": 0,
-														"number": "1"
-													}
-												}
-											],
-											"actions": [
-												{
-													"id": "destroy",
-													"objectClass": "mg0_items",
-													"sid": 692388565834056
-												}
-											],
-											"sid": 216850271240483
-										},
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "compare-animation-frame",
-													"objectClass": "mg0_items",
-													"sid": 383984780323615,
-													"parameters": {
-														"comparison": 0,
-														"number": "0"
-													}
-												}
-											],
-											"actions": [
-												{
-													"id": "set-animation-frame",
-													"objectClass": "mg0_items",
-													"sid": 161643646884842,
-													"parameters": {
-														"frame-number": "1"
-													}
-												}
-											],
-											"sid": 524384863094589
-										}
-									]
-								},
-								{
-									"eventType": "comment",
-									"text": "Butcher Knife + Knife"
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "is-animation-playing",
-											"objectClass": "mg0_items",
-											"sid": 986537426826623,
-											"parameters": {
-												"animation": "\"item_2\""
-											}
-										}
-									],
-									"actions": [
-										{
-											"callFunction": "SpawnParticles",
-											"sid": 722246152422138,
-											"parameters": [
-												"\"mg0_item_particles_0\"",
-												"\"1,5\"",
-												"\"255,255,255\"",
-												"random(10,15)",
-												"SpawnsParticles.UID"
-											]
-										}
-									],
+									"actions": [],
 									"sid": 610909516798667,
 									"children": [
 										{
@@ -1131,23 +1031,43 @@
 												{
 													"id": "compare-animation-frame",
 													"objectClass": "mg0_items",
-													"sid": 332783783669840,
+													"sid": 637631613857716,
 													"parameters": {
 														"comparison": 0,
-														"number": "2"
+														"number": "3"
 													}
 												},
 												{
 													"id": "compare-animation-frame",
 													"objectClass": "mg0_items",
-													"sid": 977149234081380,
+													"sid": 465177638137058,
 													"parameters": {
 														"comparison": 0,
-														"number": "3"
+														"number": "4"
+													}
+												},
+												{
+													"id": "compare-animation-frame",
+													"objectClass": "mg0_items",
+													"sid": 246032799064585,
+													"parameters": {
+														"comparison": 0,
+														"number": "5"
 													}
 												}
 											],
 											"actions": [
+												{
+													"callFunction": "SpawnParticles",
+													"sid": 105776850426215,
+													"parameters": [
+														"\"mg0_item_particles_0\"",
+														"\"1,5\"",
+														"\"255,255,255\"",
+														"random(10,15)",
+														"mg0_items.UID"
+													]
+												},
 												{
 													"id": "destroy",
 													"objectClass": "mg0_items",
@@ -1177,15 +1097,35 @@
 														"comparison": 0,
 														"number": "1"
 													}
+												},
+												{
+													"id": "compare-animation-frame",
+													"objectClass": "mg0_items",
+													"sid": 882888192485432,
+													"parameters": {
+														"comparison": 0,
+														"number": "2"
+													}
 												}
 											],
 											"actions": [
 												{
+													"callFunction": "SpawnParticles",
+													"sid": 857459543694355,
+													"parameters": [
+														"\"mg0_item_particles_0\"",
+														"\"1,5\"",
+														"\"255,255,255\"",
+														"random(2,5)",
+														"mg0_items.UID"
+													]
+												},
+												{
 													"id": "set-animation-frame",
 													"objectClass": "mg0_items",
-													"sid": 415394101322282,
+													"sid": 237649541446435,
 													"parameters": {
-														"frame-number": "mg0_items.AnimationFrame + 2"
+														"frame-number": "mg0_items.AnimationFrame + 3"
 													}
 												}
 											],
