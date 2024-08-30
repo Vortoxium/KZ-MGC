@@ -629,7 +629,7 @@
 										},
 										{
 											"eventType": "comment",
-											"text": "Fire from Explosive Vial"
+											"text": "Extra Particle + Animation Stuff"
 										},
 										{
 											"eventType": "block",
@@ -641,38 +641,98 @@
 													"parameters": {
 														"animation": "\"item_2\""
 													}
+												}
+											],
+											"actions": [],
+											"sid": 309635081043307,
+											"children": [
+												{
+													"eventType": "comment",
+													"text": "Fire from Explosive Vial"
 												},
 												{
-													"id": "compare-two-values",
-													"objectClass": "System",
-													"sid": 451080557762931,
-													"parameters": {
-														"first-value": "tickcount % 2",
-														"comparison": 0,
-														"second-value": "1"
-													}
-												}
-											],
-											"actions": [
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-animation-frame",
+															"objectClass": "mg0_items",
+															"sid": 634742246977258,
+															"parameters": {
+																"comparison": 0,
+																"number": "2"
+															}
+														},
+														{
+															"id": "compare-two-values",
+															"objectClass": "System",
+															"sid": 472381128894496,
+															"parameters": {
+																"first-value": "tickcount % 2",
+																"comparison": 0,
+																"second-value": "1"
+															}
+														}
+													],
+													"actions": [
+														{
+															"callFunction": "SpawnParticles",
+															"sid": 179900881994422,
+															"parameters": [
+																"\"mg0_item_particles_fire\"",
+																"\"0,0\"",
+																"\"255,255,255\"",
+																"\"-1,1\"",
+																"\"0,-6\"",
+																"0",
+																"0",
+																"1",
+																"1",
+																"mg0_items.UID",
+																true
+															]
+														}
+													],
+													"sid": 251296114231985
+												},
 												{
-													"callFunction": "SpawnParticles",
-													"sid": 864277181171153,
-													"parameters": [
-														"\"mg0_item_particles_fire\"",
-														"\"0,0\"",
-														"\"255,255,255\"",
-														"\"-1,1\"",
-														"\"0,-6\"",
-														"0",
-														"0",
-														"1",
-														"1",
-														"mg0_items.UID",
-														true
-													]
+													"eventType": "comment",
+													"text": "Mine Blinking"
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "evaluate-expression",
+															"objectClass": "System",
+															"sid": 350468354846742,
+															"parameters": {
+																"value": "mg0_items.AnimationFrame = 0 | mg0_items.AnimationFrame = 1"
+															}
+														},
+														{
+															"id": "compare-two-values",
+															"objectClass": "System",
+															"sid": 325084320797525,
+															"parameters": {
+																"first-value": "tickcount % (17-(ActiveMiniGameLevel*2))",
+																"comparison": 0,
+																"second-value": "1"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-animation-frame",
+															"objectClass": "mg0_items",
+															"sid": 856323679248263,
+															"parameters": {
+																"frame-number": "-mg0_items.AnimationFrame + 1"
+															}
+														}
+													],
+													"sid": 937508980034632
 												}
-											],
-											"sid": 309635081043307
+											]
 										}
 									]
 								}
@@ -790,6 +850,30 @@
 										}
 									],
 									"sid": 964671670863001
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-animation-playing",
+											"objectClass": "mg0_items",
+											"sid": 594463102343975,
+											"parameters": {
+												"animation": "\"item_2\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation-frame",
+											"objectClass": "mg0_items",
+											"sid": 835065290150754,
+											"parameters": {
+												"frame-number": "floor(random(0,2.99))"
+											}
+										}
+									],
+									"sid": 794717508925266
 								}
 							]
 						},
