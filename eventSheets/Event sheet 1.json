@@ -33,16 +33,6 @@
 			"isActiveOnStart": true,
 			"children": [
 				{
-					"eventType": "variable",
-					"name": "ItemToDrop",
-					"type": "number",
-					"initialValue": "0",
-					"comment": "",
-					"isStatic": true,
-					"isConstant": false,
-					"sid": 876640032539166
-				},
-				{
 					"eventType": "block",
 					"conditions": [
 						{
@@ -105,6 +95,7 @@
 								{
 									"callFunction": "PlayMusic",
 									"sid": 248103445401890,
+									"disabled": true,
 									"parameters": [
 										"\"song_snow\"",
 										"-2.5"
@@ -460,6 +451,16 @@
 							]
 						},
 						{
+							"eventType": "variable",
+							"name": "MG0_Items_Chance",
+							"type": "string",
+							"initialValue": "0,0,0,0,0,0,0,0,0,3|0,0,0,0,0,0,0,1,1,3|0,0,0,0,1,1,1,2,2,3|0,0,0,1,1,1,2,2,2,3",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": true,
+							"sid": 302101096858608
+						},
+						{
 							"eventType": "block",
 							"conditions": [
 								{
@@ -488,9 +489,9 @@
 								{
 									"id": "set-animation",
 									"objectClass": "mg0_items",
-									"sid": 935997643244616,
+									"sid": 859826532873048,
 									"parameters": {
-										"animation": "\"item_\"&floor(random(0,3.99))",
+										"animation": "\"item_\"&choose(\nint(tokenat(tokenat(MG0_Items_Chance,ActiveMiniGameLevel-1,\"|\"),0,\",\")),\nint(tokenat(tokenat(MG0_Items_Chance,ActiveMiniGameLevel-1,\"|\"),1,\",\")),\nint(tokenat(tokenat(MG0_Items_Chance,ActiveMiniGameLevel-1,\"|\"),2,\",\")),\r\nint(tokenat(tokenat(MG0_Items_Chance,ActiveMiniGameLevel-1,\"|\"),3,\",\")),\nint(tokenat(tokenat(MG0_Items_Chance,ActiveMiniGameLevel-1,\"|\"),4,\",\")),\r\nint(tokenat(tokenat(MG0_Items_Chance,ActiveMiniGameLevel-1,\"|\"),5,\",\")),\r\nint(tokenat(tokenat(MG0_Items_Chance,ActiveMiniGameLevel-1,\"|\"),6,\",\")),\r\nint(tokenat(tokenat(MG0_Items_Chance,ActiveMiniGameLevel-1,\"|\"),7,\",\")),\nint(tokenat(tokenat(MG0_Items_Chance,ActiveMiniGameLevel-1,\"|\"),8,\",\")),\r\nint(tokenat(tokenat(MG0_Items_Chance,ActiveMiniGameLevel-1,\"|\"),9,\",\"))\n)",
 										"from": "beginning"
 									}
 								},
