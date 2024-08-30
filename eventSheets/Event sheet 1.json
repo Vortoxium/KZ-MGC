@@ -58,6 +58,41 @@
 							"sid": 626396585930151
 						},
 						{
+							"name": "ParticalHorizontalMovement",
+							"type": "string",
+							"initialValue": "",
+							"comment": "",
+							"sid": 542528411411731
+						},
+						{
+							"name": "ParticalVerticalMovement",
+							"type": "string",
+							"initialValue": "",
+							"comment": "",
+							"sid": 533668089831183
+						},
+						{
+							"name": "ParticleXFromObject",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 379583483628412
+						},
+						{
+							"name": "ParticleYFromObject",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 737342958982478
+						},
+						{
+							"name": "ParticleImagePoint",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 746985227878351
+						},
+						{
 							"name": "ParticleAmount",
 							"type": "number",
 							"initialValue": "0",
@@ -70,6 +105,13 @@
 							"initialValue": "0",
 							"comment": "",
 							"sid": 866400038812329
+						},
+						{
+							"name": "ParticleGravity",
+							"type": "boolean",
+							"initialValue": "true",
+							"comment": "",
+							"sid": 272036351343896
 						}
 					],
 					"eventType": "function-block",
@@ -101,12 +143,12 @@
 								{
 									"id": "create-object",
 									"objectClass": "System",
-									"sid": 613641710378082,
+									"sid": 412290312447767,
 									"parameters": {
 										"object-to-create": "particles",
-										"layer": "0",
-										"x": "SpawnsParticles.X",
-										"y": "SpawnsParticles.Y",
+										"layer": "\"Particles\"",
+										"x": "SpawnsParticles.ImagePointX(ParticleImagePoint) + ParticleXFromObject",
+										"y": "SpawnsParticles.ImagePointY(ParticleImagePoint) + ParticleYFromObject",
 										"create-hierarchy": false,
 										"template-name": "\"\""
 									}
@@ -131,19 +173,19 @@
 								{
 									"id": "set-instvar-value",
 									"objectClass": "particles",
-									"sid": 193516698897492,
+									"sid": 499677671549364,
 									"parameters": {
 										"instance-variable": "HorizontalMovement",
-										"value": "random(-6,6)"
+										"value": "random(int(tokenat(ParticalHorizontalMovement,0,\",\")),int(tokenat(ParticalHorizontalMovement,1,\",\")))"
 									}
 								},
 								{
 									"id": "set-instvar-value",
 									"objectClass": "particles",
-									"sid": 539910725687999,
+									"sid": 956091586287585,
 									"parameters": {
 										"instance-variable": "VerticalMovement",
-										"value": "random(-6,6)"
+										"value": "random(int(tokenat(ParticalVerticalMovement,0,\",\")),int(tokenat(ParticalVerticalMovement,1,\",\")))"
 									}
 								},
 								{
@@ -164,7 +206,34 @@
 									}
 								}
 							],
-							"sid": 791689407482954
+							"sid": 791689407482954,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 848699046373050,
+											"parameters": {
+												"variable": "ParticleGravity"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-boolean-instvar",
+											"objectClass": "particles",
+											"sid": 384861230502466,
+											"parameters": {
+												"instance-variable": "HasGravity",
+												"value": "true"
+											}
+										}
+									],
+									"sid": 390907989875815
+								}
+							]
 						}
 					]
 				},
@@ -222,36 +291,68 @@
 								{
 									"id": "set-position",
 									"objectClass": "particles",
-									"sid": 309788127199534,
+									"sid": 866864094162865,
 									"parameters": {
 										"x": "Particles.X + (Particles.HorizontalMovement*(dt*60))",
-										"y": "Particles.Y + (Particles.VerticalMovement*(dt*60))"
+										"y": "Particles.Y + (particles.HasGravity * Particles.VerticalMovement*(dt*60))"
 									}
 								}
 							],
-							"sid": 976691375225137
-						},
-						{
-							"eventType": "block",
-							"conditions": [
+							"sid": 976691375225137,
+							"children": [
 								{
-									"id": "compare-y",
-									"objectClass": "particles",
-									"sid": 778334843869559,
-									"parameters": {
-										"comparison": 5,
-										"y-co-ordinate": "204"
-									}
-								}
-							],
-							"actions": [
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-y",
+											"objectClass": "particles",
+											"sid": 764846590802303,
+											"parameters": {
+												"comparison": 5,
+												"y-co-ordinate": "204"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "destroy",
+											"objectClass": "particles",
+											"sid": 457972989014483
+										}
+									],
+									"sid": 283779625291091
+								},
 								{
-									"id": "destroy",
-									"objectClass": "particles",
-									"sid": 923203516784053
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-animation-playing",
+											"objectClass": "particles",
+											"sid": 522897717308237,
+											"parameters": {
+												"animation": "\"mg0_item_particles_explosion\""
+											}
+										},
+										{
+											"id": "compare-animation-frame",
+											"objectClass": "particles",
+											"sid": 294762333611935,
+											"parameters": {
+												"comparison": 0,
+												"number": "11"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "destroy",
+											"objectClass": "particles",
+											"sid": 194049370912748
+										}
+									],
+									"sid": 928880398783497
 								}
-							],
-							"sid": 547896316121669
+							]
 						}
 					]
 				}
@@ -525,6 +626,53 @@
 												}
 											],
 											"sid": 884913386182958
+										},
+										{
+											"eventType": "comment",
+											"text": "Fire from Explosive Vial"
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-animation-playing",
+													"objectClass": "mg0_items",
+													"sid": 962937534301547,
+													"parameters": {
+														"animation": "\"item_2\""
+													}
+												},
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 451080557762931,
+													"parameters": {
+														"first-value": "tickcount % 2",
+														"comparison": 0,
+														"second-value": "1"
+													}
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "SpawnParticles",
+													"sid": 864277181171153,
+													"parameters": [
+														"\"mg0_item_particles_fire\"",
+														"\"0,0\"",
+														"\"255,255,255\"",
+														"\"-1,1\"",
+														"\"0,-6\"",
+														"0",
+														"0",
+														"1",
+														"1",
+														"mg0_items.UID",
+														true
+													]
+												}
+											],
+											"sid": 309635081043307
 										}
 									]
 								}
@@ -546,10 +694,10 @@
 								{
 									"id": "create-object",
 									"objectClass": "System",
-									"sid": 765056236012151,
+									"sid": 723064625136489,
 									"parameters": {
 										"object-to-create": "mg0_items",
-										"layer": "0",
+										"layer": "\"Objects\"",
 										"x": "random(0,320)",
 										"y": "-56",
 										"create-hierarchy": false,
@@ -559,9 +707,9 @@
 								{
 									"id": "set-animation",
 									"objectClass": "mg0_items",
-									"sid": 446748857704063,
+									"sid": 278265822646925,
 									"parameters": {
-										"animation": "\"item_\"&floor(random(0,1.99))",
+										"animation": "\"item_\"&floor(random(0,2.99))",
 										"from": "beginning"
 									}
 								},
@@ -989,13 +1137,19 @@
 									"actions": [
 										{
 											"callFunction": "SpawnParticles",
-											"sid": 683221664928378,
+											"sid": 921262672069453,
 											"parameters": [
-												"\"mg0_item_particles_0\"",
+												"\"mg0_item_particles_glass\"",
 												"\"1,5\"",
 												"tokenat(mg0_item_0_colours,mg0_items.AnimationFrame,\"|\")",
+												"\"-6,6\"",
+												"\"-6,6\"",
+												"0",
+												"0",
+												"0",
 												"random(10,15)",
-												"mg0_items.UID"
+												"mg0_items.UID",
+												true
 											]
 										},
 										{
@@ -1029,43 +1183,30 @@
 											"eventType": "block",
 											"conditions": [
 												{
-													"id": "compare-animation-frame",
-													"objectClass": "mg0_items",
-													"sid": 637631613857716,
+													"id": "evaluate-expression",
+													"objectClass": "System",
+													"sid": 817844533051078,
 													"parameters": {
-														"comparison": 0,
-														"number": "3"
-													}
-												},
-												{
-													"id": "compare-animation-frame",
-													"objectClass": "mg0_items",
-													"sid": 465177638137058,
-													"parameters": {
-														"comparison": 0,
-														"number": "4"
-													}
-												},
-												{
-													"id": "compare-animation-frame",
-													"objectClass": "mg0_items",
-													"sid": 246032799064585,
-													"parameters": {
-														"comparison": 0,
-														"number": "5"
+														"value": "mg0_items.AnimationFrame >= 3 & mg0_items.AnimationFrame <= 5"
 													}
 												}
 											],
 											"actions": [
 												{
 													"callFunction": "SpawnParticles",
-													"sid": 105776850426215,
+													"sid": 289330960172384,
 													"parameters": [
-														"\"mg0_item_particles_0\"",
+														"\"mg0_item_particles_glass\"",
 														"\"1,5\"",
 														"\"255,255,255\"",
+														"\"-6,6\"",
+														"\"-6,6\"",
+														"0",
+														"0",
+														"0",
 														"random(10,15)",
-														"mg0_items.UID"
+														"mg0_items.UID",
+														true
 													]
 												},
 												{
@@ -1074,50 +1215,36 @@
 													"sid": 605276787071545
 												}
 											],
-											"sid": 248403991274893,
-											"isOrBlock": true
+											"sid": 248403991274893
 										},
 										{
 											"eventType": "block",
 											"conditions": [
 												{
-													"id": "compare-animation-frame",
-													"objectClass": "mg0_items",
-													"sid": 489656214970725,
+													"id": "evaluate-expression",
+													"objectClass": "System",
+													"sid": 301022051855521,
 													"parameters": {
-														"comparison": 0,
-														"number": "0"
-													}
-												},
-												{
-													"id": "compare-animation-frame",
-													"objectClass": "mg0_items",
-													"sid": 439687845675969,
-													"parameters": {
-														"comparison": 0,
-														"number": "1"
-													}
-												},
-												{
-													"id": "compare-animation-frame",
-													"objectClass": "mg0_items",
-													"sid": 882888192485432,
-													"parameters": {
-														"comparison": 0,
-														"number": "2"
+														"value": "mg0_items.AnimationFrame >= 0 & mg0_items.AnimationFrame <= 2"
 													}
 												}
 											],
 											"actions": [
 												{
 													"callFunction": "SpawnParticles",
-													"sid": 857459543694355,
+													"sid": 584327669050271,
 													"parameters": [
-														"\"mg0_item_particles_0\"",
+														"\"mg0_item_particles_glass\"",
 														"\"1,5\"",
 														"\"255,255,255\"",
+														"\"-6,6\"",
+														"\"-6,6\"",
+														"0",
+														"0",
+														"0",
 														"random(2,5)",
-														"mg0_items.UID"
+														"mg0_items.UID",
+														true
 													]
 												},
 												{
@@ -1287,8 +1414,66 @@
 													],
 													"sid": 210998082221330
 												}
+											]
+										}
+									]
+								},
+								{
+									"eventType": "comment",
+									"text": "Explosive Vial + Mine"
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-animation-playing",
+											"objectClass": "mg0_items",
+											"sid": 486396418223116,
+											"parameters": {
+												"animation": "\"item_2\""
+											}
+										}
+									],
+									"actions": [],
+									"sid": 678962133348498,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "repeat",
+													"objectClass": "System",
+													"sid": 319479149737549,
+													"parameters": {
+														"count": "floor(random(10,15.99))"
+													}
+												}
 											],
-											"isOrBlock": true
+											"actions": [
+												{
+													"callFunction": "SpawnParticles",
+													"sid": 251830954457840,
+													"parameters": [
+														"\"mg0_item_particles_explosion\"",
+														"\"0,0\"",
+														"\"255,255,255\"",
+														"\"0,0\"",
+														"\"0,0\"",
+														"random(-64,64)",
+														"random(-64,64)",
+														"0",
+														"1",
+														"mg0_items.UID",
+														false
+													]
+												},
+												{
+													"id": "destroy",
+													"objectClass": "mg0_items",
+													"sid": 407909863005717
+												}
+											],
+											"sid": 497898829728258
 										}
 									]
 								}

@@ -24,6 +24,13 @@
 			"desc": "",
 			"show": true,
 			"sid": 739225790617073
+		},
+		{
+			"name": "HasGravity",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 106458443165014
 		}
 	],
 	"behaviorTypes": [],
@@ -290,7 +297,7 @@
 						"width": 96,
 						"height": 112,
 						"originX": 0.5,
-						"originY": 0.5,
+						"originY": 0.7142857142857143,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
@@ -449,7 +456,7 @@
 				"isPingPong": false,
 				"repeatCount": 1,
 				"repeatTo": 0,
-				"speed": 12
+				"speed": 16
 			}
 		],
 		"subfolders": []
