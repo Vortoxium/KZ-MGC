@@ -274,10 +274,10 @@
 								{
 									"id": "set-instvar-value",
 									"objectClass": "particles",
-									"sid": 484731259086631,
+									"sid": 643348173173722,
 									"parameters": {
 										"instance-variable": "VerticalMovement",
-										"value": "Particles.VerticalMovement+(6-Particles.VerticalMovement)*0.06"
+										"value": "Particles.VerticalMovement+(((6-Particles.VerticalMovement)*0.06)*particles.HasGravity)"
 									}
 								},
 								{
@@ -291,10 +291,10 @@
 								{
 									"id": "set-position",
 									"objectClass": "particles",
-									"sid": 866864094162865,
+									"sid": 248741094523459,
 									"parameters": {
 										"x": "Particles.X + (Particles.HorizontalMovement*(dt*60))",
-										"y": "Particles.Y + (particles.HasGravity * Particles.VerticalMovement*(dt*60))"
+										"y": "Particles.Y + (Particles.VerticalMovement*(dt*60))"
 									}
 								}
 							],
@@ -351,6 +351,36 @@
 										}
 									],
 									"sid": 928880398783497
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-animation-playing",
+											"objectClass": "particles",
+											"sid": 369113799958351,
+											"parameters": {
+												"animation": "\"mg0_item_particles_smoke_0\""
+											}
+										},
+										{
+											"id": "compare-animation-frame",
+											"objectClass": "particles",
+											"sid": 669475203035666,
+											"parameters": {
+												"comparison": 0,
+												"number": "10"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "destroy",
+											"objectClass": "particles",
+											"sid": 394596942318516
+										}
+									],
+									"sid": 851877264156636
 								}
 							]
 						}
@@ -629,7 +659,7 @@
 										},
 										{
 											"eventType": "comment",
-											"text": "Extra Particle + Animation Stuff"
+											"text": "[h4] Extra Particle + Animation Stuff [h4]"
 										},
 										{
 											"eventType": "block",
@@ -637,63 +667,15 @@
 												{
 													"id": "is-animation-playing",
 													"objectClass": "mg0_items",
-													"sid": 962937534301547,
+													"sid": 721907392000932,
 													"parameters": {
 														"animation": "\"item_2\""
 													}
 												}
 											],
 											"actions": [],
-											"sid": 309635081043307,
+											"sid": 500308209003270,
 											"children": [
-												{
-													"eventType": "comment",
-													"text": "Fire from Explosive Vial"
-												},
-												{
-													"eventType": "block",
-													"conditions": [
-														{
-															"id": "compare-animation-frame",
-															"objectClass": "mg0_items",
-															"sid": 634742246977258,
-															"parameters": {
-																"comparison": 0,
-																"number": "2"
-															}
-														},
-														{
-															"id": "compare-two-values",
-															"objectClass": "System",
-															"sid": 472381128894496,
-															"parameters": {
-																"first-value": "tickcount % 2",
-																"comparison": 0,
-																"second-value": "1"
-															}
-														}
-													],
-													"actions": [
-														{
-															"callFunction": "SpawnParticles",
-															"sid": 179900881994422,
-															"parameters": [
-																"\"mg0_item_particles_fire\"",
-																"\"0,0\"",
-																"\"255,255,255\"",
-																"\"-1,1\"",
-																"\"0,-6\"",
-																"0",
-																"0",
-																"1",
-																"1",
-																"mg0_items.UID",
-																true
-															]
-														}
-													],
-													"sid": 251296114231985
-												},
 												{
 													"eventType": "comment",
 													"text": "Mine Blinking"
@@ -704,7 +686,7 @@
 														{
 															"id": "evaluate-expression",
 															"objectClass": "System",
-															"sid": 350468354846742,
+															"sid": 775268240127927,
 															"parameters": {
 																"value": "mg0_items.AnimationFrame = 0 | mg0_items.AnimationFrame = 1"
 															}
@@ -712,7 +694,7 @@
 														{
 															"id": "compare-two-values",
 															"objectClass": "System",
-															"sid": 325084320797525,
+															"sid": 127189092730338,
 															"parameters": {
 																"first-value": "tickcount % (17-(ActiveMiniGameLevel*2))",
 																"comparison": 0,
@@ -724,15 +706,110 @@
 														{
 															"id": "set-animation-frame",
 															"objectClass": "mg0_items",
-															"sid": 856323679248263,
+															"sid": 119730717148524,
 															"parameters": {
 																"frame-number": "-mg0_items.AnimationFrame + 1"
 															}
 														}
 													],
-													"sid": 937508980034632
+													"sid": 834793044632322
+												},
+												{
+													"eventType": "comment",
+													"text": "Fire from Explosive Vial"
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-animation-frame",
+															"objectClass": "mg0_items",
+															"sid": 549132368309614,
+															"parameters": {
+																"comparison": 0,
+																"number": "2"
+															}
+														},
+														{
+															"id": "compare-two-values",
+															"objectClass": "System",
+															"sid": 341939298326870,
+															"parameters": {
+																"first-value": "tickcount % 2",
+																"comparison": 0,
+																"second-value": "1"
+															}
+														}
+													],
+													"actions": [
+														{
+															"callFunction": "SpawnParticles",
+															"sid": 298389222628567,
+															"parameters": [
+																"\"mg0_item_particles_fire\"",
+																"\"0,0\"",
+																"\"255,255,255\"",
+																"\"-1,1\"",
+																"\"0,-6\"",
+																"random(-4,4)",
+																"random(-4,4)",
+																"1",
+																"1",
+																"mg0_items.UID",
+																true
+															]
+														}
+													],
+													"sid": 121884817140540
 												}
 											]
+										},
+										{
+											"eventType": "comment",
+											"text": "Smoke from Smoke Vial"
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-animation-playing",
+													"objectClass": "mg0_items",
+													"sid": 618544050455778,
+													"parameters": {
+														"animation": "\"item_3\""
+													}
+												},
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 881584233682561,
+													"parameters": {
+														"first-value": "tickcount % 2",
+														"comparison": 0,
+														"second-value": "1"
+													}
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "SpawnParticles",
+													"sid": 608115418067318,
+													"parameters": [
+														"\"mg0_item_particles_smoke_0\"",
+														"\"0,0\"",
+														"\"255,255,255\"",
+														"\"-1,1\"",
+														"\"-1,-3\"",
+														"random(-4,4)",
+														"random(-4,4)",
+														"1",
+														"1",
+														"mg0_items.UID",
+														false
+													]
+												}
+											],
+											"sid": 959546817274232
 										}
 									]
 								}
@@ -767,9 +844,9 @@
 								{
 									"id": "set-animation",
 									"objectClass": "mg0_items",
-									"sid": 278265822646925,
+									"sid": 935997643244616,
 									"parameters": {
-										"animation": "\"item_\"&floor(random(0,2.99))",
+										"animation": "\"item_\"&floor(random(0,3.99))",
 										"from": "beginning"
 									}
 								},

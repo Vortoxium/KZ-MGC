@@ -336,13 +336,6 @@
 							]
 						},
 						"useCollisionPoly": true,
-						"imagePoints": [
-							{
-								"name": "Image Point 1",
-								"x": 0.5,
-								"y": 0.08536585365853659
-							}
-						],
 						"duration": 1,
 						"tag": ""
 					},
@@ -376,13 +369,6 @@
 							]
 						},
 						"useCollisionPoly": true,
-						"imagePoints": [
-							{
-								"name": "Image Point 1",
-								"x": 0.5,
-								"y": 0.08536585365853659
-							}
-						],
 						"duration": 1,
 						"tag": ""
 					},
@@ -419,6 +405,37 @@
 				],
 				"sid": 151037138489268,
 				"name": "item_2",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			},
+			{
+				"frames": [
+					{
+						"width": 40,
+						"height": 68,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 6683149,
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Image Point 1",
+								"x": 0.775,
+								"y": 0.27941176470588236
+							}
+						],
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 644071826459574,
+				"name": "item_3",
 				"isLooping": false,
 				"isPingPong": false,
 				"repeatCount": 1,
