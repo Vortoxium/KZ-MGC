@@ -1,0 +1,476 @@
+{
+	"name": "Small Stuff",
+	"events": [
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Particles",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"functionName": "SpawnParticles",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": true,
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "ParticleAnimation",
+							"type": "string",
+							"initialValue": "",
+							"comment": "",
+							"sid": 332098207728353
+						},
+						{
+							"name": "ParticleFrameRange",
+							"type": "string",
+							"initialValue": "",
+							"comment": "",
+							"sid": 468502652709480
+						},
+						{
+							"name": "ParticleColour",
+							"type": "string",
+							"initialValue": "",
+							"comment": "",
+							"sid": 626396585930151
+						},
+						{
+							"name": "ParticalHorizontalMovement",
+							"type": "string",
+							"initialValue": "",
+							"comment": "",
+							"sid": 542528411411731
+						},
+						{
+							"name": "ParticalVerticalMovement",
+							"type": "string",
+							"initialValue": "",
+							"comment": "",
+							"sid": 533668089831183
+						},
+						{
+							"name": "ParticleXFromObject",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 379583483628412
+						},
+						{
+							"name": "ParticleYFromObject",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 737342958982478
+						},
+						{
+							"name": "ParticleImagePoint",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 746985227878351
+						},
+						{
+							"name": "ParticleAmount",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 313794550741076
+						},
+						{
+							"name": "ObjectUID",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 866400038812329
+						},
+						{
+							"name": "ParticleGravity",
+							"type": "boolean",
+							"initialValue": "true",
+							"comment": "",
+							"sid": 272036351343896
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 858969987280417,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "repeat",
+									"objectClass": "System",
+									"sid": 106316707633676,
+									"parameters": {
+										"count": "ParticleAmount"
+									}
+								},
+								{
+									"id": "pick-by-unique-id",
+									"objectClass": "SpawnsParticles",
+									"sid": 625594821337014,
+									"parameters": {
+										"unique-id": "ObjectUID"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 412290312447767,
+									"parameters": {
+										"object-to-create": "particles",
+										"layer": "\"Particles\"",
+										"x": "SpawnsParticles.ImagePointX(ParticleImagePoint) + ParticleXFromObject",
+										"y": "SpawnsParticles.ImagePointY(ParticleImagePoint) + ParticleYFromObject",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"id": "set-default-color",
+									"objectClass": "particles",
+									"sid": 674932255411357,
+									"parameters": {
+										"color": "rgb(\nint(tokenat(ParticleColour,0,\",\")),\nint(tokenat(ParticleColour,1,\",\")),\nint(tokenat(ParticleColour,2,\",\"))\n)"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "particles",
+									"sid": 775533281090751,
+									"parameters": {
+										"animation": "ParticleAnimation",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "particles",
+									"sid": 499677671549364,
+									"parameters": {
+										"instance-variable": "HorizontalMovement",
+										"value": "random(int(tokenat(ParticalHorizontalMovement,0,\",\")),int(tokenat(ParticalHorizontalMovement,1,\",\")))"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "particles",
+									"sid": 956091586287585,
+									"parameters": {
+										"instance-variable": "VerticalMovement",
+										"value": "random(int(tokenat(ParticalVerticalMovement,0,\",\")),int(tokenat(ParticalVerticalMovement,1,\",\")))"
+									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "particles",
+									"sid": 648503676480628,
+									"parameters": {
+										"frame-number": "random(int(tokenat(ParticleFrameRange,0,\",\")),int(tokenat(ParticleFrameRange,1,\",\")))"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "particles",
+									"sid": 997353467507116,
+									"parameters": {
+										"instance-variable": "Rotation",
+										"value": "particles.HorizontalMovement * 3"
+									}
+								}
+							],
+							"sid": 791689407482954,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 848699046373050,
+											"parameters": {
+												"variable": "ParticleGravity"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-boolean-instvar",
+											"objectClass": "particles",
+											"sid": 384861230502466,
+											"parameters": {
+												"instance-variable": "HasGravity",
+												"value": "true"
+											}
+										}
+									],
+									"sid": 390907989875815
+								}
+							]
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 165092861848697,
+							"parameters": {
+								"object": "particles"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 861869491984553,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "every-tick",
+									"objectClass": "System",
+									"sid": 769073054240175
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "particles",
+									"sid": 831250098682347,
+									"parameters": {
+										"instance-variable": "HorizontalMovement",
+										"value": "Particles.HorizontalMovement*0.99"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "particles",
+									"sid": 643348173173722,
+									"parameters": {
+										"instance-variable": "VerticalMovement",
+										"value": "Particles.VerticalMovement+(((6-Particles.VerticalMovement)*0.06)*particles.HasGravity)"
+									}
+								},
+								{
+									"id": "rotate-clockwise",
+									"objectClass": "particles",
+									"sid": 659987042724093,
+									"parameters": {
+										"degrees": "particles.Rotation * (dt*60)"
+									}
+								},
+								{
+									"id": "set-position",
+									"objectClass": "particles",
+									"sid": 248741094523459,
+									"parameters": {
+										"x": "Particles.X + (Particles.HorizontalMovement*(dt*60))",
+										"y": "Particles.Y + (Particles.VerticalMovement*(dt*60))"
+									}
+								}
+							],
+							"sid": 976691375225137,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-y",
+											"objectClass": "particles",
+											"sid": 764846590802303,
+											"parameters": {
+												"comparison": 5,
+												"y-co-ordinate": "204"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "destroy",
+											"objectClass": "particles",
+											"sid": 457972989014483
+										}
+									],
+									"sid": 283779625291091
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-animation-playing",
+											"objectClass": "particles",
+											"sid": 917829713401447,
+											"parameters": {
+												"animation": "\"mg0_item_explosion\""
+											}
+										},
+										{
+											"id": "compare-animation-frame",
+											"objectClass": "particles",
+											"sid": 294762333611935,
+											"parameters": {
+												"comparison": 0,
+												"number": "11"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "destroy",
+											"objectClass": "particles",
+											"sid": 194049370912748
+										}
+									],
+									"sid": 928880398783497
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-animation-playing",
+											"objectClass": "particles",
+											"sid": 134747703786984,
+											"parameters": {
+												"animation": "\"mg0_item_smoke_0\""
+											}
+										},
+										{
+											"id": "compare-animation-frame",
+											"objectClass": "particles",
+											"sid": 669475203035666,
+											"parameters": {
+												"comparison": 0,
+												"number": "10"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "destroy",
+											"objectClass": "particles",
+											"sid": 394596942318516
+										}
+									],
+									"sid": 851877264156636
+								}
+							]
+						}
+					]
+				}
+			],
+			"sid": 299900369294803
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Music & Sound",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"functionName": "PlayMusic",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": true,
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "MusicName",
+							"type": "string",
+							"initialValue": "",
+							"comment": "",
+							"sid": 344930042760153
+						},
+						{
+							"name": "Volume_M",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 608664005840598
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "stop",
+							"objectClass": "Audio",
+							"sid": 569412816679793,
+							"parameters": {
+								"tag": "\"currentMusic\""
+							}
+						},
+						{
+							"id": "play-by-name",
+							"objectClass": "Audio",
+							"sid": 380014832503662,
+							"parameters": {
+								"folder": "sounds",
+								"audio-file-name": "MusicName",
+								"loop": "looping",
+								"volume": "Volume_M",
+								"stereo-pan": "0",
+								"tag-optional": "\"currentMusic\""
+							}
+						}
+					],
+					"sid": 317897953878220
+				},
+				{
+					"functionName": "PlaySound",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": true,
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "SoundName",
+							"type": "string",
+							"initialValue": "",
+							"comment": "",
+							"sid": 383434187112759
+						},
+						{
+							"name": "Volume_S",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 373549213934385
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "play-by-name",
+							"objectClass": "Audio",
+							"sid": 565460539195774,
+							"parameters": {
+								"folder": "sounds",
+								"audio-file-name": "SoundName",
+								"loop": "not-looping",
+								"volume": "Volume_S",
+								"stereo-pan": "0",
+								"tag-optional": "\"currentSound\""
+							}
+						}
+					],
+					"sid": 414966208628388
+				}
+			],
+			"sid": 131944663447881
+		}
+	],
+	"sid": 898564590862313
+}

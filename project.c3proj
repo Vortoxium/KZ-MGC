@@ -8,6 +8,13 @@
 	"usedAddons": [
 		{
 			"type": "plugin",
+			"id": "Audio",
+			"name": "Audio",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
 			"id": "Browser",
 			"name": "Browser",
 			"author": "Scirra",
@@ -51,7 +58,8 @@
 			{
 				"items": [
 					"Browser",
-					"Mouse"
+					"Mouse",
+					"Audio"
 				],
 				"subfolders": [],
 				"name": "Plugins"
@@ -75,7 +83,8 @@
 	},
 	"eventSheets": {
 		"items": [
-			"Event sheet 1"
+			"Event sheet 1",
+			"Small Stuff"
 		],
 		"subfolders": []
 	},
@@ -85,11 +94,77 @@
 			"subfolders": []
 		},
 		"sound": {
-			"items": [],
+			"items": [
+				{
+					"name": "sound_vial_explosive.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 414499657497787,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "sound_vial_smoke.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 491677492100085,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "sound_object_light_shatter_01.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 231683912881708,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "sound_object_light_shatter_02.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 138170586052986,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "sound_clatter_brick1.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 636733519131434,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "sound_clatter_brick2.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 769609436451835,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "sound_clatter_brick3.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 686551027294208,
+					"file-info": {
+						"purpose": "none"
+					}
+				}
+			],
 			"subfolders": []
 		},
 		"music": {
-			"items": [],
+			"items": [
+				{
+					"name": "song_snow.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 961991693538117,
+					"file-info": {
+						"purpose": "none"
+					}
+				}
+			],
 			"subfolders": []
 		},
 		"video": {
