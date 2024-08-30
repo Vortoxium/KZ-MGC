@@ -466,9 +466,9 @@
 								{
 									"id": "every-x-seconds",
 									"objectClass": "System",
-									"sid": 383635656322208,
+									"sid": 498724513474439,
 									"parameters": {
-										"interval-seconds": "random(1/ActiveMiniGameLevel,1.60 - (0.10*ActiveMiniGameLevel))"
+										"interval-seconds": "random(1.10 - (0.15*ActiveMiniGameLevel),1.60 - (0.10*ActiveMiniGameLevel))"
 									}
 								}
 							],
