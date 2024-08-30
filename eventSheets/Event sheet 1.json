@@ -744,9 +744,9 @@
 													"actions": [
 														{
 															"callFunction": "SpawnParticles",
-															"sid": 298389222628567,
+															"sid": 196256131737155,
 															"parameters": [
-																"\"mg0_item_particles_fire\"",
+																"\"mg0_item_fire\"",
 																"\"0,0\"",
 																"\"255,255,255\"",
 																"\"-1,1\"",
@@ -793,9 +793,9 @@
 											"actions": [
 												{
 													"callFunction": "SpawnParticles",
-													"sid": 608115418067318,
+													"sid": 595286364102486,
 													"parameters": [
-														"\"mg0_item_particles_smoke_0\"",
+														"\"mg0_item_smoke_0\"",
 														"\"0,0\"",
 														"\"255,255,255\"",
 														"\"-1,1\"",
@@ -1298,9 +1298,9 @@
 									"actions": [
 										{
 											"callFunction": "SpawnParticles",
-											"sid": 921262672069453,
+											"sid": 348167803800390,
 											"parameters": [
-												"\"mg0_item_particles_glass\"",
+												"\"mg0_item_glass\"",
 												"\"1,5\"",
 												"tokenat(mg0_item_0_colours,mg0_items.AnimationFrame,\"|\")",
 												"\"-6,6\"",
@@ -1355,9 +1355,9 @@
 											"actions": [
 												{
 													"callFunction": "SpawnParticles",
-													"sid": 289330960172384,
+													"sid": 143970848601872,
 													"parameters": [
-														"\"mg0_item_particles_glass\"",
+														"\"mg0_item_glass\"",
 														"\"1,5\"",
 														"\"255,255,255\"",
 														"\"-6,6\"",
@@ -1393,9 +1393,9 @@
 											"actions": [
 												{
 													"callFunction": "SpawnParticles",
-													"sid": 584327669050271,
+													"sid": 974052399640160,
 													"parameters": [
-														"\"mg0_item_particles_glass\"",
+														"\"mg0_item_glass\"",
 														"\"1,5\"",
 														"\"255,255,255\"",
 														"\"-6,6\"",
@@ -1613,9 +1613,9 @@
 											"actions": [
 												{
 													"callFunction": "SpawnParticles",
-													"sid": 251830954457840,
+													"sid": 167549723983991,
 													"parameters": [
-														"\"mg0_item_particles_explosion\"",
+														"\"mg0_item_explosion\"",
 														"\"0,0\"",
 														"\"255,255,255\"",
 														"\"0,0\"",
