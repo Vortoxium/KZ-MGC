@@ -94,10 +94,10 @@
 								},
 								{
 									"callFunction": "PlayMusic",
-									"sid": 248103445401890,
+									"sid": 709054178358342,
 									"parameters": [
 										"\"song_snow\"",
-										"-2.5"
+										"-7.5"
 									]
 								}
 							],
@@ -1010,10 +1010,10 @@
 										},
 										{
 											"callFunction": "PlaySound",
-											"sid": 512775912696670,
+											"sid": 807192737475133,
 											"parameters": [
 												"\"sound_object_light_shatter_0\"&choose(1,2)",
-												"0"
+												"-2.5"
 											]
 										},
 										{
@@ -1078,10 +1078,10 @@
 												},
 												{
 													"callFunction": "PlaySound",
-													"sid": 889398251087543,
+													"sid": 554301119777627,
 													"parameters": [
 														"\"sound_clatter_brick3\"",
-														"0"
+														"-2.5"
 													]
 												},
 												{
@@ -1127,10 +1127,10 @@
 												},
 												{
 													"callFunction": "PlaySound",
-													"sid": 544069122144033,
+													"sid": 513391059972647,
 													"parameters": [
 														"\"sound_clatter_brick\"&choose(1,2)",
-														"0"
+														"-2.5"
 													]
 												},
 												{
@@ -1323,10 +1323,10 @@
 									"actions": [
 										{
 											"callFunction": "PlaySound",
-											"sid": 375280132277230,
+											"sid": 427907669777166,
 											"parameters": [
 												"\"sound_vial_explosive\"",
-												"0"
+												"-2.5"
 											]
 										}
 									],
