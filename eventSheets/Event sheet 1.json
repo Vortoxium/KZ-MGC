@@ -87,14 +87,15 @@
 								{
 									"id": "set-animation-frame",
 									"objectClass": "cursor",
-									"sid": 238859181276793,
+									"sid": 348153415539422,
 									"parameters": {
-										"frame-number": "0"
+										"frame-number": "6"
 									}
 								},
 								{
 									"callFunction": "PlayMusic",
 									"sid": 709054178358342,
+									"disabled": true,
 									"parameters": [
 										"\"song_snow\"",
 										"-7.5"
