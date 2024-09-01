@@ -95,7 +95,6 @@
 								{
 									"callFunction": "PlayMusic",
 									"sid": 709054178358342,
-									"disabled": true,
 									"parameters": [
 										"\"song_snow\"",
 										"-7.5"
@@ -514,9 +513,9 @@
 								{
 									"id": "every-x-seconds",
 									"objectClass": "System",
-									"sid": 498724513474439,
+									"sid": 699528538283411,
 									"parameters": {
-										"interval-seconds": "random(1.10 - (0.15*ActiveMiniGameLevel),1.60 - (0.10*ActiveMiniGameLevel))"
+										"interval-seconds": "random(1 - (0.15*ActiveMiniGameLevel),1.60 - (0.10*ActiveMiniGameLevel))"
 									}
 								}
 							],
@@ -524,11 +523,11 @@
 								{
 									"id": "create-object",
 									"objectClass": "System",
-									"sid": 723064625136489,
+									"sid": 440832189806145,
 									"parameters": {
 										"object-to-create": "mg0_items",
 										"layer": "\"Objects\"",
-										"x": "random(0,320)",
+										"x": "random(8,312)",
 										"y": "-56",
 										"create-hierarchy": false,
 										"template-name": "\"\""
