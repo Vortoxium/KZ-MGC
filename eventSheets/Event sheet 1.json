@@ -1171,10 +1171,10 @@
 														{
 															"id": "set-instvar-value",
 															"objectClass": "mg0_items",
-															"sid": 328298516409595,
+															"sid": 242383628876373,
 															"parameters": {
 																"instance-variable": "VerticalMovement",
-																"value": "-(((360 - slash.Angle) / 7.5) * (1+(ActiveMiniGameLevel/10)-0.1)) * (1 + slash.Width/320)"
+																"value": "-(((360 - slash.Angle) / 10) * (1+(ActiveMiniGameLevel/10)-0.1)) * (1 + slash.Width/320)"
 															}
 														}
 													],
@@ -1206,10 +1206,10 @@
 														{
 															"id": "set-instvar-value",
 															"objectClass": "mg0_items",
-															"sid": 756462936074546,
+															"sid": 604315242957045,
 															"parameters": {
 																"instance-variable": "VerticalMovement",
-																"value": "-(((slash.Angle - 180) / 7.5) * (1+(ActiveMiniGameLevel/10)-0.1)) * (1 + slash.Width/320)"
+																"value": "-(((slash.Angle - 180) / 10) * (1+(ActiveMiniGameLevel/10)-0.1)) * (1 + slash.Width/320)"
 															}
 														}
 													],
@@ -1241,10 +1241,10 @@
 														{
 															"id": "set-instvar-value",
 															"objectClass": "mg0_items",
-															"sid": 398189923847095,
+															"sid": 170245836281277,
 															"parameters": {
 																"instance-variable": "VerticalMovement",
-																"value": "(((180 - slash.Angle) / 7.5) * (1+(ActiveMiniGameLevel/10)-0.1))"
+																"value": "(((180 - slash.Angle) / 10) * (1+(ActiveMiniGameLevel/10)-0.1))"
 															}
 														}
 													],
@@ -1276,10 +1276,10 @@
 														{
 															"id": "set-instvar-value",
 															"objectClass": "mg0_items",
-															"sid": 807769505725209,
+															"sid": 637768065706796,
 															"parameters": {
 																"instance-variable": "VerticalMovement",
-																"value": "(slash.Angle / 7.5) * (1+(ActiveMiniGameLevel/10)-0.1)"
+																"value": "(slash.Angle / 10) * (1+(ActiveMiniGameLevel/10)-0.1)"
 															}
 														}
 													],
