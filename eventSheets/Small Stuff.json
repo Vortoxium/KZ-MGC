@@ -450,6 +450,97 @@
 										}
 									],
 									"sid": 851877264156636
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-animation-playing",
+											"objectClass": "particles",
+											"sid": 334017250052572,
+											"parameters": {
+												"animation": "\"mg0_item_smoke_appear\""
+											}
+										},
+										{
+											"id": "compare-animation-frame",
+											"objectClass": "particles",
+											"sid": 880075775304140,
+											"parameters": {
+												"comparison": 0,
+												"number": "3"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation",
+											"objectClass": "particles",
+											"sid": 804837566854942,
+											"parameters": {
+												"animation": "\"mg0_item_smoke_loop\"",
+												"from": "beginning"
+											}
+										}
+									],
+									"sid": 342024070066545
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-animation-playing",
+											"objectClass": "particles",
+											"sid": 632018234363309,
+											"parameters": {
+												"animation": "\"mg0_item_smoke_loop\""
+											}
+										},
+										{
+											"id": "is-on-screen",
+											"objectClass": "particles",
+											"sid": 661821702976619,
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "destroy",
+											"objectClass": "particles",
+											"sid": 417463938496798
+										}
+									],
+									"sid": 851465100754140
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-animation-playing",
+											"objectClass": "particles",
+											"sid": 339757283217699,
+											"parameters": {
+												"animation": "\"mg0_item_smoke_dissolve\""
+											}
+										},
+										{
+											"id": "compare-animation-frame",
+											"objectClass": "particles",
+											"sid": 647301035401648,
+											"parameters": {
+												"comparison": 0,
+												"number": "7"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "destroy",
+											"objectClass": "particles",
+											"sid": 245305113175965
+										}
+									],
+									"sid": 204240422549444
 								}
 							]
 						}

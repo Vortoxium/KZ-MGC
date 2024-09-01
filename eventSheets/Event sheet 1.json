@@ -95,6 +95,7 @@
 								{
 									"callFunction": "PlayMusic",
 									"sid": 709054178358342,
+									"disabled": true,
 									"parameters": [
 										"\"song_snow\"",
 										"-7.5"
@@ -293,7 +294,7 @@
 										},
 										{
 											"eventType": "comment",
-											"text": "[h4] Extra Particle + Animation Stuff [h4]"
+											"text": "[h4] Extra Particle + Animation Stuff [/h4]"
 										},
 										{
 											"eventType": "block",
@@ -944,7 +945,7 @@
 						},
 						{
 							"eventType": "comment",
-							"text": "Slashing Items"
+							"text": "[h4]Slashing Items[/h4]"
 						},
 						{
 							"eventType": "block",
@@ -952,14 +953,14 @@
 								{
 									"id": "on-collision-with-another-object",
 									"objectClass": "slash",
-									"sid": 866834751680204,
+									"sid": 835346384266322,
 									"parameters": {
 										"object": "mg0_items"
 									}
 								}
 							],
 							"actions": [],
-							"sid": 742028561951940,
+							"sid": 924415637743307,
 							"children": [
 								{
 									"eventType": "comment",
@@ -973,7 +974,7 @@
 									"comment": "",
 									"isStatic": false,
 									"isConstant": true,
-									"sid": 841280771017314
+									"sid": 738082844488152
 								},
 								{
 									"eventType": "block",
@@ -981,7 +982,7 @@
 										{
 											"id": "is-animation-playing",
 											"objectClass": "mg0_items",
-											"sid": 523231949491757,
+											"sid": 700347915396206,
 											"parameters": {
 												"animation": "\"item_0\""
 											}
@@ -990,7 +991,7 @@
 									"actions": [
 										{
 											"callFunction": "SpawnParticles",
-											"sid": 125547159096871,
+											"sid": 668656871540322,
 											"parameters": [
 												"\"mg0_item_glass\"",
 												"\"1,5\"",
@@ -1010,7 +1011,7 @@
 										},
 										{
 											"callFunction": "PlaySound",
-											"sid": 807192737475133,
+											"sid": 933520023800630,
 											"parameters": [
 												"\"sound_object_light_shatter_0\"&choose(1,2)",
 												"-2.5"
@@ -1019,10 +1020,10 @@
 										{
 											"id": "destroy",
 											"objectClass": "mg0_items",
-											"sid": 540894160259475
+											"sid": 910815498832429
 										}
 									],
-									"sid": 741700907806688
+									"sid": 933000658706583
 								},
 								{
 									"eventType": "comment",
@@ -1034,14 +1035,14 @@
 										{
 											"id": "is-animation-playing",
 											"objectClass": "mg0_items",
-											"sid": 359429364168170,
+											"sid": 801131363806583,
 											"parameters": {
 												"animation": "\"item_1\""
 											}
 										}
 									],
 									"actions": [],
-									"sid": 610909516798667,
+									"sid": 984480552977590,
 									"children": [
 										{
 											"eventType": "block",
@@ -1049,7 +1050,7 @@
 												{
 													"id": "evaluate-expression",
 													"objectClass": "System",
-													"sid": 817844533051078,
+													"sid": 542745216010907,
 													"parameters": {
 														"value": "mg0_items.AnimationFrame >= 3 & mg0_items.AnimationFrame <= 5"
 													}
@@ -1058,7 +1059,7 @@
 											"actions": [
 												{
 													"callFunction": "SpawnParticles",
-													"sid": 631754281840000,
+													"sid": 951981753069260,
 													"parameters": [
 														"\"mg0_item_glass\"",
 														"\"1,5\"",
@@ -1078,7 +1079,7 @@
 												},
 												{
 													"callFunction": "PlaySound",
-													"sid": 554301119777627,
+													"sid": 619197347290466,
 													"parameters": [
 														"\"sound_clatter_brick3\"",
 														"-2.5"
@@ -1087,10 +1088,10 @@
 												{
 													"id": "destroy",
 													"objectClass": "mg0_items",
-													"sid": 605276787071545
+													"sid": 530651746427626
 												}
 											],
-											"sid": 248403991274893
+											"sid": 198770968730684
 										},
 										{
 											"eventType": "block",
@@ -1098,7 +1099,7 @@
 												{
 													"id": "evaluate-expression",
 													"objectClass": "System",
-													"sid": 301022051855521,
+													"sid": 931250622913906,
 													"parameters": {
 														"value": "mg0_items.AnimationFrame >= 0 & mg0_items.AnimationFrame <= 2"
 													}
@@ -1107,7 +1108,7 @@
 											"actions": [
 												{
 													"callFunction": "SpawnParticles",
-													"sid": 485557644213179,
+													"sid": 462415460022517,
 													"parameters": [
 														"\"mg0_item_glass\"",
 														"\"1,5\"",
@@ -1127,7 +1128,7 @@
 												},
 												{
 													"callFunction": "PlaySound",
-													"sid": 513391059972647,
+													"sid": 336738078836887,
 													"parameters": [
 														"\"sound_clatter_brick\"&choose(1,2)",
 														"-2.5"
@@ -1136,13 +1137,13 @@
 												{
 													"id": "set-animation-frame",
 													"objectClass": "mg0_items",
-													"sid": 237649541446435,
+													"sid": 883901794121929,
 													"parameters": {
 														"frame-number": "mg0_items.AnimationFrame + 3"
 													}
 												}
 											],
-											"sid": 832941457070052,
+											"sid": 862478302339658,
 											"children": [
 												{
 													"eventType": "block",
@@ -1150,7 +1151,7 @@
 														{
 															"id": "is-between-angles",
 															"objectClass": "slash",
-															"sid": 563574833433471,
+															"sid": 135001764756292,
 															"parameters": {
 																"first-angle": "270",
 																"second-angle": "360"
@@ -1161,7 +1162,7 @@
 														{
 															"id": "set-instvar-value",
 															"objectClass": "mg0_items",
-															"sid": 753764332653287,
+															"sid": 230017234076703,
 															"parameters": {
 																"instance-variable": "HorizontalMovement",
 																"value": "((slash.Angle - 270) / 15) * (1+(ActiveMiniGameLevel/10)-0.1)"
@@ -1170,14 +1171,14 @@
 														{
 															"id": "set-instvar-value",
 															"objectClass": "mg0_items",
-															"sid": 472507766277456,
+															"sid": 328298516409595,
 															"parameters": {
 																"instance-variable": "VerticalMovement",
-																"value": "-(((360 - slash.Angle) / 7.5) * (1+(ActiveMiniGameLevel/10)-0.1))"
+																"value": "-(((360 - slash.Angle) / 7.5) * (1+(ActiveMiniGameLevel/10)-0.1)) * (1 + slash.Width/320)"
 															}
 														}
 													],
-													"sid": 267945158871264
+													"sid": 870211603155895
 												},
 												{
 													"eventType": "block",
@@ -1185,7 +1186,7 @@
 														{
 															"id": "is-between-angles",
 															"objectClass": "slash",
-															"sid": 326293568753278,
+															"sid": 616262718385473,
 															"parameters": {
 																"first-angle": "180",
 																"second-angle": "270"
@@ -1196,7 +1197,7 @@
 														{
 															"id": "set-instvar-value",
 															"objectClass": "mg0_items",
-															"sid": 432485757991692,
+															"sid": 933410150213395,
 															"parameters": {
 																"instance-variable": "HorizontalMovement",
 																"value": "-(((270 - slash.Angle) / 15) * (1+(ActiveMiniGameLevel/10)-0.1))"
@@ -1205,14 +1206,14 @@
 														{
 															"id": "set-instvar-value",
 															"objectClass": "mg0_items",
-															"sid": 627705593562031,
+															"sid": 756462936074546,
 															"parameters": {
 																"instance-variable": "VerticalMovement",
-																"value": "-(((slash.Angle - 180) / 7.5) * (1+(ActiveMiniGameLevel/10)-0.1))"
+																"value": "-(((slash.Angle - 180) / 7.5) * (1+(ActiveMiniGameLevel/10)-0.1)) * (1 + slash.Width/320)"
 															}
 														}
 													],
-													"sid": 242930051360816
+													"sid": 435582985868213
 												},
 												{
 													"eventType": "block",
@@ -1220,7 +1221,7 @@
 														{
 															"id": "is-between-angles",
 															"objectClass": "slash",
-															"sid": 846967983966595,
+															"sid": 672730585385694,
 															"parameters": {
 																"first-angle": "90",
 																"second-angle": "180"
@@ -1231,7 +1232,7 @@
 														{
 															"id": "set-instvar-value",
 															"objectClass": "mg0_items",
-															"sid": 484248557737630,
+															"sid": 219473225012955,
 															"parameters": {
 																"instance-variable": "HorizontalMovement",
 																"value": "-(((slash.Angle - 90) / 15) * (1+(ActiveMiniGameLevel/10)-0.1))"
@@ -1240,14 +1241,14 @@
 														{
 															"id": "set-instvar-value",
 															"objectClass": "mg0_items",
-															"sid": 362032241598352,
+															"sid": 398189923847095,
 															"parameters": {
 																"instance-variable": "VerticalMovement",
 																"value": "(((180 - slash.Angle) / 7.5) * (1+(ActiveMiniGameLevel/10)-0.1))"
 															}
 														}
 													],
-													"sid": 819831566346516
+													"sid": 834573289661358
 												},
 												{
 													"eventType": "block",
@@ -1255,7 +1256,7 @@
 														{
 															"id": "is-between-angles",
 															"objectClass": "slash",
-															"sid": 409505106181437,
+															"sid": 384912190237688,
 															"parameters": {
 																"first-angle": "0",
 																"second-angle": "90"
@@ -1266,7 +1267,7 @@
 														{
 															"id": "set-instvar-value",
 															"objectClass": "mg0_items",
-															"sid": 583196625995739,
+															"sid": 344106032926968,
 															"parameters": {
 																"instance-variable": "HorizontalMovement",
 																"value": "(((90 - slash.Angle) / 15) * (1+(ActiveMiniGameLevel/10)-0.1))"
@@ -1275,14 +1276,14 @@
 														{
 															"id": "set-instvar-value",
 															"objectClass": "mg0_items",
-															"sid": 128801756209823,
+															"sid": 807769505725209,
 															"parameters": {
 																"instance-variable": "VerticalMovement",
 																"value": "(slash.Angle / 7.5) * (1+(ActiveMiniGameLevel/10)-0.1)"
 															}
 														}
 													],
-													"sid": 615801759713474
+													"sid": 727374806969342
 												},
 												{
 													"eventType": "block",
@@ -1291,14 +1292,14 @@
 														{
 															"id": "set-instvar-value",
 															"objectClass": "mg0_items",
-															"sid": 848412885866001,
+															"sid": 418353190759106,
 															"parameters": {
 																"instance-variable": "Rotation",
 																"value": "mg0_items.HorizontalMovement * 2"
 															}
 														}
 													],
-													"sid": 210998082221330
+													"sid": 651837333876463
 												}
 											]
 										}
@@ -1314,7 +1315,7 @@
 										{
 											"id": "is-animation-playing",
 											"objectClass": "mg0_items",
-											"sid": 486396418223116,
+											"sid": 524616739292560,
 											"parameters": {
 												"animation": "\"item_2\""
 											}
@@ -1323,14 +1324,14 @@
 									"actions": [
 										{
 											"callFunction": "PlaySound",
-											"sid": 427907669777166,
+											"sid": 174966445762985,
 											"parameters": [
 												"\"sound_vial_explosive\"",
 												"-2.5"
 											]
 										}
 									],
-									"sid": 678962133348498,
+									"sid": 275605333117412,
 									"children": [
 										{
 											"eventType": "block",
@@ -1338,7 +1339,7 @@
 												{
 													"id": "repeat",
 													"objectClass": "System",
-													"sid": 319479149737549,
+													"sid": 732848960802114,
 													"parameters": {
 														"count": "floor(random(10,15.99))"
 													}
@@ -1347,7 +1348,7 @@
 											"actions": [
 												{
 													"callFunction": "SpawnParticles",
-													"sid": 870578406264992,
+													"sid": 178697925232973,
 													"parameters": [
 														"\"mg0_item_explosion\"",
 														"\"0,0\"",
@@ -1368,14 +1369,150 @@
 												{
 													"id": "destroy",
 													"objectClass": "mg0_items",
-													"sid": 407909863005717
+													"sid": 842445053416871
 												}
 											],
-											"sid": 497898829728258
+											"sid": 144611404533930
+										}
+									]
+								},
+								{
+									"eventType": "comment",
+									"text": "Smoke Vial"
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-animation-playing",
+											"objectClass": "mg0_items",
+											"sid": 444982211558870,
+											"parameters": {
+												"animation": "\"item_3\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "PlaySound",
+											"sid": 964214257194037,
+											"parameters": [
+												"\"sound_vial_smoke\"",
+												"-2.5"
+											]
+										}
+									],
+									"sid": 934700645378269,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "repeat",
+													"objectClass": "System",
+													"sid": 961936618461858,
+													"parameters": {
+														"count": "floor(random(20,30.99))"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "create-object",
+													"objectClass": "System",
+													"sid": 665050723221716,
+													"parameters": {
+														"object-to-create": "particles",
+														"layer": "\"Particles Smoke\"",
+														"x": "mg0_items.X",
+														"y": "mg0_items.Y",
+														"create-hierarchy": false,
+														"template-name": "\"\""
+													}
+												},
+												{
+													"id": "set-animation",
+													"objectClass": "particles",
+													"sid": 254811957492948,
+													"parameters": {
+														"animation": "\"mg0_item_smoke_appear\"",
+														"from": "beginning"
+													}
+												},
+												{
+													"id": "set-scale",
+													"objectClass": "particles",
+													"sid": 538216468178099,
+													"parameters": {
+														"scale": "2"
+													}
+												},
+												{
+													"id": "tween-two-properties",
+													"objectClass": "particles",
+													"sid": 484317854237135,
+													"behaviorType": "Tween",
+													"parameters": {
+														"tags": "\"SmokeMoveToPos\"",
+														"property": "position",
+														"end-x": "particles.X + random(-96,96)",
+														"end-y": "particles.Y + random(-96,96)",
+														"time": "random(0.5,1)",
+														"ease": "easeoutsine",
+														"destroy-on-complete": "no",
+														"loop": "no",
+														"ping-pong": "no",
+														"repeat-count": "1"
+													}
+												},
+												{
+													"id": "destroy",
+													"objectClass": "mg0_items",
+													"sid": 696747293551885
+												}
+											],
+											"sid": 744541789645460
 										}
 									]
 								}
 							]
+						},
+						{
+							"eventType": "comment",
+							"text": "Slashing Smoke"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-collision-with-another-object",
+									"objectClass": "slash",
+									"sid": 718282150975088,
+									"parameters": {
+										"object": "particles"
+									}
+								},
+								{
+									"id": "is-animation-playing",
+									"objectClass": "particles",
+									"sid": 579951624006720,
+									"parameters": {
+										"animation": "\"mg0_item_smoke_loop\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "particles",
+									"sid": 321637342111420,
+									"parameters": {
+										"animation": "\"mg0_item_smoke_dissolve\"",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 319029635743465
 						}
 					]
 				}
