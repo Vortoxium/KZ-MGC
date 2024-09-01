@@ -40,6 +40,13 @@
 			"name": "Sprite",
 			"author": "Scirra",
 			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Sin",
+			"name": "Sine",
+			"author": "Scirra",
+			"bundled": false
 		}
 	],
 	"uniqueId": "tqj16r1yvft",
@@ -52,7 +59,8 @@
 			"slash_marker",
 			"slash_helper",
 			"slash",
-			"particles"
+			"particles",
+			"InvisibleTracker"
 		],
 		"subfolders": [
 			{

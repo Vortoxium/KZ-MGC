@@ -95,7 +95,6 @@
 								{
 									"callFunction": "PlayMusic",
 									"sid": 248103445401890,
-									"disabled": true,
 									"parameters": [
 										"\"song_snow\"",
 										"-2.5"
@@ -379,7 +378,7 @@
 													"actions": [
 														{
 															"callFunction": "SpawnParticles",
-															"sid": 196256131737155,
+															"sid": 953002837143079,
 															"parameters": [
 																"\"mg0_item_fire\"",
 																"\"0,0\"",
@@ -388,10 +387,13 @@
 																"\"0,-6\"",
 																"random(-4,4)",
 																"random(-4,4)",
+																"2",
 																"1",
 																"1",
 																"mg0_items.UID",
-																true
+																true,
+																false,
+																"\"\""
 															]
 														}
 													],
@@ -428,7 +430,7 @@
 											"actions": [
 												{
 													"callFunction": "SpawnParticles",
-													"sid": 595286364102486,
+													"sid": 120361552239015,
 													"parameters": [
 														"\"mg0_item_smoke_0\"",
 														"\"0,0\"",
@@ -437,16 +439,61 @@
 														"\"-1,-3\"",
 														"random(-4,4)",
 														"random(-4,4)",
+														"2",
 														"1",
 														"1",
 														"mg0_items.UID",
-														false
+														false,
+														false,
+														"\"\""
 													]
 												}
 											],
 											"sid": 959546817274232
 										}
 									]
+								},
+								{
+									"eventType": "comment",
+									"text": "Rosepetals Background"
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 974209845970816,
+											"parameters": {
+												"first-value": "tickcount % 8",
+												"comparison": 0,
+												"second-value": "1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "SpawnParticles",
+											"sid": 332385895961494,
+											"parameters": [
+												"\"mg0_rosepetal\"",
+												"\"0,5\"",
+												"\"0,0,0\"",
+												"\"0,0\"",
+												"\"0.25,1\"",
+												"random(-160,160)",
+												"0",
+												"2",
+												"0",
+												"1",
+												"InvisibleTracker.UID",
+												false,
+												true,
+												"\"-16,16\""
+											]
+										}
+									],
+									"sid": 117263359067542
 								}
 							]
 						},
@@ -943,7 +990,7 @@
 									"actions": [
 										{
 											"callFunction": "SpawnParticles",
-											"sid": 348167803800390,
+											"sid": 125547159096871,
 											"parameters": [
 												"\"mg0_item_glass\"",
 												"\"1,5\"",
@@ -952,10 +999,13 @@
 												"\"-6,6\"",
 												"0",
 												"0",
+												"2",
 												"0",
 												"random(10,15)",
 												"mg0_items.UID",
-												true
+												true,
+												false,
+												"\"\""
 											]
 										},
 										{
@@ -1008,7 +1058,7 @@
 											"actions": [
 												{
 													"callFunction": "SpawnParticles",
-													"sid": 143970848601872,
+													"sid": 631754281840000,
 													"parameters": [
 														"\"mg0_item_glass\"",
 														"\"1,5\"",
@@ -1017,10 +1067,13 @@
 														"\"-6,6\"",
 														"0",
 														"0",
+														"2",
 														"0",
 														"random(10,15)",
 														"mg0_items.UID",
-														true
+														true,
+														false,
+														"\"\""
 													]
 												},
 												{
@@ -1054,7 +1107,7 @@
 											"actions": [
 												{
 													"callFunction": "SpawnParticles",
-													"sid": 974052399640160,
+													"sid": 485557644213179,
 													"parameters": [
 														"\"mg0_item_glass\"",
 														"\"1,5\"",
@@ -1063,10 +1116,13 @@
 														"\"-6,6\"",
 														"0",
 														"0",
+														"2",
 														"0",
 														"random(2,5)",
 														"mg0_items.UID",
-														true
+														true,
+														false,
+														"\"\""
 													]
 												},
 												{
@@ -1291,7 +1347,7 @@
 											"actions": [
 												{
 													"callFunction": "SpawnParticles",
-													"sid": 167549723983991,
+													"sid": 870578406264992,
 													"parameters": [
 														"\"mg0_item_explosion\"",
 														"\"0,0\"",
@@ -1300,10 +1356,13 @@
 														"\"0,0\"",
 														"random(-64,64)",
 														"random(-64,64)",
+														"2",
 														"0",
 														"1",
 														"mg0_items.UID",
-														false
+														false,
+														false,
+														"\"\""
 													]
 												},
 												{

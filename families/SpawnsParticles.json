@@ -6,6 +6,7 @@
 	"behaviorTypes": [],
 	"effectTypes": [],
 	"members": [
-		"mg0_items"
+		"mg0_items",
+		"InvisibleTracker"
 	]
 }

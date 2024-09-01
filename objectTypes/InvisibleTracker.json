@@ -1,7 +1,7 @@
 {
-	"name": "backgrounds",
+	"name": "InvisibleTracker",
 	"plugin-id": "Sprite",
-	"sid": 941228760374580,
+	"sid": 430932797733768,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [],
@@ -11,21 +11,21 @@
 			{
 				"frames": [
 					{
-						"width": 320,
-						"height": 180,
+						"width": 16,
+						"height": 16,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 3667886,
+						"imageSpriteId": 9691087,
 						"useCollisionPoly": true,
 						"duration": 1,
 						"tag": ""
 					}
 				],
-				"sid": 889465564280262,
-				"name": "bg-0",
+				"sid": 925806212725765,
+				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,
 				"repeatCount": 1,

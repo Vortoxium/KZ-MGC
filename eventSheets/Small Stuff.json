@@ -66,6 +66,13 @@
 							"sid": 737342958982478
 						},
 						{
+							"name": "ParticleScale",
+							"type": "number",
+							"initialValue": "1",
+							"comment": "",
+							"sid": 896562014909490
+						},
+						{
 							"name": "ParticleImagePoint",
 							"type": "number",
 							"initialValue": "0",
@@ -87,11 +94,25 @@
 							"sid": 866400038812329
 						},
 						{
-							"name": "ParticleGravity",
+							"name": "IsParticleGravity",
 							"type": "boolean",
 							"initialValue": "true",
 							"comment": "",
 							"sid": 272036351343896
+						},
+						{
+							"name": "IsParticleSine",
+							"type": "boolean",
+							"initialValue": "false",
+							"comment": "",
+							"sid": 282133762906875
+						},
+						{
+							"name": "ParticleSineMagnitude",
+							"type": "string",
+							"initialValue": "",
+							"comment": "",
+							"sid": 978684401260126
 						}
 					],
 					"eventType": "function-block",
@@ -134,6 +155,14 @@
 									}
 								},
 								{
+									"id": "set-scale",
+									"objectClass": "particles",
+									"sid": 597626077867418,
+									"parameters": {
+										"scale": "ParticleScale"
+									}
+								},
+								{
 									"id": "set-default-color",
 									"objectClass": "particles",
 									"sid": 674932255411357,
@@ -153,19 +182,19 @@
 								{
 									"id": "set-instvar-value",
 									"objectClass": "particles",
-									"sid": 499677671549364,
+									"sid": 499513239800528,
 									"parameters": {
 										"instance-variable": "HorizontalMovement",
-										"value": "random(int(tokenat(ParticalHorizontalMovement,0,\",\")),int(tokenat(ParticalHorizontalMovement,1,\",\")))"
+										"value": "random(float(tokenat(ParticalHorizontalMovement,0,\",\")),float(tokenat(ParticalHorizontalMovement,1,\",\")))"
 									}
 								},
 								{
 									"id": "set-instvar-value",
 									"objectClass": "particles",
-									"sid": 956091586287585,
+									"sid": 447295717499909,
 									"parameters": {
 										"instance-variable": "VerticalMovement",
-										"value": "random(int(tokenat(ParticalVerticalMovement,0,\",\")),int(tokenat(ParticalVerticalMovement,1,\",\")))"
+										"value": "random(float(tokenat(ParticalVerticalMovement,0,\",\")),float(tokenat(ParticalVerticalMovement,1,\",\")))"
 									}
 								},
 								{
@@ -196,7 +225,7 @@
 											"objectClass": "System",
 											"sid": 848699046373050,
 											"parameters": {
-												"variable": "ParticleGravity"
+												"variable": "IsParticleGravity"
 											}
 										}
 									],
@@ -212,6 +241,66 @@
 										}
 									],
 									"sid": 390907989875815
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 802675552784945,
+											"parameters": {
+												"variable": "IsParticleSine"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-boolean-instvar",
+											"objectClass": "particles",
+											"sid": 116614121100791,
+											"parameters": {
+												"instance-variable": "IsSine",
+												"value": "true"
+											}
+										},
+										{
+											"id": "set-active",
+											"objectClass": "particles",
+											"sid": 133884710735168,
+											"behaviorType": "Sine",
+											"parameters": {
+												"state": "active"
+											}
+										},
+										{
+											"id": "set-magnitude",
+											"objectClass": "particles",
+											"sid": 709928754358769,
+											"behaviorType": "Sine",
+											"parameters": {
+												"magnitude": "random(int(tokenat(ParticleSineMagnitude,0,\",\")),(int(tokenat(ParticleSineMagnitude,1,\",\"))))"
+											}
+										},
+										{
+											"id": "set-period",
+											"objectClass": "particles",
+											"sid": 675866310057856,
+											"behaviorType": "Sine",
+											"parameters": {
+												"period": "random(2,4)"
+											}
+										},
+										{
+											"id": "set-animation-speed",
+											"objectClass": "particles",
+											"sid": 538986133484187,
+											"parameters": {
+												"speed": "4 + abs(particles.Sine.Magnitude/8) + (particles.Sine.Period/2)"
+											}
+										}
+									],
+									"sid": 561035380096748
 								}
 							]
 						}
