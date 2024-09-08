@@ -103,7 +103,8 @@
 			"slash",
 			"particles",
 			"InvisibleTracker",
-			"Font_VHS"
+			"Font_VHS",
+			"Font_Folder"
 		],
 		"subfolders": [
 			{
