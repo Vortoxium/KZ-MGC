@@ -25,13 +25,13 @@
 						"GlowHorizontal": {
 							"isEnabled": false,
 							"parameters": {
-								"intensity": 0.33
+								"intensity": 0.25
 							}
 						},
 						"GlowVertical": {
 							"isEnabled": false,
 							"parameters": {
-								"intensity": 0.33
+								"intensity": 0.25
 							}
 						}
 					},
@@ -106,13 +106,13 @@
 						"GlowHorizontal": {
 							"isEnabled": false,
 							"parameters": {
-								"intensity": 0.33
+								"intensity": 0.25
 							}
 						},
 						"GlowVertical": {
 							"isEnabled": false,
 							"parameters": {
-								"intensity": 0.33
+								"intensity": 0.25
 							}
 						}
 					},
@@ -187,13 +187,13 @@
 						"GlowHorizontal": {
 							"isEnabled": false,
 							"parameters": {
-								"intensity": 0.33
+								"intensity": 0.25
 							}
 						},
 						"GlowVertical": {
 							"isEnabled": false,
 							"parameters": {
-								"intensity": 0.33
+								"intensity": 0.25
 							}
 						}
 					},
@@ -233,13 +233,13 @@
 						"GlowHorizontal": {
 							"isEnabled": false,
 							"parameters": {
-								"intensity": 0.33
+								"intensity": 0.25
 							}
 						},
 						"GlowVertical": {
 							"isEnabled": false,
 							"parameters": {
-								"intensity": 0.33
+								"intensity": 0.25
 							}
 						}
 					},
@@ -314,13 +314,13 @@
 						"GlowHorizontal": {
 							"isEnabled": false,
 							"parameters": {
-								"intensity": 0.33
+								"intensity": 0.25
 							}
 						},
 						"GlowVertical": {
 							"isEnabled": false,
 							"parameters": {
-								"intensity": 0.33
+								"intensity": 0.25
 							}
 						}
 					},
@@ -360,13 +360,13 @@
 						"GlowHorizontal": {
 							"isEnabled": false,
 							"parameters": {
-								"intensity": 0.33
+								"intensity": 0.25
 							}
 						},
 						"GlowVertical": {
 							"isEnabled": false,
 							"parameters": {
-								"intensity": 0.33
+								"intensity": 0.25
 							}
 						}
 					},
@@ -441,13 +441,13 @@
 						"GlowHorizontal": {
 							"isEnabled": false,
 							"parameters": {
-								"intensity": 0.33
+								"intensity": 0.25
 							}
 						},
 						"GlowVertical": {
 							"isEnabled": false,
 							"parameters": {
-								"intensity": 0.33
+								"intensity": 0.25
 							}
 						}
 					},
@@ -487,13 +487,13 @@
 						"GlowHorizontal": {
 							"isEnabled": false,
 							"parameters": {
-								"intensity": 0.33
+								"intensity": 0.25
 							}
 						},
 						"GlowVertical": {
 							"isEnabled": false,
 							"parameters": {
-								"intensity": 0.33
+								"intensity": 0.25
 							}
 						}
 					},
@@ -568,13 +568,13 @@
 						"GlowHorizontal": {
 							"isEnabled": false,
 							"parameters": {
-								"intensity": 0.33
+								"intensity": 0.25
 							}
 						},
 						"GlowVertical": {
 							"isEnabled": false,
 							"parameters": {
-								"intensity": 0.33
+								"intensity": 0.25
 							}
 						}
 					},
@@ -614,13 +614,13 @@
 						"GlowHorizontal": {
 							"isEnabled": false,
 							"parameters": {
-								"intensity": 0.33
+								"intensity": 0.25
 							}
 						},
 						"GlowVertical": {
 							"isEnabled": false,
 							"parameters": {
-								"intensity": 0.33
+								"intensity": 0.25
 							}
 						}
 					},
