@@ -22,16 +22,16 @@
 					},
 					"behaviors": {},
 					"effects": {
-						"BlurVertical": {
+						"GlowHorizontal": {
 							"isEnabled": false,
 							"parameters": {
-								"intensity": 0.2
+								"intensity": 0.33
 							}
 						},
-						"BlurHorizontal": {
+						"GlowVertical": {
 							"isEnabled": false,
 							"parameters": {
-								"intensity": 0.2
+								"intensity": 0.33
 							}
 						}
 					},
@@ -103,16 +103,16 @@
 					},
 					"behaviors": {},
 					"effects": {
-						"BlurVertical": {
+						"GlowHorizontal": {
 							"isEnabled": false,
 							"parameters": {
-								"intensity": 0.2
+								"intensity": 0.33
 							}
 						},
-						"BlurHorizontal": {
+						"GlowVertical": {
 							"isEnabled": false,
 							"parameters": {
-								"intensity": 0.2
+								"intensity": 0.33
 							}
 						}
 					},
@@ -184,16 +184,16 @@
 					},
 					"behaviors": {},
 					"effects": {
-						"BlurVertical": {
+						"GlowHorizontal": {
 							"isEnabled": false,
 							"parameters": {
-								"intensity": 0.2
+								"intensity": 0.33
 							}
 						},
-						"BlurHorizontal": {
+						"GlowVertical": {
 							"isEnabled": false,
 							"parameters": {
-								"intensity": 0.2
+								"intensity": 0.33
 							}
 						}
 					},
@@ -230,16 +230,16 @@
 					},
 					"behaviors": {},
 					"effects": {
-						"BlurVertical": {
+						"GlowHorizontal": {
 							"isEnabled": false,
 							"parameters": {
-								"intensity": 0.2
+								"intensity": 0.33
 							}
 						},
-						"BlurHorizontal": {
+						"GlowVertical": {
 							"isEnabled": false,
 							"parameters": {
-								"intensity": 0.2
+								"intensity": 0.33
 							}
 						}
 					},
@@ -311,16 +311,16 @@
 					},
 					"behaviors": {},
 					"effects": {
-						"BlurVertical": {
+						"GlowHorizontal": {
 							"isEnabled": false,
 							"parameters": {
-								"intensity": 0.2
+								"intensity": 0.33
 							}
 						},
-						"BlurHorizontal": {
+						"GlowVertical": {
 							"isEnabled": false,
 							"parameters": {
-								"intensity": 0.2
+								"intensity": 0.33
 							}
 						}
 					},
@@ -357,16 +357,16 @@
 					},
 					"behaviors": {},
 					"effects": {
-						"BlurVertical": {
+						"GlowHorizontal": {
 							"isEnabled": false,
 							"parameters": {
-								"intensity": 0.2
+								"intensity": 0.33
 							}
 						},
-						"BlurHorizontal": {
+						"GlowVertical": {
 							"isEnabled": false,
 							"parameters": {
-								"intensity": 0.2
+								"intensity": 0.33
 							}
 						}
 					},
@@ -438,16 +438,16 @@
 					},
 					"behaviors": {},
 					"effects": {
-						"BlurVertical": {
+						"GlowHorizontal": {
 							"isEnabled": false,
 							"parameters": {
-								"intensity": 0.2
+								"intensity": 0.33
 							}
 						},
-						"BlurHorizontal": {
+						"GlowVertical": {
 							"isEnabled": false,
 							"parameters": {
-								"intensity": 0.2
+								"intensity": 0.33
 							}
 						}
 					},
@@ -484,16 +484,16 @@
 					},
 					"behaviors": {},
 					"effects": {
-						"BlurVertical": {
+						"GlowHorizontal": {
 							"isEnabled": false,
 							"parameters": {
-								"intensity": 0.2
+								"intensity": 0.33
 							}
 						},
-						"BlurHorizontal": {
+						"GlowVertical": {
 							"isEnabled": false,
 							"parameters": {
-								"intensity": 0.2
+								"intensity": 0.33
 							}
 						}
 					},
@@ -565,16 +565,16 @@
 					},
 					"behaviors": {},
 					"effects": {
-						"BlurVertical": {
+						"GlowHorizontal": {
 							"isEnabled": false,
 							"parameters": {
-								"intensity": 0.2
+								"intensity": 0.33
 							}
 						},
-						"BlurHorizontal": {
+						"GlowVertical": {
 							"isEnabled": false,
 							"parameters": {
-								"intensity": 0.2
+								"intensity": 0.33
 							}
 						}
 					},
@@ -611,16 +611,16 @@
 					},
 					"behaviors": {},
 					"effects": {
-						"BlurVertical": {
+						"GlowHorizontal": {
 							"isEnabled": false,
 							"parameters": {
-								"intensity": 0.2
+								"intensity": 0.33
 							}
 						},
-						"BlurHorizontal": {
+						"GlowVertical": {
 							"isEnabled": false,
 							"parameters": {
-								"intensity": 0.2
+								"intensity": 0.33
 							}
 						}
 					},

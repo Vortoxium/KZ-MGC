@@ -64,15 +64,15 @@
 		},
 		{
 			"type": "effect",
-			"id": "blurhorizontal",
-			"name": "Blur horizontal",
+			"id": "glowhorizontal",
+			"name": "Glow horizontal",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "effect",
-			"id": "blurvertical",
-			"name": "Blur vertical",
+			"id": "glowvertical",
+			"name": "Glow vertical",
 			"author": "Scirra",
 			"bundled": false
 		}

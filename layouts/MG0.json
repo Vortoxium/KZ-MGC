@@ -22,13 +22,13 @@
 					},
 					"behaviors": {},
 					"effects": {
-						"BlurVertical": {
+						"GlowHorizontal": {
 							"isEnabled": true,
 							"parameters": {
 								"intensity": 1
 							}
 						},
-						"BlurHorizontal": {
+						"GlowVertical": {
 							"isEnabled": true,
 							"parameters": {
 								"intensity": 1

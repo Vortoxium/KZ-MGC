@@ -110,19 +110,19 @@
 										{
 											"id": "set-effect-enabled",
 											"objectClass": "backgrounds",
-											"sid": 604049280025514,
+											"sid": 613628948699892,
 											"parameters": {
 												"mode": "enable",
-												"effect": "\"BlurVertical\""
+												"effect": "\"GlowHorizontal\""
 											}
 										},
 										{
 											"id": "set-effect-enabled",
 											"objectClass": "backgrounds",
-											"sid": 613215597384671,
+											"sid": 367823586228364,
 											"parameters": {
 												"mode": "enable",
-												"effect": "\"BlurHorizontal\""
+												"effect": "\"GlowVertical\""
 											}
 										}
 									],

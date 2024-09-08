@@ -22,12 +22,12 @@
 	"behaviorTypes": [],
 	"effectTypes": [
 		{
-			"effectId": "blurvertical",
-			"name": "BlurVertical"
+			"effectId": "glowhorizontal",
+			"name": "GlowHorizontal"
 		},
 		{
-			"effectId": "blurhorizontal",
-			"name": "BlurHorizontal"
+			"effectId": "glowvertical",
+			"name": "GlowVertical"
 		}
 	],
 	"animations": {
