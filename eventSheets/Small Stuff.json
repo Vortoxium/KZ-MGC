@@ -650,6 +650,82 @@
 				}
 			],
 			"sid": 131944663447881
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Global Keybinds",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 524570765570560,
+							"parameters": {
+								"key": 70
+							}
+						},
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 694070161244659,
+							"parameters": {
+								"key": 16
+							}
+						}
+					],
+					"actions": [],
+					"sid": 859835026786416,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-fullscreen",
+									"objectClass": "Browser",
+									"sid": 523300174255543,
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "request-fullscreen",
+									"objectClass": "Browser",
+									"sid": 661882260755213,
+									"parameters": {
+										"mode": "stretch-integer-letterbox-scale",
+										"navigation-ui": "auto"
+									}
+								}
+							],
+							"sid": 792774402268073
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-fullscreen",
+									"objectClass": "Browser",
+									"sid": 466893314569054
+								}
+							],
+							"actions": [
+								{
+									"id": "cancel-fullscreen",
+									"objectClass": "Browser",
+									"sid": 442445099368150
+								}
+							],
+							"sid": 541985652056574
+						}
+					]
+				}
+			],
+			"sid": 531628472115024
 		}
 	],
 	"sid": 898564590862313

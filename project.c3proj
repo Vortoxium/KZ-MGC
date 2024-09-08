@@ -49,6 +49,13 @@
 			"bundled": false
 		},
 		{
+			"type": "plugin",
+			"id": "Text",
+			"name": "Text",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
 			"type": "behavior",
 			"id": "Sin",
 			"name": "Sine",
@@ -96,7 +103,8 @@
 					"Browser",
 					"Mouse",
 					"Audio",
-					"Keyboard"
+					"Keyboard",
+					"Text"
 				],
 				"subfolders": [],
 				"name": "Plugins"

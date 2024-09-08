@@ -36,6 +36,16 @@
 					"eventType": "block",
 					"conditions": [
 						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 676012414625066,
+							"parameters": {
+								"first-value": "LayoutName",
+								"comparison": 0,
+								"second-value": "\"MG0\""
+							}
+						},
+						{
 							"id": "compare-eventvar",
 							"objectClass": "System",
 							"sid": 538518353883857,

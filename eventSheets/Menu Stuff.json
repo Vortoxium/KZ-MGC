@@ -2,6 +2,10 @@
 	"name": "Menu Stuff",
 	"events": [
 		{
+			"eventType": "include",
+			"includeSheet": "Small Stuff"
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
