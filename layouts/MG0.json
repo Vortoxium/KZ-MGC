@@ -16,7 +16,10 @@
 						"live-preview": false
 					},
 					"uid": 2,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"PosX": 0,
+						"PosY": 0
+					},
 					"behaviors": {},
 					"world": {
 						"x": 160,
@@ -371,5 +374,5 @@
 	"vpX": 0.5,
 	"vpY": 0.5,
 	"projection": "perspective",
-	"eventSheet": "Event sheet 1"
+	"eventSheet": "Main Stuff"
 }

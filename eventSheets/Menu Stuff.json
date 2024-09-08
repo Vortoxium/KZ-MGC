@@ -1,0 +1,152 @@
+{
+	"name": "Menu Stuff",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-two-values",
+					"objectClass": "System",
+					"sid": 293469680340441,
+					"parameters": {
+						"first-value": "LayoutName",
+						"comparison": 0,
+						"second-value": "\"Menu\""
+					}
+				}
+			],
+			"actions": [],
+			"sid": 983953215629405,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 903562885843699
+						}
+					],
+					"actions": [
+						{
+							"id": "set-cursor-style",
+							"objectClass": "Mouse",
+							"sid": 768680492397527,
+							"parameters": {
+								"cursor-style": "none"
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 382810637681054,
+							"parameters": {
+								"object-to-create": "cursor",
+								"layer": "\"Objects\"",
+								"x": "160",
+								"y": "90",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-animation-frame",
+							"objectClass": "cursor",
+							"sid": 250907326697905,
+							"parameters": {
+								"frame-number": "7"
+							}
+						}
+					],
+					"sid": 162244279050737,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for-each",
+									"objectClass": "System",
+									"sid": 353713758848495,
+									"parameters": {
+										"object": "backgrounds"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "backgrounds",
+									"sid": 480584277378272,
+									"parameters": {
+										"instance-variable": "PosX",
+										"value": "backgrounds.X"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "backgrounds",
+									"sid": 887646891262259,
+									"parameters": {
+										"instance-variable": "PosY",
+										"value": "backgrounds.Y"
+									}
+								}
+							],
+							"sid": 765309069765622
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 128055722324789
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "cursor",
+							"sid": 269403700850269,
+							"parameters": {
+								"x": "Mouse.X",
+								"y": "Mouse.Y"
+							}
+						}
+					],
+					"sid": 160990721441197,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for-each",
+									"objectClass": "System",
+									"sid": 468826703240866,
+									"parameters": {
+										"object": "backgrounds"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-position",
+									"objectClass": "backgrounds",
+									"sid": 527793698898443,
+									"parameters": {
+										"x": "backgrounds.PosX + (160-cursor.X) * (LayerParallaxX(backgrounds.LayerName)/100)",
+										"y": "backgrounds.PosY + (90-cursor.Y) * (LayerParallaxY(backgrounds.LayerName)/100)"
+									}
+								}
+							],
+							"sid": 823943835024566
+						}
+					]
+				}
+			]
+		}
+	],
+	"sid": 654798273839922
+}

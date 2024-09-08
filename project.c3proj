@@ -92,14 +92,16 @@
 	"layouts": {
 		"items": [
 			"MG0",
+			"Menu",
 			"ObjectStorage"
 		],
 		"subfolders": []
 	},
 	"eventSheets": {
 		"items": [
-			"Event sheet 1",
-			"Small Stuff"
+			"Main Stuff",
+			"Small Stuff",
+			"Menu Stuff"
 		],
 		"subfolders": []
 	},

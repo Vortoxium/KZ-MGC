@@ -49,7 +49,10 @@
 						"live-preview": false
 					},
 					"uid": 10,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"PosX": 0,
+						"PosY": 0
+					},
 					"behaviors": {},
 					"world": {
 						"x": 223,
