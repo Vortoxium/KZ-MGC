@@ -218,7 +218,7 @@
 								"period-offset-random": 0,
 								"magnitude": 50,
 								"magnitude-random": 0,
-								"enabled": true,
+								"enabled": false,
 								"live-preview": false
 							}
 						},
