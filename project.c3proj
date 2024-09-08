@@ -22,6 +22,13 @@
 		},
 		{
 			"type": "plugin",
+			"id": "Keyboard",
+			"name": "Keyboard",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
 			"id": "Mouse",
 			"name": "Mouse",
 			"author": "Scirra",
@@ -54,6 +61,20 @@
 			"name": "Tween",
 			"author": "Scirra",
 			"bundled": false
+		},
+		{
+			"type": "effect",
+			"id": "blurhorizontal",
+			"name": "Blur horizontal",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "effect",
+			"id": "blurvertical",
+			"name": "Blur vertical",
+			"author": "Scirra",
+			"bundled": false
 		}
 	],
 	"uniqueId": "tqj16r1yvft",
@@ -74,7 +95,8 @@
 				"items": [
 					"Browser",
 					"Mouse",
-					"Audio"
+					"Audio",
+					"Keyboard"
 				],
 				"subfolders": [],
 				"name": "Plugins"

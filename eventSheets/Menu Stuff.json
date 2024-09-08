@@ -92,7 +92,43 @@
 									}
 								}
 							],
-							"sid": 765309069765622
+							"sid": 765309069765622,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "evaluate-expression",
+											"objectClass": "System",
+											"sid": 660504672868219,
+											"parameters": {
+												"value": "backgrounds.AnimationFrame = 3 | backgrounds.AnimationFrame = 5 | backgrounds.AnimationFrame = 7 | backgrounds.AnimationFrame = 9"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-effect-enabled",
+											"objectClass": "backgrounds",
+											"sid": 604049280025514,
+											"parameters": {
+												"mode": "enable",
+												"effect": "\"BlurVertical\""
+											}
+										},
+										{
+											"id": "set-effect-enabled",
+											"objectClass": "backgrounds",
+											"sid": 613215597384671,
+											"parameters": {
+												"mode": "enable",
+												"effect": "\"BlurHorizontal\""
+											}
+										}
+									],
+									"sid": 905401482376316
+								}
+							]
 						}
 					]
 				},

@@ -21,6 +21,20 @@
 						"PosY": 0
 					},
 					"behaviors": {},
+					"effects": {
+						"BlurVertical": {
+							"isEnabled": false,
+							"parameters": {
+								"intensity": 0.2
+							}
+						},
+						"BlurHorizontal": {
+							"isEnabled": false,
+							"parameters": {
+								"intensity": 0.2
+							}
+						}
+					},
 					"world": {
 						"x": 164,
 						"y": 20,
@@ -88,6 +102,20 @@
 						"PosY": 0
 					},
 					"behaviors": {},
+					"effects": {
+						"BlurVertical": {
+							"isEnabled": false,
+							"parameters": {
+								"intensity": 0.2
+							}
+						},
+						"BlurHorizontal": {
+							"isEnabled": false,
+							"parameters": {
+								"intensity": 0.2
+							}
+						}
+					},
 					"world": {
 						"x": 158,
 						"y": 148,
@@ -155,6 +183,20 @@
 						"PosY": 0
 					},
 					"behaviors": {},
+					"effects": {
+						"BlurVertical": {
+							"isEnabled": false,
+							"parameters": {
+								"intensity": 0.2
+							}
+						},
+						"BlurHorizontal": {
+							"isEnabled": false,
+							"parameters": {
+								"intensity": 0.2
+							}
+						}
+					},
 					"world": {
 						"x": 158,
 						"y": 135,
@@ -187,6 +229,20 @@
 						"PosY": 0
 					},
 					"behaviors": {},
+					"effects": {
+						"BlurVertical": {
+							"isEnabled": false,
+							"parameters": {
+								"intensity": 0.2
+							}
+						},
+						"BlurHorizontal": {
+							"isEnabled": false,
+							"parameters": {
+								"intensity": 0.2
+							}
+						}
+					},
 					"world": {
 						"x": 167,
 						"y": 69,
@@ -254,6 +310,20 @@
 						"PosY": 0
 					},
 					"behaviors": {},
+					"effects": {
+						"BlurVertical": {
+							"isEnabled": false,
+							"parameters": {
+								"intensity": 0.2
+							}
+						},
+						"BlurHorizontal": {
+							"isEnabled": false,
+							"parameters": {
+								"intensity": 0.2
+							}
+						}
+					},
 					"world": {
 						"x": 158,
 						"y": 148,
@@ -286,6 +356,20 @@
 						"PosY": 0
 					},
 					"behaviors": {},
+					"effects": {
+						"BlurVertical": {
+							"isEnabled": false,
+							"parameters": {
+								"intensity": 0.2
+							}
+						},
+						"BlurHorizontal": {
+							"isEnabled": false,
+							"parameters": {
+								"intensity": 0.2
+							}
+						}
+					},
 					"world": {
 						"x": 183,
 						"y": 121,
@@ -353,6 +437,20 @@
 						"PosY": 0
 					},
 					"behaviors": {},
+					"effects": {
+						"BlurVertical": {
+							"isEnabled": false,
+							"parameters": {
+								"intensity": 0.2
+							}
+						},
+						"BlurHorizontal": {
+							"isEnabled": false,
+							"parameters": {
+								"intensity": 0.2
+							}
+						}
+					},
 					"world": {
 						"x": 158,
 						"y": 168,
@@ -385,6 +483,20 @@
 						"PosY": 0
 					},
 					"behaviors": {},
+					"effects": {
+						"BlurVertical": {
+							"isEnabled": false,
+							"parameters": {
+								"intensity": 0.2
+							}
+						},
+						"BlurHorizontal": {
+							"isEnabled": false,
+							"parameters": {
+								"intensity": 0.2
+							}
+						}
+					},
 					"world": {
 						"x": 161,
 						"y": 138,
@@ -452,6 +564,20 @@
 						"PosY": 0
 					},
 					"behaviors": {},
+					"effects": {
+						"BlurVertical": {
+							"isEnabled": false,
+							"parameters": {
+								"intensity": 0.2
+							}
+						},
+						"BlurHorizontal": {
+							"isEnabled": false,
+							"parameters": {
+								"intensity": 0.2
+							}
+						}
+					},
 					"world": {
 						"x": 158,
 						"y": 183,
@@ -484,6 +610,20 @@
 						"PosY": 0
 					},
 					"behaviors": {},
+					"effects": {
+						"BlurVertical": {
+							"isEnabled": false,
+							"parameters": {
+								"intensity": 0.2
+							}
+						},
+						"BlurHorizontal": {
+							"isEnabled": false,
+							"parameters": {
+								"intensity": 0.2
+							}
+						}
+					},
 					"world": {
 						"x": 170,
 						"y": 171,

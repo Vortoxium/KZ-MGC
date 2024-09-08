@@ -21,6 +21,20 @@
 						"PosY": 0
 					},
 					"behaviors": {},
+					"effects": {
+						"BlurVertical": {
+							"isEnabled": true,
+							"parameters": {
+								"intensity": 1
+							}
+						},
+						"BlurHorizontal": {
+							"isEnabled": true,
+							"parameters": {
+								"intensity": 1
+							}
+						}
+					},
 					"world": {
 						"x": 160,
 						"y": 90,
