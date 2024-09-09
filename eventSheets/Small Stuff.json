@@ -316,6 +316,15 @@
 							"parameters": {
 								"object": "particles"
 							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 530322374937204,
+							"parameters": {
+								"variable": "IsPaused"
+							},
+							"isInverted": true
 						}
 					],
 					"actions": [],
@@ -1414,9 +1423,9 @@
 														{
 															"id": "set-opacity",
 															"objectClass": "Pixel",
-															"sid": 499475542469976,
+															"sid": 180162710805370,
 															"parameters": {
-																"opacity": "25"
+																"opacity": "33"
 															}
 														},
 														{
@@ -1787,14 +1796,6 @@
 							"sid": 432866750691625,
 							"parameters": {
 								"key": 32
-							}
-						},
-						{
-							"id": "compare-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 398558510940054,
-							"parameters": {
-								"variable": "IsPaused"
 							}
 						},
 						{
