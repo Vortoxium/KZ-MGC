@@ -110,9 +110,106 @@
 										"-10",
 										"0"
 									]
+								},
+								{
+									"callFunction": "CreateText",
+									"sid": 727335142559580,
+									"parameters": [
+										"\"HUD Below\"",
+										"\"1,170\"",
+										"\"Timer\"",
+										"\"Time: \"&InvisibleTracker.Timer",
+										"\"255,200,225\"",
+										"66"
+									]
 								}
 							],
 							"sid": 998425120620862
+						},
+						{
+							"eventType": "comment",
+							"text": "Timer"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "every-x-seconds",
+									"objectClass": "System",
+									"sid": 939298420315208,
+									"parameters": {
+										"interval-seconds": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "InvisibleTracker",
+									"sid": 586686992502523,
+									"parameters": {
+										"instance-variable": "Timer",
+										"value": "InvisibleTracker.Timer + 1"
+									}
+								}
+							],
+							"sid": 178683113652211,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "Font_Folder",
+											"sid": 824989014290570,
+											"parameters": {
+												"instance-variable": "Mode",
+												"comparison": 0,
+												"value": "\"Timer\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-text",
+											"objectClass": "Font_Folder",
+											"sid": 649451465261530,
+											"parameters": {
+												"text": "\"Time: \"&InvisibleTracker.Timer"
+											}
+										}
+									],
+									"sid": 310949910084303
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 724261424386964,
+											"parameters": {
+												"variable": "ActiveMiniGameLevel",
+												"comparison": 5,
+												"value": "4"
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 476181998042892,
+											"parameters": {
+												"variable": "ActiveMiniGameLevel",
+												"value": "1 + (InvisibleTracker.Timer/60)"
+											}
+										}
+									],
+									"sid": 271298044846211
+								}
+							]
 						},
 						{
 							"eventType": "comment",
@@ -348,9 +445,9 @@
 														{
 															"id": "compare-two-values",
 															"objectClass": "System",
-															"sid": 127189092730338,
+															"sid": 110658847784598,
 															"parameters": {
-																"first-value": "tickcount % (17-(ActiveMiniGameLevel*2))",
+																"first-value": "tickcount % (17-(floor(ActiveMiniGameLevel)*2))",
 																"comparison": 0,
 																"second-value": "1"
 															}
@@ -521,7 +618,7 @@
 							"eventType": "variable",
 							"name": "MG0_Items_Chance",
 							"type": "string",
-							"initialValue": "0,0,0,0,0,0,0,0,0,3|0,0,0,0,0,0,0,1,1,3|0,0,0,0,0,1,1,2,2,3|0,0,0,1,1,1,2,2,2,3",
+							"initialValue": "0,0,0,0,0,0,0,0,0,3|0,0,0,0,0,0,0,1,1,3|0,0,0,0,0,1,1,1,2,3|0,0,0,0,1,1,1,2,2,3",
 							"comment": "",
 							"isStatic": false,
 							"isConstant": true,
@@ -556,9 +653,9 @@
 								{
 									"id": "set-animation",
 									"objectClass": "mg0_items",
-									"sid": 859826532873048,
+									"sid": 777340570034274,
 									"parameters": {
-										"animation": "\"item_\"&choose(\nint(tokenat(tokenat(MG0_Items_Chance,ActiveMiniGameLevel-1,\"|\"),0,\",\")),\nint(tokenat(tokenat(MG0_Items_Chance,ActiveMiniGameLevel-1,\"|\"),1,\",\")),\nint(tokenat(tokenat(MG0_Items_Chance,ActiveMiniGameLevel-1,\"|\"),2,\",\")),\r\nint(tokenat(tokenat(MG0_Items_Chance,ActiveMiniGameLevel-1,\"|\"),3,\",\")),\nint(tokenat(tokenat(MG0_Items_Chance,ActiveMiniGameLevel-1,\"|\"),4,\",\")),\r\nint(tokenat(tokenat(MG0_Items_Chance,ActiveMiniGameLevel-1,\"|\"),5,\",\")),\r\nint(tokenat(tokenat(MG0_Items_Chance,ActiveMiniGameLevel-1,\"|\"),6,\",\")),\r\nint(tokenat(tokenat(MG0_Items_Chance,ActiveMiniGameLevel-1,\"|\"),7,\",\")),\nint(tokenat(tokenat(MG0_Items_Chance,ActiveMiniGameLevel-1,\"|\"),8,\",\")),\r\nint(tokenat(tokenat(MG0_Items_Chance,ActiveMiniGameLevel-1,\"|\"),9,\",\"))\n)",
+										"animation": "\"item_\"&choose(\nint(tokenat(tokenat(MG0_Items_Chance,floor(ActiveMiniGameLevel-1),\"|\"),0,\",\")),\nint(tokenat(tokenat(MG0_Items_Chance,floor(ActiveMiniGameLevel-1),\"|\"),1,\",\")),\nint(tokenat(tokenat(MG0_Items_Chance,floor(ActiveMiniGameLevel-1),\"|\"),2,\",\")),\r\nint(tokenat(tokenat(MG0_Items_Chance,floor(ActiveMiniGameLevel-1),\"|\"),3,\",\")),\nint(tokenat(tokenat(MG0_Items_Chance,floor(ActiveMiniGameLevel-1),\"|\"),4,\",\")),\r\nint(tokenat(tokenat(MG0_Items_Chance,floor(ActiveMiniGameLevel-1),\"|\"),5,\",\")),\r\nint(tokenat(tokenat(MG0_Items_Chance,floor(ActiveMiniGameLevel-1),\"|\"),6,\",\")),\r\nint(tokenat(tokenat(MG0_Items_Chance,floor(ActiveMiniGameLevel-1),\"|\"),7,\",\")),\nint(tokenat(tokenat(MG0_Items_Chance,floor(ActiveMiniGameLevel-1),\"|\"),8,\",\")),\r\nint(tokenat(tokenat(MG0_Items_Chance,floor(ActiveMiniGameLevel-1),\"|\"),9,\",\"))\n)",
 										"from": "beginning"
 									}
 								},

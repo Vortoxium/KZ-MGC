@@ -3,7 +3,15 @@
 	"plugin-id": "Sprite",
 	"sid": 430932797733768,
 	"isGlobal": false,
-	"instanceVariables": [],
+	"instanceVariables": [
+		{
+			"name": "Timer",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 340297940513622
+		}
+	],
 	"behaviorTypes": [],
 	"effectTypes": [],
 	"animations": {

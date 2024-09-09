@@ -4,6 +4,15 @@
 		{
 			"eventType": "group",
 			"disabled": false,
+			"title": "On Start",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [],
+			"sid": 832234814272269
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
 			"title": "Particles",
 			"description": "",
 			"isActiveOnStart": true,
@@ -2099,7 +2108,32 @@
 									}
 								}
 							],
-							"sid": 232991065488648
+							"sid": 232991065488648,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "Font_Folder",
+											"sid": 370946189727330,
+											"parameters": {
+												"instance-variable": "Mode",
+												"comparison": 0,
+												"value": "\"Timer\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "destroy",
+											"objectClass": "Font_Folder",
+											"sid": 535084812416115
+										}
+									],
+									"sid": 647973706122746
+								}
+							]
 						}
 					]
 				},

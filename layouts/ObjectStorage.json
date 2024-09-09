@@ -156,7 +156,9 @@
 						"live-preview": false
 					},
 					"uid": 13,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"Timer": 0
+					},
 					"behaviors": {},
 					"world": {
 						"x": 19,
