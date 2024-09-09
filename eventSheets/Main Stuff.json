@@ -618,7 +618,7 @@
 							"eventType": "variable",
 							"name": "MG0_Items_Chance",
 							"type": "string",
-							"initialValue": "0,0,0,0,0,0,0,0,0,3|0,0,0,0,0,0,0,1,1,3|0,0,0,0,0,1,1,1,2,3|0,0,0,0,1,1,1,2,2,3",
+							"initialValue": "0,0,0,0,0,0,0,0,0,3|0,0,0,0,0,0,0,1,1,3|0,0,0,0,0,0,1,1,2,3|0,0,0,0,0,1,1,2,2,3",
 							"comment": "",
 							"isStatic": false,
 							"isConstant": true,

@@ -417,7 +417,14 @@
 		}
 	],
 	"sid": 405929297051471,
-	"nonworld-instances": [],
+	"nonworld-instances": [
+		{
+			"type": "Highscores",
+			"properties": {},
+			"uid": 34,
+			"instanceVariables": {}
+		}
+	],
 	"effectTypes": [],
 	"width": 640,
 	"height": 360,

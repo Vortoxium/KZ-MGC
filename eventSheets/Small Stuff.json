@@ -4,10 +4,111 @@
 		{
 			"eventType": "group",
 			"disabled": false,
-			"title": "On Start",
+			"title": "Savedata",
 			"description": "",
 			"isActiveOnStart": true,
-			"children": [],
+			"children": [
+				{
+					"functionName": "SaveCurrentData",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": true,
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "KeyName",
+							"type": "string",
+							"initialValue": "",
+							"comment": "",
+							"sid": 594986132310919
+						},
+						{
+							"name": "KeyValue",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 546963866404244
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "add-key",
+							"objectClass": "Highscores",
+							"sid": 496212388684651,
+							"parameters": {
+								"key": "KeyName",
+								"value": "KeyValue"
+							}
+						},
+						{
+							"id": "set-item",
+							"objectClass": "LocalStorage",
+							"sid": 517549329473719,
+							"parameters": {
+								"key": "\"Highscores\"",
+								"value": "Highscores.AsJSON"
+							}
+						}
+					],
+					"sid": 139488025676838
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 600637290750390
+						}
+					],
+					"actions": [
+						{
+							"id": "set-silent",
+							"objectClass": "Audio",
+							"sid": 776637127773839,
+							"parameters": {
+								"mode": "silent"
+							}
+						},
+						{
+							"id": "get-item",
+							"objectClass": "LocalStorage",
+							"sid": 968069451416838,
+							"parameters": {
+								"key": "\"Highscores\""
+							}
+						}
+					],
+					"sid": 198319836872923
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-item-get",
+							"objectClass": "LocalStorage",
+							"sid": 778681905050184,
+							"parameters": {
+								"key": "\"Highscores\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "load",
+							"objectClass": "Highscores",
+							"sid": 313077471798175,
+							"parameters": {
+								"json": "LocalStorage.ItemValue"
+							}
+						}
+					],
+					"sid": 245008299850713
+				}
+			],
 			"sid": 832234814272269
 		},
 		{
@@ -2098,18 +2199,61 @@
 								{
 									"callFunction": "UnPause",
 									"sid": 811824914360432
-								},
-								{
-									"id": "go-to-layout",
-									"objectClass": "System",
-									"sid": 516880517450876,
-									"parameters": {
-										"layout": "Menu"
-									}
 								}
 							],
 							"sid": 232991065488648,
 							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "has-key",
+											"objectClass": "Highscores",
+											"sid": 231709997554168,
+											"parameters": {
+												"key": "\"MG\"&ActiveMiniGame"
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "SaveCurrentData",
+											"sid": 161500177576543,
+											"parameters": [
+												"\"MG\"&ActiveMiniGame",
+												"InvisibleTracker.Timer"
+											]
+										}
+									],
+									"sid": 362452049984894
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-value",
+											"objectClass": "Highscores",
+											"sid": 565477566485102,
+											"parameters": {
+												"key": "\"MG\"&ActiveMiniGame",
+												"comparison": 2,
+												"value": "InvisibleTracker.Timer"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "SaveCurrentData",
+											"sid": 988628034789552,
+											"parameters": [
+												"\"MG\"&ActiveMiniGame",
+												"InvisibleTracker.Timer"
+											]
+										}
+									],
+									"sid": 772153246114107
+								},
 								{
 									"eventType": "block",
 									"conditions": [
@@ -2129,6 +2273,22 @@
 											"id": "destroy",
 											"objectClass": "Font_Folder",
 											"sid": 535084812416115
+										},
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 732817300051065,
+											"parameters": {
+												"seconds": "0"
+											}
+										},
+										{
+											"id": "go-to-layout",
+											"objectClass": "System",
+											"sid": 138733655736532,
+											"parameters": {
+												"layout": "Menu"
+											}
 										}
 									],
 									"sid": 647973706122746
