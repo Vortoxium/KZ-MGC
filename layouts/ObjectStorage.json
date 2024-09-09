@@ -373,12 +373,12 @@
 				{
 					"type": "Font_Folder",
 					"properties": {
-						"text": "Text",
+						"text": "Text bla",
 						"enable-bbcode": true,
 						"character-width": 7,
 						"character-height": 9,
 						"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789,.?!+-*/=<>:;\"#$%&'()[\\]^_@°{|}~",
-						"spacing-data": "",
+						"spacing-data": "[[3, \"il,.!:;'|\"], [4, \"j()\"], [5, \"I1-*[]°{}\"], [6, \"/%\\\\^\"]]",
 						"scale": 1,
 						"character-spacing": 0,
 						"line-height": 0,
@@ -390,7 +390,9 @@
 						"read-aloud": false
 					},
 					"uid": 29,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"Mode": ""
+					},
 					"behaviors": {},
 					"world": {
 						"x": 6,

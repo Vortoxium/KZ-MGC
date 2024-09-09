@@ -2088,6 +2088,119 @@
 				}
 			],
 			"sid": 538255346928704
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Text",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"functionName": "CreateText",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": true,
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "TextLayer",
+							"type": "string",
+							"initialValue": "",
+							"comment": "",
+							"sid": 556719705488722
+						},
+						{
+							"name": "TextPOS",
+							"type": "string",
+							"initialValue": "",
+							"comment": "",
+							"sid": 253802759213096
+						},
+						{
+							"name": "TextMode",
+							"type": "string",
+							"initialValue": "",
+							"comment": "",
+							"sid": 164639498121506
+						},
+						{
+							"name": "TextContent",
+							"type": "string",
+							"initialValue": "",
+							"comment": "",
+							"sid": 454658538091147
+						},
+						{
+							"name": "TextRGB",
+							"type": "string",
+							"initialValue": "",
+							"comment": "",
+							"sid": 569986505011657
+						},
+						{
+							"name": "TextOpacity",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 574452339855469
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 609342104646076,
+							"parameters": {
+								"object-to-create": "Font_Folder",
+								"layer": "TextLayer",
+								"x": "int(tokenat(TextPOS,0,\",\"))",
+								"y": "int(tokenat(TextPOS,1,\",\"))",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Font_Folder",
+							"sid": 634281400747537,
+							"parameters": {
+								"instance-variable": "Mode",
+								"value": "TextMode"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "Font_Folder",
+							"sid": 602226532430699,
+							"parameters": {
+								"text": "TextContent"
+							}
+						},
+						{
+							"id": "set-default-color",
+							"objectClass": "Font_Folder",
+							"sid": 801231479457806,
+							"parameters": {
+								"color": "rgb(\nint(tokenat(TextRGB,0,\",\")),\nint(tokenat(TextRGB,1,\",\")),\nint(tokenat(TextRGB,2,\",\"))\n)"
+							}
+						},
+						{
+							"id": "set-opacity",
+							"objectClass": "Font_Folder",
+							"sid": 333151486096589,
+							"parameters": {
+								"opacity": "TextOpacity"
+							}
+						}
+					],
+					"sid": 678354474075259
+				}
+			],
+			"sid": 566237503277095
 		}
 	],
 	"sid": 898564590862313

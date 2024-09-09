@@ -116,6 +116,18 @@
 									]
 								},
 								{
+									"callFunction": "CreateText",
+									"sid": 685843512033804,
+									"parameters": [
+										"\"HUD\"",
+										"\"1,170\"",
+										"\"MenuText\"",
+										"\"Press F to toggle Fullscreen\"",
+										"\"255,255,255\"",
+										"75"
+									]
+								},
+								{
 									"id": "wait",
 									"objectClass": "System",
 									"sid": 997090689576828,
