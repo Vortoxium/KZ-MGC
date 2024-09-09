@@ -17,6 +17,13 @@
 			"desc": "",
 			"show": true,
 			"sid": 199029816910086
+		},
+		{
+			"name": "Parallax",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 140687601493940
 		}
 	],
 	"behaviorTypes": [],

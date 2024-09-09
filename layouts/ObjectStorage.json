@@ -51,7 +51,8 @@
 					"uid": 10,
 					"instanceVariables": {
 						"PosX": 0,
-						"PosY": 0
+						"PosY": 0,
+						"Parallax": 100
 					},
 					"behaviors": {},
 					"effects": {

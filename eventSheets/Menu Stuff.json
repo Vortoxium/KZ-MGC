@@ -174,10 +174,10 @@
 								{
 									"id": "set-position",
 									"objectClass": "backgrounds",
-									"sid": 527793698898443,
+									"sid": 163479035748882,
 									"parameters": {
-										"x": "backgrounds.PosX + (160-cursor.X) * (LayerParallaxX(backgrounds.LayerName)/100)",
-										"y": "backgrounds.PosY + (90-cursor.Y) * (LayerParallaxY(backgrounds.LayerName)/100)"
+										"x": "backgrounds.PosX + (160-cursor.X) * (backgrounds.Parallax/100)",
+										"y": "backgrounds.PosY + (90-cursor.Y) * (backgrounds.Parallax/100)"
 									}
 								}
 							],
