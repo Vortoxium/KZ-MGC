@@ -585,22 +585,22 @@
 						{
 							"id": "stop",
 							"objectClass": "Audio",
-							"sid": 569412816679793,
+							"sid": 187578695511938,
 							"parameters": {
-								"tag": "\"currentMusic\""
+								"tag": "MusicName"
 							}
 						},
 						{
 							"id": "play-by-name",
 							"objectClass": "Audio",
-							"sid": 380014832503662,
+							"sid": 332254923224842,
 							"parameters": {
 								"folder": "sounds",
 								"audio-file-name": "MusicName",
 								"loop": "looping",
 								"volume": "Volume_M",
 								"stereo-pan": "0",
-								"tag-optional": "\"currentMusic\""
+								"tag-optional": "MusicName"
 							}
 						}
 					],
@@ -627,22 +627,46 @@
 							"initialValue": "0",
 							"comment": "",
 							"sid": 373549213934385
+						},
+						{
+							"name": "SoundPos",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 953270713982230
 						}
 					],
 					"eventType": "function-block",
 					"conditions": [],
 					"actions": [
 						{
+							"id": "stop",
+							"objectClass": "Audio",
+							"sid": 927854874189560,
+							"parameters": {
+								"tag": "SoundName"
+							}
+						},
+						{
 							"id": "play-by-name",
 							"objectClass": "Audio",
-							"sid": 565460539195774,
+							"sid": 855490098091483,
 							"parameters": {
 								"folder": "sounds",
 								"audio-file-name": "SoundName",
 								"loop": "not-looping",
 								"volume": "Volume_S",
 								"stereo-pan": "0",
-								"tag-optional": "\"currentSound\""
+								"tag-optional": "SoundName"
+							}
+						},
+						{
+							"id": "seek-to",
+							"objectClass": "Audio",
+							"sid": 571839402846543,
+							"parameters": {
+								"tag": "SoundName",
+								"position": "SoundPos"
 							}
 						}
 					],
@@ -726,6 +750,1192 @@
 				}
 			],
 			"sid": 531628472115024
+		},
+		{
+			"eventType": "variable",
+			"name": "IsPaused",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 183079244495698
+		},
+		{
+			"eventType": "variable",
+			"name": "CurrentButton",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 120495361080599
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Pausing",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"functionName": "UnPause",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 383955534514850,
+							"parameters": {
+								"variable": "IsPaused",
+								"value": "false"
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "PauseMenu_BG",
+							"sid": 935263725948163
+						},
+						{
+							"id": "destroy",
+							"objectClass": "Font_VHS",
+							"sid": 711036806716678
+						},
+						{
+							"id": "destroy",
+							"objectClass": "Pixel",
+							"sid": 994975893129678
+						},
+						{
+							"id": "set-time-scale",
+							"objectClass": "System",
+							"sid": 485772565319054,
+							"parameters": {
+								"time-scale": "1"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 714639640252432,
+							"parameters": {
+								"variable": "CurrentButton",
+								"value": "0"
+							}
+						}
+					],
+					"sid": 680864137689678
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 648240348855042,
+							"parameters": {
+								"first-value": "LayoutName",
+								"comparison": 0,
+								"second-value": "\"MG0\""
+							}
+						}
+					],
+					"actions": [],
+					"sid": 592932851800191,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 401777108971703,
+									"parameters": {
+										"key": 27
+									}
+								},
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 660490377876780,
+									"parameters": {
+										"key": 80
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "toggle-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 410863931385649,
+									"parameters": {
+										"variable": "IsPaused"
+									}
+								}
+							],
+							"sid": 477629688607164,
+							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 294978531978700,
+									"parameters": {
+										"variable": "IsPaused"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [],
+							"sid": 924555119260532,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "trigger-once-while-true",
+											"objectClass": "System",
+											"sid": 986495956367098
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "UnPause",
+											"sid": 317149599800897
+										}
+									],
+									"sid": 825968798648007
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 880979271742271,
+									"parameters": {
+										"variable": "IsPaused"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 887149628209708,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "trigger-once-while-true",
+											"objectClass": "System",
+											"sid": 604617857301086
+										}
+									],
+									"actions": [
+										{
+											"id": "create-object",
+											"objectClass": "System",
+											"sid": 219178519905877,
+											"parameters": {
+												"object-to-create": "PauseMenu_BG",
+												"layer": "\"Pause\"",
+												"x": "0",
+												"y": "0",
+												"create-hierarchy": false,
+												"template-name": "\"\""
+											}
+										},
+										{
+											"callFunction": "CreateButton",
+											"sid": 273418760710353,
+											"parameters": [
+												"32",
+												"32",
+												"\"0,255,255\"",
+												"\"RESUME\"",
+												"\"PauseButton\"",
+												"0"
+											]
+										},
+										{
+											"callFunction": "CreateButton",
+											"sid": 206208784972574,
+											"parameters": [
+												"32",
+												"56",
+												"\"0,255,255\"",
+												"\"MAIN MENU\"",
+												"\"PauseButton\"",
+												"1"
+											]
+										},
+										{
+											"id": "set-time-scale",
+											"objectClass": "System",
+											"sid": 413349549363976,
+											"parameters": {
+												"time-scale": "0"
+											}
+										},
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 294388022046009,
+											"parameters": {
+												"seconds": "0"
+											}
+										},
+										{
+											"callFunction": "HighlightButton",
+											"sid": 791168313025414
+										}
+									],
+									"sid": 725502439567237,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "Font_VHS",
+													"sid": 979652180365587,
+													"parameters": {
+														"instance-variable": "ButtonNumber",
+														"comparison": 0,
+														"value": "CurrentButton"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "create-object",
+													"objectClass": "System",
+													"sid": 643472004609553,
+													"parameters": {
+														"object-to-create": "Pixel",
+														"layer": "\"Pause\"",
+														"x": "0",
+														"y": "Font_VHS.Y - 1",
+														"create-hierarchy": false,
+														"template-name": "\"\""
+													}
+												},
+												{
+													"id": "set-object-time-scale",
+													"objectClass": "System",
+													"sid": 892324083243909,
+													"parameters": {
+														"object": "Pixel",
+														"time-scale": "1"
+													}
+												},
+												{
+													"id": "set-instvar-value",
+													"objectClass": "Pixel",
+													"sid": 209366270276483,
+													"parameters": {
+														"instance-variable": "Mode",
+														"value": "\"Highlight\""
+													}
+												},
+												{
+													"id": "set-opacity",
+													"objectClass": "Pixel",
+													"sid": 677317580307576,
+													"parameters": {
+														"opacity": "25"
+													}
+												},
+												{
+													"id": "set-size",
+													"objectClass": "Pixel",
+													"sid": 300514570515289,
+													"parameters": {
+														"width": "320",
+														"height": "20"
+													}
+												},
+												{
+													"id": "move-to-bottom",
+													"objectClass": "Pixel",
+													"sid": 687101268946789
+												}
+											],
+											"sid": 330194468080232
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-key-pressed",
+											"objectClass": "Keyboard",
+											"sid": 589217732181958,
+											"parameters": {
+												"key": 87
+											}
+										},
+										{
+											"id": "on-key-pressed",
+											"objectClass": "Keyboard",
+											"sid": 486375982170083,
+											"parameters": {
+												"key": 38
+											}
+										}
+									],
+									"actions": [],
+									"sid": 136605355148760,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 354274453974961,
+													"parameters": {
+														"first-value": "CurrentButton",
+														"comparison": 3,
+														"second-value": "0"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 994066570742820,
+													"parameters": {
+														"variable": "CurrentButton",
+														"value": "Font_VHS.Count - 1"
+													}
+												}
+											],
+											"sid": 139026726143480
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 512632205488093
+												}
+											],
+											"actions": [
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 941912946840503,
+													"parameters": {
+														"variable": "CurrentButton",
+														"value": "CurrentButton - 1"
+													}
+												}
+											],
+											"sid": 806620738626008
+										},
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"callFunction": "HighlightButton",
+													"sid": 132290335388503
+												}
+											],
+											"sid": 534288554668570
+										}
+									],
+									"isOrBlock": true
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-key-pressed",
+											"objectClass": "Keyboard",
+											"sid": 788860348037843,
+											"parameters": {
+												"key": 83
+											}
+										},
+										{
+											"id": "on-key-pressed",
+											"objectClass": "Keyboard",
+											"sid": 915995376336625,
+											"parameters": {
+												"key": 40
+											}
+										}
+									],
+									"actions": [],
+									"sid": 740107231328698,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 784306032140887,
+													"parameters": {
+														"first-value": "CurrentButton",
+														"comparison": 5,
+														"second-value": "Font_VHS.Count - 1"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 249349122422814,
+													"parameters": {
+														"variable": "CurrentButton",
+														"value": "0"
+													}
+												}
+											],
+											"sid": 335067487146645
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 861653058795261
+												}
+											],
+											"actions": [
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 816864493664454,
+													"parameters": {
+														"variable": "CurrentButton",
+														"value": "CurrentButton + 1"
+													}
+												}
+											],
+											"sid": 763672681896928
+										},
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"callFunction": "HighlightButton",
+													"sid": 516756857661496
+												}
+											],
+											"sid": 679860950079116
+										}
+									],
+									"isOrBlock": true
+								},
+								{
+									"eventType": "comment",
+									"text": "Fuzz Static on Pause Menu"
+								},
+								{
+									"eventType": "group",
+									"disabled": false,
+									"title": "Spawn Fuzz",
+									"description": "",
+									"isActiveOnStart": true,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "every-tick",
+													"objectClass": "System",
+													"sid": 425109513845581
+												}
+											],
+											"actions": [],
+											"sid": 290086319361107,
+											"children": [
+												{
+													"eventType": "variable",
+													"name": "SpawnFuzzY",
+													"type": "number",
+													"initialValue": "0",
+													"comment": "",
+													"isStatic": true,
+													"isConstant": false,
+													"sid": 239900703507423
+												},
+												{
+													"eventType": "block",
+													"conditions": [],
+													"actions": [
+														{
+															"id": "set-eventvar-value",
+															"objectClass": "System",
+															"sid": 574508548361473,
+															"parameters": {
+																"variable": "SpawnFuzzY",
+																"value": "round(random(0,180))"
+															}
+														}
+													],
+													"sid": 934793798119702
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "repeat",
+															"objectClass": "System",
+															"sid": 995232408332123,
+															"parameters": {
+																"count": "40"
+															}
+														},
+														{
+															"id": "compare-instance-variable",
+															"objectClass": "Pixel",
+															"sid": 609790644875427,
+															"parameters": {
+																"instance-variable": "Mode",
+																"comparison": 0,
+																"value": "\"Highlight\""
+															}
+														},
+														{
+															"id": "compare-instance-variable",
+															"objectClass": "Pixel",
+															"sid": 242786184030094,
+															"parameters": {
+																"instance-variable": "Mode",
+																"comparison": 1,
+																"value": "\"FadeOut\""
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "create-object",
+															"objectClass": "System",
+															"sid": 859337195413541,
+															"parameters": {
+																"object-to-create": "Pixel",
+																"layer": "\"Pause\"",
+																"x": "round(random(0,360))",
+																"y": "Pixel.Y + round(random(0,Pixel.Height - 1))",
+																"create-hierarchy": false,
+																"template-name": "\"\""
+															}
+														},
+														{
+															"id": "set-opacity",
+															"objectClass": "Pixel",
+															"sid": 395677955757885,
+															"parameters": {
+																"opacity": "choose(25,50,75)"
+															}
+														},
+														{
+															"id": "set-width",
+															"objectClass": "Pixel",
+															"sid": 622157206771136,
+															"parameters": {
+																"width": "round(random(1,21))"
+															}
+														},
+														{
+															"id": "wait",
+															"objectClass": "System",
+															"sid": 763028424153290,
+															"parameters": {
+																"seconds": "0"
+															}
+														},
+														{
+															"id": "destroy",
+															"objectClass": "Pixel",
+															"sid": 694031259092483
+														}
+													],
+													"sid": 927509249446145
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "repeat",
+															"objectClass": "System",
+															"sid": 498893224190174,
+															"parameters": {
+																"count": "20"
+															}
+														},
+														{
+															"id": "compare-instance-variable",
+															"objectClass": "Pixel",
+															"sid": 682977384175743,
+															"parameters": {
+																"instance-variable": "Mode",
+																"comparison": 1,
+																"value": "\"FadeOut\""
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "create-object",
+															"objectClass": "System",
+															"sid": 189041036355321,
+															"parameters": {
+																"object-to-create": "Pixel",
+																"layer": "\"Pause\"",
+																"x": "round(random(0,360))",
+																"y": "SpawnFuzzY + round(random(-8,8))",
+																"create-hierarchy": false,
+																"template-name": "\"\""
+															}
+														},
+														{
+															"id": "set-opacity",
+															"objectClass": "Pixel",
+															"sid": 499475542469976,
+															"parameters": {
+																"opacity": "25"
+															}
+														},
+														{
+															"id": "set-width",
+															"objectClass": "Pixel",
+															"sid": 883816644316373,
+															"parameters": {
+																"width": "round(random(1,21))"
+															}
+														},
+														{
+															"id": "wait",
+															"objectClass": "System",
+															"sid": 967170996422515,
+															"parameters": {
+																"seconds": "0"
+															}
+														},
+														{
+															"id": "destroy",
+															"objectClass": "Pixel",
+															"sid": 221435319816108
+														}
+													],
+													"sid": 408150320675464
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "repeat",
+															"objectClass": "System",
+															"sid": 804067769984754,
+															"parameters": {
+																"count": "20"
+															}
+														},
+														{
+															"id": "compare-instance-variable",
+															"objectClass": "Pixel",
+															"sid": 489467212253616,
+															"parameters": {
+																"instance-variable": "Mode",
+																"comparison": 1,
+																"value": "\"FadeOut\""
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "create-object",
+															"objectClass": "System",
+															"sid": 342252837394035,
+															"parameters": {
+																"object-to-create": "Pixel",
+																"layer": "\"Pause\"",
+																"x": "0",
+																"y": "round(random(0,180))",
+																"create-hierarchy": false,
+																"template-name": "\"\""
+															}
+														},
+														{
+															"id": "set-default-color",
+															"objectClass": "Pixel",
+															"sid": 435324757296181,
+															"parameters": {
+																"color": "rgb(0, 0, 0)"
+															}
+														},
+														{
+															"id": "move-to-bottom",
+															"objectClass": "Pixel",
+															"sid": 471800191109088
+														},
+														{
+															"id": "set-opacity",
+															"objectClass": "Pixel",
+															"sid": 769610894583249,
+															"parameters": {
+																"opacity": "15"
+															}
+														},
+														{
+															"id": "set-size",
+															"objectClass": "Pixel",
+															"sid": 172950772584908,
+															"parameters": {
+																"width": "320",
+																"height": "2"
+															}
+														},
+														{
+															"id": "wait",
+															"objectClass": "System",
+															"sid": 457815747654249,
+															"parameters": {
+																"seconds": "0"
+															}
+														},
+														{
+															"id": "destroy",
+															"objectClass": "Pixel",
+															"sid": 321426595939471
+														}
+													],
+													"sid": 546823735484297
+												}
+											]
+										}
+									],
+									"sid": 398806813952130
+								}
+							]
+						}
+					]
+				}
+			],
+			"sid": 286575356548766
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Buttons",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"functionName": "CreateButton",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": true,
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "ButtonX",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 698878113658187
+						},
+						{
+							"name": "ButtonY",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 934285335548206
+						},
+						{
+							"name": "ButtonColour",
+							"type": "string",
+							"initialValue": "",
+							"comment": "",
+							"sid": 475821848222748
+						},
+						{
+							"name": "ButtonContent",
+							"type": "string",
+							"initialValue": "",
+							"comment": "",
+							"sid": 641665749713323
+						},
+						{
+							"name": "ButtonMode",
+							"type": "string",
+							"initialValue": "",
+							"comment": "",
+							"sid": 165389220885772
+						},
+						{
+							"name": "ButtonNumber",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 112502350102850
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 203656610678389,
+							"parameters": {
+								"object-to-create": "Font_VHS",
+								"layer": "\"Pause\"",
+								"x": "ButtonX",
+								"y": "ButtonY",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "Font_VHS",
+							"sid": 366408092272062,
+							"parameters": {
+								"text": "ButtonContent"
+							}
+						},
+						{
+							"id": "set-default-color",
+							"objectClass": "Font_VHS",
+							"sid": 240825767863845,
+							"parameters": {
+								"color": "rgb(\nint(tokenat(ButtonColour,0,\",\")),\nint(tokenat(ButtonColour,1,\",\")),\nint(tokenat(ButtonColour,2,\",\"))\n)"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Font_VHS",
+							"sid": 248077868381060,
+							"parameters": {
+								"instance-variable": "Mode",
+								"value": "ButtonMode"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Font_VHS",
+							"sid": 713095188592755,
+							"parameters": {
+								"instance-variable": "ButtonNumber",
+								"value": "ButtonNumber"
+							}
+						},
+						{
+							"id": "set-object-time-scale",
+							"objectClass": "System",
+							"sid": 251529644230892,
+							"parameters": {
+								"object": "Font_VHS",
+								"time-scale": "1"
+							}
+						}
+					],
+					"sid": 742955505788882
+				},
+				{
+					"functionName": "HighlightButton",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": true,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"callFunction": "PlaySound",
+							"sid": 978448577399481,
+							"parameters": [
+								"\"sound_menubeep_1\"",
+								"-10",
+								"0"
+							]
+						},
+						{
+							"callFunction": "PlaySound",
+							"sid": 267252447896980,
+							"parameters": [
+								"\"sound_eject_tape\"",
+								"-5",
+								"0.5"
+							]
+						}
+					],
+					"sid": 956096903571904,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Font_VHS",
+									"sid": 890058242859885,
+									"parameters": {
+										"instance-variable": "ButtonNumber",
+										"comparison": 0,
+										"value": "CurrentButton"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "set-default-color",
+									"objectClass": "Font_VHS",
+									"sid": 643549028650969,
+									"parameters": {
+										"color": "rgb(0,255,255)"
+									}
+								},
+								{
+									"id": "stop-tweens",
+									"objectClass": "Font_VHS",
+									"sid": 510721423480942,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"GlowButton\""
+									}
+								}
+							],
+							"sid": 492386492304392
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Font_VHS",
+									"sid": 146841439896547,
+									"parameters": {
+										"instance-variable": "ButtonNumber",
+										"comparison": 0,
+										"value": "CurrentButton"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-default-color",
+									"objectClass": "Font_VHS",
+									"sid": 816095530537335,
+									"parameters": {
+										"color": "rgb(255,0,255)"
+									}
+								},
+								{
+									"id": "set-y",
+									"objectClass": "Pixel",
+									"sid": 561630175483337,
+									"parameters": {
+										"y": "Font_VHS.Y - 1"
+									}
+								},
+								{
+									"id": "tween-one-property",
+									"objectClass": "Font_VHS",
+									"sid": 505093071329723,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"GlowButton\"",
+										"property": "offsetColor",
+										"end-value": "rgbEx(255,255,255)",
+										"time": "0.33",
+										"ease": "easeinsine",
+										"destroy-on-complete": "no",
+										"loop": "yes",
+										"ping-pong": "yes",
+										"repeat-count": "0"
+									}
+								}
+							],
+							"sid": 948292128210544
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 432866750691625,
+							"parameters": {
+								"key": 32
+							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 398558510940054,
+							"parameters": {
+								"variable": "IsPaused"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Font_VHS",
+							"sid": 917811138018052,
+							"parameters": {
+								"instance-variable": "ButtonNumber",
+								"comparison": 0,
+								"value": "CurrentButton"
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "PlaySound",
+							"sid": 874999705714625,
+							"parameters": [
+								"\"sound_menubeep_2\"",
+								"-5",
+								"0"
+							]
+						},
+						{
+							"callFunction": "PlaySound",
+							"sid": 196513768308504,
+							"parameters": [
+								"\"sound_tape_move\"&choose(1,2,3)",
+								"-5",
+								"0"
+							]
+						},
+						{
+							"id": "stop-tweens",
+							"objectClass": "Font_VHS",
+							"sid": 577032843094478,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"GlowButton\""
+							}
+						},
+						{
+							"id": "set-default-color",
+							"objectClass": "Font_VHS",
+							"sid": 224439201464714,
+							"parameters": {
+								"color": "rgb(255, 0, 255)"
+							}
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "Font_VHS",
+							"sid": 621995411285148,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"GlowButtonFast\"&Font_VHS.ButtonNumber",
+								"property": "offsetColor",
+								"end-value": "rgbEx(255,255,255)",
+								"time": "0.11",
+								"ease": "easeinsine",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "5"
+							}
+						}
+					],
+					"sid": 810519728917334
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-tweens-finished",
+							"objectClass": "Font_VHS",
+							"sid": 200220039195523,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"GlowButtonFast\"&Font_VHS.ButtonNumber"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 908558861160764,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Font_VHS",
+									"sid": 149234424165892,
+									"parameters": {
+										"instance-variable": "ButtonNumber",
+										"comparison": 0,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "UnPause",
+									"sid": 636475387475898
+								}
+							],
+							"sid": 887393861119872
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Font_VHS",
+									"sid": 467378385610841,
+									"parameters": {
+										"instance-variable": "ButtonNumber",
+										"comparison": 0,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "UnPause",
+									"sid": 811824914360432
+								},
+								{
+									"id": "go-to-layout",
+									"objectClass": "System",
+									"sid": 516880517450876,
+									"parameters": {
+										"layout": "Menu"
+									}
+								}
+							],
+							"sid": 232991065488648
+						}
+					]
+				}
+			],
+			"sid": 538255346928704
 		}
 	],
 	"sid": 898564590862313

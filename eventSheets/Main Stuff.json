@@ -104,11 +104,11 @@
 								},
 								{
 									"callFunction": "PlayMusic",
-									"sid": 709054178358342,
+									"sid": 139258840369632,
 									"disabled": true,
 									"parameters": [
 										"\"song_snow\"",
-										"-7.5"
+										"-10"
 									]
 								}
 							],
@@ -125,6 +125,15 @@
 									"id": "every-tick",
 									"objectClass": "System",
 									"sid": 979541570200130
+								},
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 768206361998003,
+									"parameters": {
+										"variable": "IsPaused"
+									},
+									"isInverted": true
 								}
 							],
 							"actions": [
@@ -671,6 +680,15 @@
 									"parameters": {
 										"mouse-button": "left"
 									}
+								},
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 814011060221728,
+									"parameters": {
+										"variable": "IsPaused"
+									},
+									"isInverted": true
 								}
 							],
 							"actions": [],
@@ -835,6 +853,15 @@
 									"parameters": {
 										"mouse-button": "left"
 									}
+								},
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 446632438515462,
+									"parameters": {
+										"variable": "IsPaused"
+									},
+									"isInverted": true
 								}
 							],
 							"actions": [],
@@ -1041,10 +1068,11 @@
 										},
 										{
 											"callFunction": "PlaySound",
-											"sid": 933520023800630,
+											"sid": 584154785297691,
 											"parameters": [
 												"\"sound_object_light_shatter_0\"&choose(1,2)",
-												"-2.5"
+												"-5",
+												"0"
 											]
 										},
 										{
@@ -1109,10 +1137,11 @@
 												},
 												{
 													"callFunction": "PlaySound",
-													"sid": 619197347290466,
+													"sid": 944396282548643,
 													"parameters": [
 														"\"sound_clatter_brick3\"",
-														"-2.5"
+														"-5",
+														"0"
 													]
 												},
 												{
@@ -1158,10 +1187,11 @@
 												},
 												{
 													"callFunction": "PlaySound",
-													"sid": 336738078836887,
+													"sid": 352682015575965,
 													"parameters": [
 														"\"sound_clatter_brick\"&choose(1,2)",
-														"-2.5"
+														"-5",
+														"0"
 													]
 												},
 												{
@@ -1354,10 +1384,11 @@
 									"actions": [
 										{
 											"callFunction": "PlaySound",
-											"sid": 174966445762985,
+											"sid": 200350831974534,
 											"parameters": [
 												"\"sound_vial_explosive\"",
-												"-2.5"
+												"-5",
+												"0"
 											]
 										}
 									],
@@ -1425,10 +1456,11 @@
 									"actions": [
 										{
 											"callFunction": "PlaySound",
-											"sid": 964214257194037,
+											"sid": 928522219105821,
 											"parameters": [
 												"\"sound_vial_smoke\"",
-												"-2.5"
+												"-5",
+												"0"
 											]
 										}
 									],

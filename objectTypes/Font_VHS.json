@@ -2,9 +2,30 @@
 	"name": "Font_VHS",
 	"plugin-id": "Spritefont2",
 	"sid": 520747305694721,
-	"isGlobal": false,
-	"instanceVariables": [],
-	"behaviorTypes": [],
+	"isGlobal": true,
+	"instanceVariables": [
+		{
+			"name": "Mode",
+			"type": "string",
+			"desc": "",
+			"show": true,
+			"sid": 838075449555967
+		},
+		{
+			"name": "ButtonNumber",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 697794867275230
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 212133952046233
+		}
+	],
 	"effectTypes": [],
 	"image": {
 		"width": 247,

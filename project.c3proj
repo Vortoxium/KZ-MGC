@@ -104,7 +104,9 @@
 			"particles",
 			"InvisibleTracker",
 			"Font_VHS",
-			"Font_Folder"
+			"Font_Folder",
+			"PauseMenu_BG",
+			"Pixel"
 		],
 		"subfolders": [
 			{
@@ -203,6 +205,54 @@
 					"name": "sound_clatter_brick3.webm",
 					"type": "audio/webm; codecs=opus",
 					"sid": 686551027294208,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "sound_menubeep_1.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 546886281192579,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "sound_menubeep_2.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 409333467536931,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "sound_tape_move1.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 625103395002973,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "sound_tape_move2.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 873074556541472,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "sound_tape_move3.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 618986905419370,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "sound_eject_tape.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 369146557061519,
 					"file-info": {
 						"purpose": "none"
 					}

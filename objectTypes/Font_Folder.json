@@ -2,7 +2,7 @@
 	"name": "Font_Folder",
 	"plugin-id": "Spritefont2",
 	"sid": 972799565232691,
-	"isGlobal": false,
+	"isGlobal": true,
 	"instanceVariables": [],
 	"behaviorTypes": [],
 	"effectTypes": [],
