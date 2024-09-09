@@ -701,14 +701,6 @@
 							"parameters": {
 								"key": 70
 							}
-						},
-						{
-							"id": "key-is-down",
-							"objectClass": "Keyboard",
-							"sid": 694070161244659,
-							"parameters": {
-								"key": 16
-							}
 						}
 					],
 					"actions": [],
@@ -762,6 +754,16 @@
 		},
 		{
 			"eventType": "variable",
+			"name": "CanChangeButtons",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 221331697076360
+		},
+		{
+			"eventType": "variable",
 			"name": "IsPaused",
 			"type": "boolean",
 			"initialValue": "false",
@@ -808,6 +810,15 @@
 							}
 						},
 						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 952438607734145,
+							"parameters": {
+								"variable": "CanChangeButtons",
+								"value": "false"
+							}
+						},
+						{
 							"id": "destroy",
 							"objectClass": "PauseMenu_BG",
 							"sid": 935263725948163
@@ -841,6 +852,195 @@
 						}
 					],
 					"sid": 680864137689678
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 427594475822529,
+							"parameters": {
+								"variable": "CanChangeButtons"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 388833478152608,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 896271178662401,
+									"parameters": {
+										"key": 87
+									}
+								},
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 530497336182049,
+									"parameters": {
+										"key": 38
+									}
+								}
+							],
+							"actions": [],
+							"sid": 326276645682387,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 173049565934105,
+											"parameters": {
+												"first-value": "CurrentButton",
+												"comparison": 3,
+												"second-value": "0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 176274904576047,
+											"parameters": {
+												"variable": "CurrentButton",
+												"value": "Font_VHS.Count - 1"
+											}
+										}
+									],
+									"sid": 151680906510137
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 936886352988442
+										}
+									],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 136929140093302,
+											"parameters": {
+												"variable": "CurrentButton",
+												"value": "CurrentButton - 1"
+											}
+										}
+									],
+									"sid": 631376795562765
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"callFunction": "HighlightButton",
+											"sid": 226101704118048
+										}
+									],
+									"sid": 136710747686910
+								}
+							],
+							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 651392388442799,
+									"parameters": {
+										"key": 83
+									}
+								},
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 418320398639630,
+									"parameters": {
+										"key": 40
+									}
+								}
+							],
+							"actions": [],
+							"sid": 230700062292859,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 170290325295050,
+											"parameters": {
+												"first-value": "CurrentButton",
+												"comparison": 5,
+												"second-value": "Font_VHS.Count - 1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 868300343415608,
+											"parameters": {
+												"variable": "CurrentButton",
+												"value": "0"
+											}
+										}
+									],
+									"sid": 216163673834244
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 338980358409573
+										}
+									],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 642382467916527,
+											"parameters": {
+												"variable": "CurrentButton",
+												"value": "CurrentButton + 1"
+											}
+										}
+									],
+									"sid": 194369666536521
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"callFunction": "HighlightButton",
+											"sid": 333254715510951
+										}
+									],
+									"sid": 330338842814093
+								}
+							],
+							"isOrBlock": true
+						}
+					]
 				},
 				{
 					"eventType": "block",
@@ -953,6 +1153,15 @@
 									],
 									"actions": [
 										{
+											"id": "set-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 931919349382406,
+											"parameters": {
+												"variable": "CanChangeButtons",
+												"value": "true"
+											}
+										},
+										{
 											"id": "create-object",
 											"objectClass": "System",
 											"sid": 219178519905877,
@@ -967,8 +1176,9 @@
 										},
 										{
 											"callFunction": "CreateButton",
-											"sid": 273418760710353,
+											"sid": 911373770821848,
 											"parameters": [
+												"\"Pause\"",
 												"32",
 												"32",
 												"\"0,255,255\"",
@@ -979,8 +1189,9 @@
 										},
 										{
 											"callFunction": "CreateButton",
-											"sid": 206208784972574,
+											"sid": 768424565234581,
 											"parameters": [
+												"\"Pause\"",
 												"32",
 												"56",
 												"\"0,255,255\"",
@@ -1084,178 +1295,6 @@
 											"sid": 330194468080232
 										}
 									]
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "on-key-pressed",
-											"objectClass": "Keyboard",
-											"sid": 589217732181958,
-											"parameters": {
-												"key": 87
-											}
-										},
-										{
-											"id": "on-key-pressed",
-											"objectClass": "Keyboard",
-											"sid": 486375982170083,
-											"parameters": {
-												"key": 38
-											}
-										}
-									],
-									"actions": [],
-									"sid": 136605355148760,
-									"children": [
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "compare-two-values",
-													"objectClass": "System",
-													"sid": 354274453974961,
-													"parameters": {
-														"first-value": "CurrentButton",
-														"comparison": 3,
-														"second-value": "0"
-													}
-												}
-											],
-											"actions": [
-												{
-													"id": "set-eventvar-value",
-													"objectClass": "System",
-													"sid": 994066570742820,
-													"parameters": {
-														"variable": "CurrentButton",
-														"value": "Font_VHS.Count - 1"
-													}
-												}
-											],
-											"sid": 139026726143480
-										},
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "else",
-													"objectClass": "System",
-													"sid": 512632205488093
-												}
-											],
-											"actions": [
-												{
-													"id": "set-eventvar-value",
-													"objectClass": "System",
-													"sid": 941912946840503,
-													"parameters": {
-														"variable": "CurrentButton",
-														"value": "CurrentButton - 1"
-													}
-												}
-											],
-											"sid": 806620738626008
-										},
-										{
-											"eventType": "block",
-											"conditions": [],
-											"actions": [
-												{
-													"callFunction": "HighlightButton",
-													"sid": 132290335388503
-												}
-											],
-											"sid": 534288554668570
-										}
-									],
-									"isOrBlock": true
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "on-key-pressed",
-											"objectClass": "Keyboard",
-											"sid": 788860348037843,
-											"parameters": {
-												"key": 83
-											}
-										},
-										{
-											"id": "on-key-pressed",
-											"objectClass": "Keyboard",
-											"sid": 915995376336625,
-											"parameters": {
-												"key": 40
-											}
-										}
-									],
-									"actions": [],
-									"sid": 740107231328698,
-									"children": [
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "compare-two-values",
-													"objectClass": "System",
-													"sid": 784306032140887,
-													"parameters": {
-														"first-value": "CurrentButton",
-														"comparison": 5,
-														"second-value": "Font_VHS.Count - 1"
-													}
-												}
-											],
-											"actions": [
-												{
-													"id": "set-eventvar-value",
-													"objectClass": "System",
-													"sid": 249349122422814,
-													"parameters": {
-														"variable": "CurrentButton",
-														"value": "0"
-													}
-												}
-											],
-											"sid": 335067487146645
-										},
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "else",
-													"objectClass": "System",
-													"sid": 861653058795261
-												}
-											],
-											"actions": [
-												{
-													"id": "set-eventvar-value",
-													"objectClass": "System",
-													"sid": 816864493664454,
-													"parameters": {
-														"variable": "CurrentButton",
-														"value": "CurrentButton + 1"
-													}
-												}
-											],
-											"sid": 763672681896928
-										},
-										{
-											"eventType": "block",
-											"conditions": [],
-											"actions": [
-												{
-													"callFunction": "HighlightButton",
-													"sid": 516756857661496
-												}
-											],
-											"sid": 679860950079116
-										}
-									],
-									"isOrBlock": true
 								},
 								{
 									"eventType": "comment",
@@ -1562,6 +1601,13 @@
 					"functionIsAsync": false,
 					"functionParameters": [
 						{
+							"name": "ButtonLayer",
+							"type": "string",
+							"initialValue": "",
+							"comment": "",
+							"sid": 499071631236901
+						},
+						{
 							"name": "ButtonX",
 							"type": "number",
 							"initialValue": "0",
@@ -1610,10 +1656,10 @@
 						{
 							"id": "create-object",
 							"objectClass": "System",
-							"sid": 203656610678389,
+							"sid": 326361976058163,
 							"parameters": {
 								"object-to-create": "Font_VHS",
-								"layer": "\"Pause\"",
+								"layer": "ButtonLayer",
 								"x": "ButtonX",
 								"y": "ButtonY",
 								"create-hierarchy": false,
@@ -1629,9 +1675,19 @@
 							}
 						},
 						{
+							"id": "set-instvar-value",
+							"objectClass": "Font_VHS",
+							"sid": 270396853483886,
+							"parameters": {
+								"instance-variable": "ButtonRGB",
+								"value": "ButtonColour"
+							}
+						},
+						{
 							"id": "set-default-color",
 							"objectClass": "Font_VHS",
 							"sid": 240825767863845,
+							"disabled": true,
 							"parameters": {
 								"color": "rgb(\nint(tokenat(ButtonColour,0,\",\")),\nint(tokenat(ButtonColour,1,\",\")),\nint(tokenat(ButtonColour,2,\",\"))\n)"
 							}
@@ -1717,9 +1773,9 @@
 								{
 									"id": "set-default-color",
 									"objectClass": "Font_VHS",
-									"sid": 643549028650969,
+									"sid": 762585086520515,
 									"parameters": {
-										"color": "rgb(0,255,255)"
+										"color": "rgb(\nint(tokenat(Font_VHS.ButtonRGB,0,\",\")),\nint(tokenat(Font_VHS.ButtonRGB,1,\",\")),\nint(tokenat(Font_VHS.ButtonRGB,2,\",\"))\n)"
 									}
 								},
 								{
@@ -1866,6 +1922,10 @@
 					"sid": 810519728917334
 				},
 				{
+					"eventType": "comment",
+					"text": "PauseButtons on Press"
+				},
+				{
 					"eventType": "block",
 					"conditions": [
 						{
@@ -1875,6 +1935,16 @@
 							"behaviorType": "Tween",
 							"parameters": {
 								"tags": "\"GlowButtonFast\"&Font_VHS.ButtonNumber"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Font_VHS",
+							"sid": 413651252953923,
+							"parameters": {
+								"instance-variable": "Mode",
+								"comparison": 0,
+								"value": "\"PauseButton\""
 							}
 						}
 					],
@@ -1932,6 +2002,87 @@
 								}
 							],
 							"sid": 232991065488648
+						}
+					]
+				},
+				{
+					"eventType": "comment",
+					"text": "MenuButtons on Press"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-tweens-finished",
+							"objectClass": "Font_VHS",
+							"sid": 830126260726152,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"GlowButtonFast\"&Font_VHS.ButtonNumber"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Font_VHS",
+							"sid": 750795135507666,
+							"parameters": {
+								"instance-variable": "Mode",
+								"comparison": 0,
+								"value": "\"MenuButton\""
+							}
+						}
+					],
+					"actions": [],
+					"sid": 341106300986888,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Font_VHS",
+									"sid": 124089286535419,
+									"parameters": {
+										"instance-variable": "ButtonNumber",
+										"comparison": 0,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "go-to-layout",
+									"objectClass": "System",
+									"sid": 716562915313387,
+									"parameters": {
+										"layout": "MG0"
+									}
+								}
+							],
+							"sid": 293104110029980
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Font_VHS",
+									"sid": 941175131268945,
+									"parameters": {
+										"instance-variable": "ButtonNumber",
+										"comparison": 0,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "close",
+									"objectClass": "Browser",
+									"sid": 765906506435676
+								}
+							],
+							"sid": 504003835696726
 						}
 					]
 				}

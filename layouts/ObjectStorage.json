@@ -343,7 +343,8 @@
 					"uid": 30,
 					"instanceVariables": {
 						"Mode": "",
-						"ButtonNumber": 0
+						"ButtonNumber": 0,
+						"ButtonRGB": ""
 					},
 					"behaviors": {
 						"Tween": {

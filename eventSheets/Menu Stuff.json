@@ -43,10 +43,10 @@
 						{
 							"id": "create-object",
 							"objectClass": "System",
-							"sid": 382810637681054,
+							"sid": 317588860591022,
 							"parameters": {
 								"object-to-create": "cursor",
-								"layer": "\"Objects\"",
+								"layer": "\"Mouse\"",
 								"x": "160",
 								"y": "90",
 								"create-hierarchy": false,
@@ -64,6 +64,154 @@
 					],
 					"sid": 162244279050737,
 					"children": [
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 485459393871672,
+									"parameters": {
+										"object-to-create": "PauseMenu_BG",
+										"layer": "\"HUD\"",
+										"x": "213",
+										"y": "0",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"id": "set-width",
+									"objectClass": "PauseMenu_BG",
+									"sid": 381868549968044,
+									"parameters": {
+										"width": "107"
+									}
+								},
+								{
+									"callFunction": "CreateButton",
+									"sid": 831167642098926,
+									"parameters": [
+										"\"HUD\"",
+										"229",
+										"48",
+										"\"0,255,255\"",
+										"\"SNOW\"",
+										"\"MenuButton\"",
+										"0"
+									]
+								},
+								{
+									"callFunction": "CreateButton",
+									"sid": 853070500530472,
+									"parameters": [
+										"\"HUD\"",
+										"229",
+										"72",
+										"\"255,255,0\"",
+										"\"EXIT\"",
+										"\"MenuButton\"",
+										"1"
+									]
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 997090689576828,
+									"parameters": {
+										"seconds": "0"
+									}
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 229294873940312,
+									"parameters": {
+										"variable": "CanChangeButtons",
+										"value": "true"
+									}
+								},
+								{
+									"callFunction": "HighlightButton",
+									"sid": 382085952414159
+								}
+							],
+							"sid": 159469897643709,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "Font_VHS",
+											"sid": 338896019408706,
+											"parameters": {
+												"instance-variable": "ButtonNumber",
+												"comparison": 0,
+												"value": "CurrentButton"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "create-object",
+											"objectClass": "System",
+											"sid": 979470764578761,
+											"parameters": {
+												"object-to-create": "Pixel",
+												"layer": "\"HUD\"",
+												"x": "PauseMenu_BG.X",
+												"y": "Font_VHS.Y - 1",
+												"create-hierarchy": false,
+												"template-name": "\"\""
+											}
+										},
+										{
+											"id": "set-object-time-scale",
+											"objectClass": "System",
+											"sid": 152087870947171,
+											"parameters": {
+												"object": "Pixel",
+												"time-scale": "1"
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "Pixel",
+											"sid": 186888711246327,
+											"parameters": {
+												"instance-variable": "Mode",
+												"value": "\"Highlight\""
+											}
+										},
+										{
+											"id": "set-opacity",
+											"objectClass": "Pixel",
+											"sid": 772380327469902,
+											"parameters": {
+												"opacity": "25"
+											}
+										},
+										{
+											"id": "set-size",
+											"objectClass": "Pixel",
+											"sid": 868535015615186,
+											"parameters": {
+												"width": "107",
+												"height": "20"
+											}
+										},
+										{
+											"id": "move-to-bottom",
+											"objectClass": "Pixel",
+											"sid": 796881050839504
+										}
+									],
+									"sid": 660002193041670
+								}
+							]
+						},
 						{
 							"eventType": "block",
 							"conditions": [
