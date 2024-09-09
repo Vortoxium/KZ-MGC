@@ -60,6 +60,15 @@
 							"parameters": {
 								"frame-number": "7"
 							}
+						},
+						{
+							"callFunction": "PlayMusic",
+							"sid": 172446487556941,
+							"parameters": [
+								"\"song_silhouette\"",
+								"-5",
+								"4"
+							]
 						}
 					],
 					"sid": 162244279050737,
@@ -117,14 +126,14 @@
 								},
 								{
 									"callFunction": "CreateText",
-									"sid": 685843512033804,
+									"sid": 527903089472826,
 									"parameters": [
 										"\"HUD\"",
-										"\"1,170\"",
+										"\"1,0\"",
 										"\"MenuText\"",
 										"\"Press F to toggle Fullscreen\"",
 										"\"255,255,255\"",
-										"75"
+										"50"
 									]
 								},
 								{

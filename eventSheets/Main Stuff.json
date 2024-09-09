@@ -105,10 +105,10 @@
 								{
 									"callFunction": "PlayMusic",
 									"sid": 139258840369632,
-									"disabled": true,
 									"parameters": [
 										"\"song_snow\"",
-										"-10"
+										"-10",
+										"0"
 									]
 								}
 							],

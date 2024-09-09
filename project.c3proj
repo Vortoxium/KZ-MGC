@@ -269,6 +269,14 @@
 					"file-info": {
 						"purpose": "none"
 					}
+				},
+				{
+					"name": "song_silhouette.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 404207569423289,
+					"file-info": {
+						"purpose": "none"
+					}
 				}
 			],
 			"subfolders": []

@@ -566,6 +566,79 @@
 			"isActiveOnStart": true,
 			"children": [
 				{
+					"eventType": "variable",
+					"name": "CurrentMusic",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"isStatic": true,
+					"isConstant": false,
+					"sid": 642314745383912
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 863325923563431,
+							"parameters": {
+								"key": 77
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "seek-to",
+							"objectClass": "Audio",
+							"sid": 245963793231247,
+							"parameters": {
+								"tag": "\"currentMusic\"",
+								"position": "208"
+							}
+						}
+					],
+					"sid": 470525513474200,
+					"disabled": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 845256560366626,
+							"parameters": {
+								"first-value": "CurrentMusic",
+								"comparison": 0,
+								"second-value": "\"song_silhouette\""
+							}
+						},
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 297298690572078,
+							"parameters": {
+								"first-value": "Audio.PlaybackTime(\"currentMusic\")",
+								"comparison": 5,
+								"second-value": "214"
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "PlayMusic",
+							"sid": 498113901455853,
+							"parameters": [
+								"\"song_silhouette\"",
+								"-5",
+								"4"
+							]
+						}
+					],
+					"sid": 132490208667635
+				},
+				{
 					"functionName": "PlayMusic",
 					"functionDescription": "",
 					"functionCategory": "",
@@ -586,6 +659,13 @@
 							"initialValue": "0",
 							"comment": "",
 							"sid": 608664005840598
+						},
+						{
+							"name": "MusicStart",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 559016255087846
 						}
 					],
 					"eventType": "function-block",
@@ -594,22 +674,40 @@
 						{
 							"id": "stop",
 							"objectClass": "Audio",
-							"sid": 187578695511938,
+							"sid": 880572301530226,
 							"parameters": {
-								"tag": "MusicName"
+								"tag": "\"currentMusic\""
 							}
 						},
 						{
 							"id": "play-by-name",
 							"objectClass": "Audio",
-							"sid": 332254923224842,
+							"sid": 206279593935455,
 							"parameters": {
 								"folder": "sounds",
 								"audio-file-name": "MusicName",
 								"loop": "looping",
 								"volume": "Volume_M",
 								"stereo-pan": "0",
-								"tag-optional": "MusicName"
+								"tag-optional": "\"currentMusic\""
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 519489766279820,
+							"parameters": {
+								"variable": "CurrentMusic",
+								"value": "MusicName"
+							}
+						},
+						{
+							"id": "seek-to",
+							"objectClass": "Audio",
+							"sid": 459483066829272,
+							"parameters": {
+								"tag": "\"currentMusic\"",
+								"position": "MusicStart"
 							}
 						}
 					],
@@ -638,7 +736,7 @@
 							"sid": 373549213934385
 						},
 						{
-							"name": "SoundPos",
+							"name": "SoundStart",
 							"type": "number",
 							"initialValue": "0",
 							"comment": "",
@@ -675,7 +773,7 @@
 							"sid": 571839402846543,
 							"parameters": {
 								"tag": "SoundName",
-								"position": "SoundPos"
+								"position": "SoundStart"
 							}
 						}
 					],
@@ -1735,19 +1833,19 @@
 					"actions": [
 						{
 							"callFunction": "PlaySound",
-							"sid": 978448577399481,
+							"sid": 649304287959851,
 							"parameters": [
 								"\"sound_menubeep_1\"",
-								"-10",
+								"-12.5",
 								"0"
 							]
 						},
 						{
 							"callFunction": "PlaySound",
-							"sid": 267252447896980,
+							"sid": 307924133489438,
 							"parameters": [
 								"\"sound_eject_tape\"",
-								"-5",
+								"-7.5",
 								"0.5"
 							]
 						}
@@ -1868,19 +1966,19 @@
 					"actions": [
 						{
 							"callFunction": "PlaySound",
-							"sid": 874999705714625,
+							"sid": 135999082554163,
 							"parameters": [
 								"\"sound_menubeep_2\"",
-								"-5",
+								"-7.5",
 								"0"
 							]
 						},
 						{
 							"callFunction": "PlaySound",
-							"sid": 196513768308504,
+							"sid": 885791501837611,
 							"parameters": [
 								"\"sound_tape_move\"&choose(1,2,3)",
-								"-5",
+								"-7.5",
 								"0"
 							]
 						},
@@ -2051,6 +2149,13 @@
 							],
 							"actions": [
 								{
+									"callFunction": "DestroyText",
+									"sid": 139935962047139,
+									"parameters": [
+										"\"MenuText\""
+									]
+								},
+								{
 									"id": "go-to-layout",
 									"objectClass": "System",
 									"sid": 716562915313387,
@@ -2153,7 +2258,7 @@
 						{
 							"id": "create-object",
 							"objectClass": "System",
-							"sid": 609342104646076,
+							"sid": 799640959747792,
 							"parameters": {
 								"object-to-create": "Font_Folder",
 								"layer": "TextLayer",
@@ -2166,7 +2271,7 @@
 						{
 							"id": "set-instvar-value",
 							"objectClass": "Font_Folder",
-							"sid": 634281400747537,
+							"sid": 854871280000196,
 							"parameters": {
 								"instance-variable": "Mode",
 								"value": "TextMode"
@@ -2175,7 +2280,7 @@
 						{
 							"id": "set-text",
 							"objectClass": "Font_Folder",
-							"sid": 602226532430699,
+							"sid": 680624674209784,
 							"parameters": {
 								"text": "TextContent"
 							}
@@ -2183,7 +2288,7 @@
 						{
 							"id": "set-default-color",
 							"objectClass": "Font_Folder",
-							"sid": 801231479457806,
+							"sid": 942319339056887,
 							"parameters": {
 								"color": "rgb(\nint(tokenat(TextRGB,0,\",\")),\nint(tokenat(TextRGB,1,\",\")),\nint(tokenat(TextRGB,2,\",\"))\n)"
 							}
@@ -2191,13 +2296,51 @@
 						{
 							"id": "set-opacity",
 							"objectClass": "Font_Folder",
-							"sid": 333151486096589,
+							"sid": 448461306474977,
 							"parameters": {
 								"opacity": "TextOpacity"
 							}
 						}
 					],
-					"sid": 678354474075259
+					"sid": 388462715604598
+				},
+				{
+					"functionName": "DestroyText",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": true,
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "TextMode",
+							"type": "string",
+							"initialValue": "",
+							"comment": "",
+							"sid": 950587423849073
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Font_Folder",
+							"sid": 167072524060943,
+							"parameters": {
+								"instance-variable": "Mode",
+								"comparison": 0,
+								"value": "TextMode"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "Font_Folder",
+							"sid": 611278761914163
+						}
+					],
+					"sid": 949777341217992
 				}
 			],
 			"sid": 566237503277095
