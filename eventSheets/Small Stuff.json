@@ -9,6 +9,34 @@
 			"isActiveOnStart": true,
 			"children": [
 				{
+					"functionName": "DestroyMedal",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": true,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 342573212982227,
+							"parameters": {
+								"object": "Medal"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "Medal",
+							"sid": 255018089631105
+						}
+					],
+					"sid": 197054084330092
+				},
+				{
 					"functionName": "LoadMedal",
 					"functionDescription": "",
 					"functionCategory": "",

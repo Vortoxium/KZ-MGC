@@ -170,7 +170,7 @@
 										{
 											"id": "compare-instance-variable",
 											"objectClass": "Font_VHS",
-											"sid": 338896019408706,
+											"sid": 860888277255540,
 											"parameters": {
 												"instance-variable": "ButtonNumber",
 												"comparison": 0,
@@ -182,7 +182,7 @@
 										{
 											"id": "create-object",
 											"objectClass": "System",
-											"sid": 979470764578761,
+											"sid": 199742903254597,
 											"parameters": {
 												"object-to-create": "Pixel",
 												"layer": "\"HUD\"",
@@ -195,7 +195,7 @@
 										{
 											"id": "set-object-time-scale",
 											"objectClass": "System",
-											"sid": 152087870947171,
+											"sid": 177829798943988,
 											"parameters": {
 												"object": "Pixel",
 												"time-scale": "1"
@@ -204,7 +204,7 @@
 										{
 											"id": "set-instvar-value",
 											"objectClass": "Pixel",
-											"sid": 186888711246327,
+											"sid": 561129998719952,
 											"parameters": {
 												"instance-variable": "Mode",
 												"value": "\"Highlight\""
@@ -213,7 +213,7 @@
 										{
 											"id": "set-opacity",
 											"objectClass": "Pixel",
-											"sid": 772380327469902,
+											"sid": 987933892467641,
 											"parameters": {
 												"opacity": "25"
 											}
@@ -221,7 +221,7 @@
 										{
 											"id": "set-size",
 											"objectClass": "Pixel",
-											"sid": 868535015615186,
+											"sid": 561371181567166,
 											"parameters": {
 												"width": "107",
 												"height": "20"
@@ -230,12 +230,43 @@
 										{
 											"id": "move-to-bottom",
 											"objectClass": "Pixel",
-											"sid": 796881050839504
+											"sid": 203107309464389
 										}
 									],
-									"sid": 660002193041670
+									"sid": 658555175459079
+								},
+								{
+									"eventType": "comment",
+									"text": "Medals"
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-empty",
+											"objectClass": "Highscores",
+											"sid": 885398760446036,
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "LoadMedal",
+											"sid": 101698349064596,
+											"parameters": [
+												"80",
+												"13",
+												"0"
+											]
+										}
+									],
+									"sid": 112699250669387
 								}
 							]
+						},
+						{
+							"eventType": "comment",
+							"text": "Make Background lights glow"
 						},
 						{
 							"eventType": "block",
@@ -308,6 +339,10 @@
 							]
 						}
 					]
+				},
+				{
+					"eventType": "comment",
+					"text": "Scroll Backgrounds"
 				},
 				{
 					"eventType": "block",
