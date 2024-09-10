@@ -1215,6 +1215,48 @@
 							"sid": 541985652056574
 						}
 					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 520803862812832,
+							"parameters": {
+								"key": 84
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "CallTransition",
+							"sid": 941393193524069
+						}
+					],
+					"sid": 137350164418131,
+					"disabled": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 248213711068149,
+							"parameters": {
+								"key": 69
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "EndTransition",
+							"sid": 701685163262018
+						}
+					],
+					"sid": 996451689494375,
+					"disabled": true
 				}
 			],
 			"sid": 531628472115024
@@ -2881,6 +2923,303 @@
 				}
 			],
 			"sid": 566237503277095
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Transition",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-animation-playing",
+							"objectClass": "Transition",
+							"sid": 161427818902341,
+							"parameters": {
+								"animation": "\"End\""
+							}
+						},
+						{
+							"id": "compare-animation-frame",
+							"objectClass": "Transition",
+							"sid": 212616616575602,
+							"parameters": {
+								"comparison": 0,
+								"number": "13"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "Transition",
+							"sid": 423730435296394
+						}
+					],
+					"sid": 651258544584307
+				},
+				{
+					"functionName": "CallTransition",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 923562249583229,
+					"children": [
+						{
+							"eventType": "variable",
+							"name": "i",
+							"type": "number",
+							"initialValue": "-1",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 903675866045056
+						},
+						{
+							"eventType": "variable",
+							"name": "j",
+							"type": "number",
+							"initialValue": "-1",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 726047733083721
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "repeat",
+									"objectClass": "System",
+									"sid": 621216443918562,
+									"parameters": {
+										"count": "20"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 564236017391297,
+									"parameters": {
+										"variable": "j",
+										"value": "0"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 826099887089007,
+									"parameters": {
+										"variable": "i",
+										"value": "i+1"
+									}
+								}
+							],
+							"sid": 955381397550022,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "repeat",
+											"objectClass": "System",
+											"sid": 151239993082280,
+											"parameters": {
+												"count": "12"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 338662253578820,
+											"parameters": {
+												"variable": "j",
+												"value": "j+1"
+											}
+										},
+										{
+											"id": "create-object",
+											"objectClass": "System",
+											"sid": 616116315388277,
+											"parameters": {
+												"object-to-create": "Transition",
+												"layer": "\"HUD\"",
+												"x": "312 - (i*16)",
+												"y": "-8 + (j*16)",
+												"create-hierarchy": false,
+												"template-name": "\"\""
+											}
+										},
+										{
+											"id": "set-animation",
+											"objectClass": "Transition",
+											"sid": 413811991122516,
+											"parameters": {
+												"animation": "\"Start\"",
+												"from": "beginning"
+											}
+										}
+									],
+									"sid": 515637874180508
+								}
+							]
+						}
+					]
+				},
+				{
+					"functionName": "EndTransition",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 514437916556624,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for-each",
+									"objectClass": "System",
+									"sid": 909622805506457,
+									"parameters": {
+										"object": "Transition"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "Transition",
+									"sid": 986378502686843
+								}
+							],
+							"sid": 609789942176343
+						},
+						{
+							"eventType": "variable",
+							"name": "i",
+							"type": "number",
+							"initialValue": "-1",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 790009367995224
+						},
+						{
+							"eventType": "variable",
+							"name": "j",
+							"type": "number",
+							"initialValue": "-1",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 638522648178881
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "repeat",
+									"objectClass": "System",
+									"sid": 713349733304974,
+									"parameters": {
+										"count": "20"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 313890519420818,
+									"parameters": {
+										"variable": "j",
+										"value": "0"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 913609992816805,
+									"parameters": {
+										"variable": "i",
+										"value": "i+1"
+									}
+								}
+							],
+							"sid": 472842498096236,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "repeat",
+											"objectClass": "System",
+											"sid": 317579064228576,
+											"parameters": {
+												"count": "12"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 704059804939976,
+											"parameters": {
+												"variable": "j",
+												"value": "j+1"
+											}
+										},
+										{
+											"id": "create-object",
+											"objectClass": "System",
+											"sid": 138410987310622,
+											"parameters": {
+												"object-to-create": "Transition",
+												"layer": "\"HUD\"",
+												"x": "312 - (i*16)",
+												"y": "-8 + (j*16)",
+												"create-hierarchy": false,
+												"template-name": "\"\""
+											}
+										},
+										{
+											"id": "set-animation",
+											"objectClass": "Transition",
+											"sid": 960817078432078,
+											"parameters": {
+												"animation": "\"End\"",
+												"from": "beginning"
+											}
+										}
+									],
+									"sid": 302065443885707
+								}
+							]
+						}
+					]
+				}
+			],
+			"sid": 182815226243647
 		}
 	],
 	"sid": 898564590862313

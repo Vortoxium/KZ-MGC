@@ -128,7 +128,8 @@
 			"Font_Folder",
 			"PauseMenu_BG",
 			"Pixel",
-			"Medal"
+			"Medal",
+			"Transition"
 		],
 		"subfolders": [
 			{
