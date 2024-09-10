@@ -1328,6 +1328,11 @@
 							}
 						},
 						{
+							"id": "release-pointer-lock",
+							"objectClass": "Mouse",
+							"sid": 553327436895602
+						},
+						{
 							"id": "destroy",
 							"objectClass": "PauseMenu_BG",
 							"sid": 935263725948163
@@ -1669,6 +1674,11 @@
 												"variable": "CanChangeButtons",
 												"value": "true"
 											}
+										},
+										{
+											"id": "request-pointer-lock",
+											"objectClass": "Mouse",
+											"sid": 238023615451538
 										},
 										{
 											"id": "create-object",
