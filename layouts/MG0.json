@@ -161,9 +161,13 @@
 					},
 					"uid": 9,
 					"instanceVariables": {
-						"Timer": 0
+						"TotalSeconds": 0
 					},
-					"behaviors": {},
+					"behaviors": {
+						"Timer": {
+							"properties": {}
+						}
+					},
 					"world": {
 						"x": 160,
 						"y": -8,

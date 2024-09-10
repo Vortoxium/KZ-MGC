@@ -157,9 +157,13 @@
 					},
 					"uid": 13,
 					"instanceVariables": {
-						"Timer": 0
+						"TotalSeconds": 0
 					},
-					"behaviors": {},
+					"behaviors": {
+						"Timer": {
+							"properties": {}
+						}
+					},
 					"world": {
 						"x": 19,
 						"y": 46,

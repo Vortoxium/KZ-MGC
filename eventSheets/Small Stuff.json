@@ -352,10 +352,14 @@
 					],
 					"actions": [
 						{
+							"callFunction": "ShowHighscore",
+							"sid": 311326525525270
+						},
+						{
 							"callFunction": "LoadMedal",
-							"sid": 313936361301717,
+							"sid": 743543196514459,
 							"parameters": [
-								"80",
+								"-9",
 								"13",
 								"0"
 							]
@@ -2303,6 +2307,28 @@
 								}
 							],
 							"sid": 948292128210544
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Font_VHS",
+									"sid": 960409529813661,
+									"parameters": {
+										"instance-variable": "Mode",
+										"comparison": 0,
+										"value": "\"MenuButton\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "ShowHighscore",
+									"sid": 438257189038244
+								}
+							],
+							"sid": 901355111887775
 						}
 					]
 				},
@@ -2477,7 +2503,7 @@
 											"sid": 161500177576543,
 											"parameters": [
 												"\"MG\"&ActiveMiniGame",
-												"InvisibleTracker.Timer"
+												"InvisibleTracker.TotalSeconds"
 											]
 										}
 									],
@@ -2493,7 +2519,7 @@
 											"parameters": {
 												"key": "\"MG\"&ActiveMiniGame",
 												"comparison": 2,
-												"value": "InvisibleTracker.Timer"
+												"value": "InvisibleTracker.TotalSeconds"
 											}
 										}
 									],
@@ -2503,7 +2529,7 @@
 											"sid": 988628034789552,
 											"parameters": [
 												"\"MG\"&ActiveMiniGame",
-												"InvisibleTracker.Timer"
+												"InvisibleTracker.TotalSeconds"
 											]
 										}
 									],
@@ -2598,11 +2624,9 @@
 							],
 							"actions": [
 								{
-									"callFunction": "DestroyText",
-									"sid": 139935962047139,
-									"parameters": [
-										"\"MenuText\""
-									]
+									"id": "destroy",
+									"objectClass": "Font_Folder",
+									"sid": 431147142690521
 								},
 								{
 									"id": "go-to-layout",
@@ -2650,6 +2674,70 @@
 			"description": "",
 			"isActiveOnStart": true,
 			"children": [
+				{
+					"functionName": "ShowHighscore",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": true,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Font_VHS",
+							"sid": 950393776694029,
+							"parameters": {
+								"instance-variable": "ButtonNumber",
+								"comparison": 0,
+								"value": "CurrentButton"
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "DestroyText",
+							"sid": 706948942340936,
+							"parameters": [
+								"\"Highscore\""
+							]
+						}
+					],
+					"sid": 968421574135595,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Font_VHS",
+									"sid": 612419312764905,
+									"parameters": {
+										"instance-variable": "ButtonNumber",
+										"comparison": 0,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "CreateText",
+									"sid": 590143124059070,
+									"parameters": [
+										"\"HUD\"",
+										"\"214,170\"",
+										"\"Highscore\"",
+										"\"Record: \" & Highscores.Get(\"MG\"&Font_VHS.ButtonNumber)",
+										"\"255,255,255\"",
+										"100"
+									]
+								}
+							],
+							"sid": 256845047925559
+						}
+					]
+				},
 				{
 					"functionName": "CreateText",
 					"functionDescription": "",

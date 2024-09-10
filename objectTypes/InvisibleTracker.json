@@ -5,14 +5,20 @@
 	"isGlobal": false,
 	"instanceVariables": [
 		{
-			"name": "Timer",
+			"name": "TotalSeconds",
 			"type": "number",
 			"desc": "",
 			"show": true,
 			"sid": 340297940513622
 		}
 	],
-	"behaviorTypes": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Timer",
+			"name": "Timer",
+			"sid": 857408335781360
+		}
+	],
 	"effectTypes": [],
 	"animations": {
 		"items": [

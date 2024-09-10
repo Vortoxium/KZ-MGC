@@ -118,7 +118,7 @@
 										"\"HUD Below\"",
 										"\"1,170\"",
 										"\"Timer\"",
-										"\"Time: \"&InvisibleTracker.Timer",
+										"\"Time: \"&InvisibleTracker.TotalSeconds",
 										"\"255,200,225\"",
 										"66"
 									]
@@ -126,6 +126,24 @@
 								{
 									"callFunction": "DestroyMedal",
 									"sid": 939602186527890
+								},
+								{
+									"callFunction": "DestroyText",
+									"sid": 985616073371697,
+									"parameters": [
+										"\"Highscore\""
+									]
+								},
+								{
+									"id": "start-timer",
+									"objectClass": "InvisibleTracker",
+									"sid": 392878473789558,
+									"behaviorType": "Timer",
+									"parameters": {
+										"duration": "1",
+										"type": "regular",
+										"tag": "\"TimerMG0\""
+									}
 								}
 							],
 							"sid": 998425120620862
@@ -138,11 +156,12 @@
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "every-x-seconds",
-									"objectClass": "System",
-									"sid": 939298420315208,
+									"id": "on-timer",
+									"objectClass": "InvisibleTracker",
+									"sid": 774929446632374,
+									"behaviorType": "Timer",
 									"parameters": {
-										"interval-seconds": "1"
+										"tag": "\"TimerMG0\""
 									}
 								}
 							],
@@ -152,8 +171,8 @@
 									"objectClass": "InvisibleTracker",
 									"sid": 586686992502523,
 									"parameters": {
-										"instance-variable": "Timer",
-										"value": "InvisibleTracker.Timer + 1"
+										"instance-variable": "TotalSeconds",
+										"value": "InvisibleTracker.TotalSeconds + 1"
 									}
 								}
 							],
@@ -179,7 +198,7 @@
 											"objectClass": "Font_Folder",
 											"sid": 649451465261530,
 											"parameters": {
-												"text": "\"Time: \"&InvisibleTracker.Timer"
+												"text": "\"Time: \"&InvisibleTracker.TotalSeconds"
 											}
 										}
 									],
@@ -207,7 +226,7 @@
 											"sid": 476181998042892,
 											"parameters": {
 												"variable": "ActiveMiniGameLevel",
-												"value": "1 + (InvisibleTracker.Timer/60)"
+												"value": "1 + (InvisibleTracker.TotalSeconds/60)"
 											}
 										}
 									],
