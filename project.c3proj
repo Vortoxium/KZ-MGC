@@ -282,6 +282,22 @@
 					"file-info": {
 						"purpose": "none"
 					}
+				},
+				{
+					"name": "sound_transition_begin.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 630346051193530,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "sound_transition_end.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 669547743491137,
+					"file-info": {
+						"purpose": "none"
+					}
 				}
 			],
 			"subfolders": []

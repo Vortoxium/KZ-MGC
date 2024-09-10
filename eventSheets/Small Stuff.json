@@ -296,6 +296,7 @@
 							"id": "set-silent",
 							"objectClass": "Audio",
 							"sid": 425737794903237,
+							"disabled": true,
 							"parameters": {
 								"mode": "silent"
 							}
@@ -2611,10 +2612,10 @@
 										{
 											"id": "start-timer",
 											"objectClass": "InvisibleTrackerFree",
-											"sid": 782891463877026,
+											"sid": 708907123155208,
 											"behaviorType": "Timer",
 											"parameters": {
-												"duration": "0.33",
+												"duration": "0.5",
 												"type": "once",
 												"tag": "\"SwitchLayoutToMainMenu\""
 											}
@@ -2734,9 +2735,9 @@
 								{
 									"id": "wait",
 									"objectClass": "System",
-									"sid": 816440357710669,
+									"sid": 829496291663631,
 									"parameters": {
-										"seconds": "0.33"
+										"seconds": "0.5"
 									}
 								},
 								{
@@ -3082,9 +3083,75 @@
 					],
 					"eventType": "function-block",
 					"conditions": [],
-					"actions": [],
+					"actions": [
+						{
+							"id": "fade-volume",
+							"objectClass": "Audio",
+							"sid": 784700572737242,
+							"parameters": {
+								"tag": "\"currentMusic\"",
+								"db": "-100",
+								"duration": "0.5",
+								"ending": "stop"
+							}
+						}
+					],
 					"sid": 923562249583229,
 					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 187162985886201,
+									"parameters": {
+										"variable": "TransitionMode",
+										"comparison": 0,
+										"value": "\"Start\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "PlaySound",
+									"sid": 100610221507255,
+									"parameters": [
+										"\"sound_transition_begin\"",
+										"-12.5",
+										"0"
+									]
+								}
+							],
+							"sid": 395143492808991
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 970826434027001,
+									"parameters": {
+										"variable": "TransitionMode",
+										"comparison": 0,
+										"value": "\"End\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "PlaySound",
+									"sid": 120058193739037,
+									"parameters": [
+										"\"sound_transition_end\"",
+										"-12.5",
+										"0"
+									]
+								}
+							],
+							"sid": 403407730988149
+						},
 						{
 							"eventType": "block",
 							"conditions": [
