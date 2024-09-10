@@ -9,6 +9,205 @@
 			"isActiveOnStart": true,
 			"children": [
 				{
+					"functionName": "LoadMedal",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": true,
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "MedalX",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 726608821003066
+						},
+						{
+							"name": "MedalY",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 701243846735412
+						},
+						{
+							"name": "MedalMinigame",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 770464050311044
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Font_VHS",
+							"sid": 452619339199572,
+							"parameters": {
+								"instance-variable": "ButtonNumber",
+								"comparison": 0,
+								"value": "MedalMinigame"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 691846091792030,
+							"parameters": {
+								"object-to-create": "Medal",
+								"layer": "\"HUD\"",
+								"x": "0",
+								"y": "0",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Medal",
+							"sid": 226114739138994,
+							"parameters": {
+								"instance-variable": "MG",
+								"value": "MedalMinigame"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "Medal",
+							"sid": 863760202788135,
+							"parameters": {
+								"x": "Font_VHS.X + MedalX",
+								"y": "Font_VHS.Y + MedalY"
+							}
+						}
+					],
+					"sid": 327248426594289,
+					"children": [
+						{
+							"eventType": "variable",
+							"name": "MG_MedalValues",
+							"type": "string",
+							"initialValue": "60,120,180,300",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": true,
+							"sid": 154515750680027
+						},
+						{
+							"eventType": "variable",
+							"name": "i",
+							"type": "number",
+							"initialValue": "-1",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 218782138305358
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "repeat",
+									"objectClass": "System",
+									"sid": 557561579296740,
+									"parameters": {
+										"count": "4"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 654201902626177,
+									"parameters": {
+										"variable": "i",
+										"value": "i+1"
+									}
+								}
+							],
+							"sid": 894620482403573,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 946288571708672,
+											"parameters": {
+												"variable": "i",
+												"comparison": 2,
+												"value": "3"
+											}
+										},
+										{
+											"id": "is-between-values",
+											"objectClass": "System",
+											"sid": 115282218050345,
+											"parameters": {
+												"value": "int(Highscores.Get(\"MG\"&Medal.MG))",
+												"lower-bound": "int(tokenat(tokenat(MG_MedalValues,Medal.MG,\"|\"),i,\",\"))",
+												"upper-bound": "int(tokenat(tokenat(MG_MedalValues,Medal.MG,\"|\"),i+1,\",\"))"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation-frame",
+											"objectClass": "Medal",
+											"sid": 708654793309729,
+											"parameters": {
+												"frame-number": "i+1"
+											}
+										}
+									],
+									"sid": 231969837773577
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 815974432065012,
+											"parameters": {
+												"variable": "i",
+												"comparison": 5,
+												"value": "3"
+											}
+										},
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 525096762230051,
+											"parameters": {
+												"first-value": "int(Highscores.Get(\"MG\"&Medal.MG))",
+												"comparison": 5,
+												"second-value": "int(tokenat(tokenat(MG_MedalValues,Medal.MG,\"|\"),i,\",\"))"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation-frame",
+											"objectClass": "Medal",
+											"sid": 366385650221652,
+											"parameters": {
+												"frame-number": "i+1"
+											}
+										}
+									],
+									"sid": 879169125282875
+								}
+							]
+						}
+					]
+				},
+				{
 					"functionName": "SaveCurrentData",
 					"functionDescription": "",
 					"functionCategory": "",
@@ -61,14 +260,14 @@
 						{
 							"id": "trigger-once-while-true",
 							"objectClass": "System",
-							"sid": 600637290750390
+							"sid": 154322790897927
 						}
 					],
 					"actions": [
 						{
 							"id": "set-silent",
 							"objectClass": "Audio",
-							"sid": 776637127773839,
+							"sid": 425737794903237,
 							"parameters": {
 								"mode": "silent"
 							}
@@ -76,13 +275,13 @@
 						{
 							"id": "get-item",
 							"objectClass": "LocalStorage",
-							"sid": 968069451416838,
+							"sid": 838076741155796,
 							"parameters": {
 								"key": "\"Highscores\""
 							}
 						}
 					],
-					"sid": 198319836872923
+					"sid": 625275325658800
 				},
 				{
 					"eventType": "block",
@@ -107,6 +306,34 @@
 						}
 					],
 					"sid": 245008299850713
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-empty",
+							"objectClass": "Highscores",
+							"sid": 928722585451271,
+							"isInverted": true
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 912378256883351
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "LoadMedal",
+							"sid": 313936361301717,
+							"parameters": [
+								"80",
+								"13",
+								"0"
+							]
+						}
+					],
+					"sid": 720639197745455
 				}
 			],
 			"sid": 832234814272269

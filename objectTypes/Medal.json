@@ -3,7 +3,15 @@
 	"plugin-id": "Sprite",
 	"sid": 751729557150382,
 	"isGlobal": false,
-	"instanceVariables": [],
+	"instanceVariables": [
+		{
+			"name": "MG",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 350434997102587
+		}
+	],
 	"behaviorTypes": [],
 	"effectTypes": [],
 	"animations": {
@@ -40,7 +48,7 @@
 						"width": 10,
 						"height": 14,
 						"originX": 0.5,
-						"originY": 0.5,
+						"originY": 0.6428571428571429,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
@@ -52,8 +60,8 @@
 					{
 						"width": 11,
 						"height": 14,
-						"originX": 0.5,
-						"originY": 0.5,
+						"originX": 0.45454545454545453,
+						"originY": 0.7142857142857143,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
@@ -65,8 +73,8 @@
 					{
 						"width": 11,
 						"height": 14,
-						"originX": 0.5,
-						"originY": 0.5,
+						"originX": 0.45454545454545453,
+						"originY": 0.75,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
