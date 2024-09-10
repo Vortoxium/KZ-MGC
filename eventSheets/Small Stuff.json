@@ -3606,9 +3606,41 @@
 										"instance-variable": "TotalSeconds",
 										"value": "0"
 									}
+								},
+								{
+									"id": "destroy",
+									"objectClass": "mg0_items",
+									"sid": 197453933192370
 								}
 							],
-							"sid": 796960375451308
+							"sid": 796960375451308,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-animation-playing",
+											"objectClass": "particles",
+											"sid": 234013349663292,
+											"parameters": {
+												"animation": "\"mg0_item_smoke_loop\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation",
+											"objectClass": "particles",
+											"sid": 383560543528337,
+											"parameters": {
+												"animation": "\"mg0_item_smoke_dissolve\"",
+												"from": "beginning"
+											}
+										}
+									],
+									"sid": 455923093929933
+								}
+							]
 						}
 					]
 				}
