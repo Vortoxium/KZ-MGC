@@ -260,27 +260,81 @@
 					],
 					"eventType": "function-block",
 					"conditions": [],
-					"actions": [
+					"actions": [],
+					"sid": 139488025676838,
+					"children": [
 						{
-							"id": "add-key",
-							"objectClass": "Highscores",
-							"sid": 496212388684651,
-							"parameters": {
-								"key": "KeyName",
-								"value": "KeyValue"
-							}
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "has-key",
+									"objectClass": "Highscores",
+									"sid": 583515699677612,
+									"parameters": {
+										"key": "\"MG\"&ActiveMiniGame"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "add-key",
+									"objectClass": "Highscores",
+									"sid": 319288570004678,
+									"parameters": {
+										"key": "KeyName",
+										"value": "KeyValue"
+									}
+								},
+								{
+									"id": "set-item",
+									"objectClass": "LocalStorage",
+									"sid": 562361283633507,
+									"parameters": {
+										"key": "\"Highscores\"",
+										"value": "Highscores.AsJSON"
+									}
+								}
+							],
+							"sid": 587719683444546
 						},
 						{
-							"id": "set-item",
-							"objectClass": "LocalStorage",
-							"sid": 517549329473719,
-							"parameters": {
-								"key": "\"Highscores\"",
-								"value": "Highscores.AsJSON"
-							}
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-value",
+									"objectClass": "Highscores",
+									"sid": 299256113742396,
+									"parameters": {
+										"key": "\"MG\"&ActiveMiniGame",
+										"comparison": 2,
+										"value": "InvisibleTracker.TotalSeconds"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "add-key",
+									"objectClass": "Highscores",
+									"sid": 472704765429774,
+									"parameters": {
+										"key": "KeyName",
+										"value": "KeyValue"
+									}
+								},
+								{
+									"id": "set-item",
+									"objectClass": "LocalStorage",
+									"sid": 750631890674498,
+									"parameters": {
+										"key": "\"Highscores\"",
+										"value": "Highscores.AsJSON"
+									}
+								}
+							],
+							"sid": 606655356464931
 						}
-					],
-					"sid": 139488025676838
+					]
 				},
 				{
 					"eventType": "block",
@@ -2543,60 +2597,18 @@
 									}
 								}
 							],
-							"actions": [],
+							"actions": [
+								{
+									"callFunction": "SaveCurrentData",
+									"sid": 950447678209138,
+									"parameters": [
+										"\"MG\"&ActiveMiniGame",
+										"InvisibleTracker.TotalSeconds"
+									]
+								}
+							],
 							"sid": 526658151951771,
 							"children": [
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "has-key",
-											"objectClass": "Highscores",
-											"sid": 829636580198006,
-											"parameters": {
-												"key": "\"MG\"&ActiveMiniGame"
-											},
-											"isInverted": true
-										}
-									],
-									"actions": [
-										{
-											"callFunction": "SaveCurrentData",
-											"sid": 959508518877987,
-											"parameters": [
-												"\"MG\"&ActiveMiniGame",
-												"InvisibleTracker.TotalSeconds"
-											]
-										}
-									],
-									"sid": 638382087604946
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "compare-value",
-											"objectClass": "Highscores",
-											"sid": 775824245856316,
-											"parameters": {
-												"key": "\"MG\"&ActiveMiniGame",
-												"comparison": 2,
-												"value": "InvisibleTracker.TotalSeconds"
-											}
-										}
-									],
-									"actions": [
-										{
-											"callFunction": "SaveCurrentData",
-											"sid": 385083356579141,
-											"parameters": [
-												"\"MG\"&ActiveMiniGame",
-												"InvisibleTracker.TotalSeconds"
-											]
-										}
-									],
-									"sid": 420001779124331
-								},
 								{
 									"eventType": "block",
 									"conditions": [],
