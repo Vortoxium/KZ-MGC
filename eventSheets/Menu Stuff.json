@@ -54,6 +54,13 @@
 							}
 						},
 						{
+							"callFunction": "CallTransition",
+							"sid": 132697875981712,
+							"parameters": [
+								"\"End\""
+							]
+						},
+						{
 							"id": "set-animation-frame",
 							"objectClass": "cursor",
 							"sid": 250907326697905,
@@ -74,6 +81,35 @@
 					"sid": 162244279050737,
 					"children": [
 						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-animation-playing",
+									"objectClass": "backgrounds",
+									"sid": 335215738208394,
+									"parameters": {
+										"animation": "\"bg-2\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 311409635586891,
+									"parameters": {
+										"seconds": "0.1"
+									}
+								},
+								{
+									"id": "destroy",
+									"objectClass": "backgrounds",
+									"sid": 245240674354752
+								}
+							],
+							"sid": 633088278683329
+						},
+						{
 							"eventType": "comment",
 							"text": "Buttons"
 						},
@@ -84,10 +120,10 @@
 								{
 									"id": "create-object",
 									"objectClass": "System",
-									"sid": 485459393871672,
+									"sid": 964863618818129,
 									"parameters": {
 										"object-to-create": "PauseMenu_BG",
-										"layer": "\"HUD\"",
+										"layer": "\"HUD Below\"",
 										"x": "213",
 										"y": "0",
 										"create-hierarchy": false,
@@ -104,9 +140,9 @@
 								},
 								{
 									"callFunction": "CreateButton",
-									"sid": 915639507781467,
+									"sid": 720497070719898,
 									"parameters": [
-										"\"HUD\"",
+										"\"HUD Below\"",
 										"230",
 										"48",
 										"\"0,255,255\"",
@@ -117,9 +153,9 @@
 								},
 								{
 									"callFunction": "CreateButton",
-									"sid": 455201557676474,
+									"sid": 182700546402612,
 									"parameters": [
-										"\"HUD\"",
+										"\"HUD Below\"",
 										"230",
 										"72",
 										"\"255,255,0\"",
@@ -130,9 +166,9 @@
 								},
 								{
 									"callFunction": "CreateText",
-									"sid": 527903089472826,
+									"sid": 455800920093872,
 									"parameters": [
-										"\"HUD\"",
+										"\"HUD Below\"",
 										"\"1,0\"",
 										"\"MenuText\"",
 										"\"Press F to toggle Fullscreen\"",
@@ -182,10 +218,10 @@
 										{
 											"id": "create-object",
 											"objectClass": "System",
-											"sid": 199742903254597,
+											"sid": 481434837842107,
 											"parameters": {
 												"object-to-create": "Pixel",
-												"layer": "\"HUD\"",
+												"layer": "\"HUD Below\"",
 												"x": "PauseMenu_BG.X",
 												"y": "Font_VHS.Y - 1",
 												"create-hierarchy": false,

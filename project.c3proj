@@ -129,7 +129,8 @@
 			"PauseMenu_BG",
 			"Pixel",
 			"Medal",
-			"Transition"
+			"Transition",
+			"InvisibleTrackerFree"
 		],
 		"subfolders": [
 			{

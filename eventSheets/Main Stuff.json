@@ -84,10 +84,10 @@
 								{
 									"id": "create-object",
 									"objectClass": "System",
-									"sid": 757265209261581,
+									"sid": 321609596832538,
 									"parameters": {
 										"object-to-create": "cursor",
-										"layer": "\"HUD\"",
+										"layer": "\"Mouse\"",
 										"x": "0",
 										"y": "0",
 										"create-hierarchy": false,
@@ -101,6 +101,13 @@
 									"parameters": {
 										"frame-number": "6"
 									}
+								},
+								{
+									"callFunction": "CallTransition",
+									"sid": 376029276001954,
+									"parameters": [
+										"\"End\""
+									]
 								},
 								{
 									"callFunction": "PlayMusic",
@@ -146,7 +153,38 @@
 									}
 								}
 							],
-							"sid": 998425120620862
+							"sid": 998425120620862,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-animation-playing",
+											"objectClass": "backgrounds",
+											"sid": 459741631432458,
+											"parameters": {
+												"animation": "\"bg-2\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 308785960902766,
+											"parameters": {
+												"seconds": "0.1"
+											}
+										},
+										{
+											"id": "destroy",
+											"objectClass": "backgrounds",
+											"sid": 895894671582889
+										}
+									],
+									"sid": 412492874625125
+								}
+							]
 						},
 						{
 							"eventType": "comment",

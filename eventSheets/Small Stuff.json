@@ -1231,7 +1231,10 @@
 					"actions": [
 						{
 							"callFunction": "CallTransition",
-							"sid": 941393193524069
+							"sid": 315568730548822,
+							"parameters": [
+								"\"Start\""
+							]
 						}
 					],
 					"sid": 137350164418131,
@@ -1251,8 +1254,11 @@
 					],
 					"actions": [
 						{
-							"callFunction": "EndTransition",
-							"sid": 701685163262018
+							"callFunction": "CallTransition",
+							"sid": 205991275259695,
+							"parameters": [
+								"\"End\""
+							]
 						}
 					],
 					"sid": 996451689494375,
@@ -1725,6 +1731,15 @@
 											"sid": 413349549363976,
 											"parameters": {
 												"time-scale": "0"
+											}
+										},
+										{
+											"id": "set-object-time-scale",
+											"objectClass": "System",
+											"sid": 544441300669672,
+											"parameters": {
+												"object": "InvisibleTrackerFree",
+												"time-scale": "1"
 											}
 										},
 										{
@@ -2472,7 +2487,7 @@
 						{
 							"id": "on-tweens-finished",
 							"objectClass": "Font_VHS",
-							"sid": 200220039195523,
+							"sid": 788555601582991,
 							"behaviorType": "Tween",
 							"parameters": {
 								"tags": "\"GlowButtonFast\"&Font_VHS.ButtonNumber"
@@ -2481,7 +2496,7 @@
 						{
 							"id": "compare-instance-variable",
 							"objectClass": "Font_VHS",
-							"sid": 413651252953923,
+							"sid": 481988231872266,
 							"parameters": {
 								"instance-variable": "Mode",
 								"comparison": 0,
@@ -2490,7 +2505,7 @@
 						}
 					],
 					"actions": [],
-					"sid": 908558861160764,
+					"sid": 646899527237628,
 					"children": [
 						{
 							"eventType": "block",
@@ -2498,7 +2513,7 @@
 								{
 									"id": "compare-instance-variable",
 									"objectClass": "Font_VHS",
-									"sid": 149234424165892,
+									"sid": 316325818925104,
 									"parameters": {
 										"instance-variable": "ButtonNumber",
 										"comparison": 0,
@@ -2509,10 +2524,10 @@
 							"actions": [
 								{
 									"callFunction": "UnPause",
-									"sid": 636475387475898
+									"sid": 136759800354347
 								}
 							],
-							"sid": 887393861119872
+							"sid": 664480954527724
 						},
 						{
 							"eventType": "block",
@@ -2520,7 +2535,7 @@
 								{
 									"id": "compare-instance-variable",
 									"objectClass": "Font_VHS",
-									"sid": 467378385610841,
+									"sid": 429362566141431,
 									"parameters": {
 										"instance-variable": "ButtonNumber",
 										"comparison": 0,
@@ -2528,13 +2543,8 @@
 									}
 								}
 							],
-							"actions": [
-								{
-									"callFunction": "UnPause",
-									"sid": 811824914360432
-								}
-							],
-							"sid": 232991065488648,
+							"actions": [],
+							"sid": 526658151951771,
 							"children": [
 								{
 									"eventType": "block",
@@ -2542,7 +2552,7 @@
 										{
 											"id": "has-key",
 											"objectClass": "Highscores",
-											"sid": 231709997554168,
+											"sid": 829636580198006,
 											"parameters": {
 												"key": "\"MG\"&ActiveMiniGame"
 											},
@@ -2552,14 +2562,14 @@
 									"actions": [
 										{
 											"callFunction": "SaveCurrentData",
-											"sid": 161500177576543,
+											"sid": 959508518877987,
 											"parameters": [
 												"\"MG\"&ActiveMiniGame",
 												"InvisibleTracker.TotalSeconds"
 											]
 										}
 									],
-									"sid": 362452049984894
+									"sid": 638382087604946
 								},
 								{
 									"eventType": "block",
@@ -2567,7 +2577,7 @@
 										{
 											"id": "compare-value",
 											"objectClass": "Highscores",
-											"sid": 565477566485102,
+											"sid": 775824245856316,
 											"parameters": {
 												"key": "\"MG\"&ActiveMiniGame",
 												"comparison": 2,
@@ -2578,55 +2588,94 @@
 									"actions": [
 										{
 											"callFunction": "SaveCurrentData",
-											"sid": 988628034789552,
+											"sid": 385083356579141,
 											"parameters": [
 												"\"MG\"&ActiveMiniGame",
 												"InvisibleTracker.TotalSeconds"
 											]
 										}
 									],
-									"sid": 772153246114107
+									"sid": 420001779124331
 								},
 								{
 									"eventType": "block",
-									"conditions": [
-										{
-											"id": "compare-instance-variable",
-											"objectClass": "Font_Folder",
-											"sid": 370946189727330,
-											"parameters": {
-												"instance-variable": "Mode",
-												"comparison": 0,
-												"value": "\"Timer\""
-											}
-										}
-									],
+									"conditions": [],
 									"actions": [
 										{
-											"id": "destroy",
-											"objectClass": "Font_Folder",
-											"sid": 535084812416115
+											"callFunction": "CallTransition",
+											"sid": 621896059397608,
+											"parameters": [
+												"\"Start\""
+											]
 										},
 										{
-											"id": "wait",
-											"objectClass": "System",
-											"sid": 732817300051065,
+											"id": "start-timer",
+											"objectClass": "InvisibleTrackerFree",
+											"sid": 782891463877026,
+											"behaviorType": "Timer",
 											"parameters": {
-												"seconds": "0"
-											}
-										},
-										{
-											"id": "go-to-layout",
-											"objectClass": "System",
-											"sid": 138733655736532,
-											"parameters": {
-												"layout": "Menu"
+												"duration": "0.33",
+												"type": "once",
+												"tag": "\"SwitchLayoutToMainMenu\""
 											}
 										}
 									],
-									"sid": 647973706122746
+									"sid": 707202275838755
 								}
 							]
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-timer",
+							"objectClass": "InvisibleTrackerFree",
+							"sid": 484965456734307,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"SwitchLayoutToMainMenu\""
+							}
+						}
+					],
+					"actions": [],
+					"sid": 537270119896212,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Font_Folder",
+									"sid": 513279542155576,
+									"parameters": {
+										"instance-variable": "Mode",
+										"comparison": 0,
+										"value": "\"Timer\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "UnPause",
+									"sid": 341246182867363
+								},
+								{
+									"id": "destroy",
+									"objectClass": "Font_Folder",
+									"sid": 349959679667757
+								},
+								{
+									"id": "go-to-layout",
+									"objectClass": "System",
+									"sid": 170897826474877,
+									"parameters": {
+										"layout": "Menu"
+									}
+								}
+							],
+							"sid": 416937132850009
 						}
 					]
 				},
@@ -2675,6 +2724,21 @@
 								}
 							],
 							"actions": [
+								{
+									"callFunction": "CallTransition",
+									"sid": 380906075763471,
+									"parameters": [
+										"\"Start\""
+									]
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 816440357710669,
+									"parameters": {
+										"seconds": "0.33"
+									}
+								},
 								{
 									"id": "destroy",
 									"objectClass": "Font_Folder",
@@ -3007,12 +3071,41 @@
 					"functionReturnType": "none",
 					"functionCopyPicked": false,
 					"functionIsAsync": false,
-					"functionParameters": [],
+					"functionParameters": [
+						{
+							"name": "TransitionMode",
+							"type": "string",
+							"initialValue": "",
+							"comment": "",
+							"sid": 122122513563483
+						}
+					],
 					"eventType": "function-block",
 					"conditions": [],
 					"actions": [],
 					"sid": 923562249583229,
 					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for-each",
+									"objectClass": "System",
+									"sid": 568633832570495,
+									"parameters": {
+										"object": "Transition"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "Transition",
+									"sid": 562320406553904
+								}
+							],
+							"sid": 830068956774042
+						},
 						{
 							"eventType": "variable",
 							"name": "i",
@@ -3103,155 +3196,25 @@
 											}
 										},
 										{
+											"id": "set-object-time-scale",
+											"objectClass": "System",
+											"sid": 156509475351119,
+											"parameters": {
+												"object": "Transition",
+												"time-scale": "1"
+											}
+										},
+										{
 											"id": "set-animation",
 											"objectClass": "Transition",
-											"sid": 413811991122516,
+											"sid": 123678040933200,
 											"parameters": {
-												"animation": "\"Start\"",
+												"animation": "TransitionMode",
 												"from": "beginning"
 											}
 										}
 									],
 									"sid": 515637874180508
-								}
-							]
-						}
-					]
-				},
-				{
-					"functionName": "EndTransition",
-					"functionDescription": "",
-					"functionCategory": "",
-					"functionReturnType": "none",
-					"functionCopyPicked": false,
-					"functionIsAsync": false,
-					"functionParameters": [],
-					"eventType": "function-block",
-					"conditions": [],
-					"actions": [],
-					"sid": 514437916556624,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "for-each",
-									"objectClass": "System",
-									"sid": 909622805506457,
-									"parameters": {
-										"object": "Transition"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "destroy",
-									"objectClass": "Transition",
-									"sid": 986378502686843
-								}
-							],
-							"sid": 609789942176343
-						},
-						{
-							"eventType": "variable",
-							"name": "i",
-							"type": "number",
-							"initialValue": "-1",
-							"comment": "",
-							"isStatic": false,
-							"isConstant": false,
-							"sid": 790009367995224
-						},
-						{
-							"eventType": "variable",
-							"name": "j",
-							"type": "number",
-							"initialValue": "-1",
-							"comment": "",
-							"isStatic": false,
-							"isConstant": false,
-							"sid": 638522648178881
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "repeat",
-									"objectClass": "System",
-									"sid": 713349733304974,
-									"parameters": {
-										"count": "20"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-eventvar-value",
-									"objectClass": "System",
-									"sid": 313890519420818,
-									"parameters": {
-										"variable": "j",
-										"value": "0"
-									}
-								},
-								{
-									"id": "set-eventvar-value",
-									"objectClass": "System",
-									"sid": 913609992816805,
-									"parameters": {
-										"variable": "i",
-										"value": "i+1"
-									}
-								}
-							],
-							"sid": 472842498096236,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "repeat",
-											"objectClass": "System",
-											"sid": 317579064228576,
-											"parameters": {
-												"count": "12"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "set-eventvar-value",
-											"objectClass": "System",
-											"sid": 704059804939976,
-											"parameters": {
-												"variable": "j",
-												"value": "j+1"
-											}
-										},
-										{
-											"id": "create-object",
-											"objectClass": "System",
-											"sid": 138410987310622,
-											"parameters": {
-												"object-to-create": "Transition",
-												"layer": "\"HUD\"",
-												"x": "312 - (i*16)",
-												"y": "-8 + (j*16)",
-												"create-hierarchy": false,
-												"template-name": "\"\""
-											}
-										},
-										{
-											"id": "set-animation",
-											"objectClass": "Transition",
-											"sid": 960817078432078,
-											"parameters": {
-												"animation": "\"End\"",
-												"from": "beginning"
-											}
-										}
-									],
-									"sid": 302065443885707
 								}
 							]
 						}
