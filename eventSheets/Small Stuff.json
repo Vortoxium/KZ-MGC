@@ -2950,16 +2950,45 @@
 								"comparison": 0,
 								"number": "13"
 							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 813997270520547
+						}
+					],
+					"actions": [
+						{
+							"id": "signal",
+							"objectClass": "System",
+							"sid": 683874952202918,
+							"parameters": {
+								"tag": "\"DestroyTransition\""
+							}
+						}
+					],
+					"sid": 651258544584307
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-signal",
+							"objectClass": "System",
+							"sid": 818946711589424,
+							"parameters": {
+								"tag": "\"DestroyTransition\""
+							}
 						}
 					],
 					"actions": [
 						{
 							"id": "destroy",
 							"objectClass": "Transition",
-							"sid": 423730435296394
+							"sid": 940957979408511
 						}
 					],
-					"sid": 651258544584307
+					"sid": 607865507651867
 				},
 				{
 					"functionName": "CallTransition",
