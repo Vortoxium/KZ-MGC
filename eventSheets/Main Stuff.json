@@ -26,6 +26,16 @@
 			"sid": 512822517356273
 		},
 		{
+			"eventType": "variable",
+			"name": "isMinigameActive",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 750255458080908
+		},
+		{
 			"eventType": "group",
 			"disabled": false,
 			"title": "Minigame 0",
@@ -61,7 +71,7 @@
 					"children": [
 						{
 							"eventType": "comment",
-							"text": "Setting Cursor Sprite"
+							"text": "MG0 Boot-Up stuff"
 						},
 						{
 							"eventType": "block",
@@ -120,13 +130,15 @@
 								},
 								{
 									"callFunction": "CreateText",
-									"sid": 727335142559580,
+									"sid": 725734509643754,
 									"parameters": [
 										"\"HUD Below\"",
 										"\"1,170\"",
+										"\"200,10\"",
 										"\"Timer\"",
 										"\"Time: \"&InvisibleTracker.TotalSeconds",
-										"\"255,200,225\"",
+										"\"255,150,255\"",
+										"\"\"",
 										"66"
 									]
 								},
@@ -139,6 +151,20 @@
 									"sid": 985616073371697,
 									"parameters": [
 										"\"Highscore\""
+									]
+								},
+								{
+									"callFunction": "CreateText",
+									"sid": 727703311880863,
+									"parameters": [
+										"\"HUD Below\"",
+										"\"0,0\"",
+										"\"320,180\"",
+										"\"MG0Explain\"",
+										"\"Don't let items fall below the screen.\" \n& newline &\n\"You can ignore [color=#00FFFF]smoke vials[/color].\" \n& newline &\n\"[color=#FF0000]DO NOT[/color] destroy [color=#FF0000]explosives[/color].\" \n& newline &\n\"----------------------------------------------\" \n& newline &\n\"[color=#FFFF00]Hold left-click, drag your mouse and\" \n& newline &\n\"let go of left-click to start the game[/color].\"",
+										"\"255,255,255\"",
+										"\"Middle\"",
+										"66"
 									]
 								},
 								{
@@ -200,6 +226,14 @@
 									"behaviorType": "Timer",
 									"parameters": {
 										"tag": "\"TimerMG0\""
+									}
+								},
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 396178774162998,
+									"parameters": {
+										"variable": "isMinigameActive"
 									}
 								}
 							],
@@ -695,6 +729,14 @@
 									"parameters": {
 										"interval-seconds": "random(1 - (0.15*ActiveMiniGameLevel),1.60 - (0.10*ActiveMiniGameLevel))"
 									}
+								},
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 363637776402499,
+									"parameters": {
+										"variable": "isMinigameActive"
+									}
 								}
 							],
 							"actions": [
@@ -1090,7 +1132,50 @@
 											}
 										}
 									],
-									"sid": 135661011418603
+									"sid": 135661011418603,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-boolean-eventvar",
+													"objectClass": "System",
+													"sid": 778483228158196,
+													"parameters": {
+														"variable": "isMinigameActive"
+													},
+													"isInverted": true
+												},
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "Font_Folder",
+													"sid": 167447291570978,
+													"parameters": {
+														"instance-variable": "Mode",
+														"comparison": 0,
+														"value": "\"MG0Explain\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-boolean-eventvar",
+													"objectClass": "System",
+													"sid": 885382955809918,
+													"parameters": {
+														"variable": "isMinigameActive",
+														"value": "true"
+													}
+												},
+												{
+													"id": "destroy",
+													"objectClass": "Font_Folder",
+													"sid": 542656621181773
+												}
+											],
+											"sid": 575067074117514
+										}
+									]
 								},
 								{
 									"eventType": "block",

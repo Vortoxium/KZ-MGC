@@ -296,7 +296,6 @@
 							"id": "set-silent",
 							"objectClass": "Audio",
 							"sid": 425737794903237,
-							"disabled": true,
 							"parameters": {
 								"mode": "silent"
 							}
@@ -2655,6 +2654,16 @@
 										"comparison": 0,
 										"value": "\"Timer\""
 									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Font_Folder",
+									"sid": 256285355667624,
+									"parameters": {
+										"instance-variable": "Mode",
+										"comparison": 0,
+										"value": "\"MG0Explain\""
+									}
 								}
 							],
 							"actions": [
@@ -2676,7 +2685,8 @@
 									}
 								}
 							],
-							"sid": 416937132850009
+							"sid": 416937132850009,
+							"isOrBlock": true
 						}
 					]
 				},
@@ -2840,13 +2850,15 @@
 							"actions": [
 								{
 									"callFunction": "CreateText",
-									"sid": 590143124059070,
+									"sid": 571203715278125,
 									"parameters": [
-										"\"HUD\"",
+										"\"HUD Below\"",
 										"\"214,170\"",
+										"\"200,10\"",
 										"\"Highscore\"",
 										"\"Record: \" & Highscores.Get(\"MG\"&Font_VHS.ButtonNumber)",
 										"\"255,255,255\"",
+										"\"\"",
 										"100"
 									]
 								}
@@ -2878,6 +2890,13 @@
 							"sid": 253802759213096
 						},
 						{
+							"name": "TextSize",
+							"type": "string",
+							"initialValue": "200,10",
+							"comment": "",
+							"sid": 360410340893985
+						},
+						{
 							"name": "TextMode",
 							"type": "string",
 							"initialValue": "",
@@ -2897,6 +2916,13 @@
 							"initialValue": "",
 							"comment": "",
 							"sid": 569986505011657
+						},
+						{
+							"name": "TextOrientation",
+							"type": "string",
+							"initialValue": "",
+							"comment": "",
+							"sid": 763502371470211
 						},
 						{
 							"name": "TextOpacity",
@@ -2954,9 +2980,62 @@
 							"parameters": {
 								"opacity": "TextOpacity"
 							}
+						},
+						{
+							"id": "set-size",
+							"objectClass": "Font_Folder",
+							"sid": 463718066845037,
+							"parameters": {
+								"width": "int(tokenat(TextSize,0,\",\"))",
+								"height": "int(tokenat(TextSize,1,\",\"))"
+							}
 						}
 					],
-					"sid": 388462715604598
+					"sid": 388462715604598,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 779081100136054,
+									"parameters": {
+										"variable": "TextOrientation",
+										"comparison": 0,
+										"value": "\"Middle\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 389940653675817,
+									"parameters": {
+										"seconds": "0"
+									}
+								},
+								{
+									"id": "set-horizontal-alignment",
+									"objectClass": "Font_Folder",
+									"sid": 850683995471618,
+									"parameters": {
+										"horizontal-alignment": "center"
+									}
+								},
+								{
+									"id": "set-vertical-alignment",
+									"objectClass": "Font_Folder",
+									"sid": 422679051698713,
+									"parameters": {
+										"vertical-alignment": "center"
+									}
+								}
+							],
+							"sid": 970310882887093
+						}
+					]
 				},
 				{
 					"functionName": "DestroyText",

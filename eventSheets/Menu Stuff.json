@@ -54,19 +54,19 @@
 							}
 						},
 						{
+							"id": "set-animation-frame",
+							"objectClass": "cursor",
+							"sid": 766363443405362,
+							"parameters": {
+								"frame-number": "7"
+							}
+						},
+						{
 							"callFunction": "CallTransition",
 							"sid": 132697875981712,
 							"parameters": [
 								"\"End\""
 							]
-						},
-						{
-							"id": "set-animation-frame",
-							"objectClass": "cursor",
-							"sid": 250907326697905,
-							"parameters": {
-								"frame-number": "7"
-							}
 						},
 						{
 							"callFunction": "PlayMusic",
@@ -76,6 +76,15 @@
 								"-5",
 								"4"
 							]
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 822413325479973,
+							"parameters": {
+								"variable": "isMinigameActive",
+								"value": "false"
+							}
 						}
 					],
 					"sid": 162244279050737,
@@ -170,9 +179,11 @@
 									"parameters": [
 										"\"HUD Below\"",
 										"\"1,0\"",
+										"\"200,10\"",
 										"\"MenuText\"",
 										"\"Press F to toggle Fullscreen\"",
 										"\"255,255,255\"",
+										"\"\"",
 										"50"
 									]
 								},
