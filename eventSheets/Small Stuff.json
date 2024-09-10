@@ -350,6 +350,7 @@
 							"id": "set-silent",
 							"objectClass": "Audio",
 							"sid": 425737794903237,
+							"disabled": true,
 							"parameters": {
 								"mode": "silent"
 							}
@@ -2862,10 +2863,10 @@
 							"actions": [
 								{
 									"callFunction": "CreateText",
-									"sid": 571203715278125,
+									"sid": 302362986531297,
 									"parameters": [
 										"\"HUD Below\"",
-										"\"214,170\"",
+										"\"214,171\"",
 										"\"200,10\"",
 										"\"Highscore\"",
 										"\"Record: \" & Highscores.Get(\"MG\"&Font_VHS.ButtonNumber)",

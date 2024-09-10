@@ -175,10 +175,10 @@
 								},
 								{
 									"callFunction": "CreateText",
-									"sid": 455800920093872,
+									"sid": 492584806617741,
 									"parameters": [
 										"\"HUD Below\"",
-										"\"1,0\"",
+										"\"1,1\"",
 										"\"200,10\"",
 										"\"MenuText\"",
 										"\"Press F to toggle Fullscreen\"",

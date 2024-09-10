@@ -382,7 +382,7 @@
 						"text": "Text bla",
 						"enable-bbcode": true,
 						"character-width": 7,
-						"character-height": 9,
+						"character-height": 10,
 						"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789,.?!+-*/=<>:;\"#$%&'()[\\]^_@°{|}~",
 						"spacing-data": "[[3, \"il,.!:;'|\"], [4, \"j()\"], [5, \"I1-*[]°{}\"], [6, \"/%\\\\^\"]]",
 						"scale": 1,
