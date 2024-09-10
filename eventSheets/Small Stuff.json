@@ -83,10 +83,10 @@
 						{
 							"id": "create-object",
 							"objectClass": "System",
-							"sid": 691846091792030,
+							"sid": 210276288201426,
 							"parameters": {
 								"object-to-create": "Medal",
-								"layer": "\"HUD\"",
+								"layer": "\"HUD Below\"",
 								"x": "0",
 								"y": "0",
 								"create-hierarchy": false,
