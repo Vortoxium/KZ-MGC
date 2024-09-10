@@ -36,6 +36,16 @@
 			"sid": 750255458080908
 		},
 		{
+			"eventType": "variable",
+			"name": "isDead",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 755115531764423
+		},
+		{
 			"eventType": "group",
 			"disabled": false,
 			"title": "Minigame 0",
@@ -235,6 +245,15 @@
 									"parameters": {
 										"variable": "isMinigameActive"
 									}
+								},
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 550845857287108,
+									"parameters": {
+										"variable": "isDead"
+									},
+									"isInverted": true
 								}
 							],
 							"actions": [
@@ -501,7 +520,38 @@
 													"sid": 764965350628890
 												}
 											],
-											"sid": 884913386182958
+											"sid": 884913386182958,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "evaluate-expression",
+															"objectClass": "System",
+															"sid": 884245541119045,
+															"parameters": {
+																"value": "mg0_items.AnimationName = \"item_0\" | mg0_items.AnimationName = \"item_1\""
+															}
+														},
+														{
+															"id": "compare-boolean-eventvar",
+															"objectClass": "System",
+															"sid": 787959308790534,
+															"parameters": {
+																"variable": "isDead"
+															},
+															"isInverted": true
+														}
+													],
+													"actions": [
+														{
+															"callFunction": "CallDeath",
+															"sid": 216532786474638
+														}
+													],
+													"sid": 163984784507538
+												}
+											]
 										},
 										{
 											"eventType": "comment",
@@ -1677,6 +1727,27 @@
 												}
 											],
 											"sid": 144611404533930
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-boolean-eventvar",
+													"objectClass": "System",
+													"sid": 733003392545392,
+													"parameters": {
+														"variable": "isDead"
+													},
+													"isInverted": true
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "CallDeath",
+													"sid": 643049237580611
+												}
+											],
+											"sid": 719460594747571
 										}
 									]
 								},

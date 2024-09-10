@@ -85,6 +85,15 @@
 								"variable": "isMinigameActive",
 								"value": "false"
 							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 558806686885330,
+							"parameters": {
+								"variable": "isDead",
+								"value": "false"
+							}
 						}
 					],
 					"sid": 162244279050737,

@@ -1318,6 +1318,98 @@
 					],
 					"sid": 996451689494375,
 					"disabled": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-any-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 137895410624870
+						},
+						{
+							"id": "on-any-click",
+							"objectClass": "Mouse",
+							"sid": 997349797584365
+						}
+					],
+					"actions": [],
+					"sid": 147716572603901,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 565388960382912,
+									"parameters": {
+										"variable": "isDead"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 578334415172219,
+									"parameters": {
+										"seconds": "0"
+									}
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 603362043472204,
+									"parameters": {
+										"variable": "isDead",
+										"value": "false"
+									}
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 695914515766511,
+									"parameters": {
+										"variable": "isMinigameActive",
+										"value": "true"
+									}
+								}
+							],
+							"sid": 176162127013672,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "Font_Folder",
+											"sid": 656462658778250,
+											"parameters": {
+												"instance-variable": "Mode",
+												"comparison": 0,
+												"value": "\"DeathText\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "destroy",
+											"objectClass": "Pixel",
+											"sid": 895497596338798
+										},
+										{
+											"id": "destroy",
+											"objectClass": "Font_Folder",
+											"sid": 747035568018136
+										}
+									],
+									"sid": 459151107451258
+								}
+							]
+						}
+					],
+					"isOrBlock": true
 				}
 			],
 			"sid": 531628472115024
@@ -1654,17 +1746,35 @@
 									}
 								}
 							],
-							"actions": [
+							"actions": [],
+							"sid": 477629688607164,
+							"children": [
 								{
-									"id": "toggle-boolean-eventvar",
-									"objectClass": "System",
-									"sid": 410863931385649,
-									"parameters": {
-										"variable": "IsPaused"
-									}
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 499070767536483,
+											"parameters": {
+												"variable": "isDead"
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "toggle-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 878903732307570,
+											"parameters": {
+												"variable": "IsPaused"
+											}
+										}
+									],
+									"sid": 678709715753217
 								}
 							],
-							"sid": 477629688607164,
 							"isOrBlock": true
 						},
 						{
@@ -3022,14 +3132,6 @@
 							],
 							"actions": [
 								{
-									"id": "wait",
-									"objectClass": "System",
-									"sid": 389940653675817,
-									"parameters": {
-										"seconds": "0"
-									}
-								},
-								{
 									"id": "set-horizontal-alignment",
 									"objectClass": "Font_Folder",
 									"sid": 850683995471618,
@@ -3104,7 +3206,7 @@
 						{
 							"id": "is-animation-playing",
 							"objectClass": "Transition",
-							"sid": 161427818902341,
+							"sid": 495633465980133,
 							"parameters": {
 								"animation": "\"End\""
 							}
@@ -3112,7 +3214,7 @@
 						{
 							"id": "compare-animation-frame",
 							"objectClass": "Transition",
-							"sid": 212616616575602,
+							"sid": 943604189821259,
 							"parameters": {
 								"comparison": 0,
 								"number": "13"
@@ -3121,20 +3223,20 @@
 						{
 							"id": "trigger-once-while-true",
 							"objectClass": "System",
-							"sid": 813997270520547
+							"sid": 945496654968937
 						}
 					],
 					"actions": [
 						{
 							"id": "signal",
 							"objectClass": "System",
-							"sid": 683874952202918,
+							"sid": 653000583089795,
 							"parameters": {
 								"tag": "\"DestroyTransition\""
 							}
 						}
 					],
-					"sid": 651258544584307
+					"sid": 449018716679543
 				},
 				{
 					"eventType": "block",
@@ -3142,7 +3244,7 @@
 						{
 							"id": "on-signal",
 							"objectClass": "System",
-							"sid": 818946711589424,
+							"sid": 479985623560122,
 							"parameters": {
 								"tag": "\"DestroyTransition\""
 							}
@@ -3152,10 +3254,10 @@
 						{
 							"id": "destroy",
 							"objectClass": "Transition",
-							"sid": 940957979408511
+							"sid": 314133130624225
 						}
 					],
-					"sid": 607865507651867
+					"sid": 890320172970708
 				},
 				{
 					"functionName": "CallTransition",
@@ -3179,7 +3281,7 @@
 						{
 							"id": "fade-volume",
 							"objectClass": "Audio",
-							"sid": 784700572737242,
+							"sid": 832614274746850,
 							"parameters": {
 								"tag": "\"currentMusic\"",
 								"db": "-100",
@@ -3188,7 +3290,7 @@
 							}
 						}
 					],
-					"sid": 923562249583229,
+					"sid": 922277551547023,
 					"children": [
 						{
 							"eventType": "block",
@@ -3196,7 +3298,7 @@
 								{
 									"id": "compare-eventvar",
 									"objectClass": "System",
-									"sid": 187162985886201,
+									"sid": 365703454404747,
 									"parameters": {
 										"variable": "TransitionMode",
 										"comparison": 0,
@@ -3207,7 +3309,7 @@
 							"actions": [
 								{
 									"callFunction": "PlaySound",
-									"sid": 100610221507255,
+									"sid": 544087575282432,
 									"parameters": [
 										"\"sound_transition_begin\"",
 										"-12.5",
@@ -3215,7 +3317,7 @@
 									]
 								}
 							],
-							"sid": 395143492808991
+							"sid": 651830949309697
 						},
 						{
 							"eventType": "block",
@@ -3223,7 +3325,7 @@
 								{
 									"id": "compare-eventvar",
 									"objectClass": "System",
-									"sid": 970826434027001,
+									"sid": 632022012056531,
 									"parameters": {
 										"variable": "TransitionMode",
 										"comparison": 0,
@@ -3234,7 +3336,7 @@
 							"actions": [
 								{
 									"callFunction": "PlaySound",
-									"sid": 120058193739037,
+									"sid": 573254350788590,
 									"parameters": [
 										"\"sound_transition_end\"",
 										"-12.5",
@@ -3242,7 +3344,7 @@
 									]
 								}
 							],
-							"sid": 403407730988149
+							"sid": 943886590111489
 						},
 						{
 							"eventType": "block",
@@ -3250,7 +3352,7 @@
 								{
 									"id": "for-each",
 									"objectClass": "System",
-									"sid": 568633832570495,
+									"sid": 496055157574889,
 									"parameters": {
 										"object": "Transition"
 									}
@@ -3260,10 +3362,10 @@
 								{
 									"id": "destroy",
 									"objectClass": "Transition",
-									"sid": 562320406553904
+									"sid": 852795424153694
 								}
 							],
-							"sid": 830068956774042
+							"sid": 115371605484749
 						},
 						{
 							"eventType": "variable",
@@ -3273,7 +3375,7 @@
 							"comment": "",
 							"isStatic": false,
 							"isConstant": false,
-							"sid": 903675866045056
+							"sid": 985411859351626
 						},
 						{
 							"eventType": "variable",
@@ -3283,7 +3385,7 @@
 							"comment": "",
 							"isStatic": false,
 							"isConstant": false,
-							"sid": 726047733083721
+							"sid": 336275335533853
 						},
 						{
 							"eventType": "block",
@@ -3291,7 +3393,7 @@
 								{
 									"id": "repeat",
 									"objectClass": "System",
-									"sid": 621216443918562,
+									"sid": 745140755990261,
 									"parameters": {
 										"count": "20"
 									}
@@ -3301,7 +3403,7 @@
 								{
 									"id": "set-eventvar-value",
 									"objectClass": "System",
-									"sid": 564236017391297,
+									"sid": 139609113722669,
 									"parameters": {
 										"variable": "j",
 										"value": "0"
@@ -3310,14 +3412,14 @@
 								{
 									"id": "set-eventvar-value",
 									"objectClass": "System",
-									"sid": 826099887089007,
+									"sid": 551907696390390,
 									"parameters": {
 										"variable": "i",
 										"value": "i+1"
 									}
 								}
 							],
-							"sid": 955381397550022,
+							"sid": 822876905939060,
 							"children": [
 								{
 									"eventType": "block",
@@ -3325,7 +3427,7 @@
 										{
 											"id": "repeat",
 											"objectClass": "System",
-											"sid": 151239993082280,
+											"sid": 670162998529373,
 											"parameters": {
 												"count": "12"
 											}
@@ -3335,7 +3437,7 @@
 										{
 											"id": "set-eventvar-value",
 											"objectClass": "System",
-											"sid": 338662253578820,
+											"sid": 181189935134792,
 											"parameters": {
 												"variable": "j",
 												"value": "j+1"
@@ -3344,7 +3446,7 @@
 										{
 											"id": "create-object",
 											"objectClass": "System",
-											"sid": 616116315388277,
+											"sid": 225824563571313,
 											"parameters": {
 												"object-to-create": "Transition",
 												"layer": "\"HUD\"",
@@ -3357,7 +3459,7 @@
 										{
 											"id": "set-object-time-scale",
 											"objectClass": "System",
-											"sid": 156509475351119,
+											"sid": 315164489023263,
 											"parameters": {
 												"object": "Transition",
 												"time-scale": "1"
@@ -3366,21 +3468,152 @@
 										{
 											"id": "set-animation",
 											"objectClass": "Transition",
-											"sid": 123678040933200,
+											"sid": 650673941087131,
 											"parameters": {
 												"animation": "TransitionMode",
 												"from": "beginning"
 											}
 										}
 									],
-									"sid": 515637874180508
+									"sid": 681536643388579
 								}
 							]
 						}
 					]
 				}
 			],
-			"sid": 182815226243647
+			"sid": 926325948089797
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Death",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"functionName": "CallDeath",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 293513036150921,
+							"parameters": {
+								"variable": "isMinigameActive",
+								"value": "false"
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 187369439285967,
+							"parameters": {
+								"variable": "isDead",
+								"value": "true"
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 660281821012896,
+							"parameters": {
+								"object-to-create": "Pixel",
+								"layer": "\"HUD Below\"",
+								"x": "80",
+								"y": "60",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-size",
+							"objectClass": "Pixel",
+							"sid": 789642026424264,
+							"parameters": {
+								"width": "160",
+								"height": "60"
+							}
+						},
+						{
+							"id": "set-default-color",
+							"objectClass": "Pixel",
+							"sid": 862383046354510,
+							"parameters": {
+								"color": "rgb(0, 0, 0)"
+							}
+						},
+						{
+							"id": "set-opacity",
+							"objectClass": "Pixel",
+							"sid": 742860310349746,
+							"parameters": {
+								"opacity": "50"
+							}
+						},
+						{
+							"callFunction": "CreateText",
+							"sid": 455487126039009,
+							"parameters": [
+								"\"HUD Below\"",
+								"\"80,60\"",
+								"\"160,60\"",
+								"\"DeathText\"",
+								"\"I failed...\" & newline & \nnewline &\n\"(Press ANY BUTTON to restart)\"",
+								"\"255,150,255\"",
+								"\"Middle\"",
+								"66"
+							]
+						},
+						{
+							"callFunction": "SaveCurrentData",
+							"sid": 593845511258235,
+							"parameters": [
+								"\"MG\"&ActiveMiniGame",
+								"InvisibleTracker.TotalSeconds"
+							]
+						}
+					],
+					"sid": 788402801664835,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 962674857919613,
+									"parameters": {
+										"variable": "ActiveMiniGame",
+										"comparison": 0,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "InvisibleTracker",
+									"sid": 860552364890219,
+									"parameters": {
+										"instance-variable": "TotalSeconds",
+										"value": "0"
+									}
+								}
+							],
+							"sid": 796960375451308
+						}
+					]
+				}
+			],
+			"sid": 570288202947518
 		}
 	],
 	"sid": 898564590862313
