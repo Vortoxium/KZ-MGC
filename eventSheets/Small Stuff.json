@@ -2567,9 +2567,40 @@
 					"eventType": "block",
 					"conditions": [
 						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 688586672749200,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "Font_VHS"
+							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 593417955857917,
+							"parameters": {
+								"variable": "IsPaused"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "PressButton",
+							"sid": 100964114796993
+						}
+					],
+					"sid": 130242503903959
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
 							"id": "on-key-pressed",
 							"objectClass": "Keyboard",
-							"sid": 432866750691625,
+							"sid": 760758157420170,
 							"parameters": {
 								"key": 32
 							}
@@ -2577,7 +2608,7 @@
 						{
 							"id": "compare-instance-variable",
 							"objectClass": "Font_VHS",
-							"sid": 917811138018052,
+							"sid": 889623481891028,
 							"parameters": {
 								"instance-variable": "ButtonNumber",
 								"comparison": 0,
@@ -2587,8 +2618,26 @@
 					],
 					"actions": [
 						{
+							"callFunction": "PressButton",
+							"sid": 944874743205236
+						}
+					],
+					"sid": 975867278375182
+				},
+				{
+					"functionName": "PressButton",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": true,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
 							"callFunction": "PlaySound",
-							"sid": 135999082554163,
+							"sid": 365071720526929,
 							"parameters": [
 								"\"sound_menubeep_2\"",
 								"-7.5",
@@ -2597,7 +2646,7 @@
 						},
 						{
 							"callFunction": "PlaySound",
-							"sid": 885791501837611,
+							"sid": 398026899988613,
 							"parameters": [
 								"\"sound_tape_move\"&choose(1,2,3)",
 								"-7.5",
@@ -2607,7 +2656,7 @@
 						{
 							"id": "stop-tweens",
 							"objectClass": "Font_VHS",
-							"sid": 577032843094478,
+							"sid": 923416517630658,
 							"behaviorType": "Tween",
 							"parameters": {
 								"tags": "\"GlowButton\""
@@ -2616,7 +2665,7 @@
 						{
 							"id": "set-default-color",
 							"objectClass": "Font_VHS",
-							"sid": 224439201464714,
+							"sid": 773191103227600,
 							"parameters": {
 								"color": "rgb(255, 0, 255)"
 							}
@@ -2624,7 +2673,7 @@
 						{
 							"id": "tween-one-property",
 							"objectClass": "Font_VHS",
-							"sid": 621995411285148,
+							"sid": 676676950088631,
 							"behaviorType": "Tween",
 							"parameters": {
 								"tags": "\"GlowButtonFast\"&Font_VHS.ButtonNumber",
@@ -2639,7 +2688,7 @@
 							}
 						}
 					],
-					"sid": 810519728917334
+					"sid": 652121754301497
 				},
 				{
 					"eventType": "comment",
