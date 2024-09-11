@@ -157,7 +157,7 @@
 					},
 					"uid": 13,
 					"instanceVariables": {
-						"TotalSeconds": 0
+						"ValueToTrack": 0
 					},
 					"behaviors": {
 						"Timer": {

@@ -146,7 +146,7 @@
 										"\"1,171\"",
 										"\"200,10\"",
 										"\"Timer\"",
-										"\"Time: \"&InvisibleTracker.TotalSeconds",
+										"\"Time: \"&InvisibleTracker.ValueToTrack",
 										"\"255,150,255\"",
 										"\"\"",
 										"66"
@@ -262,8 +262,8 @@
 									"objectClass": "InvisibleTracker",
 									"sid": 586686992502523,
 									"parameters": {
-										"instance-variable": "TotalSeconds",
-										"value": "InvisibleTracker.TotalSeconds + 1"
+										"instance-variable": "ValueToTrack",
+										"value": "InvisibleTracker.ValueToTrack + 1"
 									}
 								}
 							],
@@ -289,7 +289,7 @@
 											"objectClass": "Font_Folder",
 											"sid": 649451465261530,
 											"parameters": {
-												"text": "\"Time: \"&InvisibleTracker.TotalSeconds"
+												"text": "\"Time: \"&InvisibleTracker.ValueToTrack"
 											}
 										}
 									],
@@ -317,7 +317,7 @@
 											"sid": 476181998042892,
 											"parameters": {
 												"variable": "ActiveMiniGameLevel",
-												"value": "1 + (InvisibleTracker.TotalSeconds/60)"
+												"value": "1 + (InvisibleTracker.ValueToTrack/60)"
 											}
 										}
 									],

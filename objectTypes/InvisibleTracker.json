@@ -5,7 +5,7 @@
 	"isGlobal": false,
 	"instanceVariables": [
 		{
-			"name": "TotalSeconds",
+			"name": "ValueToTrack",
 			"type": "number",
 			"desc": "",
 			"show": true,

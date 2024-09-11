@@ -308,7 +308,7 @@
 									"parameters": {
 										"key": "\"MG\"&ActiveMiniGame",
 										"comparison": 2,
-										"value": "InvisibleTracker.TotalSeconds"
+										"value": "InvisibleTracker.ValueToTrack"
 									}
 								}
 							],
@@ -350,7 +350,6 @@
 							"id": "set-silent",
 							"objectClass": "Audio",
 							"sid": 425737794903237,
-							"disabled": true,
 							"parameters": {
 								"mode": "silent"
 							}
@@ -2714,7 +2713,7 @@
 									"sid": 950447678209138,
 									"parameters": [
 										"\"MG\"&ActiveMiniGame",
-										"InvisibleTracker.TotalSeconds"
+										"InvisibleTracker.ValueToTrack"
 									]
 								}
 							],
@@ -3523,11 +3522,11 @@
 						{
 							"id": "create-object",
 							"objectClass": "System",
-							"sid": 660281821012896,
+							"sid": 713521115932153,
 							"parameters": {
 								"object-to-create": "Pixel",
 								"layer": "\"HUD Below\"",
-								"x": "80",
+								"x": "64",
 								"y": "60",
 								"create-hierarchy": false,
 								"template-name": "\"\""
@@ -3536,9 +3535,9 @@
 						{
 							"id": "set-size",
 							"objectClass": "Pixel",
-							"sid": 789642026424264,
+							"sid": 309491013476238,
 							"parameters": {
-								"width": "160",
+								"width": "192",
 								"height": "60"
 							}
 						},
@@ -3559,25 +3558,11 @@
 							}
 						},
 						{
-							"callFunction": "CreateText",
-							"sid": 455487126039009,
-							"parameters": [
-								"\"HUD Below\"",
-								"\"80,60\"",
-								"\"160,60\"",
-								"\"DeathText\"",
-								"\"I failed...\" & newline & \nnewline &\n\"(Press ANY BUTTON to restart)\"",
-								"\"255,150,255\"",
-								"\"Middle\"",
-								"66"
-							]
-						},
-						{
 							"callFunction": "SaveCurrentData",
 							"sid": 593845511258235,
 							"parameters": [
 								"\"MG\"&ActiveMiniGame",
-								"InvisibleTracker.TotalSeconds"
+								"InvisibleTracker.ValueToTrack"
 							]
 						}
 					],
@@ -3598,15 +3583,6 @@
 								}
 							],
 							"actions": [
-								{
-									"id": "set-instvar-value",
-									"objectClass": "InvisibleTracker",
-									"sid": 860552364890219,
-									"parameters": {
-										"instance-variable": "TotalSeconds",
-										"value": "0"
-									}
-								},
 								{
 									"id": "destroy",
 									"objectClass": "mg0_items",
@@ -3639,6 +3615,212 @@
 										}
 									],
 									"sid": 455923093929933
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "InvisibleTracker",
+											"sid": 387885431471455,
+											"parameters": {
+												"instance-variable": "ValueToTrack",
+												"comparison": 2,
+												"value": "60"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "CreateText",
+											"sid": 321245308912053,
+											"parameters": [
+												"\"HUD Below\"",
+												"\"64,60\"",
+												"\"192,60\"",
+												"\"DeathText\"",
+												"\"What a pathetic performance...\" & newline & \nnewline &\n\"(Press ANY BUTTON to restart)\"",
+												"\"255,150,255\"",
+												"\"Middle\"",
+												"66"
+											]
+										}
+									],
+									"sid": 329620246225849
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "InvisibleTracker",
+											"sid": 851573162564024,
+											"parameters": {
+												"instance-variable": "ValueToTrack",
+												"comparison": 5,
+												"value": "60"
+											}
+										},
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "InvisibleTracker",
+											"sid": 809236084940814,
+											"parameters": {
+												"instance-variable": "ValueToTrack",
+												"comparison": 2,
+												"value": "120"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "CreateText",
+											"sid": 636965810522966,
+											"parameters": [
+												"\"HUD Below\"",
+												"\"64,60\"",
+												"\"192,60\"",
+												"\"DeathText\"",
+												"\"I have to do better than this...\" & newline & \nnewline &\n\"(Press ANY BUTTON to restart)\"",
+												"\"255,150,255\"",
+												"\"Middle\"",
+												"66"
+											]
+										}
+									],
+									"sid": 102215190208909
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "InvisibleTracker",
+											"sid": 765379293202367,
+											"parameters": {
+												"instance-variable": "ValueToTrack",
+												"comparison": 5,
+												"value": "120"
+											}
+										},
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "InvisibleTracker",
+											"sid": 603585040124194,
+											"parameters": {
+												"instance-variable": "ValueToTrack",
+												"comparison": 2,
+												"value": "180"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "CreateText",
+											"sid": 132504742735739,
+											"parameters": [
+												"\"HUD Below\"",
+												"\"64,60\"",
+												"\"192,60\"",
+												"\"DeathText\"",
+												"\"Improvements are still achieveable.\" & newline & \nnewline &\n\"(Press ANY BUTTON to restart)\"",
+												"\"255,150,255\"",
+												"\"Middle\"",
+												"66"
+											]
+										}
+									],
+									"sid": 587706024795429
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "InvisibleTracker",
+											"sid": 410838430467802,
+											"parameters": {
+												"instance-variable": "ValueToTrack",
+												"comparison": 5,
+												"value": "180"
+											}
+										},
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "InvisibleTracker",
+											"sid": 624960206710896,
+											"parameters": {
+												"instance-variable": "ValueToTrack",
+												"comparison": 2,
+												"value": "300"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "CreateText",
+											"sid": 827465824068793,
+											"parameters": [
+												"\"HUD Below\"",
+												"\"64,60\"",
+												"\"192,60\"",
+												"\"DeathText\"",
+												"\"These are acceptable results.\" & newline & \nnewline &\n\"(Press ANY BUTTON to restart)\"",
+												"\"255,150,255\"",
+												"\"Middle\"",
+												"66"
+											]
+										}
+									],
+									"sid": 321720193002941
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "InvisibleTracker",
+											"sid": 687534297418733,
+											"parameters": {
+												"instance-variable": "ValueToTrack",
+												"comparison": 5,
+												"value": "300"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "CreateText",
+											"sid": 653463149863201,
+											"parameters": [
+												"\"HUD Below\"",
+												"\"64,60\"",
+												"\"192,60\"",
+												"\"DeathText\"",
+												"\"I think I'm done here.\" & newline & \nnewline &\n\"(Press ANY BUTTON to restart)\"",
+												"\"255,150,255\"",
+												"\"Middle\"",
+												"66"
+											]
+										}
+									],
+									"sid": 528946616797218
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "set-instvar-value",
+											"objectClass": "InvisibleTracker",
+											"sid": 136184023115304,
+											"parameters": {
+												"instance-variable": "ValueToTrack",
+												"value": "0"
+											}
+										}
+									],
+									"sid": 209300100511035
 								}
 							]
 						}
