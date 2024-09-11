@@ -7,7 +7,7 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "ActiveMiniGame",
+			"name": "MiniGame",
 			"type": "number",
 			"initialValue": "0",
 			"comment": "",
@@ -17,7 +17,7 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "ActiveMiniGameLevel",
+			"name": "MiniGameLevel",
 			"type": "number",
 			"initialValue": "1",
 			"comment": "",
@@ -70,7 +70,7 @@
 							"objectClass": "System",
 							"sid": 538518353883857,
 							"parameters": {
-								"variable": "ActiveMiniGame",
+								"variable": "MiniGame",
 								"comparison": 0,
 								"value": "0"
 							}
@@ -301,13 +301,12 @@
 										{
 											"id": "compare-eventvar",
 											"objectClass": "System",
-											"sid": 724261424386964,
+											"sid": 616217584479854,
 											"parameters": {
-												"variable": "ActiveMiniGameLevel",
-												"comparison": 5,
+												"variable": "MiniGameLevel",
+												"comparison": 3,
 												"value": "4"
-											},
-											"isInverted": true
+											}
 										}
 									],
 									"actions": [
@@ -316,12 +315,39 @@
 											"objectClass": "System",
 											"sid": 476181998042892,
 											"parameters": {
-												"variable": "ActiveMiniGameLevel",
+												"variable": "MiniGameLevel",
 												"value": "1 + (InvisibleTracker.ValueToTrack/60)"
 											}
 										}
 									],
 									"sid": 271298044846211
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 991034393137396,
+											"parameters": {
+												"variable": "MiniGameLevel",
+												"comparison": 4,
+												"value": "4"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 719597574905069,
+											"parameters": {
+												"variable": "MiniGameLevel",
+												"value": "4"
+											}
+										}
+									],
+									"sid": 154883346910674
 								}
 							]
 						},
@@ -388,7 +414,7 @@
 											"sid": 550912749439025,
 											"parameters": {
 												"instance-variable": "VerticalMovement",
-												"value": "mg0_items.VerticalMovement+(3*(1+(ActiveMiniGameLevel/10)-0.1)-mg0_items.VerticalMovement)*0.06"
+												"value": "mg0_items.VerticalMovement+(3*(1+(MiniGameLevel/10)-0.1)-mg0_items.VerticalMovement)*0.06"
 											}
 										},
 										{
@@ -592,7 +618,7 @@
 															"objectClass": "System",
 															"sid": 110658847784598,
 															"parameters": {
-																"first-value": "tickcount % (17-(floor(ActiveMiniGameLevel)*2))",
+																"first-value": "tickcount % (17-(floor(MiniGameLevel)*2))",
 																"comparison": 0,
 																"second-value": "1"
 															}
@@ -777,7 +803,7 @@
 									"objectClass": "System",
 									"sid": 699528538283411,
 									"parameters": {
-										"interval-seconds": "random(1 - (0.15*ActiveMiniGameLevel),1.60 - (0.10*ActiveMiniGameLevel))"
+										"interval-seconds": "random(1 - (0.15*MiniGameLevel),1.60 - (0.10*MiniGameLevel))"
 									}
 								},
 								{
@@ -808,7 +834,7 @@
 									"objectClass": "mg0_items",
 									"sid": 777340570034274,
 									"parameters": {
-										"animation": "\"item_\"&choose(\nint(tokenat(tokenat(MG0_Items_Chance,floor(ActiveMiniGameLevel-1),\"|\"),0,\",\")),\nint(tokenat(tokenat(MG0_Items_Chance,floor(ActiveMiniGameLevel-1),\"|\"),1,\",\")),\nint(tokenat(tokenat(MG0_Items_Chance,floor(ActiveMiniGameLevel-1),\"|\"),2,\",\")),\r\nint(tokenat(tokenat(MG0_Items_Chance,floor(ActiveMiniGameLevel-1),\"|\"),3,\",\")),\nint(tokenat(tokenat(MG0_Items_Chance,floor(ActiveMiniGameLevel-1),\"|\"),4,\",\")),\r\nint(tokenat(tokenat(MG0_Items_Chance,floor(ActiveMiniGameLevel-1),\"|\"),5,\",\")),\r\nint(tokenat(tokenat(MG0_Items_Chance,floor(ActiveMiniGameLevel-1),\"|\"),6,\",\")),\r\nint(tokenat(tokenat(MG0_Items_Chance,floor(ActiveMiniGameLevel-1),\"|\"),7,\",\")),\nint(tokenat(tokenat(MG0_Items_Chance,floor(ActiveMiniGameLevel-1),\"|\"),8,\",\")),\r\nint(tokenat(tokenat(MG0_Items_Chance,floor(ActiveMiniGameLevel-1),\"|\"),9,\",\"))\n)",
+										"animation": "\"item_\"&choose(\nint(tokenat(tokenat(MG0_Items_Chance,floor(MiniGameLevel-1),\"|\"),0,\",\")),\nint(tokenat(tokenat(MG0_Items_Chance,floor(MiniGameLevel-1),\"|\"),1,\",\")),\nint(tokenat(tokenat(MG0_Items_Chance,floor(MiniGameLevel-1),\"|\"),2,\",\")),\r\nint(tokenat(tokenat(MG0_Items_Chance,floor(MiniGameLevel-1),\"|\"),3,\",\")),\nint(tokenat(tokenat(MG0_Items_Chance,floor(MiniGameLevel-1),\"|\"),4,\",\")),\r\nint(tokenat(tokenat(MG0_Items_Chance,floor(MiniGameLevel-1),\"|\"),5,\",\")),\r\nint(tokenat(tokenat(MG0_Items_Chance,floor(MiniGameLevel-1),\"|\"),6,\",\")),\r\nint(tokenat(tokenat(MG0_Items_Chance,floor(MiniGameLevel-1),\"|\"),7,\",\")),\nint(tokenat(tokenat(MG0_Items_Chance,floor(MiniGameLevel-1),\"|\"),8,\",\")),\r\nint(tokenat(tokenat(MG0_Items_Chance,floor(MiniGameLevel-1),\"|\"),9,\",\"))\n)",
 										"from": "beginning"
 									}
 								},
@@ -818,7 +844,7 @@
 									"sid": 753668646739480,
 									"parameters": {
 										"instance-variable": "VerticalMovement",
-										"value": "3*(1+(ActiveMiniGameLevel/10)-0.1)"
+										"value": "3*(1+(MiniGameLevel/10)-0.1)"
 									}
 								},
 								{
@@ -827,7 +853,7 @@
 									"sid": 845736672695169,
 									"parameters": {
 										"instance-variable": "HorizontalMovement",
-										"value": "random(-3,3)*(1+(ActiveMiniGameLevel/10)-0.1)"
+										"value": "random(-3,3)*(1+(MiniGameLevel/10)-0.1)"
 									}
 								},
 								{
@@ -1518,7 +1544,7 @@
 															"sid": 230017234076703,
 															"parameters": {
 																"instance-variable": "HorizontalMovement",
-																"value": "((slash.Angle - 270) / 15) * (1+(ActiveMiniGameLevel/10)-0.1)"
+																"value": "((slash.Angle - 270) / 15) * (1+(MiniGameLevel/10)-0.1)"
 															}
 														},
 														{
@@ -1527,7 +1553,7 @@
 															"sid": 242383628876373,
 															"parameters": {
 																"instance-variable": "VerticalMovement",
-																"value": "-(((360 - slash.Angle) / 10) * (1+(ActiveMiniGameLevel/10)-0.1)) * (1 + slash.Width/320)"
+																"value": "-(((360 - slash.Angle) / 10) * (1+(MiniGameLevel/10)-0.1)) * (1 + slash.Width/320)"
 															}
 														}
 													],
@@ -1553,7 +1579,7 @@
 															"sid": 933410150213395,
 															"parameters": {
 																"instance-variable": "HorizontalMovement",
-																"value": "-(((270 - slash.Angle) / 15) * (1+(ActiveMiniGameLevel/10)-0.1))"
+																"value": "-(((270 - slash.Angle) / 15) * (1+(MiniGameLevel/10)-0.1))"
 															}
 														},
 														{
@@ -1562,7 +1588,7 @@
 															"sid": 604315242957045,
 															"parameters": {
 																"instance-variable": "VerticalMovement",
-																"value": "-(((slash.Angle - 180) / 10) * (1+(ActiveMiniGameLevel/10)-0.1)) * (1 + slash.Width/320)"
+																"value": "-(((slash.Angle - 180) / 10) * (1+(MiniGameLevel/10)-0.1)) * (1 + slash.Width/320)"
 															}
 														}
 													],
@@ -1588,7 +1614,7 @@
 															"sid": 219473225012955,
 															"parameters": {
 																"instance-variable": "HorizontalMovement",
-																"value": "-(((slash.Angle - 90) / 15) * (1+(ActiveMiniGameLevel/10)-0.1))"
+																"value": "-(((slash.Angle - 90) / 15) * (1+(MiniGameLevel/10)-0.1))"
 															}
 														},
 														{
@@ -1597,7 +1623,7 @@
 															"sid": 170245836281277,
 															"parameters": {
 																"instance-variable": "VerticalMovement",
-																"value": "(((180 - slash.Angle) / 10) * (1+(ActiveMiniGameLevel/10)-0.1))"
+																"value": "(((180 - slash.Angle) / 10) * (1+(MiniGameLevel/10)-0.1))"
 															}
 														}
 													],
@@ -1623,7 +1649,7 @@
 															"sid": 344106032926968,
 															"parameters": {
 																"instance-variable": "HorizontalMovement",
-																"value": "(((90 - slash.Angle) / 15) * (1+(ActiveMiniGameLevel/10)-0.1))"
+																"value": "(((90 - slash.Angle) / 15) * (1+(MiniGameLevel/10)-0.1))"
 															}
 														},
 														{
@@ -1632,7 +1658,7 @@
 															"sid": 637768065706796,
 															"parameters": {
 																"instance-variable": "VerticalMovement",
-																"value": "(slash.Angle / 10) * (1+(ActiveMiniGameLevel/10)-0.1)"
+																"value": "(slash.Angle / 10) * (1+(MiniGameLevel/10)-0.1)"
 															}
 														}
 													],

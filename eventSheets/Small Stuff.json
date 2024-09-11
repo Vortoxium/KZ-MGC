@@ -271,7 +271,7 @@
 									"objectClass": "Highscores",
 									"sid": 583515699677612,
 									"parameters": {
-										"key": "\"MG\"&ActiveMiniGame"
+										"key": "\"MG\"&MiniGame"
 									},
 									"isInverted": true
 								}
@@ -306,7 +306,7 @@
 									"objectClass": "Highscores",
 									"sid": 299256113742396,
 									"parameters": {
-										"key": "\"MG\"&ActiveMiniGame",
+										"key": "\"MG\"&MiniGame",
 										"comparison": 2,
 										"value": "InvisibleTracker.ValueToTrack"
 									}
@@ -2761,7 +2761,7 @@
 									"callFunction": "SaveCurrentData",
 									"sid": 950447678209138,
 									"parameters": [
-										"\"MG\"&ActiveMiniGame",
+										"\"MG\"&MiniGame",
 										"InvisibleTracker.ValueToTrack"
 									]
 								}
@@ -3610,7 +3610,7 @@
 							"callFunction": "SaveCurrentData",
 							"sid": 593845511258235,
 							"parameters": [
-								"\"MG\"&ActiveMiniGame",
+								"\"MG\"&MiniGame",
 								"InvisibleTracker.ValueToTrack"
 							]
 						}
@@ -3625,7 +3625,7 @@
 									"objectClass": "System",
 									"sid": 962674857919613,
 									"parameters": {
-										"variable": "ActiveMiniGame",
+										"variable": "MiniGame",
 										"comparison": 0,
 										"value": "0"
 									}
