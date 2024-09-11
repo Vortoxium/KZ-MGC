@@ -2079,11 +2079,11 @@
 														{
 															"id": "create-object",
 															"objectClass": "System",
-															"sid": 859337195413541,
+															"sid": 846210096524844,
 															"parameters": {
 																"object-to-create": "Pixel",
 																"layer": "\"Pause\"",
-																"x": "round(random(0,360))",
+																"x": "round(random(-10,360))",
 																"y": "Pixel.Y + round(random(0,Pixel.Height - 1))",
 																"create-hierarchy": false,
 																"template-name": "\"\""
@@ -2147,11 +2147,11 @@
 														{
 															"id": "create-object",
 															"objectClass": "System",
-															"sid": 189041036355321,
+															"sid": 935034938037503,
 															"parameters": {
 																"object-to-create": "Pixel",
 																"layer": "\"Pause\"",
-																"x": "round(random(0,360))",
+																"x": "round(random(-10,360))",
 																"y": "SpawnFuzzY + round(random(-8,8))",
 																"create-hierarchy": false,
 																"template-name": "\"\""
