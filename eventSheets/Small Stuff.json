@@ -2686,6 +2686,15 @@
 								"ping-pong": "no",
 								"repeat-count": "5"
 							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 818902211717191,
+							"parameters": {
+								"variable": "CanChangeButtons",
+								"value": "false"
+							}
 						}
 					],
 					"sid": 652121754301497
