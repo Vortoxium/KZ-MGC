@@ -70,10 +70,10 @@
 						},
 						{
 							"callFunction": "PlayMusic",
-							"sid": 172446487556941,
+							"sid": 411664781310334,
 							"parameters": [
 								"\"song_silhouette\"",
-								"-5",
+								"0",
 								"4"
 							]
 						},
@@ -114,9 +114,9 @@
 								{
 									"id": "wait",
 									"objectClass": "System",
-									"sid": 311409635586891,
+									"sid": 877248445043805,
 									"parameters": {
-										"seconds": "0.1"
+										"seconds": "0.075"
 									}
 								},
 								{
@@ -171,15 +171,28 @@
 								},
 								{
 									"callFunction": "CreateButton",
-									"sid": 182700546402612,
+									"sid": 382239731372162,
 									"parameters": [
 										"\"HUD Below\"",
 										"230",
 										"72",
+										"\"0,255,255\"",
+										"\"LEON\"",
+										"\"MenuButton\"",
+										"1"
+									]
+								},
+								{
+									"callFunction": "CreateButton",
+									"sid": 583734091615090,
+									"parameters": [
+										"\"HUD Below\"",
+										"230",
+										"96",
 										"\"255,255,0\"",
 										"\"EXIT\"",
 										"\"MenuButton\"",
-										"1"
+										"2"
 									]
 								},
 								{
@@ -314,6 +327,15 @@
 												"13",
 												"0"
 											]
+										},
+										{
+											"callFunction": "LoadMedal",
+											"sid": 646514060215367,
+											"parameters": [
+												"-9",
+												"13",
+												"1"
+											]
 										}
 									],
 									"sid": 112699250669387
@@ -406,48 +428,29 @@
 						{
 							"id": "every-tick",
 							"objectClass": "System",
-							"sid": 128055722324789
+							"sid": 775504639445441
+						},
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 142148216883345,
+							"parameters": {
+								"object": "backgrounds"
+							}
 						}
 					],
 					"actions": [
 						{
 							"id": "set-position",
-							"objectClass": "cursor",
-							"sid": 269403700850269,
+							"objectClass": "backgrounds",
+							"sid": 481112780363576,
 							"parameters": {
-								"x": "Mouse.X",
-								"y": "Mouse.Y"
+								"x": "backgrounds.PosX + (160-cursor.X) * (backgrounds.Parallax/100)",
+								"y": "backgrounds.PosY + (90-cursor.Y) * (backgrounds.Parallax/100)"
 							}
 						}
 					],
-					"sid": 160990721441197,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "for-each",
-									"objectClass": "System",
-									"sid": 468826703240866,
-									"parameters": {
-										"object": "backgrounds"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-position",
-									"objectClass": "backgrounds",
-									"sid": 163479035748882,
-									"parameters": {
-										"x": "backgrounds.PosX + (160-cursor.X) * (backgrounds.Parallax/100)",
-										"y": "backgrounds.PosY + (90-cursor.Y) * (backgrounds.Parallax/100)"
-									}
-								}
-							],
-							"sid": 823943835024566
-						}
-					]
+					"sid": 947012411340195
 				}
 			]
 		}

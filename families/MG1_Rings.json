@@ -1,0 +1,22 @@
+{
+	"name": "MG1_Rings",
+	"plugin-id": "Sprite",
+	"sid": 207148723013751,
+	"instanceVariables": [
+		{
+			"name": "Points",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 121669197229840
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"mg1_items_0",
+		"mg1_items_1",
+		"mg1_items_2",
+		"mg1_items_3"
+	]
+}

@@ -41,7 +41,7 @@
 					"functionDescription": "",
 					"functionCategory": "",
 					"functionReturnType": "none",
-					"functionCopyPicked": true,
+					"functionCopyPicked": false,
 					"functionIsAsync": false,
 					"functionParameters": [
 						{
@@ -118,7 +118,7 @@
 							"eventType": "variable",
 							"name": "MG_MedalValues",
 							"type": "string",
-							"initialValue": "60,120,180,300",
+							"initialValue": "60,120,180,300|100,200,300,400",
 							"comment": "",
 							"isStatic": false,
 							"isConstant": true,
@@ -350,6 +350,7 @@
 							"id": "set-silent",
 							"objectClass": "Audio",
 							"sid": 425737794903237,
+							"disabled": true,
 							"parameters": {
 								"mode": "silent"
 							}
@@ -416,6 +417,15 @@
 								"-9",
 								"13",
 								"0"
+							]
+						},
+						{
+							"callFunction": "LoadMedal",
+							"sid": 589656668879272,
+							"parameters": [
+								"-9",
+								"13",
+								"1"
 							]
 						}
 					],
@@ -505,7 +515,7 @@
 						{
 							"name": "ParticleAmount",
 							"type": "number",
-							"initialValue": "0",
+							"initialValue": "1",
 							"comment": "",
 							"sid": 313794550741076
 						},
@@ -973,6 +983,36 @@
 										}
 									],
 									"sid": 204240422549444
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-animation-playing",
+											"objectClass": "particles",
+											"sid": 471300457245340,
+											"parameters": {
+												"animation": "\"mg1_sniperbullet\""
+											}
+										},
+										{
+											"id": "compare-animation-frame",
+											"objectClass": "particles",
+											"sid": 584450791222249,
+											"parameters": {
+												"comparison": 0,
+												"number": "5"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "destroy",
+											"objectClass": "particles",
+											"sid": 240723060692058
+										}
+									],
+									"sid": 781302657228362
 								}
 							]
 						}
@@ -1051,10 +1091,10 @@
 					"actions": [
 						{
 							"callFunction": "PlayMusic",
-							"sid": 498113901455853,
+							"sid": 604439222920404,
 							"parameters": [
 								"\"song_silhouette\"",
-								"-5",
+								"0",
 								"4"
 							]
 						}
@@ -1791,13 +1831,11 @@
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "compare-two-values",
+							"id": "evaluate-expression",
 							"objectClass": "System",
-							"sid": 648240348855042,
+							"sid": 618781417723029,
 							"parameters": {
-								"first-value": "LayoutName",
-								"comparison": 0,
-								"second-value": "\"MG0\""
+								"value": "LayoutName = \"MG0\" | LayoutName = \"MG1\""
 							}
 						}
 					],
@@ -2512,19 +2550,19 @@
 					"actions": [
 						{
 							"callFunction": "PlaySound",
-							"sid": 649304287959851,
+							"sid": 879459922706034,
 							"parameters": [
 								"\"sound_menubeep_1\"",
-								"-12.5",
+								"-7.5",
 								"0"
 							]
 						},
 						{
 							"callFunction": "PlaySound",
-							"sid": 307924133489438,
+							"sid": 523525051047609,
 							"parameters": [
 								"\"sound_eject_tape\"",
-								"-7.5",
+								"-2.5",
 								"0.5"
 							]
 						}
@@ -2716,19 +2754,19 @@
 					"actions": [
 						{
 							"callFunction": "PlaySound",
-							"sid": 365071720526929,
+							"sid": 922774486648198,
 							"parameters": [
 								"\"sound_menubeep_2\"",
-								"-7.5",
+								"-2.5",
 								"0"
 							]
 						},
 						{
 							"callFunction": "PlaySound",
-							"sid": 398026899988613,
+							"sid": 335682991077185,
 							"parameters": [
 								"\"sound_tape_move\"&choose(1,2,3)",
-								"-7.5",
+								"-2.5",
 								"0"
 							]
 						},
@@ -2917,6 +2955,16 @@
 								{
 									"id": "compare-instance-variable",
 									"objectClass": "Font_Folder",
+									"sid": 691345730494142,
+									"parameters": {
+										"instance-variable": "Mode",
+										"comparison": 0,
+										"value": "\"Score\""
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Font_Folder",
 									"sid": 256285355667624,
 									"parameters": {
 										"instance-variable": "Mode",
@@ -3015,6 +3063,15 @@
 									"sid": 431147142690521
 								},
 								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 710694453333483,
+									"parameters": {
+										"variable": "MiniGame",
+										"value": "0"
+									}
+								},
+								{
 									"id": "go-to-layout",
 									"objectClass": "System",
 									"sid": 716562915313387,
@@ -3031,11 +3088,66 @@
 								{
 									"id": "compare-instance-variable",
 									"objectClass": "Font_VHS",
-									"sid": 941175131268945,
+									"sid": 354466212219951,
 									"parameters": {
 										"instance-variable": "ButtonNumber",
 										"comparison": 0,
 										"value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "CallTransition",
+									"sid": 274352134831220,
+									"parameters": [
+										"\"Start\""
+									]
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 143946871172299,
+									"parameters": {
+										"seconds": "0.5"
+									}
+								},
+								{
+									"id": "destroy",
+									"objectClass": "Font_Folder",
+									"sid": 584351025369911
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 601585293889895,
+									"parameters": {
+										"variable": "MiniGame",
+										"value": "1"
+									}
+								},
+								{
+									"id": "go-to-layout",
+									"objectClass": "System",
+									"sid": 759411589769915,
+									"parameters": {
+										"layout": "MG1"
+									}
+								}
+							],
+							"sid": 127610542708202
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Font_VHS",
+									"sid": 620112871672526,
+									"parameters": {
+										"instance-variable": "ButtonNumber",
+										"comparison": 0,
+										"value": "2"
 									}
 								}
 							],
@@ -3104,6 +3216,16 @@
 										"comparison": 0,
 										"value": "0"
 									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Font_VHS",
+									"sid": 248347722263016,
+									"parameters": {
+										"instance-variable": "ButtonNumber",
+										"comparison": 0,
+										"value": "1"
+									}
 								}
 							],
 							"actions": [
@@ -3122,7 +3244,8 @@
 									]
 								}
 							],
-							"sid": 256845047925559
+							"sid": 256845047925559,
+							"isOrBlock": true
 						}
 					]
 				},
@@ -3445,10 +3568,10 @@
 							"actions": [
 								{
 									"callFunction": "PlaySound",
-									"sid": 544087575282432,
+									"sid": 673655285023730,
 									"parameters": [
 										"\"sound_transition_begin\"",
-										"-12.5",
+										"-7.5",
 										"0"
 									]
 								}
@@ -3472,10 +3595,10 @@
 							"actions": [
 								{
 									"callFunction": "PlaySound",
-									"sid": 573254350788590,
+									"sid": 613626955967021,
 									"parameters": [
 										"\"sound_transition_end\"",
-										"-12.5",
+										"-7.5",
 										"0"
 									]
 								}
@@ -3965,6 +4088,47 @@
 				}
 			],
 			"sid": 570288202947518
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Cursor",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 245214444744418,
+							"parameters": {
+								"variable": "IsPaused"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 428624269597605
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "cursor",
+							"sid": 882913379217646,
+							"parameters": {
+								"x": "Mouse.X",
+								"y": "Mouse.Y"
+							}
+						}
+					],
+					"sid": 769322955551292
+				}
+			],
+			"sid": 980464952264092
 		}
 	],
 	"sid": 898564590862313

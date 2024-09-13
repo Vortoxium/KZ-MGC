@@ -94,14 +94,6 @@
 							],
 							"actions": [
 								{
-									"id": "set-cursor-style",
-									"objectClass": "Mouse",
-									"sid": 636761547148805,
-									"parameters": {
-										"cursor-style": "none"
-									}
-								},
-								{
 									"id": "create-object",
 									"objectClass": "System",
 									"sid": 321609596832538,
@@ -131,10 +123,10 @@
 								},
 								{
 									"callFunction": "PlayMusic",
-									"sid": 139258840369632,
+									"sid": 716561010120453,
 									"parameters": [
 										"\"song_snow\"",
-										"-10",
+										"-5",
 										"0"
 									]
 								},
@@ -207,9 +199,9 @@
 										{
 											"id": "wait",
 											"objectClass": "System",
-											"sid": 308785960902766,
+											"sid": 612360228970257,
 											"parameters": {
-												"seconds": "0.1"
+												"seconds": "0.075"
 											}
 										},
 										{
@@ -373,17 +365,7 @@
 									"isInverted": true
 								}
 							],
-							"actions": [
-								{
-									"id": "set-position",
-									"objectClass": "cursor",
-									"sid": 616793037189024,
-									"parameters": {
-										"x": "Mouse.X",
-										"y": "Mouse.Y"
-									}
-								}
-							],
+							"actions": [],
 							"sid": 308754209023684,
 							"children": [
 								{
@@ -1387,10 +1369,10 @@
 										},
 										{
 											"callFunction": "PlaySound",
-											"sid": 584154785297691,
+											"sid": 182652076386590,
 											"parameters": [
 												"\"sound_object_light_shatter_0\"&choose(1,2)",
-												"-5",
+												"0",
 												"0"
 											]
 										},
@@ -1456,10 +1438,10 @@
 												},
 												{
 													"callFunction": "PlaySound",
-													"sid": 944396282548643,
+													"sid": 534017564775137,
 													"parameters": [
 														"\"sound_clatter_brick3\"",
-														"-5",
+														"0",
 														"0"
 													]
 												},
@@ -1506,10 +1488,10 @@
 												},
 												{
 													"callFunction": "PlaySound",
-													"sid": 352682015575965,
+													"sid": 299331027675389,
 													"parameters": [
 														"\"sound_clatter_brick\"&choose(1,2)",
-														"-5",
+														"0",
 														"0"
 													]
 												},
@@ -1703,10 +1685,10 @@
 									"actions": [
 										{
 											"callFunction": "PlaySound",
-											"sid": 200350831974534,
+											"sid": 791925746985369,
 											"parameters": [
 												"\"sound_vial_explosive\"",
-												"-5",
+												"0",
 												"0"
 											]
 										}
@@ -1796,10 +1778,10 @@
 									"actions": [
 										{
 											"callFunction": "PlaySound",
-											"sid": 928522219105821,
+											"sid": 240877653277314,
 											"parameters": [
 												"\"sound_vial_smoke\"",
-												"-5",
+												"0",
 												"0"
 											]
 										}
@@ -1920,6 +1902,446 @@
 				}
 			],
 			"sid": 480137944952054
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Minigame 1",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 423052817481695,
+							"parameters": {
+								"first-value": "LayoutName",
+								"comparison": 0,
+								"second-value": "\"MG1\""
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 188947264613808,
+							"parameters": {
+								"variable": "MiniGame",
+								"comparison": 0,
+								"value": "1"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 277552137664538,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 787486044746347
+								}
+							],
+							"actions": [
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 384767594129729,
+									"parameters": {
+										"object-to-create": "cursor",
+										"layer": "\"Mouse\"",
+										"x": "0",
+										"y": "0",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "cursor",
+									"sid": 199093003287443,
+									"parameters": {
+										"frame-number": "8"
+									}
+								},
+								{
+									"callFunction": "CreateText",
+									"sid": 195073822100372,
+									"parameters": [
+										"\"HUD Below\"",
+										"\"1,171\"",
+										"\"200,10\"",
+										"\"Score\"",
+										"\"Score: \"&InvisibleTracker.ValueToTrack",
+										"\"200,150,255\"",
+										"\"\"",
+										"66"
+									]
+								},
+								{
+									"callFunction": "CallTransition",
+									"sid": 925923078300315,
+									"parameters": [
+										"\"End\""
+									]
+								},
+								{
+									"callFunction": "PlayMusic",
+									"sid": 361197077094475,
+									"parameters": [
+										"\"song_slaughterhouse\"",
+										"-2.5",
+										"0"
+									]
+								},
+								{
+									"callFunction": "DestroyMedal",
+									"sid": 337474450977837
+								},
+								{
+									"callFunction": "DestroyText",
+									"sid": 207324883215088,
+									"parameters": [
+										"\"Highscore\""
+									]
+								}
+							],
+							"sid": 532461071879254,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-animation-playing",
+											"objectClass": "backgrounds",
+											"sid": 564454729763982,
+											"parameters": {
+												"animation": "\"bg-2\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 612409440477602,
+											"parameters": {
+												"seconds": "0.075"
+											}
+										},
+										{
+											"id": "destroy",
+											"objectClass": "backgrounds",
+											"sid": 594319931360329
+										}
+									],
+									"sid": 261901688643914
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-click",
+									"objectClass": "Mouse",
+									"sid": 936368155251447,
+									"parameters": {
+										"mouse-button": "left",
+										"click-type": "clicked"
+									}
+								},
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 945452382135934,
+									"parameters": {
+										"variable": "IsPaused"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "SpawnParticles",
+									"sid": 543744248802661,
+									"parameters": [
+										"\"mg1_sniperbullet\"",
+										"\"0,0\"",
+										"\"255,255,255\"",
+										"\"0,0\"",
+										"\"0,0\"",
+										"0",
+										"0",
+										"1",
+										"0",
+										"1",
+										"cursor.UID",
+										false,
+										false,
+										"\"\""
+									]
+								},
+								{
+									"callFunction": "PlaySound",
+									"sid": 849872065075764,
+									"parameters": [
+										"\"sound_enemy_sniper_shot_0\"&choose(1,2,3)",
+										"-5",
+										"0"
+									]
+								}
+							],
+							"sid": 100745805378705
+						},
+						{
+							"eventType": "comment",
+							"text": "Shooting Targets"
+						},
+						{
+							"functionName": "UpdateScoreMG1",
+							"functionDescription": "",
+							"functionCategory": "",
+							"functionReturnType": "none",
+							"functionCopyPicked": true,
+							"functionIsAsync": false,
+							"functionParameters": [
+								{
+									"name": "PointsToGive",
+									"type": "number",
+									"initialValue": "0",
+									"comment": "",
+									"sid": 409757580209395
+								}
+							],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "InvisibleTracker",
+									"sid": 796524270297142,
+									"parameters": {
+										"instance-variable": "ValueToTrack",
+										"value": "InvisibleTracker.ValueToTrack + PointsToGive"
+									}
+								}
+							],
+							"sid": 979763870952881,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "Font_Folder",
+											"sid": 228748467182099,
+											"parameters": {
+												"instance-variable": "Mode",
+												"comparison": 0,
+												"value": "\"Score\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-text",
+											"objectClass": "Font_Folder",
+											"sid": 850542770936959,
+											"parameters": {
+												"text": "\"Score: \"&InvisibleTracker.ValueToTrack"
+											}
+										}
+									],
+									"sid": 218157548984808
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-animation-playing",
+									"objectClass": "particles",
+									"sid": 855851222160359,
+									"parameters": {
+										"animation": "\"mg1_sniperbullet\""
+									}
+								},
+								{
+									"id": "compare-animation-frame",
+									"objectClass": "particles",
+									"sid": 386014085497086,
+									"parameters": {
+										"comparison": 0,
+										"number": "0"
+									}
+								},
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 104268469389346
+								}
+							],
+							"actions": [],
+							"sid": 150100036042368,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-overlapping-another-object",
+											"objectClass": "particles",
+											"sid": 494259853112960,
+											"parameters": {
+												"object": "mg1_items_0"
+											}
+										},
+										{
+											"id": "is-overlapping-another-object",
+											"objectClass": "particles",
+											"sid": 941843514330692,
+											"parameters": {
+												"object": "mg1_items_1"
+											},
+											"isInverted": true
+										},
+										{
+											"id": "is-overlapping-another-object",
+											"objectClass": "particles",
+											"sid": 896101077754139,
+											"parameters": {
+												"object": "mg1_items_2"
+											},
+											"isInverted": true
+										},
+										{
+											"id": "is-overlapping-another-object",
+											"objectClass": "particles",
+											"sid": 125094926348960,
+											"parameters": {
+												"object": "mg1_items_3"
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "UpdateScoreMG1",
+											"sid": 300942590887018,
+											"parameters": [
+												"mg1_items_0.Points"
+											]
+										}
+									],
+									"sid": 494338015106929
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-overlapping-another-object",
+											"objectClass": "particles",
+											"sid": 222268694554142,
+											"parameters": {
+												"object": "mg1_items_1"
+											}
+										},
+										{
+											"id": "is-overlapping-another-object",
+											"objectClass": "particles",
+											"sid": 835706426802291,
+											"parameters": {
+												"object": "mg1_items_2"
+											},
+											"isInverted": true
+										},
+										{
+											"id": "is-overlapping-another-object",
+											"objectClass": "particles",
+											"sid": 544498004181838,
+											"parameters": {
+												"object": "mg1_items_3"
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "UpdateScoreMG1",
+											"sid": 876268088500045,
+											"parameters": [
+												"mg1_items_1.Points"
+											]
+										}
+									],
+									"sid": 223350471431712
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-overlapping-another-object",
+											"objectClass": "particles",
+											"sid": 681484792526538,
+											"parameters": {
+												"object": "mg1_items_2"
+											}
+										},
+										{
+											"id": "is-overlapping-another-object",
+											"objectClass": "particles",
+											"sid": 853874493139911,
+											"parameters": {
+												"object": "mg1_items_3"
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "UpdateScoreMG1",
+											"sid": 109565236845630,
+											"parameters": [
+												"mg1_items_2.Points"
+											]
+										}
+									],
+									"sid": 956161640002379
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-overlapping-another-object",
+											"objectClass": "particles",
+											"sid": 842352925023473,
+											"parameters": {
+												"object": "mg1_items_3"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "UpdateScoreMG1",
+											"sid": 948148177322219,
+											"parameters": [
+												"mg1_items_3.Points"
+											]
+										}
+									],
+									"sid": 693586046022281
+								}
+							]
+						}
+					]
+				}
+			],
+			"sid": 206627225007251
 		}
 	],
 	"sid": 901690877191249
