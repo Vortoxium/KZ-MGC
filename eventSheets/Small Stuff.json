@@ -1322,28 +1322,27 @@
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "on-any-key-pressed",
-							"objectClass": "Keyboard",
-							"sid": 137895410624870
-						},
-						{
-							"id": "on-any-click",
-							"objectClass": "Mouse",
-							"sid": 997349797584365
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 107884922168192,
+							"parameters": {
+								"variable": "isDead"
+							}
 						}
 					],
 					"actions": [],
-					"sid": 147716572603901,
+					"sid": 279416210105599,
 					"children": [
 						{
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "compare-boolean-eventvar",
-									"objectClass": "System",
-									"sid": 565388960382912,
+									"id": "on-click",
+									"objectClass": "Mouse",
+									"sid": 811169436826596,
 									"parameters": {
-										"variable": "isDead"
+										"mouse-button": "left",
+										"click-type": "clicked"
 									}
 								}
 							],
@@ -1351,7 +1350,7 @@
 								{
 									"id": "wait",
 									"objectClass": "System",
-									"sid": 578334415172219,
+									"sid": 913179073768142,
 									"parameters": {
 										"seconds": "0"
 									}
@@ -1359,7 +1358,7 @@
 								{
 									"id": "set-boolean-eventvar",
 									"objectClass": "System",
-									"sid": 603362043472204,
+									"sid": 622055003456278,
 									"parameters": {
 										"variable": "isDead",
 										"value": "false"
@@ -1368,14 +1367,14 @@
 								{
 									"id": "set-boolean-eventvar",
 									"objectClass": "System",
-									"sid": 695914515766511,
+									"sid": 454123818849499,
 									"parameters": {
 										"variable": "isMinigameActive",
 										"value": "true"
 									}
 								}
 							],
-							"sid": 176162127013672,
+							"sid": 563008405422745,
 							"children": [
 								{
 									"eventType": "block",
@@ -1383,7 +1382,7 @@
 										{
 											"id": "compare-instance-variable",
 											"objectClass": "Font_Folder",
-											"sid": 656462658778250,
+											"sid": 519896028947586,
 											"parameters": {
 												"instance-variable": "Mode",
 												"comparison": 0,
@@ -1395,20 +1394,100 @@
 										{
 											"id": "destroy",
 											"objectClass": "Pixel",
-											"sid": 895497596338798
+											"sid": 412538965263616
 										},
 										{
 											"id": "destroy",
 											"objectClass": "Font_Folder",
-											"sid": 747035568018136
+											"sid": 444430808096246
 										}
 									],
-									"sid": 459151107451258
+									"sid": 119283301060736
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-click",
+									"objectClass": "Mouse",
+									"sid": 882326244892211,
+									"parameters": {
+										"mouse-button": "right",
+										"click-type": "clicked"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 806153931977121,
+									"parameters": {
+										"seconds": "0"
+									}
+								},
+								{
+									"callFunction": "CallTransition",
+									"sid": 231705209514893,
+									"parameters": [
+										"\"Start\""
+									]
+								},
+								{
+									"id": "start-timer",
+									"objectClass": "InvisibleTrackerFree",
+									"sid": 513719096311576,
+									"behaviorType": "Timer",
+									"parameters": {
+										"duration": "0.5",
+										"type": "once",
+										"tag": "\"SwitchLayoutToMainMenu\""
+									}
+								}
+							],
+							"sid": 663418531786418,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "Font_Folder",
+											"sid": 487345432465942,
+											"parameters": {
+												"instance-variable": "Mode",
+												"comparison": 0,
+												"value": "\"DeathText\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 413255661227878,
+											"parameters": {
+												"seconds": "0.4"
+											}
+										},
+										{
+											"id": "destroy",
+											"objectClass": "Pixel",
+											"sid": 674568675216135
+										},
+										{
+											"id": "destroy",
+											"objectClass": "Font_Folder",
+											"sid": 596028726536549
+										}
+									],
+									"sid": 166714125849694
 								}
 							]
 						}
-					],
-					"isOrBlock": true
+					]
 				}
 			],
 			"sid": 531628472115024
@@ -3691,13 +3770,13 @@
 									"actions": [
 										{
 											"callFunction": "CreateText",
-											"sid": 321245308912053,
+											"sid": 894758423945266,
 											"parameters": [
 												"\"HUD Below\"",
 												"\"64,60\"",
 												"\"192,60\"",
 												"\"DeathText\"",
-												"\"What a pathetic performance...\" & newline & \nnewline &\n\"(Press ANY BUTTON to restart)\"",
+												"\"What a pathetic performance...\" & newline & \nnewline &\n\"(Press LEFT-CLICK to restart or RIGHT-CLICK to exit)\"",
 												"\"255,150,255\"",
 												"\"Middle\"",
 												"66"
@@ -3733,13 +3812,13 @@
 									"actions": [
 										{
 											"callFunction": "CreateText",
-											"sid": 636965810522966,
+											"sid": 558626420783306,
 											"parameters": [
 												"\"HUD Below\"",
 												"\"64,60\"",
 												"\"192,60\"",
 												"\"DeathText\"",
-												"\"I have to do better than this...\" & newline & \nnewline &\n\"(Press ANY BUTTON to restart)\"",
+												"\"I have to do better than this...\" & newline & \nnewline &\n\"(Press LEFT-CLICK to restart or RIGHT-CLICK to exit)\"",
 												"\"255,150,255\"",
 												"\"Middle\"",
 												"66"
@@ -3775,13 +3854,13 @@
 									"actions": [
 										{
 											"callFunction": "CreateText",
-											"sid": 132504742735739,
+											"sid": 701733204749422,
 											"parameters": [
 												"\"HUD Below\"",
 												"\"64,60\"",
 												"\"192,60\"",
 												"\"DeathText\"",
-												"\"Improvements are still achieveable.\" & newline & \nnewline &\n\"(Press ANY BUTTON to restart)\"",
+												"\"Improvements are still achieveable.\" & newline & \nnewline &\n\"(Press LEFT-CLICK to restart or RIGHT-CLICK to exit)\"",
 												"\"255,150,255\"",
 												"\"Middle\"",
 												"66"
@@ -3817,13 +3896,13 @@
 									"actions": [
 										{
 											"callFunction": "CreateText",
-											"sid": 827465824068793,
+											"sid": 403065244605705,
 											"parameters": [
 												"\"HUD Below\"",
 												"\"64,60\"",
 												"\"192,60\"",
 												"\"DeathText\"",
-												"\"These are acceptable results.\" & newline & \nnewline &\n\"(Press ANY BUTTON to restart)\"",
+												"\"These are acceptable results.\" & newline & \nnewline &\n\"(Press LEFT-CLICK to restart or RIGHT-CLICK to exit)\"",
 												"\"255,150,255\"",
 												"\"Middle\"",
 												"66"
@@ -3849,13 +3928,13 @@
 									"actions": [
 										{
 											"callFunction": "CreateText",
-											"sid": 653463149863201,
+											"sid": 837582330775921,
 											"parameters": [
 												"\"HUD Below\"",
 												"\"64,60\"",
 												"\"192,60\"",
 												"\"DeathText\"",
-												"\"I think I'm done here.\" & newline & \nnewline &\n\"(Press ANY BUTTON to restart)\"",
+												"\"I think I'm done here.\" & newline & \nnewline &\n\"(Press LEFT-CLICK to restart or RIGHT-CLICK to exit)\"",
 												"\"255,150,255\"",
 												"\"Middle\"",
 												"66"
