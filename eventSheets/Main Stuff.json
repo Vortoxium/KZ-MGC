@@ -2099,6 +2099,50 @@
 							"sid": 100745805378705
 						},
 						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-timer",
+									"objectClass": "Font_Folder",
+									"sid": 863463596951033,
+									"behaviorType": "Timer",
+									"parameters": {
+										"tag": "\"Lifespan\""
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Font_Folder",
+									"sid": 578289897948073,
+									"parameters": {
+										"instance-variable": "Mode",
+										"comparison": 0,
+										"value": "\"Score+\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "tween-one-property",
+									"objectClass": "Font_Folder",
+									"sid": 253019144715037,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"Fade\"",
+										"property": "offsetOpacity",
+										"end-value": "0",
+										"time": "0.5",
+										"ease": "noease",
+										"destroy-on-complete": "yes",
+										"loop": "no",
+										"ping-pong": "no",
+										"repeat-count": "0"
+									}
+								}
+							],
+							"sid": 755535117193629
+						},
+						{
 							"functionName": "UpdateScoreMG1",
 							"functionDescription": "",
 							"functionCategory": "",
@@ -2112,6 +2156,20 @@
 									"initialValue": "0",
 									"comment": "",
 									"sid": 409757580209395
+								},
+								{
+									"name": "TextRBG",
+									"type": "string",
+									"initialValue": "",
+									"comment": "",
+									"sid": 972789019753168
+								},
+								{
+									"name": "DoesFlash",
+									"type": "boolean",
+									"initialValue": "false",
+									"comment": "",
+									"sid": 598747378681866
 								}
 							],
 							"eventType": "function-block",
@@ -2154,6 +2212,166 @@
 										}
 									],
 									"sid": 218157548984808
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "Font_Folder",
+											"sid": 221294709623132,
+											"parameters": {
+												"instance-variable": "Mode",
+												"comparison": 0,
+												"value": "\"Score+\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-y",
+											"objectClass": "Font_Folder",
+											"sid": 405208488245800,
+											"parameters": {
+												"y": "Font_Folder.Y - 9"
+											}
+										}
+									],
+									"sid": 514111259520734
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 724643417180833,
+											"parameters": {
+												"variable": "PointsToGive",
+												"comparison": 5,
+												"value": "0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "CreateText",
+											"sid": 691298015247006,
+											"parameters": [
+												"\"HUD Below\"",
+												"53 + (len(str(InvisibleTracker.ValueToTrack))*7) &\",171\"",
+												"\"200,10\"",
+												"\"Score+\"",
+												"\"+\"&PointsToGive",
+												"TextRBG",
+												"\"\"",
+												"66"
+											]
+										}
+									],
+									"sid": 140542529865426
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 314146746380107,
+											"parameters": {
+												"variable": "PointsToGive",
+												"comparison": 2,
+												"value": "0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "CreateText",
+											"sid": 112531308915182,
+											"parameters": [
+												"\"HUD Below\"",
+												"53 + (len(str(InvisibleTracker.ValueToTrack))*7) &\",171\"",
+												"\"200,10\"",
+												"\"Score+\"",
+												"str(PointsToGive)",
+												"TextRBG",
+												"\"\"",
+												"66"
+											]
+										}
+									],
+									"sid": 865692840786227
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-last-created",
+											"objectClass": "System",
+											"sid": 829116519975879,
+											"parameters": {
+												"object": "Font_Folder"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 269073104448783,
+											"parameters": {
+												"seconds": "0"
+											}
+										},
+										{
+											"id": "start-timer",
+											"objectClass": "Font_Folder",
+											"sid": 359228199898089,
+											"behaviorType": "Timer",
+											"parameters": {
+												"duration": "0.5",
+												"type": "once",
+												"tag": "\"Lifespan\""
+											}
+										}
+									],
+									"sid": 140995287194775,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-boolean-eventvar",
+													"objectClass": "System",
+													"sid": 234128504948218,
+													"parameters": {
+														"variable": "DoesFlash"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "tween-one-property",
+													"objectClass": "Font_Folder",
+													"sid": 511682921981602,
+													"behaviorType": "Tween",
+													"parameters": {
+														"tags": "\"FlashScore\"",
+														"property": "offsetColor",
+														"end-value": "rgbEx(255,255,255)",
+														"time": "0.05",
+														"ease": "easeinoutback",
+														"destroy-on-complete": "no",
+														"loop": "yes",
+														"ping-pong": "yes",
+														"repeat-count": "0"
+													}
+												}
+											],
+											"sid": 906707082082790
+										}
+									]
 								}
 							]
 						},
@@ -2196,6 +2414,32 @@
 										{
 											"id": "is-overlapping-another-object",
 											"objectClass": "particles",
+											"sid": 422883390113989,
+											"parameters": {
+												"object": "MG1_Rings"
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "UpdateScoreMG1",
+											"sid": 721929856660993,
+											"parameters": [
+												"-1000",
+												"\"150,150,255\"",
+												false
+											]
+										}
+									],
+									"sid": 281795268895306
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-overlapping-another-object",
+											"objectClass": "particles",
 											"sid": 494259853112960,
 											"parameters": {
 												"object": "mg1_items_0"
@@ -2232,9 +2476,11 @@
 									"actions": [
 										{
 											"callFunction": "UpdateScoreMG1",
-											"sid": 300942590887018,
+											"sid": 194155077913183,
 											"parameters": [
-												"mg1_items_0.Points"
+												"mg1_items_0.Points",
+												"\"150,255,150\"",
+												false
 											]
 										}
 									],
@@ -2273,9 +2519,11 @@
 									"actions": [
 										{
 											"callFunction": "UpdateScoreMG1",
-											"sid": 876268088500045,
+											"sid": 130189757268735,
 											"parameters": [
-												"mg1_items_1.Points"
+												"mg1_items_1.Points",
+												"\"250,250,100\"",
+												false
 											]
 										}
 									],
@@ -2305,9 +2553,11 @@
 									"actions": [
 										{
 											"callFunction": "UpdateScoreMG1",
-											"sid": 109565236845630,
+											"sid": 254416306483571,
 											"parameters": [
-												"mg1_items_2.Points"
+												"mg1_items_2.Points",
+												"\"255,175,125\"",
+												false
 											]
 										}
 									],
@@ -2328,9 +2578,11 @@
 									"actions": [
 										{
 											"callFunction": "UpdateScoreMG1",
-											"sid": 948148177322219,
+											"sid": 699231084036207,
 											"parameters": [
-												"mg1_items_3.Points"
+												"mg1_items_3.Points",
+												"\"255,100,100\"",
+												true
 											]
 										}
 									],

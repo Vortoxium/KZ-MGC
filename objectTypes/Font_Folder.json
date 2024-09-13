@@ -12,7 +12,18 @@
 			"sid": 474936111574295
 		}
 	],
-	"behaviorTypes": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Timer",
+			"name": "Timer",
+			"sid": 732514406461822
+		},
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 291440416062950
+		}
+	],
 	"effectTypes": [],
 	"image": {
 		"width": 126,

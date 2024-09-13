@@ -399,7 +399,16 @@
 					"instanceVariables": {
 						"Mode": ""
 					},
-					"behaviors": {},
+					"behaviors": {
+						"Timer": {
+							"properties": {}
+						},
+						"Tween": {
+							"properties": {
+								"enabled": true
+							}
+						}
+					},
 					"world": {
 						"x": 6,
 						"y": 212,
