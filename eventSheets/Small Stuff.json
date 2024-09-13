@@ -350,7 +350,6 @@
 							"id": "set-silent",
 							"objectClass": "Audio",
 							"sid": 425737794903237,
-							"disabled": true,
 							"parameters": {
 								"mode": "silent"
 							}
@@ -734,6 +733,30 @@
 										}
 									],
 									"sid": 561035380096748
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-animation-playing",
+											"objectClass": "particles",
+											"sid": 965426809756087,
+											"parameters": {
+												"animation": "\"mg1_sniperbullet\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-angle",
+											"objectClass": "particles",
+											"sid": 976830216412623,
+											"parameters": {
+												"angle": "random(0,360)"
+											}
+										}
+									],
+									"sid": 504582315686040
 								}
 							]
 						}
