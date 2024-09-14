@@ -46,6 +46,16 @@
 			"sid": 755115531764423
 		},
 		{
+			"eventType": "variable",
+			"name": "RestartMusic",
+			"type": "boolean",
+			"initialValue": "true",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 841101681803991
+		},
+		{
 			"eventType": "group",
 			"disabled": false,
 			"title": "Minigame 0",
@@ -119,15 +129,6 @@
 									"sid": 376029276001954,
 									"parameters": [
 										"\"End\""
-									]
-								},
-								{
-									"callFunction": "PlayMusic",
-									"sid": 716561010120453,
-									"parameters": [
-										"\"song_snow\"",
-										"-5",
-										"0"
 									]
 								},
 								{
@@ -211,6 +212,47 @@
 										}
 									],
 									"sid": 412492874625125
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 403797435271990,
+											"parameters": {
+												"variable": "RestartMusic"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "PlayMusic",
+											"sid": 304818333134565,
+											"parameters": [
+												"\"song_snow\"",
+												"-5",
+												"0"
+											]
+										}
+									],
+									"sid": 717380587540468
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "set-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 943713644028607,
+											"parameters": {
+												"variable": "RestartMusic",
+												"value": "true"
+											}
+										}
+									],
+									"sid": 716715391051885
 								}
 							]
 						},
@@ -1990,15 +2032,6 @@
 									]
 								},
 								{
-									"callFunction": "PlayMusic",
-									"sid": 361197077094475,
-									"parameters": [
-										"\"song_slaughterhouse\"",
-										"-2.5",
-										"0"
-									]
-								},
-								{
 									"callFunction": "DestroyMedal",
 									"sid": 337474450977837
 								},
@@ -2040,6 +2073,47 @@
 										}
 									],
 									"sid": 261901688643914
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 178095404701831,
+											"parameters": {
+												"variable": "RestartMusic"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "PlayMusic",
+											"sid": 739894423427877,
+											"parameters": [
+												"\"song_slaughterhouse\"",
+												"-2.5",
+												"0"
+											]
+										}
+									],
+									"sid": 182930119100874
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "set-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 898261968165630,
+											"parameters": {
+												"variable": "RestartMusic",
+												"value": "true"
+											}
+										}
+									],
+									"sid": 625936393569355
 								}
 							]
 						},

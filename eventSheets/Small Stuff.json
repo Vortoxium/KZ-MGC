@@ -350,6 +350,7 @@
 							"id": "set-silent",
 							"objectClass": "Audio",
 							"sid": 425737794903237,
+							"disabled": true,
 							"parameters": {
 								"mode": "silent"
 							}
@@ -2920,8 +2921,17 @@
 							],
 							"actions": [
 								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 277864694310713,
+									"parameters": {
+										"variable": "RestartMusic",
+										"value": "false"
+									}
+								},
+								{
 									"callFunction": "CallTransition",
-									"sid": 385817295973684,
+									"sid": 572140120978781,
 									"parameters": [
 										"\"Start\""
 									]
@@ -3037,6 +3047,16 @@
 								{
 									"id": "compare-instance-variable",
 									"objectClass": "Font_Folder",
+									"sid": 603283620804290,
+									"parameters": {
+										"instance-variable": "Mode",
+										"comparison": 0,
+										"value": "\"Score+\""
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Font_Folder",
 									"sid": 256285355667624,
 									"parameters": {
 										"instance-variable": "Mode",
@@ -3107,11 +3127,21 @@
 								{
 									"id": "compare-instance-variable",
 									"objectClass": "Font_Folder",
-									"sid": 136063919159037,
+									"sid": 430112219892026,
 									"parameters": {
 										"instance-variable": "Mode",
 										"comparison": 0,
 										"value": "\"Score\""
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Font_Folder",
+									"sid": 889644875855814,
+									"parameters": {
+										"instance-variable": "Mode",
+										"comparison": 0,
+										"value": "\"Score+\""
 									}
 								},
 								{
@@ -3688,21 +3718,36 @@
 					],
 					"eventType": "function-block",
 					"conditions": [],
-					"actions": [
-						{
-							"id": "fade-volume",
-							"objectClass": "Audio",
-							"sid": 832614274746850,
-							"parameters": {
-								"tag": "\"currentMusic\"",
-								"db": "-100",
-								"duration": "0.5",
-								"ending": "stop"
-							}
-						}
-					],
+					"actions": [],
 					"sid": 922277551547023,
 					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 493008593307736,
+									"parameters": {
+										"variable": "RestartMusic"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "fade-volume",
+									"objectClass": "Audio",
+									"sid": 929230647167262,
+									"parameters": {
+										"tag": "\"currentMusic\"",
+										"db": "-100",
+										"duration": "0.5",
+										"ending": "stop"
+									}
+								}
+							],
+							"sid": 532166159907241
+						},
 						{
 							"eventType": "block",
 							"conditions": [

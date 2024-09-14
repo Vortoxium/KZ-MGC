@@ -69,15 +69,6 @@
 							]
 						},
 						{
-							"callFunction": "PlayMusic",
-							"sid": 411664781310334,
-							"parameters": [
-								"\"song_silhouette\"",
-								"0",
-								"4"
-							]
-						},
-						{
 							"id": "set-boolean-eventvar",
 							"objectClass": "System",
 							"sid": 822413325479973,
@@ -126,6 +117,47 @@
 								}
 							],
 							"sid": 633088278683329
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 726220726841832,
+									"parameters": {
+										"variable": "RestartMusic"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "PlayMusic",
+									"sid": 687831778308272,
+									"parameters": [
+										"\"song_silhouette\"",
+										"0",
+										"4"
+									]
+								}
+							],
+							"sid": 113655269016236
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 687615447808045,
+									"parameters": {
+										"variable": "RestartMusic",
+										"value": "true"
+									}
+								}
+							],
+							"sid": 475309349115949
 						},
 						{
 							"eventType": "comment",
