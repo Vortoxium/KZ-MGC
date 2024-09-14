@@ -2018,15 +2018,28 @@
 										},
 										{
 											"callFunction": "CreateButton",
-											"sid": 768424565234581,
+											"sid": 181389588908393,
 											"parameters": [
 												"\"Pause\"",
 												"32",
 												"56",
 												"\"0,255,255\"",
-												"\"MAIN MENU\"",
+												"\"RESTART\"",
 												"\"PauseButton\"",
 												"1"
+											]
+										},
+										{
+											"callFunction": "CreateButton",
+											"sid": 532258166063327,
+											"parameters": [
+												"\"Pause\"",
+												"32",
+												"80",
+												"\"0,255,255\"",
+												"\"MAIN MENU\"",
+												"\"PauseButton\"",
+												"2"
 											]
 										},
 										{
@@ -2897,11 +2910,47 @@
 								{
 									"id": "compare-instance-variable",
 									"objectClass": "Font_VHS",
-									"sid": 429362566141431,
+									"sid": 785262737300143,
 									"parameters": {
 										"instance-variable": "ButtonNumber",
 										"comparison": 0,
 										"value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "CallTransition",
+									"sid": 385817295973684,
+									"parameters": [
+										"\"Start\""
+									]
+								},
+								{
+									"id": "start-timer",
+									"objectClass": "InvisibleTrackerFree",
+									"sid": 651566186271473,
+									"behaviorType": "Timer",
+									"parameters": {
+										"duration": "0.5",
+										"type": "once",
+										"tag": "\"RestartLayout\""
+									}
+								}
+							],
+							"sid": 877199546183821
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Font_VHS",
+									"sid": 391662417816614,
+									"parameters": {
+										"instance-variable": "ButtonNumber",
+										"comparison": 0,
+										"value": "2"
 									}
 								}
 							],
@@ -2952,10 +3001,10 @@
 						{
 							"id": "on-timer",
 							"objectClass": "InvisibleTrackerFree",
-							"sid": 484965456734307,
+							"sid": 234434335216454,
 							"behaviorType": "Timer",
 							"parameters": {
-								"tag": "\"SwitchLayoutToMainMenu\""
+								"tag": "\"RestartLayout\""
 							}
 						}
 					],
@@ -3007,15 +3056,95 @@
 									"sid": 349959679667757
 								},
 								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 717673059662611,
+									"parameters": {
+										"variable": "isMinigameActive",
+										"value": "false"
+									}
+								},
+								{
+									"id": "restart-layout",
+									"objectClass": "System",
+									"sid": 739898095882209
+								}
+							],
+							"sid": 416937132850009,
+							"isOrBlock": true
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-timer",
+							"objectClass": "InvisibleTrackerFree",
+							"sid": 982816752653899,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"SwitchLayoutToMainMenu\""
+							}
+						}
+					],
+					"actions": [],
+					"sid": 659067844625179,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Font_Folder",
+									"sid": 552300881617076,
+									"parameters": {
+										"instance-variable": "Mode",
+										"comparison": 0,
+										"value": "\"Timer\""
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Font_Folder",
+									"sid": 136063919159037,
+									"parameters": {
+										"instance-variable": "Mode",
+										"comparison": 0,
+										"value": "\"Score\""
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Font_Folder",
+									"sid": 817482396280913,
+									"parameters": {
+										"instance-variable": "Mode",
+										"comparison": 0,
+										"value": "\"MG0Explain\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "UnPause",
+									"sid": 248511789795223
+								},
+								{
+									"id": "destroy",
+									"objectClass": "Font_Folder",
+									"sid": 966423121996171
+								},
+								{
 									"id": "go-to-layout",
 									"objectClass": "System",
-									"sid": 170897826474877,
+									"sid": 246759677126590,
 									"parameters": {
 										"layout": "Menu"
 									}
 								}
 							],
-							"sid": 416937132850009,
+							"sid": 369357662734042,
 							"isOrBlock": true
 						}
 					]
