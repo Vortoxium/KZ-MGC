@@ -350,7 +350,6 @@
 							"id": "set-silent",
 							"objectClass": "Audio",
 							"sid": 425737794903237,
-							"disabled": true,
 							"parameters": {
 								"mode": "silent"
 							}

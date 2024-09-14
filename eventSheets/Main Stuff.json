@@ -2089,10 +2089,10 @@
 									"actions": [
 										{
 											"callFunction": "PlayMusic",
-											"sid": 739894423427877,
+											"sid": 841294766903919,
 											"parameters": [
 												"\"song_slaughterhouse\"",
-												"-2.5",
+												"-2",
 												"0"
 											]
 										}
