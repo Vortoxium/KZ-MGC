@@ -20,6 +20,8 @@
 						"seams": "overlap"
 					},
 					"uid": 8,
+					"sid": 709120968005821,
+					"tags": "",
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
@@ -49,6 +51,8 @@
 						"live-preview": false
 					},
 					"uid": 10,
+					"sid": 104294838583702,
+					"tags": "",
 					"instanceVariables": {
 						"PosX": 0,
 						"PosY": 0,
@@ -96,6 +100,8 @@
 						"live-preview": false
 					},
 					"uid": 11,
+					"sid": 698159948517915,
+					"tags": "",
 					"instanceVariables": {
 						"mode": "pushRight"
 					},
@@ -127,6 +133,8 @@
 						"live-preview": false
 					},
 					"uid": 12,
+					"sid": 276605437806958,
+					"tags": "",
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
@@ -156,6 +164,8 @@
 						"live-preview": false
 					},
 					"uid": 13,
+					"sid": 867087534727910,
+					"tags": "",
 					"instanceVariables": {
 						"ValueToTrack": 0
 					},
@@ -191,6 +201,8 @@
 						"live-preview": false
 					},
 					"uid": 14,
+					"sid": 734822443342455,
+					"tags": "",
 					"instanceVariables": {
 						"VerticalMovement": 0,
 						"HorizontalMovement": 0,
@@ -224,6 +236,8 @@
 						"live-preview": false
 					},
 					"uid": 15,
+					"sid": 704370065581911,
+					"tags": "",
 					"instanceVariables": {
 						"HorizontalMovement": 0,
 						"VerticalMovement": 0,
@@ -279,6 +293,8 @@
 						"live-preview": false
 					},
 					"uid": 16,
+					"sid": 744434693573543,
+					"tags": "",
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
@@ -308,6 +324,8 @@
 						"live-preview": false
 					},
 					"uid": 17,
+					"sid": 708383588560509,
+					"tags": "",
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
@@ -347,6 +365,8 @@
 						"read-aloud": false
 					},
 					"uid": 30,
+					"sid": 386324260677042,
+					"tags": "",
 					"instanceVariables": {
 						"Mode": "",
 						"ButtonNumber": 0,
@@ -396,6 +416,8 @@
 						"read-aloud": false
 					},
 					"uid": 29,
+					"sid": 640246651060568,
+					"tags": "",
 					"instanceVariables": {
 						"Mode": ""
 					},
@@ -436,6 +458,8 @@
 						"live-preview": false
 					},
 					"uid": 31,
+					"sid": 601109862798468,
+					"tags": "",
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
@@ -465,6 +489,8 @@
 						"live-preview": false
 					},
 					"uid": 32,
+					"sid": 331148295087860,
+					"tags": "",
 					"instanceVariables": {
 						"Mode": ""
 					},
@@ -502,6 +528,8 @@
 						"live-preview": false
 					},
 					"uid": 35,
+					"sid": 391591277635323,
+					"tags": "",
 					"instanceVariables": {
 						"MG": 0
 					},
@@ -533,6 +561,8 @@
 						"live-preview": false
 					},
 					"uid": 39,
+					"sid": 537390533312204,
+					"tags": "",
 					"instanceVariables": {},
 					"behaviors": {
 						"Timer": {
@@ -566,6 +596,8 @@
 						"live-preview": false
 					},
 					"uid": 40,
+					"sid": 519642407618321,
+					"tags": "",
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
@@ -595,16 +627,19 @@
 						"live-preview": false
 					},
 					"uid": 42,
+					"sid": 241155562799029,
+					"tags": "",
 					"instanceVariables": {
-						"Points": 100
+						"Points": 100,
+						"ConnectedUI": 0
 					},
 					"behaviors": {},
 					"world": {
-						"x": 37,
+						"x": 40,
 						"y": 234,
-						"width": 24,
+						"width": 22,
 						"height": 22,
-						"originX": 0.4583333333333333,
+						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
 							1,
@@ -626,16 +661,19 @@
 						"live-preview": false
 					},
 					"uid": 43,
+					"sid": 741450919635631,
+					"tags": "",
 					"instanceVariables": {
-						"Points": 250
+						"Points": 250,
+						"ConnectedUI": 0
 					},
 					"behaviors": {},
 					"world": {
-						"x": 56,
+						"x": 64,
 						"y": 234,
-						"width": 24,
+						"width": 22,
 						"height": 22,
-						"originX": 0.4583333333333333,
+						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
 							1,
@@ -657,16 +695,19 @@
 						"live-preview": false
 					},
 					"uid": 44,
+					"sid": 898992448870062,
+					"tags": "",
 					"instanceVariables": {
-						"Points": 500
+						"Points": 500,
+						"ConnectedUI": 0
 					},
 					"behaviors": {},
 					"world": {
-						"x": 76,
-						"y": 235,
-						"width": 24,
+						"x": 84,
+						"y": 234,
+						"width": 22,
 						"height": 22,
-						"originX": 0.4583333333333333,
+						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
 							1,
@@ -688,16 +729,57 @@
 						"live-preview": false
 					},
 					"uid": 45,
+					"sid": 763158872691188,
+					"tags": "",
 					"instanceVariables": {
-						"Points": 1000
+						"Points": 1000,
+						"ConnectedUI": 0
 					},
 					"behaviors": {},
 					"world": {
-						"x": 97,
+						"x": 106,
 						"y": 234,
-						"width": 24,
+						"width": 22,
 						"height": 22,
-						"originX": 0.4583333333333333,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "mg1_items_P",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 55,
+					"sid": 679654269047334,
+					"tags": "",
+					"instanceVariables": {
+						"Points": 100,
+						"ConnectedUI": 0
+					},
+					"behaviors": {},
+					"instanceFolderItem": {
+						"sid": 679654269047334,
+						"expanded": true
+					},
+					"world": {
+						"x": 13,
+						"y": 234,
+						"width": 22,
+						"height": 22,
+						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
 							1,
@@ -740,6 +822,10 @@
 			"global": false
 		}
 	],
+	"scene-graphs-folder-root": {
+		"items": [],
+		"subfolders": []
+	},
 	"sid": 688425127858705,
 	"nonworld-instances": [],
 	"effectTypes": [],

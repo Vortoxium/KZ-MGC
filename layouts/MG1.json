@@ -10,12 +10,14 @@
 					"type": "backgrounds",
 					"properties": {
 						"initially-visible": true,
-						"initial-animation": "bg-1",
-						"initial-frame": 0,
+						"initial-animation": "bg-3",
+						"initial-frame": 2,
 						"enable-collisions": true,
 						"live-preview": false
 					},
-					"uid": 41,
+					"uid": 54,
+					"sid": 814573971657076,
+					"tags": "",
 					"instanceVariables": {
 						"PosX": 0,
 						"PosY": 0,
@@ -24,23 +26,27 @@
 					"behaviors": {},
 					"effects": {
 						"GlowHorizontal": {
-							"isEnabled": true,
+							"isEnabled": false,
 							"parameters": {
 								"intensity": 1
 							}
 						},
 						"GlowVertical": {
-							"isEnabled": true,
+							"isEnabled": false,
 							"parameters": {
 								"intensity": 1
 							}
 						}
 					},
+					"instanceFolderItem": {
+						"sid": 814573971657076,
+						"expanded": true
+					},
 					"world": {
 						"x": 160,
 						"y": 90,
-						"width": 785,
-						"height": 318,
+						"width": 320,
+						"height": 180,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -54,28 +60,95 @@
 					}
 				},
 				{
-					"type": "InvisibleTracker",
+					"type": "backgrounds",
 					"properties": {
 						"initially-visible": true,
-						"initial-animation": "Animation 1",
+						"initial-animation": "bg-3",
+						"initial-frame": 1,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 53,
+					"sid": 250990249028790,
+					"tags": "",
+					"instanceVariables": {
+						"PosX": 0,
+						"PosY": 0,
+						"Parallax": 100
+					},
+					"behaviors": {},
+					"effects": {
+						"GlowHorizontal": {
+							"isEnabled": false,
+							"parameters": {
+								"intensity": 1
+							}
+						},
+						"GlowVertical": {
+							"isEnabled": false,
+							"parameters": {
+								"intensity": 1
+							}
+						}
+					},
+					"instanceFolderItem": {
+						"sid": 250990249028790,
+						"expanded": true
+					},
+					"world": {
+						"x": 160,
+						"y": 90,
+						"width": 320,
+						"height": 180,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "backgrounds",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "bg-3",
 						"initial-frame": 0,
 						"enable-collisions": true,
 						"live-preview": false
 					},
-					"uid": 46,
+					"uid": 41,
+					"sid": 286760986192271,
+					"tags": "",
 					"instanceVariables": {
-						"ValueToTrack": 0
+						"PosX": 0,
+						"PosY": 0,
+						"Parallax": 100
 					},
-					"behaviors": {
-						"Timer": {
-							"properties": {}
+					"behaviors": {},
+					"effects": {
+						"GlowHorizontal": {
+							"isEnabled": false,
+							"parameters": {
+								"intensity": 1
+							}
+						},
+						"GlowVertical": {
+							"isEnabled": false,
+							"parameters": {
+								"intensity": 1
+							}
 						}
 					},
 					"world": {
 						"x": 160,
-						"y": -8,
-						"width": 16,
-						"height": 16,
+						"y": 90,
+						"width": 320,
+						"height": 180,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -133,16 +206,19 @@
 						"live-preview": false
 					},
 					"uid": 47,
+					"sid": 900944818701187,
+					"tags": "",
 					"instanceVariables": {
-						"Points": 100
+						"Points": 100,
+						"ConnectedUI": 0
 					},
 					"behaviors": {},
 					"world": {
-						"x": 258,
-						"y": 137,
-						"width": 24,
+						"x": 260,
+						"y": 136,
+						"width": 22,
 						"height": 22,
-						"originX": 0.4583333333333333,
+						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
 							1,
@@ -164,16 +240,19 @@
 						"live-preview": false
 					},
 					"uid": 48,
+					"sid": 368574822897198,
+					"tags": "",
 					"instanceVariables": {
-						"Points": 250
+						"Points": 250,
+						"ConnectedUI": 0
 					},
 					"behaviors": {},
 					"world": {
-						"x": 258,
-						"y": 137,
-						"width": 24,
+						"x": 260,
+						"y": 136,
+						"width": 22,
 						"height": 22,
-						"originX": 0.4583333333333333,
+						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
 							1,
@@ -195,16 +274,19 @@
 						"live-preview": false
 					},
 					"uid": 49,
+					"sid": 600697443228912,
+					"tags": "",
 					"instanceVariables": {
-						"Points": 500
+						"Points": 500,
+						"ConnectedUI": 0
 					},
 					"behaviors": {},
 					"world": {
-						"x": 258,
-						"y": 137,
-						"width": 24,
+						"x": 260,
+						"y": 136,
+						"width": 22,
 						"height": 22,
-						"originX": 0.4583333333333333,
+						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
 							1,
@@ -226,16 +308,19 @@
 						"live-preview": false
 					},
 					"uid": 50,
+					"sid": 535186085563468,
+					"tags": "",
 					"instanceVariables": {
-						"Points": 1000
+						"Points": 1000,
+						"ConnectedUI": 0
 					},
 					"behaviors": {},
 					"world": {
-						"x": 258,
-						"y": 137,
-						"width": 24,
+						"x": 260,
+						"y": 136,
+						"width": 22,
 						"height": 22,
-						"originX": 0.4583333333333333,
+						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
 							1,
@@ -428,6 +513,8 @@
 						"live-preview": false
 					},
 					"uid": 51,
+					"sid": 926385553260919,
+					"tags": "",
 					"instanceVariables": {},
 					"behaviors": {
 						"Timer": {
@@ -436,6 +523,43 @@
 					},
 					"world": {
 						"x": 176,
+						"y": -8,
+						"width": 16,
+						"height": 16,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "InvisibleTracker",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 46,
+					"sid": 142516082840941,
+					"tags": "",
+					"instanceVariables": {
+						"ValueToTrack": 0
+					},
+					"behaviors": {
+						"Timer": {
+							"properties": {}
+						}
+					},
+					"world": {
+						"x": 160,
 						"y": -8,
 						"width": 16,
 						"height": 16,
@@ -461,6 +585,8 @@
 						"live-preview": false
 					},
 					"uid": 52,
+					"sid": 265771289147681,
+					"tags": "",
 					"instanceVariables": {
 						"PosX": 0,
 						"PosY": 0,
@@ -469,13 +595,13 @@
 					"behaviors": {},
 					"effects": {
 						"GlowHorizontal": {
-							"isEnabled": true,
+							"isEnabled": false,
 							"parameters": {
 								"intensity": 1
 							}
 						},
 						"GlowVertical": {
-							"isEnabled": true,
+							"isEnabled": false,
 							"parameters": {
 								"intensity": 1
 							}
@@ -529,6 +655,10 @@
 			"global": false
 		}
 	],
+	"scene-graphs-folder-root": {
+		"items": [],
+		"subfolders": []
+	},
 	"sid": 831796513040035,
 	"nonworld-instances": [],
 	"effectTypes": [],

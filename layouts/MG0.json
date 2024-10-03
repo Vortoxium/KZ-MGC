@@ -16,6 +16,8 @@
 						"live-preview": false
 					},
 					"uid": 2,
+					"sid": 916642366986238,
+					"tags": "",
 					"instanceVariables": {
 						"PosX": 0,
 						"PosY": 0,
@@ -24,13 +26,13 @@
 					"behaviors": {},
 					"effects": {
 						"GlowHorizontal": {
-							"isEnabled": true,
+							"isEnabled": false,
 							"parameters": {
 								"intensity": 1
 							}
 						},
 						"GlowVertical": {
-							"isEnabled": true,
+							"isEnabled": false,
 							"parameters": {
 								"intensity": 1
 							}
@@ -63,6 +65,8 @@
 						"live-preview": false
 					},
 					"uid": 6,
+					"sid": 603877525068496,
+					"tags": "",
 					"instanceVariables": {
 						"mode": "pushRight"
 					},
@@ -94,6 +98,8 @@
 						"live-preview": false
 					},
 					"uid": 4,
+					"sid": 236203032749582,
+					"tags": "",
 					"instanceVariables": {
 						"mode": "pushLeft"
 					},
@@ -125,6 +131,8 @@
 						"live-preview": false
 					},
 					"uid": 38,
+					"sid": 269328498757769,
+					"tags": "",
 					"instanceVariables": {},
 					"behaviors": {
 						"Timer": {
@@ -158,6 +166,8 @@
 						"live-preview": false
 					},
 					"uid": 9,
+					"sid": 405760070739980,
+					"tags": "",
 					"instanceVariables": {
 						"ValueToTrack": 0
 					},
@@ -466,6 +476,8 @@
 						"live-preview": false
 					},
 					"uid": 36,
+					"sid": 773771817323352,
+					"tags": "",
 					"instanceVariables": {
 						"PosX": 0,
 						"PosY": 0,
@@ -474,13 +486,13 @@
 					"behaviors": {},
 					"effects": {
 						"GlowHorizontal": {
-							"isEnabled": true,
+							"isEnabled": false,
 							"parameters": {
 								"intensity": 1
 							}
 						},
 						"GlowVertical": {
-							"isEnabled": true,
+							"isEnabled": false,
 							"parameters": {
 								"intensity": 1
 							}
@@ -534,12 +546,18 @@
 			"global": false
 		}
 	],
+	"scene-graphs-folder-root": {
+		"items": [],
+		"subfolders": []
+	},
 	"sid": 405929297051471,
 	"nonworld-instances": [
 		{
 			"type": "Highscores",
 			"properties": {},
 			"uid": 34,
+			"sid": 895830404041977,
+			"tags": "",
 			"instanceVariables": {}
 		}
 	],

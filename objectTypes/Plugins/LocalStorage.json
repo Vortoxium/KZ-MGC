@@ -5,6 +5,8 @@
 	"singleglobal-inst": {
 		"type": "LocalStorage",
 		"properties": {},
-		"uid": 33
+		"uid": 33,
+		"sid": 525801678000006,
+		"tags": ""
 	}
 }

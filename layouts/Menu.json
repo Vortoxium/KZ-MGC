@@ -16,6 +16,8 @@
 						"live-preview": false
 					},
 					"uid": 18,
+					"sid": 464369650412801,
+					"tags": "",
 					"instanceVariables": {
 						"PosX": 0,
 						"PosY": 0,
@@ -63,6 +65,8 @@
 						"live-preview": false
 					},
 					"uid": 19,
+					"sid": 337602686076025,
+					"tags": "",
 					"instanceVariables": {
 						"PosX": 0,
 						"PosY": 0,
@@ -110,6 +114,8 @@
 						"live-preview": false
 					},
 					"uid": 20,
+					"sid": 161065959716863,
+					"tags": "",
 					"instanceVariables": {
 						"PosX": 0,
 						"PosY": 0,
@@ -157,6 +163,8 @@
 						"live-preview": false
 					},
 					"uid": 21,
+					"sid": 351971688592479,
+					"tags": "",
 					"instanceVariables": {
 						"PosX": 0,
 						"PosY": 0,
@@ -204,6 +212,8 @@
 						"live-preview": false
 					},
 					"uid": 22,
+					"sid": 774909203456976,
+					"tags": "",
 					"instanceVariables": {
 						"PosX": 0,
 						"PosY": 0,
@@ -251,6 +261,8 @@
 						"live-preview": false
 					},
 					"uid": 23,
+					"sid": 133499007033121,
+					"tags": "",
 					"instanceVariables": {
 						"PosX": 0,
 						"PosY": 0,
@@ -298,6 +310,8 @@
 						"live-preview": false
 					},
 					"uid": 24,
+					"sid": 273047529297083,
+					"tags": "",
 					"instanceVariables": {
 						"PosX": 0,
 						"PosY": 0,
@@ -345,6 +359,8 @@
 						"live-preview": false
 					},
 					"uid": 25,
+					"sid": 818564034171589,
+					"tags": "",
 					"instanceVariables": {
 						"PosX": 0,
 						"PosY": 0,
@@ -392,6 +408,8 @@
 						"live-preview": false
 					},
 					"uid": 26,
+					"sid": 306071720276003,
+					"tags": "",
 					"instanceVariables": {
 						"PosX": 0,
 						"PosY": 0,
@@ -439,6 +457,8 @@
 						"live-preview": false
 					},
 					"uid": 27,
+					"sid": 268592507402618,
+					"tags": "",
 					"instanceVariables": {
 						"PosX": 0,
 						"PosY": 0,
@@ -589,6 +609,8 @@
 						"live-preview": false
 					},
 					"uid": 37,
+					"sid": 515649696717816,
+					"tags": "",
 					"instanceVariables": {
 						"PosX": 0,
 						"PosY": 0,
@@ -597,13 +619,13 @@
 					"behaviors": {},
 					"effects": {
 						"GlowHorizontal": {
-							"isEnabled": true,
+							"isEnabled": false,
 							"parameters": {
 								"intensity": 1
 							}
 						},
 						"GlowVertical": {
-							"isEnabled": true,
+							"isEnabled": false,
 							"parameters": {
 								"intensity": 1
 							}
@@ -657,6 +679,10 @@
 			"global": false
 		}
 	],
+	"scene-graphs-folder-root": {
+		"items": [],
+		"subfolders": []
+	},
 	"sid": 858630917170472,
 	"nonworld-instances": [],
 	"effectTypes": [],
