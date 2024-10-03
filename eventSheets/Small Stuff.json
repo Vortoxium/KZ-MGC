@@ -1988,7 +1988,10 @@
 										{
 											"id": "request-pointer-lock",
 											"objectClass": "Mouse",
-											"sid": 238023615451538
+											"sid": 238023615451538,
+											"parameters": {
+												"unadjusted-movement": false
+											}
 										},
 										{
 											"id": "create-object",
@@ -2574,11 +2577,104 @@
 					"sid": 742955505788882
 				},
 				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-playing",
+							"objectClass": "Font_VHS",
+							"sid": 944934140122978,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"GlowButtonFast\""
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [],
+					"sid": 241446924143232,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-object-clicked",
+									"objectClass": "Mouse",
+									"sid": 609088418436249,
+									"parameters": {
+										"mouse-button": "left",
+										"click-type": "clicked",
+										"object-clicked": "Font_VHS"
+									}
+								},
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 534015762480101,
+									"parameters": {
+										"variable": "IsPaused"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 761810679356628,
+									"parameters": {
+										"variable": "CurrentButton",
+										"value": "Font_VHS.ButtonNumber"
+									}
+								},
+								{
+									"callFunction": "HighlightButton",
+									"sid": 944046047740733
+								},
+								{
+									"callFunction": "PressButton",
+									"sid": 243222110041703
+								}
+							],
+							"sid": 610889255872279
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 676786371968477,
+									"parameters": {
+										"key": 32
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Font_VHS",
+									"sid": 908437524118586,
+									"parameters": {
+										"instance-variable": "ButtonNumber",
+										"comparison": 0,
+										"value": "CurrentButton"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "PressButton",
+									"sid": 679016554621691
+								}
+							],
+							"sid": 839192871763000
+						}
+					]
+				},
+				{
 					"functionName": "HighlightButton",
 					"functionDescription": "",
 					"functionCategory": "",
 					"functionReturnType": "none",
-					"functionCopyPicked": true,
+					"functionCopyPicked": false,
 					"functionIsAsync": false,
 					"functionParameters": [],
 					"eventType": "function-block",
@@ -2586,7 +2682,7 @@
 					"actions": [
 						{
 							"callFunction": "PlaySound",
-							"sid": 879459922706034,
+							"sid": 421247217728925,
 							"parameters": [
 								"\"sound_menubeep_1\"",
 								"-7.5",
@@ -2595,7 +2691,7 @@
 						},
 						{
 							"callFunction": "PlaySound",
-							"sid": 523525051047609,
+							"sid": 485991501701105,
 							"parameters": [
 								"\"sound_eject_tape\"",
 								"-2.5",
@@ -2603,7 +2699,7 @@
 							]
 						}
 					],
-					"sid": 956096903571904,
+					"sid": 569339006707373,
 					"children": [
 						{
 							"eventType": "block",
@@ -2611,7 +2707,7 @@
 								{
 									"id": "compare-instance-variable",
 									"objectClass": "Font_VHS",
-									"sid": 890058242859885,
+									"sid": 467760535380902,
 									"parameters": {
 										"instance-variable": "ButtonNumber",
 										"comparison": 0,
@@ -2624,7 +2720,7 @@
 								{
 									"id": "set-default-color",
 									"objectClass": "Font_VHS",
-									"sid": 762585086520515,
+									"sid": 300794823408666,
 									"parameters": {
 										"color": "rgb(\nint(tokenat(Font_VHS.ButtonRGB,0,\",\")),\nint(tokenat(Font_VHS.ButtonRGB,1,\",\")),\nint(tokenat(Font_VHS.ButtonRGB,2,\",\"))\n)"
 									}
@@ -2632,14 +2728,14 @@
 								{
 									"id": "stop-tweens",
 									"objectClass": "Font_VHS",
-									"sid": 510721423480942,
+									"sid": 878188374163609,
 									"behaviorType": "Tween",
 									"parameters": {
 										"tags": "\"GlowButton\""
 									}
 								}
 							],
-							"sid": 492386492304392
+							"sid": 359190602637785
 						},
 						{
 							"eventType": "block",
@@ -2647,7 +2743,7 @@
 								{
 									"id": "compare-instance-variable",
 									"objectClass": "Font_VHS",
-									"sid": 146841439896547,
+									"sid": 713453096130939,
 									"parameters": {
 										"instance-variable": "ButtonNumber",
 										"comparison": 0,
@@ -2659,7 +2755,7 @@
 								{
 									"id": "set-default-color",
 									"objectClass": "Font_VHS",
-									"sid": 816095530537335,
+									"sid": 748452399626818,
 									"parameters": {
 										"color": "rgb(255,0,255)"
 									}
@@ -2667,7 +2763,7 @@
 								{
 									"id": "set-y",
 									"objectClass": "Pixel",
-									"sid": 561630175483337,
+									"sid": 545030697774491,
 									"parameters": {
 										"y": "Font_VHS.Y - 1"
 									}
@@ -2675,7 +2771,7 @@
 								{
 									"id": "tween-one-property",
 									"objectClass": "Font_VHS",
-									"sid": 505093071329723,
+									"sid": 520254019108196,
 									"behaviorType": "Tween",
 									"parameters": {
 										"tags": "\"GlowButton\"",
@@ -2690,7 +2786,7 @@
 									}
 								}
 							],
-							"sid": 948292128210544
+							"sid": 801142755924219
 						},
 						{
 							"eventType": "block",
@@ -2698,7 +2794,7 @@
 								{
 									"id": "compare-instance-variable",
 									"objectClass": "Font_VHS",
-									"sid": 960409529813661,
+									"sid": 741639203064625,
 									"parameters": {
 										"instance-variable": "Mode",
 										"comparison": 0,
@@ -2709,73 +2805,12 @@
 							"actions": [
 								{
 									"callFunction": "ShowHighscore",
-									"sid": 438257189038244
+									"sid": 180526364405979
 								}
 							],
-							"sid": 901355111887775
+							"sid": 655772922711281
 						}
 					]
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-object-clicked",
-							"objectClass": "Mouse",
-							"sid": 688586672749200,
-							"parameters": {
-								"mouse-button": "left",
-								"click-type": "clicked",
-								"object-clicked": "Font_VHS"
-							}
-						},
-						{
-							"id": "compare-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 593417955857917,
-							"parameters": {
-								"variable": "IsPaused"
-							},
-							"isInverted": true
-						}
-					],
-					"actions": [
-						{
-							"callFunction": "PressButton",
-							"sid": 100964114796993
-						}
-					],
-					"sid": 130242503903959
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-key-pressed",
-							"objectClass": "Keyboard",
-							"sid": 760758157420170,
-							"parameters": {
-								"key": 32
-							}
-						},
-						{
-							"id": "compare-instance-variable",
-							"objectClass": "Font_VHS",
-							"sid": 889623481891028,
-							"parameters": {
-								"instance-variable": "ButtonNumber",
-								"comparison": 0,
-								"value": "CurrentButton"
-							}
-						}
-					],
-					"actions": [
-						{
-							"callFunction": "PressButton",
-							"sid": 944874743205236
-						}
-					],
-					"sid": 975867278375182
 				},
 				{
 					"functionName": "PressButton",
@@ -2826,10 +2861,10 @@
 						{
 							"id": "tween-one-property",
 							"objectClass": "Font_VHS",
-							"sid": 676676950088631,
+							"sid": 764530599239973,
 							"behaviorType": "Tween",
 							"parameters": {
-								"tags": "\"GlowButtonFast\"&Font_VHS.ButtonNumber",
+								"tags": "\"GlowButtonFast\"",
 								"property": "offsetColor",
 								"end-value": "rgbEx(255,255,255)",
 								"time": "0.11",
@@ -2862,10 +2897,10 @@
 						{
 							"id": "on-tweens-finished",
 							"objectClass": "Font_VHS",
-							"sid": 788555601582991,
+							"sid": 778720874789525,
 							"behaviorType": "Tween",
 							"parameters": {
-								"tags": "\"GlowButtonFast\"&Font_VHS.ButtonNumber"
+								"tags": "\"GlowButtonFast\""
 							}
 						},
 						{
@@ -3188,10 +3223,10 @@
 						{
 							"id": "on-tweens-finished",
 							"objectClass": "Font_VHS",
-							"sid": 830126260726152,
+							"sid": 896289302817161,
 							"behaviorType": "Tween",
 							"parameters": {
-								"tags": "\"GlowButtonFast\"&Font_VHS.ButtonNumber"
+								"tags": "\"GlowButtonFast\""
 							}
 						},
 						{
