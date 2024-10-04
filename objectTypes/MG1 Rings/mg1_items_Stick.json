@@ -1,29 +1,19 @@
 {
-	"name": "InvisibleTracker",
+	"name": "mg1_items_Stick",
 	"plugin-id": "Sprite",
-	"sid": 430932797733768,
+	"sid": 552266188301941,
 	"isGlobal": false,
-	"instanceVariables": [
-		{
-			"name": "ValueToTrack",
-			"type": "number",
-			"desc": "",
-			"show": true,
-			"sid": 340297940513622
-		},
-		{
-			"name": "Value2",
-			"type": "number",
-			"desc": "",
-			"show": true,
-			"sid": 196785320095210
-		}
-	],
+	"instanceVariables": [],
 	"behaviorTypes": [
 		{
-			"behaviorId": "Timer",
-			"name": "Timer",
-			"sid": 857408335781360
+			"behaviorId": "Sin",
+			"name": "Sine",
+			"sid": 809210978362340
+		},
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 978575852788549
 		}
 	],
 	"effectTypes": [],
@@ -32,21 +22,21 @@
 			{
 				"frames": [
 					{
-						"width": 16,
-						"height": 16,
+						"width": 2,
+						"height": 60,
 						"originX": 0.5,
-						"originY": 0.5,
+						"originY": -0.18333333333333332,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
 						"fileType": "image/png",
-						"imageSpriteId": 9691087,
+						"imageSpriteId": 9095398,
 						"useCollisionPoly": true,
 						"duration": 1,
 						"tag": ""
 					}
 				],
-				"sid": 925806212725765,
+				"sid": 146922370963371,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

@@ -19,7 +19,7 @@
 			"eventType": "variable",
 			"name": "MiniGameLevel",
 			"type": "number",
-			"initialValue": "1",
+			"initialValue": "0",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
@@ -1391,10 +1391,10 @@
 									"actions": [
 										{
 											"callFunction": "SpawnParticles",
-											"sid": 668656871540322,
+											"sid": 846350568384503,
 											"parameters": [
 												"\"mg0_item_glass\"",
-												"\"1,5\"",
+												"\"0,5\"",
 												"tokenat(mg0_item_0_colours,mg0_items.AnimationFrame,\"|\")",
 												"\"-6,6\"",
 												"\"-6,6\"",
@@ -1460,10 +1460,10 @@
 											"actions": [
 												{
 													"callFunction": "SpawnParticles",
-													"sid": 951981753069260,
+													"sid": 355915424287466,
 													"parameters": [
 														"\"mg0_item_glass\"",
-														"\"1,5\"",
+														"\"0,5\"",
 														"\"255,255,255\"",
 														"\"-6,6\"",
 														"\"-6,6\"",
@@ -1510,10 +1510,10 @@
 											"actions": [
 												{
 													"callFunction": "SpawnParticles",
-													"sid": 462415460022517,
+													"sid": 336692898359762,
 													"parameters": [
 														"\"mg0_item_glass\"",
-														"\"1,5\"",
+														"\"0,5\"",
 														"\"255,255,255\"",
 														"\"-6,6\"",
 														"\"-6,6\"",
@@ -2041,6 +2041,15 @@
 									"parameters": [
 										"\"Highscore\""
 									]
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 135057981303591,
+									"parameters": {
+										"variable": "MiniGameLevel",
+										"value": "choose(0,0)"
+									}
 								}
 							],
 							"sid": 532461071879254,
@@ -2679,13 +2688,463 @@
 										}
 									],
 									"sid": 693586046022281
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-overlapping-another-object",
+											"objectClass": "particles",
+											"sid": 945881049184255,
+											"parameters": {
+												"object": "mg1_items_Stick"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "UpdateScoreMG1",
+											"sid": 519517766207849,
+											"parameters": [
+												"mg1_items_Stick.Points",
+												"\"255,255,255\"",
+												false
+											]
+										}
+									],
+									"sid": 485575783257384
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-overlapping-another-object",
+											"objectClass": "particles",
+											"sid": 542084022968748,
+											"parameters": {
+												"object": "MG1_Rings"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 458712919628163,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-overlapping-another-object",
+													"objectClass": "particles",
+													"sid": 489355244873991,
+													"parameters": {
+														"object": "mg1_items_Stick"
+													}
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "DestroyTarget",
+													"sid": 117100744123128,
+													"parameters": [
+														true,
+														"mg1_items_Stick.UID"
+													]
+												}
+											],
+											"sid": 682936124648643
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 410937850121840
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "DestroyTarget",
+													"sid": 286300152957999,
+													"parameters": [
+														false,
+														"MG1_Rings.ConnectedUID"
+													]
+												}
+											],
+											"sid": 507723013771239
+										}
+									]
 								}
 							]
+						},
+						{
+							"eventType": "comment",
+							"text": "Destroy Target"
+						},
+						{
+							"functionName": "DestroyTarget",
+							"functionDescription": "",
+							"functionCategory": "",
+							"functionReturnType": "none",
+							"functionCopyPicked": false,
+							"functionIsAsync": false,
+							"functionParameters": [
+								{
+									"name": "IsStick",
+									"type": "boolean",
+									"initialValue": "false",
+									"comment": "",
+									"sid": 759943835215809
+								},
+								{
+									"name": "TargetUID",
+									"type": "number",
+									"initialValue": "0",
+									"comment": "",
+									"sid": 708988429368863
+								}
+							],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 367020395175567,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 778484660360072,
+											"parameters": {
+												"variable": "IsStick"
+											}
+										},
+										{
+											"id": "pick-by-unique-id",
+											"objectClass": "mg1_items_Stick",
+											"sid": 967649524284798,
+											"parameters": {
+												"unique-id": "TargetUID"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "SpawnParticles",
+											"sid": 663326034361877,
+											"parameters": [
+												"\"mg0_item_glass\"",
+												"\"0,5\"",
+												"\"60,54,51\"",
+												"\"-6,6\"",
+												"\"-6,6\"",
+												"0",
+												"distance(0,mg1_items_Stick.Y,0,Mouse.Y)",
+												"1",
+												"0",
+												"random(10,15)",
+												"mg1_items_Stick.UID",
+												true,
+												false,
+												"\"\""
+											]
+										},
+										{
+											"id": "destroy",
+											"objectClass": "mg1_items_Stick",
+											"sid": 337900328822563
+										}
+									],
+									"sid": 245544067934878
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 945740210236310,
+											"parameters": {
+												"variable": "IsStick"
+											},
+											"isInverted": true
+										},
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "MG1_Rings",
+											"sid": 709570572161736,
+											"parameters": {
+												"instance-variable": "ConnectedUID",
+												"comparison": 0,
+												"value": "TargetUID"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "SpawnParticles",
+											"sid": 632985236797656,
+											"parameters": [
+												"\"mg0_item_glass\"",
+												"\"0,5\"",
+												"\"200,220,250\"",
+												"\"-6,6\"",
+												"\"-6,6\"",
+												"random(-11,11)",
+												"random(-11,11)",
+												"1",
+												"0",
+												"random(10,15)",
+												"MG1_Rings.UID",
+												true,
+												false,
+												"\"\""
+											]
+										},
+										{
+											"id": "destroy",
+											"objectClass": "MG1_Rings",
+											"sid": 379487777661945
+										}
+									],
+									"sid": 343985481395714
+								}
+							]
+						},
+						{
+							"eventType": "comment",
+							"text": "Spawn Target + Target Movement Logic"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 336639514544739,
+									"parameters": {
+										"key": 68
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "SpawnTarget",
+									"sid": 991320377515283,
+									"parameters": [
+										"Mouse.X & \",\" & Mouse.Y",
+										"\"0,0\""
+									]
+								}
+							],
+							"sid": 440286632964569
+						},
+						{
+							"functionName": "SpawnTarget",
+							"functionDescription": "",
+							"functionCategory": "",
+							"functionReturnType": "none",
+							"functionCopyPicked": false,
+							"functionIsAsync": false,
+							"functionParameters": [
+								{
+									"name": "SpawnPOS",
+									"type": "string",
+									"initialValue": "",
+									"comment": "",
+									"sid": 322961314433342
+								},
+								{
+									"name": "VectorXY",
+									"type": "string",
+									"initialValue": "",
+									"comment": "",
+									"sid": 279034524344164
+								}
+							],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 805848255978988,
+									"parameters": {
+										"object-to-create": "mg1_items_Stick",
+										"layer": "\"Objects\"",
+										"x": "int(tokenat(SpawnPOS,0,\",\"))",
+										"y": "int(tokenat(SpawnPOS,1,\",\"))",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "mg1_items_Stick",
+									"sid": 309020044853186,
+									"parameters": {
+										"instance-variable": "ConnectedUID",
+										"value": "mg1_items_Stick.UID"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "mg1_items_Stick",
+									"sid": 462272481871352,
+									"parameters": {
+										"instance-variable": "VectorX",
+										"value": "int(tokenat(VectorXY,0,\",\"))"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "mg1_items_Stick",
+									"sid": 976107417479272,
+									"parameters": {
+										"instance-variable": "VectorY",
+										"value": "int(tokenat(VectorXY,1,\",\"))"
+									}
+								}
+							],
+							"sid": 810663304683233,
+							"children": [
+								{
+									"eventType": "variable",
+									"name": "MG1_Items",
+									"type": "string",
+									"initialValue": "P,0,1,2,3",
+									"comment": "",
+									"isStatic": false,
+									"isConstant": true,
+									"sid": 165030990193246
+								},
+								{
+									"eventType": "variable",
+									"name": "i",
+									"type": "number",
+									"initialValue": "0",
+									"comment": "",
+									"isStatic": false,
+									"isConstant": false,
+									"sid": 692225490052341
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "repeat",
+											"objectClass": "System",
+											"sid": 862053233626565,
+											"parameters": {
+												"count": "5"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "create-object-by-name",
+											"objectClass": "System",
+											"sid": 608142180599565,
+											"parameters": {
+												"object-name": "\"mg1_items_\" & tokenat(MG1_Items,i,\",\")",
+												"layer": "\"Objects\"",
+												"x": "mg1_items_Stick.X",
+												"y": "mg1_items_Stick.Y",
+												"create-hierarchy": false,
+												"template-name": "\"\""
+											}
+										}
+									],
+									"sid": 519073971272845,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-last-created",
+													"objectClass": "System",
+													"sid": 764540097867364,
+													"parameters": {
+														"object": "MG1_Rings"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-instvar-value",
+													"objectClass": "MG1_Rings",
+													"sid": 569637638624743,
+													"parameters": {
+														"instance-variable": "ConnectedUID",
+														"value": "mg1_items_Stick.UID"
+													}
+												},
+												{
+													"id": "add-child",
+													"objectClass": "mg1_items_Stick",
+													"sid": 645130860742880,
+													"parameters": {
+														"child": "MG1_Rings",
+														"transform-x": true,
+														"transform-y": true,
+														"transform-w": false,
+														"transform-h": false,
+														"transform-a": false,
+														"transform-o": false,
+														"transform-z-elevation": true,
+														"transform-visibility": true,
+														"destroy-with-parent": false
+													}
+												},
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 444372848710541,
+													"parameters": {
+														"variable": "i",
+														"value": "i + 1"
+													}
+												}
+											],
+											"sid": 974684476765977
+										}
+									]
+								}
+							]
+						},
+						{
+							"eventType": "comment",
+							"text": "Patterns"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 580219761467014,
+									"parameters": {
+										"variable": "MiniGameLevel",
+										"comparison": 0,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 954195754280341
 						}
 					]
 				}
 			],
-			"sid": 206627225007251
+			"sid": 206627225007251,
+			"background-color": [
+				0.4745098039215686,
+				0.21176470588235294,
+				0.5686274509803921,
+				1
+			]
 		}
 	],
 	"sid": 901690877191249

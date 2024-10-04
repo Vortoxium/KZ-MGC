@@ -169,7 +169,8 @@
 					"sid": 405760070739980,
 					"tags": "",
 					"instanceVariables": {
-						"ValueToTrack": 0
+						"ValueToTrack": 0,
+						"Value2": 0
 					},
 					"behaviors": {
 						"Timer": {

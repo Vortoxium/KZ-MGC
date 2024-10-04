@@ -8,6 +8,12 @@
 	"members": [
 		"mg0_items",
 		"InvisibleTracker",
-		"cursor"
+		"cursor",
+		"mg1_items_Stick",
+		"mg1_items_1",
+		"mg1_items_3",
+		"mg1_items_0",
+		"mg1_items_2",
+		"mg1_items_P"
 	]
 }

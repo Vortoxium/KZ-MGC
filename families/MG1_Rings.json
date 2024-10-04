@@ -11,11 +11,25 @@
 			"sid": 121669197229840
 		},
 		{
-			"name": "ConnectedUI",
+			"name": "ConnectedUID",
 			"type": "number",
 			"desc": "",
 			"show": true,
 			"sid": 410277472367821
+		},
+		{
+			"name": "VectorX",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 209892019277324
+		},
+		{
+			"name": "VectorY",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 337287828311498
 		}
 	],
 	"behaviorTypes": [],
@@ -25,6 +39,7 @@
 		"mg1_items_1",
 		"mg1_items_2",
 		"mg1_items_3",
-		"mg1_items_P"
+		"mg1_items_P",
+		"mg1_items_Stick"
 	]
 }

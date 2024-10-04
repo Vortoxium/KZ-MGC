@@ -167,7 +167,8 @@
 					"sid": 867087534727910,
 					"tags": "",
 					"instanceVariables": {
-						"ValueToTrack": 0
+						"ValueToTrack": 0,
+						"Value2": 0
 					},
 					"behaviors": {
 						"Timer": {
@@ -631,7 +632,9 @@
 					"tags": "",
 					"instanceVariables": {
 						"Points": 100,
-						"ConnectedUI": 0
+						"ConnectedUID": 0,
+						"VectorX": 0,
+						"VectorY": 0
 					},
 					"behaviors": {},
 					"world": {
@@ -665,7 +668,9 @@
 					"tags": "",
 					"instanceVariables": {
 						"Points": 250,
-						"ConnectedUI": 0
+						"ConnectedUID": 0,
+						"VectorX": 0,
+						"VectorY": 0
 					},
 					"behaviors": {},
 					"world": {
@@ -699,7 +704,9 @@
 					"tags": "",
 					"instanceVariables": {
 						"Points": 500,
-						"ConnectedUI": 0
+						"ConnectedUID": 0,
+						"VectorX": 0,
+						"VectorY": 0
 					},
 					"behaviors": {},
 					"world": {
@@ -733,7 +740,9 @@
 					"tags": "",
 					"instanceVariables": {
 						"Points": 1000,
-						"ConnectedUI": 0
+						"ConnectedUID": 0,
+						"VectorX": 0,
+						"VectorY": 0
 					},
 					"behaviors": {},
 					"world": {
@@ -767,7 +776,9 @@
 					"tags": "",
 					"instanceVariables": {
 						"Points": 100,
-						"ConnectedUI": 0
+						"ConnectedUID": 0,
+						"VectorX": 0,
+						"VectorY": 0
 					},
 					"behaviors": {},
 					"instanceFolderItem": {
@@ -781,6 +792,66 @@
 						"height": 22,
 						"originX": 0.5,
 						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "mg1_items_Stick",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 57,
+					"sid": 363473557195433,
+					"tags": "",
+					"instanceVariables": {
+						"Points": 1,
+						"ConnectedUID": 0,
+						"VectorX": 0,
+						"VectorY": 0
+					},
+					"behaviors": {
+						"Sine": {
+							"properties": {
+								"movement": "horizontal",
+								"wave": "sine",
+								"period": 4,
+								"period-random": 0,
+								"period-offset": 0,
+								"period-offset-random": 0,
+								"magnitude": 50,
+								"magnitude-random": 0,
+								"enabled": false,
+								"live-preview": false
+							}
+						},
+						"Tween": {
+							"properties": {
+								"enabled": true
+							}
+						}
+					},
+					"instanceFolderItem": {
+						"sid": 363473557195433,
+						"expanded": true
+					},
+					"world": {
+						"x": 13,
+						"y": 234,
+						"width": 2,
+						"height": 60,
+						"originX": 0.5,
+						"originY": -0.18333333333333332,
 						"color": [
 							1,
 							1,
