@@ -2514,51 +2514,69 @@
 										{
 											"id": "is-overlapping-another-object",
 											"objectClass": "particles",
-											"sid": 494259853112960,
+											"sid": 470075632064935,
 											"parameters": {
-												"object": "mg1_items_0"
+												"object": "mg1_items_P"
 											}
 										},
 										{
 											"id": "is-overlapping-another-object",
 											"objectClass": "particles",
-											"sid": 941843514330692,
+											"sid": 201864234923044,
 											"parameters": {
-												"object": "mg1_items_1"
-											},
-											"isInverted": true
-										},
-										{
-											"id": "is-overlapping-another-object",
-											"objectClass": "particles",
-											"sid": 896101077754139,
-											"parameters": {
-												"object": "mg1_items_2"
-											},
-											"isInverted": true
-										},
-										{
-											"id": "is-overlapping-another-object",
-											"objectClass": "particles",
-											"sid": 125094926348960,
-											"parameters": {
-												"object": "mg1_items_3"
-											},
-											"isInverted": true
+												"object": "mg1_items_0"
+											}
 										}
 									],
-									"actions": [
+									"actions": [],
+									"sid": 494338015106929,
+									"children": [
 										{
-											"callFunction": "UpdateScoreMG1",
-											"sid": 194155077913183,
-											"parameters": [
-												"mg1_items_0.Points",
-												"\"150,255,150\"",
-												false
-											]
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-overlapping-another-object",
+													"objectClass": "particles",
+													"sid": 726394694107986,
+													"parameters": {
+														"object": "mg1_items_1"
+													},
+													"isInverted": true
+												},
+												{
+													"id": "is-overlapping-another-object",
+													"objectClass": "particles",
+													"sid": 575237597611998,
+													"parameters": {
+														"object": "mg1_items_2"
+													},
+													"isInverted": true
+												},
+												{
+													"id": "is-overlapping-another-object",
+													"objectClass": "particles",
+													"sid": 528610849797768,
+													"parameters": {
+														"object": "mg1_items_3"
+													},
+													"isInverted": true
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "UpdateScoreMG1",
+													"sid": 172601370644754,
+													"parameters": [
+														"mg1_items_0.Points",
+														"\"150,255,150\"",
+														false
+													]
+												}
+											],
+											"sid": 982392144301247
 										}
 									],
-									"sid": 494338015106929
+									"isOrBlock": true
 								},
 								{
 									"eventType": "block",

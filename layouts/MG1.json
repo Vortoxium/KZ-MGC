@@ -197,6 +197,44 @@
 			"subLayers": [],
 			"instances": [
 				{
+					"type": "mg1_items_P",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 56,
+					"sid": 256560950728572,
+					"tags": "",
+					"instanceVariables": {
+						"Points": 100,
+						"ConnectedUI": 0
+					},
+					"behaviors": {},
+					"instanceFolderItem": {
+						"sid": 256560950728572,
+						"expanded": true
+					},
+					"world": {
+						"x": 260,
+						"y": 136,
+						"width": 22,
+						"height": 22,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
 					"type": "mg1_items_0",
 					"properties": {
 						"initially-visible": true,
