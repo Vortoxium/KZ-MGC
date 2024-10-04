@@ -2935,7 +2935,8 @@
 									"sid": 991320377515283,
 									"parameters": [
 										"Mouse.X & \",\" & Mouse.Y",
-										"\"0,0\""
+										"\"0,0\"",
+										"0"
 									]
 								}
 							],
@@ -2962,6 +2963,13 @@
 									"initialValue": "",
 									"comment": "",
 									"sid": 279034524344164
+								},
+								{
+									"name": "StickRotation",
+									"type": "number",
+									"initialValue": "0",
+									"comment": "",
+									"sid": 678164469930577
 								}
 							],
 							"eventType": "function-block",
@@ -2978,6 +2986,14 @@
 										"y": "int(tokenat(SpawnPOS,1,\",\"))",
 										"create-hierarchy": false,
 										"template-name": "\"\""
+									}
+								},
+								{
+									"id": "set-angle",
+									"objectClass": "mg1_items_Stick",
+									"sid": 959789229287972,
+									"parameters": {
+										"angle": "StickRotation"
 									}
 								},
 								{
