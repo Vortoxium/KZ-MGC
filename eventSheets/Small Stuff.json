@@ -118,7 +118,7 @@
 							"eventType": "variable",
 							"name": "MG_MedalValues",
 							"type": "string",
-							"initialValue": "60,120,180,300|100,200,300,400",
+							"initialValue": "60,120,180,300|20000,40000,60000,80000",
 							"comment": "",
 							"isStatic": false,
 							"isConstant": true,
@@ -4170,7 +4170,17 @@
 									}
 								}
 							],
-							"actions": [],
+							"actions": [
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "InvisibleTracker",
+									"sid": 740860491457366,
+									"parameters": {
+										"instance-variable": "Boolean1",
+										"value": "false"
+									}
+								}
+							],
 							"sid": 405008014447274,
 							"children": [
 								{
@@ -4187,14 +4197,9 @@
 									],
 									"actions": [
 										{
-											"id": "destroy",
-											"objectClass": "MG1_Rings",
-											"sid": 552051744308960
-										},
-										{
 											"id": "wait",
 											"objectClass": "System",
-											"sid": 918795582822013,
+											"sid": 114476992273096,
 											"parameters": {
 												"seconds": "0"
 											}
@@ -4202,7 +4207,7 @@
 										{
 											"id": "destroy",
 											"objectClass": "MG1_Rings",
-											"sid": 998907688124081
+											"sid": 552051744308960
 										}
 									],
 									"sid": 392804713378884
@@ -4255,11 +4260,11 @@
 										{
 											"id": "compare-instance-variable",
 											"objectClass": "InvisibleTracker",
-											"sid": 311655843758544,
+											"sid": 228223638249623,
 											"parameters": {
 												"instance-variable": "Value1",
 												"comparison": 2,
-												"value": "17000"
+												"value": "20000"
 											}
 										}
 									],
@@ -4287,21 +4292,21 @@
 										{
 											"id": "compare-instance-variable",
 											"objectClass": "InvisibleTracker",
-											"sid": 476286727643940,
+											"sid": 308142769525555,
 											"parameters": {
 												"instance-variable": "Value1",
 												"comparison": 5,
-												"value": "17000"
+												"value": "20000"
 											}
 										},
 										{
 											"id": "compare-instance-variable",
 											"objectClass": "InvisibleTracker",
-											"sid": 649535285326432,
+											"sid": 226982333868866,
 											"parameters": {
 												"instance-variable": "Value1",
 												"comparison": 2,
-												"value": "34000"
+												"value": "40000"
 											}
 										}
 									],
@@ -4329,21 +4334,21 @@
 										{
 											"id": "compare-instance-variable",
 											"objectClass": "InvisibleTracker",
-											"sid": 491575999038212,
+											"sid": 312489240006285,
 											"parameters": {
 												"instance-variable": "Value1",
 												"comparison": 5,
-												"value": "34000"
+												"value": "40000"
 											}
 										},
 										{
 											"id": "compare-instance-variable",
 											"objectClass": "InvisibleTracker",
-											"sid": 181458379090541,
+											"sid": 838199005688578,
 											"parameters": {
 												"instance-variable": "Value1",
 												"comparison": 2,
-												"value": "51000"
+												"value": "60000"
 											}
 										}
 									],
@@ -4371,21 +4376,21 @@
 										{
 											"id": "compare-instance-variable",
 											"objectClass": "InvisibleTracker",
-											"sid": 563502384584528,
+											"sid": 661932035035279,
 											"parameters": {
 												"instance-variable": "Value1",
 												"comparison": 5,
-												"value": "51000"
+												"value": "60000"
 											}
 										},
 										{
 											"id": "compare-instance-variable",
 											"objectClass": "InvisibleTracker",
-											"sid": 304784626324783,
+											"sid": 582401648167524,
 											"parameters": {
 												"instance-variable": "Value1",
 												"comparison": 2,
-												"value": "68000"
+												"value": "80000"
 											}
 										}
 									],
@@ -4413,11 +4418,11 @@
 										{
 											"id": "compare-instance-variable",
 											"objectClass": "InvisibleTracker",
-											"sid": 881569996588817,
+											"sid": 616947250044126,
 											"parameters": {
 												"instance-variable": "Value1",
 												"comparison": 5,
-												"value": "68000"
+												"value": "80000"
 											}
 										}
 									],
@@ -4563,6 +4568,33 @@
 										}
 									],
 									"sid": 584680764807649
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 208582018766419,
+											"parameters": {
+												"variable": "MiniGame",
+												"comparison": 0,
+												"value": "1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-boolean-instvar",
+											"objectClass": "InvisibleTracker",
+											"sid": 947595320073361,
+											"parameters": {
+												"instance-variable": "Boolean1",
+												"value": "true"
+											}
+										}
+									],
+									"sid": 411738486505984
 								}
 							]
 						},

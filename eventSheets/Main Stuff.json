@@ -3324,6 +3324,15 @@
 									"parameters": {
 										"instance-variable": "Boolean1"
 									}
+								},
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 221051898940800,
+									"parameters": {
+										"variable": "isDead"
+									},
+									"isInverted": true
 								}
 							],
 							"actions": [],
@@ -3861,6 +3870,15 @@
 									"parameters": {
 										"tag": "\"NewWave\""
 									}
+								},
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 148478037196726,
+									"parameters": {
+										"variable": "isDead"
+									},
+									"isInverted": true
 								}
 							],
 							"actions": [
@@ -3940,10 +3958,10 @@
 										{
 											"id": "start-timer",
 											"objectClass": "InvisibleTracker",
-											"sid": 321769880789287,
+											"sid": 808809414137454,
 											"behaviorType": "Timer",
 											"parameters": {
-												"duration": "3.75",
+												"duration": "2.5",
 												"type": "once",
 												"tag": "\"NewWave\""
 											}
@@ -3986,12 +4004,12 @@
 											"actions": [
 												{
 													"callFunction": "SpawnTarget",
-													"sid": 378366961619320,
+													"sid": 938235096123458,
 													"parameters": [
 														"\"30,147\"",
-														"\"2,0\"",
+														"\"1.5,0\"",
 														"\"0,0\"",
-														"0.4 * i",
+														"0.5 * i",
 														"0"
 													]
 												},
@@ -4022,12 +4040,12 @@
 											"actions": [
 												{
 													"callFunction": "SpawnTarget",
-													"sid": 706401388156520,
+													"sid": 961015602137425,
 													"parameters": [
 														"\"290,35\"",
-														"\"-2,0\"",
+														"\"-1.5,0\"",
 														"\"0,0\"",
-														"0.4 * j",
+														"0.5 * j",
 														"180"
 													]
 												},
@@ -4082,10 +4100,10 @@
 										},
 										{
 											"callFunction": "SpawnTarget",
-											"sid": 162387506099779,
+											"sid": 459934275926282,
 											"parameters": [
 												"\"30,147\"",
-												"\"4,0\"",
+												"\"3,0\"",
 												"\"0,0\"",
 												"0",
 												"0"
@@ -4093,10 +4111,10 @@
 										},
 										{
 											"callFunction": "SpawnTarget",
-											"sid": 496346182966465,
+											"sid": 694471901852243,
 											"parameters": [
 												"\"290,35\"",
-												"\"-4,0\"",
+												"\"-3,0\"",
 												"\"0,0\"",
 												"0",
 												"180"
