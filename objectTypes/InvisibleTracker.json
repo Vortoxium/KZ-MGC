@@ -5,9 +5,9 @@
 	"isGlobal": false,
 	"instanceVariables": [
 		{
-			"name": "ValueToTrack",
+			"name": "Value1",
 			"type": "number",
-			"desc": "",
+			"desc": "Tracked in Main Menu",
 			"show": true,
 			"sid": 340297940513622
 		},
@@ -17,6 +17,13 @@
 			"desc": "",
 			"show": true,
 			"sid": 196785320095210
+		},
+		{
+			"name": "Boolean1",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 405701147982349
 		}
 	],
 	"behaviorTypes": [

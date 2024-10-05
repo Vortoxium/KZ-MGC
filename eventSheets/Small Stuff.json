@@ -308,7 +308,7 @@
 									"parameters": {
 										"key": "\"MG\"&MiniGame",
 										"comparison": 2,
-										"value": "InvisibleTracker.ValueToTrack"
+										"value": "InvisibleTracker.Value1"
 									}
 								}
 							],
@@ -3004,7 +3004,7 @@
 									"sid": 950447678209138,
 									"parameters": [
 										"\"MG\"&MiniGame",
-										"InvisibleTracker.ValueToTrack"
+										"InvisibleTracker.Value1"
 									]
 								}
 							],
@@ -4053,7 +4053,7 @@
 							"sid": 593845511258235,
 							"parameters": [
 								"\"MG\"&MiniGame",
-								"InvisibleTracker.ValueToTrack"
+								"InvisibleTracker.Value1"
 							]
 						}
 					],
@@ -4115,7 +4115,7 @@
 											"objectClass": "InvisibleTracker",
 											"sid": 387885431471455,
 											"parameters": {
-												"instance-variable": "ValueToTrack",
+												"instance-variable": "Value1",
 												"comparison": 2,
 												"value": "60"
 											}
@@ -4147,7 +4147,7 @@
 											"objectClass": "InvisibleTracker",
 											"sid": 851573162564024,
 											"parameters": {
-												"instance-variable": "ValueToTrack",
+												"instance-variable": "Value1",
 												"comparison": 5,
 												"value": "60"
 											}
@@ -4157,7 +4157,7 @@
 											"objectClass": "InvisibleTracker",
 											"sid": 809236084940814,
 											"parameters": {
-												"instance-variable": "ValueToTrack",
+												"instance-variable": "Value1",
 												"comparison": 2,
 												"value": "120"
 											}
@@ -4189,7 +4189,7 @@
 											"objectClass": "InvisibleTracker",
 											"sid": 765379293202367,
 											"parameters": {
-												"instance-variable": "ValueToTrack",
+												"instance-variable": "Value1",
 												"comparison": 5,
 												"value": "120"
 											}
@@ -4199,7 +4199,7 @@
 											"objectClass": "InvisibleTracker",
 											"sid": 603585040124194,
 											"parameters": {
-												"instance-variable": "ValueToTrack",
+												"instance-variable": "Value1",
 												"comparison": 2,
 												"value": "180"
 											}
@@ -4231,7 +4231,7 @@
 											"objectClass": "InvisibleTracker",
 											"sid": 410838430467802,
 											"parameters": {
-												"instance-variable": "ValueToTrack",
+												"instance-variable": "Value1",
 												"comparison": 5,
 												"value": "180"
 											}
@@ -4241,7 +4241,7 @@
 											"objectClass": "InvisibleTracker",
 											"sid": 624960206710896,
 											"parameters": {
-												"instance-variable": "ValueToTrack",
+												"instance-variable": "Value1",
 												"comparison": 2,
 												"value": "300"
 											}
@@ -4273,7 +4273,7 @@
 											"objectClass": "InvisibleTracker",
 											"sid": 687534297418733,
 											"parameters": {
-												"instance-variable": "ValueToTrack",
+												"instance-variable": "Value1",
 												"comparison": 5,
 												"value": "300"
 											}
@@ -4306,7 +4306,7 @@
 											"objectClass": "InvisibleTracker",
 											"sid": 136184023115304,
 											"parameters": {
-												"instance-variable": "ValueToTrack",
+												"instance-variable": "Value1",
 												"value": "0"
 											}
 										}

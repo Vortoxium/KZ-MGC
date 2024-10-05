@@ -167,8 +167,9 @@
 					"sid": 867087534727910,
 					"tags": "",
 					"instanceVariables": {
-						"ValueToTrack": 0,
-						"Value2": 0
+						"Value1": 0,
+						"Value2": 0,
+						"Boolean1": false
 					},
 					"behaviors": {
 						"Timer": {
@@ -634,7 +635,9 @@
 						"Points": 100,
 						"ConnectedUID": 0,
 						"VectorX": 0,
-						"VectorY": 0
+						"VectorY": 0,
+						"ThrottleX": 0,
+						"ThrottleY": 0
 					},
 					"behaviors": {},
 					"world": {
@@ -670,7 +673,9 @@
 						"Points": 250,
 						"ConnectedUID": 0,
 						"VectorX": 0,
-						"VectorY": 0
+						"VectorY": 0,
+						"ThrottleX": 0,
+						"ThrottleY": 0
 					},
 					"behaviors": {},
 					"world": {
@@ -706,7 +711,9 @@
 						"Points": 500,
 						"ConnectedUID": 0,
 						"VectorX": 0,
-						"VectorY": 0
+						"VectorY": 0,
+						"ThrottleX": 0,
+						"ThrottleY": 0
 					},
 					"behaviors": {},
 					"world": {
@@ -742,7 +749,9 @@
 						"Points": 1000,
 						"ConnectedUID": 0,
 						"VectorX": 0,
-						"VectorY": 0
+						"VectorY": 0,
+						"ThrottleX": 0,
+						"ThrottleY": 0
 					},
 					"behaviors": {},
 					"world": {
@@ -778,7 +787,10 @@
 						"Points": 100,
 						"ConnectedUID": 0,
 						"VectorX": 0,
-						"VectorY": 0
+						"VectorY": 0,
+						"ThrottleX": 0,
+						"ThrottleY": 0,
+						"Stickless": false
 					},
 					"behaviors": {},
 					"instanceFolderItem": {
@@ -818,7 +830,9 @@
 						"Points": 1,
 						"ConnectedUID": 0,
 						"VectorX": 0,
-						"VectorY": 0
+						"VectorY": 0,
+						"ThrottleX": 0,
+						"ThrottleY": 0
 					},
 					"behaviors": {
 						"Sine": {

@@ -139,7 +139,7 @@
 										"\"1,171\"",
 										"\"200,10\"",
 										"\"Timer\"",
-										"\"Time: \"&InvisibleTracker.ValueToTrack",
+										"\"Time: \"&InvisibleTracker.Value1",
 										"\"255,150,255\"",
 										"\"\"",
 										"66"
@@ -296,8 +296,8 @@
 									"objectClass": "InvisibleTracker",
 									"sid": 586686992502523,
 									"parameters": {
-										"instance-variable": "ValueToTrack",
-										"value": "InvisibleTracker.ValueToTrack + 1"
+										"instance-variable": "Value1",
+										"value": "InvisibleTracker.Value1 + 1"
 									}
 								}
 							],
@@ -323,7 +323,7 @@
 											"objectClass": "Font_Folder",
 											"sid": 649451465261530,
 											"parameters": {
-												"text": "\"Time: \"&InvisibleTracker.ValueToTrack"
+												"text": "\"Time: \"&InvisibleTracker.Value1"
 											}
 										}
 									],
@@ -350,7 +350,7 @@
 											"sid": 476181998042892,
 											"parameters": {
 												"variable": "MiniGameLevel",
-												"value": "1 + (InvisibleTracker.ValueToTrack/60)"
+												"value": "1 + (InvisibleTracker.Value1/60)"
 											}
 										}
 									],
@@ -2018,7 +2018,7 @@
 										"\"1,171\"",
 										"\"200,10\"",
 										"\"Score\"",
-										"\"Score: \"&InvisibleTracker.ValueToTrack",
+										"\"Score: \"&InvisibleTracker.Value1",
 										"\"200,150,255\"",
 										"\"\"",
 										"66"
@@ -2045,10 +2045,10 @@
 								{
 									"id": "set-eventvar-value",
 									"objectClass": "System",
-									"sid": 135057981303591,
+									"sid": 740251374551959,
 									"parameters": {
 										"variable": "MiniGameLevel",
-										"value": "choose(0,0)"
+										"value": "choose(0,1)"
 									}
 								}
 							],
@@ -2263,8 +2263,8 @@
 									"objectClass": "InvisibleTracker",
 									"sid": 796524270297142,
 									"parameters": {
-										"instance-variable": "ValueToTrack",
-										"value": "InvisibleTracker.ValueToTrack + PointsToGive"
+										"instance-variable": "Value1",
+										"value": "InvisibleTracker.Value1 + PointsToGive"
 									}
 								}
 							],
@@ -2290,7 +2290,7 @@
 											"objectClass": "Font_Folder",
 											"sid": 850542770936959,
 											"parameters": {
-												"text": "\"Score: \"&InvisibleTracker.ValueToTrack"
+												"text": "\"Score: \"&InvisibleTracker.Value1"
 											}
 										}
 									],
@@ -2342,7 +2342,7 @@
 											"sid": 691298015247006,
 											"parameters": [
 												"\"HUD Below\"",
-												"53 + (len(str(InvisibleTracker.ValueToTrack))*7) &\",171\"",
+												"53 + (len(str(InvisibleTracker.Value1))*7) &\",171\"",
 												"\"200,10\"",
 												"\"Score+\"",
 												"\"+\"&PointsToGive",
@@ -2374,7 +2374,7 @@
 											"sid": 112531308915182,
 											"parameters": [
 												"\"HUD Below\"",
-												"53 + (len(str(InvisibleTracker.ValueToTrack))*7) &\",171\"",
+												"53 + (len(str(InvisibleTracker.Value1))*7) &\",171\"",
 												"\"200,10\"",
 												"\"Score+\"",
 												"str(PointsToGive)",
@@ -2850,14 +2850,202 @@
 												false,
 												"\"\""
 											]
-										},
-										{
-											"id": "destroy",
-											"objectClass": "mg1_items_Stick",
-											"sid": 337900328822563
 										}
 									],
-									"sid": 245544067934878
+									"sid": 245544067934878,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "MG1_Rings",
+													"sid": 996951029024849,
+													"parameters": {
+														"instance-variable": "ConnectedUID",
+														"comparison": 0,
+														"value": "TargetUID"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "remove-child",
+													"objectClass": "mg1_items_Stick",
+													"sid": 472090139112696,
+													"parameters": {
+														"child": "MG1_Rings"
+													}
+												}
+											],
+											"sid": 909008612310074
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "mg1_items_P",
+													"sid": 908797234977551,
+													"parameters": {
+														"instance-variable": "ConnectedUID",
+														"comparison": 0,
+														"value": "TargetUID"
+													}
+												},
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "mg1_items_0",
+													"sid": 370395626273310,
+													"parameters": {
+														"instance-variable": "ConnectedUID",
+														"comparison": 0,
+														"value": "TargetUID"
+													}
+												},
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "mg1_items_1",
+													"sid": 839439688029223,
+													"parameters": {
+														"instance-variable": "ConnectedUID",
+														"comparison": 0,
+														"value": "TargetUID"
+													}
+												},
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "mg1_items_2",
+													"sid": 529153471087229,
+													"parameters": {
+														"instance-variable": "ConnectedUID",
+														"comparison": 0,
+														"value": "TargetUID"
+													}
+												},
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "mg1_items_3",
+													"sid": 437134767777886,
+													"parameters": {
+														"instance-variable": "ConnectedUID",
+														"comparison": 0,
+														"value": "TargetUID"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-instvar-value",
+													"objectClass": "mg1_items_P",
+													"sid": 516143840144737,
+													"parameters": {
+														"instance-variable": "VectorX",
+														"value": "mg1_items_Stick.VectorX"
+													}
+												},
+												{
+													"id": "set-instvar-value",
+													"objectClass": "mg1_items_P",
+													"sid": 933976531996009,
+													"parameters": {
+														"instance-variable": "VectorY",
+														"value": "mg1_items_Stick.VectorY"
+													}
+												},
+												{
+													"id": "set-boolean-instvar",
+													"objectClass": "mg1_items_P",
+													"sid": 635496580096828,
+													"parameters": {
+														"instance-variable": "Stickless",
+														"value": "true"
+													}
+												},
+												{
+													"id": "add-child",
+													"objectClass": "mg1_items_P",
+													"sid": 550419562081000,
+													"parameters": {
+														"child": "mg1_items_0",
+														"transform-x": true,
+														"transform-y": true,
+														"transform-w": false,
+														"transform-h": false,
+														"transform-a": false,
+														"transform-o": false,
+														"transform-z-elevation": true,
+														"transform-visibility": false,
+														"destroy-with-parent": false
+													}
+												},
+												{
+													"id": "add-child",
+													"objectClass": "mg1_items_P",
+													"sid": 185690146093815,
+													"parameters": {
+														"child": "mg1_items_1",
+														"transform-x": true,
+														"transform-y": true,
+														"transform-w": false,
+														"transform-h": false,
+														"transform-a": false,
+														"transform-o": false,
+														"transform-z-elevation": true,
+														"transform-visibility": false,
+														"destroy-with-parent": false
+													}
+												},
+												{
+													"id": "add-child",
+													"objectClass": "mg1_items_P",
+													"sid": 504736995013280,
+													"parameters": {
+														"child": "mg1_items_2",
+														"transform-x": true,
+														"transform-y": true,
+														"transform-w": false,
+														"transform-h": false,
+														"transform-a": false,
+														"transform-o": false,
+														"transform-z-elevation": true,
+														"transform-visibility": false,
+														"destroy-with-parent": false
+													}
+												},
+												{
+													"id": "add-child",
+													"objectClass": "mg1_items_P",
+													"sid": 147187305501938,
+													"parameters": {
+														"child": "mg1_items_3",
+														"transform-x": true,
+														"transform-y": true,
+														"transform-w": false,
+														"transform-h": false,
+														"transform-a": false,
+														"transform-o": false,
+														"transform-z-elevation": true,
+														"transform-visibility": false,
+														"destroy-with-parent": false
+													}
+												}
+											],
+											"sid": 227538408715560
+										},
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"id": "destroy",
+													"objectClass": "mg1_items_Stick",
+													"sid": 697558946353554
+												}
+											],
+											"sid": 690896725383247
+										}
+									]
 								},
 								{
 									"eventType": "block",
@@ -2914,8 +3102,66 @@
 							]
 						},
 						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 615493069798616,
+									"parameters": {
+										"first-value": "MG1_Rings.Count",
+										"comparison": 0,
+										"second-value": "0"
+									}
+								},
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "InvisibleTracker",
+									"sid": 671473469523525,
+									"parameters": {
+										"instance-variable": "Boolean1"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 287547458125139,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "trigger-once-while-true",
+											"objectClass": "System",
+											"sid": 600297006628145
+										}
+									],
+									"actions": [
+										{
+											"id": "set-boolean-instvar",
+											"objectClass": "InvisibleTracker",
+											"sid": 850887562174762,
+											"parameters": {
+												"instance-variable": "Boolean1",
+												"value": "false"
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 179332755013292,
+											"parameters": {
+												"variable": "MiniGameLevel",
+												"value": "choose(0,1)"
+											}
+										}
+									],
+									"sid": 499971683129583
+								}
+							]
+						},
+						{
 							"eventType": "comment",
-							"text": "Spawn Target + Target Movement Logic"
+							"text": "Spawn Target"
 						},
 						{
 							"eventType": "block",
@@ -2936,11 +3182,14 @@
 									"parameters": [
 										"Mouse.X & \",\" & Mouse.Y",
 										"\"0,0\"",
+										"\"\"",
+										"0",
 										"0"
 									]
 								}
 							],
-							"sid": 440286632964569
+							"sid": 440286632964569,
+							"disabled": true
 						},
 						{
 							"functionName": "SpawnTarget",
@@ -2965,6 +3214,20 @@
 									"sid": 279034524344164
 								},
 								{
+									"name": "ThrottleXY",
+									"type": "string",
+									"initialValue": "",
+									"comment": "",
+									"sid": 732170128149623
+								},
+								{
+									"name": "DelayMultiplier",
+									"type": "number",
+									"initialValue": "0",
+									"comment": "",
+									"sid": 332316881145967
+								},
+								{
 									"name": "StickRotation",
 									"type": "number",
 									"initialValue": "0",
@@ -2975,6 +3238,14 @@
 							"eventType": "function-block",
 							"conditions": [],
 							"actions": [
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 263738823569842,
+									"parameters": {
+										"seconds": "1 * DelayMultiplier"
+									}
+								},
 								{
 									"id": "create-object",
 									"objectClass": "System",
@@ -3008,19 +3279,37 @@
 								{
 									"id": "set-instvar-value",
 									"objectClass": "mg1_items_Stick",
-									"sid": 462272481871352,
+									"sid": 549786126502168,
 									"parameters": {
 										"instance-variable": "VectorX",
-										"value": "int(tokenat(VectorXY,0,\",\"))"
+										"value": "float(tokenat(VectorXY,0,\",\"))"
 									}
 								},
 								{
 									"id": "set-instvar-value",
 									"objectClass": "mg1_items_Stick",
-									"sid": 976107417479272,
+									"sid": 293024367738081,
 									"parameters": {
 										"instance-variable": "VectorY",
-										"value": "int(tokenat(VectorXY,1,\",\"))"
+										"value": "float(tokenat(VectorXY,1,\",\"))"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "mg1_items_Stick",
+									"sid": 888468440369542,
+									"parameters": {
+										"instance-variable": "ThrottleX",
+										"value": "float(tokenat(ThrottleXY,0,\",\"))"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "mg1_items_Stick",
+									"sid": 273108586731834,
+									"parameters": {
+										"instance-variable": "ThrottleY",
+										"value": "float(tokenat(ThrottleXY,1,\",\"))"
 									}
 								}
 							],
@@ -3132,7 +3421,274 @@
 						},
 						{
 							"eventType": "comment",
-							"text": "Patterns"
+							"text": "Target Movement"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "every-tick",
+									"objectClass": "System",
+									"sid": 445332220926540
+								},
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 840651106462629,
+									"parameters": {
+										"variable": "IsPaused"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "set-position",
+									"objectClass": "mg1_items_Stick",
+									"sid": 818128900269131,
+									"parameters": {
+										"x": "mg1_items_Stick.X + (mg1_items_Stick.VectorX*(dt*60))",
+										"y": "mg1_items_Stick.Y + (mg1_items_Stick.VectorY*(dt*60))"
+									}
+								}
+							],
+							"sid": 108655506363909,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "mg1_items_Stick",
+											"sid": 466667373767186,
+											"parameters": {
+												"instance-variable": "ThrottleX",
+												"comparison": 4,
+												"value": "0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-instvar-value",
+											"objectClass": "mg1_items_Stick",
+											"sid": 282191594366570,
+											"parameters": {
+												"instance-variable": "VectorX",
+												"value": "mg1_items_Stick.VectorX * (1-mg1_items_Stick.ThrottleX)"
+											}
+										}
+									],
+									"sid": 494906260588091
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "mg1_items_Stick",
+											"sid": 339158274704210,
+											"parameters": {
+												"instance-variable": "ThrottleY",
+												"comparison": 4,
+												"value": "0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-instvar-value",
+											"objectClass": "mg1_items_Stick",
+											"sid": 937060202816936,
+											"parameters": {
+												"instance-variable": "VectorY",
+												"value": "mg1_items_Stick.VectorY * (1-mg1_items_Stick.ThrottleY)"
+											}
+										}
+									],
+									"sid": 471648950437467
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "mg1_items_P",
+											"sid": 106266087080211,
+											"parameters": {
+												"instance-variable": "Stickless"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-instvar-value",
+											"objectClass": "mg1_items_P",
+											"sid": 724353941717200,
+											"parameters": {
+												"instance-variable": "VectorX",
+												"value": "mg1_items_P.VectorX * 0.99"
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "mg1_items_P",
+											"sid": 257175831160429,
+											"parameters": {
+												"instance-variable": "VectorY",
+												"value": "mg1_items_P.VectorY + ((distance(mg1_items_P.VectorY,0,6.67,0)) * 0.01)"
+											}
+										},
+										{
+											"id": "set-position",
+											"objectClass": "mg1_items_P",
+											"sid": 835280896308519,
+											"parameters": {
+												"x": "mg1_items_P.X + (mg1_items_P.VectorX*(dt*60))",
+												"y": "mg1_items_P.Y + (mg1_items_P.VectorY*(dt*60))"
+											}
+										}
+									],
+									"sid": 945470731695351,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-on-screen",
+													"objectClass": "mg1_items_P",
+													"sid": 981723202242237,
+													"isInverted": true
+												}
+											],
+											"actions": [],
+											"sid": 979088007911754,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "for-each",
+															"objectClass": "System",
+															"sid": 486678627704053,
+															"parameters": {
+																"object": "MG1_Rings"
+															}
+														},
+														{
+															"id": "compare-instance-variable",
+															"objectClass": "MG1_Rings",
+															"sid": 443334200770682,
+															"parameters": {
+																"instance-variable": "ConnectedUID",
+																"comparison": 0,
+																"value": "mg1_items_P.ConnectedUID"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "destroy",
+															"objectClass": "MG1_Rings",
+															"sid": 685616957396131
+														}
+													],
+													"sid": 385582445952104
+												}
+											]
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-on-screen",
+											"objectClass": "mg1_items_Stick",
+											"sid": 570016230488857,
+											"isInverted": true
+										}
+									],
+									"actions": [],
+									"sid": 231027146476425,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "for-each",
+													"objectClass": "System",
+													"sid": 938666442121545,
+													"parameters": {
+														"object": "MG1_Rings"
+													}
+												},
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "MG1_Rings",
+													"sid": 258729391050103,
+													"parameters": {
+														"instance-variable": "ConnectedUID",
+														"comparison": 0,
+														"value": "mg1_items_Stick.UID"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "destroy",
+													"objectClass": "MG1_Rings",
+													"sid": 190342945136605
+												}
+											],
+											"sid": 656426106092411
+										}
+									]
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-timer",
+									"objectClass": "InvisibleTracker",
+									"sid": 159941736338573,
+									"behaviorType": "Timer",
+									"parameters": {
+										"tag": "\"NewWave\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 625398726506511,
+									"parameters": {
+										"variable": "MiniGameLevel",
+										"value": "-1"
+									}
+								},
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "InvisibleTracker",
+									"sid": 337257492800706,
+									"parameters": {
+										"instance-variable": "Boolean1",
+										"value": "true"
+									}
+								}
+							],
+							"sid": 517262080444738
+						},
+						{
+							"eventType": "comment",
+							"text": "[h4] Patterns [h4]"
+						},
+						{
+							"eventType": "comment",
+							"text": "0"
 						},
 						{
 							"eventType": "block",
@@ -3146,10 +3702,181 @@
 										"comparison": 0,
 										"value": "0"
 									}
+								},
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 104844206991825
 								}
 							],
-							"actions": [],
-							"sid": 954195754280341
+							"actions": [
+								{
+									"id": "start-timer",
+									"objectClass": "InvisibleTracker",
+									"sid": 473457682351003,
+									"behaviorType": "Timer",
+									"parameters": {
+										"duration": "3.75",
+										"type": "once",
+										"tag": "\"NewWave\""
+									}
+								}
+							],
+							"sid": 954195754280341,
+							"children": [
+								{
+									"eventType": "variable",
+									"name": "i",
+									"type": "number",
+									"initialValue": "0",
+									"comment": "",
+									"isStatic": false,
+									"isConstant": false,
+									"sid": 622706309784397
+								},
+								{
+									"eventType": "variable",
+									"name": "j",
+									"type": "number",
+									"initialValue": "0",
+									"comment": "",
+									"isStatic": false,
+									"isConstant": false,
+									"sid": 677530425853147
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "repeat",
+											"objectClass": "System",
+											"sid": 105592943159689,
+											"parameters": {
+												"count": "5"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "SpawnTarget",
+											"sid": 956822550311886,
+											"parameters": [
+												"\"30,147\"",
+												"\"1,0\"",
+												"\"0,0\"",
+												"0.75 * i",
+												"0"
+											]
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 861826950428332,
+											"parameters": {
+												"variable": "i",
+												"value": "i+1"
+											}
+										}
+									],
+									"sid": 956765111147815
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "repeat",
+											"objectClass": "System",
+											"sid": 728257558323979,
+											"parameters": {
+												"count": "5"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "SpawnTarget",
+											"sid": 666023414810889,
+											"parameters": [
+												"\"290,35\"",
+												"\"-1,0\"",
+												"\"0,0\"",
+												"0.75 * j",
+												"180"
+											]
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 145348176899697,
+											"parameters": {
+												"variable": "j",
+												"value": "j+1"
+											}
+										}
+									],
+									"sid": 502033461517484
+								}
+							]
+						},
+						{
+							"eventType": "comment",
+							"text": "1"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 558566111457163,
+									"parameters": {
+										"variable": "MiniGameLevel",
+										"comparison": 0,
+										"value": "1"
+									}
+								},
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 557668811754680
+								}
+							],
+							"actions": [
+								{
+									"id": "start-timer",
+									"objectClass": "InvisibleTracker",
+									"sid": 905724858576077,
+									"behaviorType": "Timer",
+									"parameters": {
+										"duration": "0.1",
+										"type": "once",
+										"tag": "\"NewWave\""
+									}
+								},
+								{
+									"callFunction": "SpawnTarget",
+									"sid": 895889393913880,
+									"parameters": [
+										"\"30,147\"",
+										"\"3,0\"",
+										"\"0,0\"",
+										"0",
+										"0"
+									]
+								},
+								{
+									"callFunction": "SpawnTarget",
+									"sid": 523732881792712,
+									"parameters": [
+										"\"290,35\"",
+										"\"-3,0\"",
+										"\"0,0\"",
+										"0",
+										"180"
+									]
+								}
+							],
+							"sid": 494255176077776
 						}
 					]
 				}

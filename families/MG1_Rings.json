@@ -30,6 +30,20 @@
 			"desc": "",
 			"show": true,
 			"sid": 337287828311498
+		},
+		{
+			"name": "ThrottleX",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 687871584589599
+		},
+		{
+			"name": "ThrottleY",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 323619573787936
 		}
 	],
 	"behaviorTypes": [],
