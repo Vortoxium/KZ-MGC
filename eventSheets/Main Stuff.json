@@ -3773,10 +3773,10 @@
 										{
 											"id": "set-instvar-value",
 											"objectClass": "mg1_items_0",
-											"sid": 257175831160429,
+											"sid": 695940672704507,
 											"parameters": {
 												"instance-variable": "VectorY",
-												"value": "mg1_items_0.VectorY + ((distance(mg1_items_0.VectorY,0,6.67,0)) * 0.01)"
+												"value": "mg1_items_0.VectorY + ((distance(mg1_items_0.VectorY,0,6.67,0)) * 0.015)"
 											}
 										},
 										{
