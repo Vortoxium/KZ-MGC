@@ -3089,7 +3089,7 @@
 												{
 													"id": "compare-instance-variable",
 													"objectClass": "mg1_items_P",
-													"sid": 908797234977551,
+													"sid": 213232867729660,
 													"parameters": {
 														"instance-variable": "ConnectedUID",
 														"comparison": 0,
@@ -3140,7 +3140,7 @@
 											"actions": [
 												{
 													"id": "set-instvar-value",
-													"objectClass": "mg1_items_P",
+													"objectClass": "mg1_items_0",
 													"sid": 516143840144737,
 													"parameters": {
 														"instance-variable": "VectorX",
@@ -3149,7 +3149,7 @@
 												},
 												{
 													"id": "set-instvar-value",
-													"objectClass": "mg1_items_P",
+													"objectClass": "mg1_items_0",
 													"sid": 933976531996009,
 													"parameters": {
 														"instance-variable": "VectorY",
@@ -3158,7 +3158,7 @@
 												},
 												{
 													"id": "set-boolean-instvar",
-													"objectClass": "mg1_items_P",
+													"objectClass": "mg1_items_0",
 													"sid": 635496580096828,
 													"parameters": {
 														"instance-variable": "Stickless",
@@ -3167,10 +3167,10 @@
 												},
 												{
 													"id": "add-child",
-													"objectClass": "mg1_items_P",
-													"sid": 550419562081000,
+													"objectClass": "mg1_items_0",
+													"sid": 482608796254430,
 													"parameters": {
-														"child": "mg1_items_0",
+														"child": "mg1_items_P",
 														"transform-x": true,
 														"transform-y": true,
 														"transform-w": false,
@@ -3184,7 +3184,7 @@
 												},
 												{
 													"id": "add-child",
-													"objectClass": "mg1_items_P",
+													"objectClass": "mg1_items_0",
 													"sid": 185690146093815,
 													"parameters": {
 														"child": "mg1_items_1",
@@ -3201,7 +3201,7 @@
 												},
 												{
 													"id": "add-child",
-													"objectClass": "mg1_items_P",
+													"objectClass": "mg1_items_0",
 													"sid": 504736995013280,
 													"parameters": {
 														"child": "mg1_items_2",
@@ -3218,7 +3218,7 @@
 												},
 												{
 													"id": "add-child",
-													"objectClass": "mg1_items_P",
+													"objectClass": "mg1_items_0",
 													"sid": 147187305501938,
 													"parameters": {
 														"child": "mg1_items_3",
@@ -3324,15 +3324,6 @@
 									"parameters": {
 										"instance-variable": "Boolean1"
 									}
-								},
-								{
-									"id": "compare-boolean-eventvar",
-									"objectClass": "System",
-									"sid": 221051898940800,
-									"parameters": {
-										"variable": "isDead"
-									},
-									"isInverted": true
 								}
 							],
 							"actions": [],
@@ -3724,8 +3715,45 @@
 									"eventType": "block",
 									"conditions": [
 										{
-											"id": "is-boolean-instance-variable-set",
+											"id": "compare-instance-variable",
 											"objectClass": "mg1_items_P",
+											"sid": 301317373534653,
+											"parameters": {
+												"instance-variable": "ConnectedUID",
+												"comparison": 0,
+												"value": "mg1_items_0.ConnectedUID"
+											}
+										},
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "mg1_items_0",
+											"sid": 955875138034850,
+											"parameters": {
+												"instance-variable": "ConnectedUID",
+												"comparison": 0,
+												"value": "mg1_items_P.ConnectedUID"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-position",
+											"objectClass": "mg1_items_P",
+											"sid": 947631239649404,
+											"parameters": {
+												"x": "mg1_items_0.X + ((160-mg1_items_0.X) / 72)",
+												"y": "mg1_items_0.Y + ((90-mg1_items_0.Y) / 40.5)"
+											}
+										}
+									],
+									"sid": 997974913851168
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "mg1_items_0",
 											"sid": 106266087080211,
 											"parameters": {
 												"instance-variable": "Stickless"
@@ -3735,29 +3763,29 @@
 									"actions": [
 										{
 											"id": "set-instvar-value",
-											"objectClass": "mg1_items_P",
+											"objectClass": "mg1_items_0",
 											"sid": 724353941717200,
 											"parameters": {
 												"instance-variable": "VectorX",
-												"value": "mg1_items_P.VectorX * 0.99"
+												"value": "mg1_items_0.VectorX * 0.99"
 											}
 										},
 										{
 											"id": "set-instvar-value",
-											"objectClass": "mg1_items_P",
+											"objectClass": "mg1_items_0",
 											"sid": 257175831160429,
 											"parameters": {
 												"instance-variable": "VectorY",
-												"value": "mg1_items_P.VectorY + ((distance(mg1_items_P.VectorY,0,6.67,0)) * 0.01)"
+												"value": "mg1_items_0.VectorY + ((distance(mg1_items_0.VectorY,0,6.67,0)) * 0.01)"
 											}
 										},
 										{
 											"id": "set-position",
-											"objectClass": "mg1_items_P",
+											"objectClass": "mg1_items_0",
 											"sid": 835280896308519,
 											"parameters": {
-												"x": "mg1_items_P.X + (mg1_items_P.VectorX*(dt*60))",
-												"y": "mg1_items_P.Y + (mg1_items_P.VectorY*(dt*60))"
+												"x": "mg1_items_0.X + (mg1_items_0.VectorX*(dt*60))",
+												"y": "mg1_items_0.Y + (mg1_items_0.VectorY*(dt*60))"
 											}
 										}
 									],
@@ -3768,7 +3796,7 @@
 											"conditions": [
 												{
 													"id": "is-on-screen",
-													"objectClass": "mg1_items_P",
+													"objectClass": "mg1_items_0",
 													"sid": 981723202242237,
 													"isInverted": true
 												}
@@ -3794,7 +3822,7 @@
 															"parameters": {
 																"instance-variable": "ConnectedUID",
 																"comparison": 0,
-																"value": "mg1_items_P.ConnectedUID"
+																"value": "mg1_items_0.ConnectedUID"
 															}
 														}
 													],
@@ -3870,15 +3898,6 @@
 									"parameters": {
 										"tag": "\"NewWave\""
 									}
-								},
-								{
-									"id": "compare-boolean-eventvar",
-									"objectClass": "System",
-									"sid": 148478037196726,
-									"parameters": {
-										"variable": "isDead"
-									},
-									"isInverted": true
 								}
 							],
 							"actions": [

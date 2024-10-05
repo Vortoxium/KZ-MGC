@@ -3,15 +3,7 @@
 	"plugin-id": "Sprite",
 	"sid": 396633616303446,
 	"isGlobal": false,
-	"instanceVariables": [
-		{
-			"name": "Stickless",
-			"type": "boolean",
-			"desc": "",
-			"show": true,
-			"sid": 208458219829496
-		}
-	],
+	"instanceVariables": [],
 	"behaviorTypes": [],
 	"effectTypes": [],
 	"animations": {

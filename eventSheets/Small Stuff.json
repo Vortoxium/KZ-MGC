@@ -350,7 +350,6 @@
 							"id": "set-silent",
 							"objectClass": "Audio",
 							"sid": 425737794903237,
-							"disabled": true,
 							"parameters": {
 								"mode": "silent"
 							}
@@ -4172,12 +4171,12 @@
 							],
 							"actions": [
 								{
-									"id": "set-boolean-instvar",
+									"id": "stop-timer",
 									"objectClass": "InvisibleTracker",
-									"sid": 740860491457366,
+									"sid": 717668195277177,
+									"behaviorType": "Timer",
 									"parameters": {
-										"instance-variable": "Boolean1",
-										"value": "false"
+										"tag": "\"NewWave\""
 									}
 								}
 							],

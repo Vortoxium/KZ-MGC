@@ -637,7 +637,8 @@
 						"VectorX": 0,
 						"VectorY": 0,
 						"ThrottleX": 0,
-						"ThrottleY": 0
+						"ThrottleY": 0,
+						"Stickless": false
 					},
 					"behaviors": {},
 					"world": {
@@ -789,8 +790,7 @@
 						"VectorX": 0,
 						"VectorY": 0,
 						"ThrottleX": 0,
-						"ThrottleY": 0,
-						"Stickless": false
+						"ThrottleY": 0
 					},
 					"behaviors": {},
 					"instanceFolderItem": {
