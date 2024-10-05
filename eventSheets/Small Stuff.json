@@ -350,6 +350,7 @@
 							"id": "set-silent",
 							"objectClass": "Audio",
 							"sid": 425737794903237,
+							"disabled": true,
 							"parameters": {
 								"mode": "silent"
 							}
@@ -1380,177 +1381,6 @@
 					],
 					"sid": 996451689494375,
 					"disabled": true
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 107884922168192,
-							"parameters": {
-								"variable": "isDead"
-							}
-						}
-					],
-					"actions": [],
-					"sid": 279416210105599,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "on-click",
-									"objectClass": "Mouse",
-									"sid": 811169436826596,
-									"parameters": {
-										"mouse-button": "left",
-										"click-type": "clicked"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "wait",
-									"objectClass": "System",
-									"sid": 913179073768142,
-									"parameters": {
-										"seconds": "0"
-									}
-								},
-								{
-									"id": "set-boolean-eventvar",
-									"objectClass": "System",
-									"sid": 622055003456278,
-									"parameters": {
-										"variable": "isDead",
-										"value": "false"
-									}
-								},
-								{
-									"id": "set-boolean-eventvar",
-									"objectClass": "System",
-									"sid": 454123818849499,
-									"parameters": {
-										"variable": "isMinigameActive",
-										"value": "true"
-									}
-								}
-							],
-							"sid": 563008405422745,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "compare-instance-variable",
-											"objectClass": "Font_Folder",
-											"sid": 519896028947586,
-											"parameters": {
-												"instance-variable": "Mode",
-												"comparison": 0,
-												"value": "\"DeathText\""
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "destroy",
-											"objectClass": "Pixel",
-											"sid": 412538965263616
-										},
-										{
-											"id": "destroy",
-											"objectClass": "Font_Folder",
-											"sid": 444430808096246
-										}
-									],
-									"sid": 119283301060736
-								}
-							]
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "on-click",
-									"objectClass": "Mouse",
-									"sid": 882326244892211,
-									"parameters": {
-										"mouse-button": "right",
-										"click-type": "clicked"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "wait",
-									"objectClass": "System",
-									"sid": 806153931977121,
-									"parameters": {
-										"seconds": "0"
-									}
-								},
-								{
-									"callFunction": "CallTransition",
-									"sid": 231705209514893,
-									"parameters": [
-										"\"Start\""
-									]
-								},
-								{
-									"id": "start-timer",
-									"objectClass": "InvisibleTrackerFree",
-									"sid": 513719096311576,
-									"behaviorType": "Timer",
-									"parameters": {
-										"duration": "0.5",
-										"type": "once",
-										"tag": "\"SwitchLayoutToMainMenu\""
-									}
-								}
-							],
-							"sid": 663418531786418,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "compare-instance-variable",
-											"objectClass": "Font_Folder",
-											"sid": 487345432465942,
-											"parameters": {
-												"instance-variable": "Mode",
-												"comparison": 0,
-												"value": "\"DeathText\""
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "wait",
-											"objectClass": "System",
-											"sid": 413255661227878,
-											"parameters": {
-												"seconds": "0.4"
-											}
-										},
-										{
-											"id": "destroy",
-											"objectClass": "Pixel",
-											"sid": 674568675216135
-										},
-										{
-											"id": "destroy",
-											"objectClass": "Font_Folder",
-											"sid": 596028726536549
-										}
-									],
-									"sid": 166714125849694
-								}
-							]
-						}
-					]
 				}
 			],
 			"sid": 531628472115024
@@ -3995,7 +3825,7 @@
 						{
 							"id": "set-boolean-eventvar",
 							"objectClass": "System",
-							"sid": 293513036150921,
+							"sid": 751215722482366,
 							"parameters": {
 								"variable": "isMinigameActive",
 								"value": "false"
@@ -4004,7 +3834,7 @@
 						{
 							"id": "set-boolean-eventvar",
 							"objectClass": "System",
-							"sid": 187369439285967,
+							"sid": 881641416818226,
 							"parameters": {
 								"variable": "isDead",
 								"value": "true"
@@ -4013,7 +3843,7 @@
 						{
 							"id": "create-object",
 							"objectClass": "System",
-							"sid": 713521115932153,
+							"sid": 128566416809077,
 							"parameters": {
 								"object-to-create": "Pixel",
 								"layer": "\"HUD Below\"",
@@ -4026,7 +3856,7 @@
 						{
 							"id": "set-size",
 							"objectClass": "Pixel",
-							"sid": 309491013476238,
+							"sid": 828666488608866,
 							"parameters": {
 								"width": "192",
 								"height": "60"
@@ -4035,7 +3865,7 @@
 						{
 							"id": "set-default-color",
 							"objectClass": "Pixel",
-							"sid": 862383046354510,
+							"sid": 308127822382776,
 							"parameters": {
 								"color": "rgb(0, 0, 0)"
 							}
@@ -4043,21 +3873,32 @@
 						{
 							"id": "set-opacity",
 							"objectClass": "Pixel",
-							"sid": 742860310349746,
+							"sid": 124923577129430,
 							"parameters": {
 								"opacity": "50"
 							}
 						},
 						{
+							"id": "start-timer",
+							"objectClass": "InvisibleTracker",
+							"sid": 493517358075094,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": "1.0",
+								"type": "once",
+								"tag": "\"PreventSkipDeathScreen\""
+							}
+						},
+						{
 							"callFunction": "SaveCurrentData",
-							"sid": 593845511258235,
+							"sid": 922635116383258,
 							"parameters": [
 								"\"MG\"&MiniGame",
 								"InvisibleTracker.Value1"
 							]
 						}
 					],
-					"sid": 788402801664835,
+					"sid": 283101199905791,
 					"children": [
 						{
 							"eventType": "block",
@@ -4065,7 +3906,7 @@
 								{
 									"id": "compare-eventvar",
 									"objectClass": "System",
-									"sid": 962674857919613,
+									"sid": 957203298834969,
 									"parameters": {
 										"variable": "MiniGame",
 										"comparison": 0,
@@ -4077,10 +3918,10 @@
 								{
 									"id": "destroy",
 									"objectClass": "mg0_items",
-									"sid": 197453933192370
+									"sid": 114976757386581
 								}
 							],
-							"sid": 796960375451308,
+							"sid": 190356575889205,
 							"children": [
 								{
 									"eventType": "block",
@@ -4088,7 +3929,7 @@
 										{
 											"id": "is-animation-playing",
 											"objectClass": "particles",
-											"sid": 234013349663292,
+											"sid": 311121706906979,
 											"parameters": {
 												"animation": "\"mg0_item_smoke_loop\""
 											}
@@ -4098,14 +3939,14 @@
 										{
 											"id": "set-animation",
 											"objectClass": "particles",
-											"sid": 383560543528337,
+											"sid": 317031513517090,
 											"parameters": {
 												"animation": "\"mg0_item_smoke_dissolve\"",
 												"from": "beginning"
 											}
 										}
 									],
-									"sid": 455923093929933
+									"sid": 767851854429225
 								},
 								{
 									"eventType": "block",
@@ -4113,7 +3954,7 @@
 										{
 											"id": "compare-instance-variable",
 											"objectClass": "InvisibleTracker",
-											"sid": 387885431471455,
+											"sid": 327216387562094,
 											"parameters": {
 												"instance-variable": "Value1",
 												"comparison": 2,
@@ -4124,7 +3965,7 @@
 									"actions": [
 										{
 											"callFunction": "CreateText",
-											"sid": 894758423945266,
+											"sid": 244359391491244,
 											"parameters": [
 												"\"HUD Below\"",
 												"\"64,60\"",
@@ -4137,7 +3978,7 @@
 											]
 										}
 									],
-									"sid": 329620246225849
+									"sid": 137866438600693
 								},
 								{
 									"eventType": "block",
@@ -4145,7 +3986,7 @@
 										{
 											"id": "compare-instance-variable",
 											"objectClass": "InvisibleTracker",
-											"sid": 851573162564024,
+											"sid": 424969779149852,
 											"parameters": {
 												"instance-variable": "Value1",
 												"comparison": 5,
@@ -4155,7 +3996,7 @@
 										{
 											"id": "compare-instance-variable",
 											"objectClass": "InvisibleTracker",
-											"sid": 809236084940814,
+											"sid": 132531088342113,
 											"parameters": {
 												"instance-variable": "Value1",
 												"comparison": 2,
@@ -4166,7 +4007,7 @@
 									"actions": [
 										{
 											"callFunction": "CreateText",
-											"sid": 558626420783306,
+											"sid": 693440762623374,
 											"parameters": [
 												"\"HUD Below\"",
 												"\"64,60\"",
@@ -4179,7 +4020,7 @@
 											]
 										}
 									],
-									"sid": 102215190208909
+									"sid": 712237188909724
 								},
 								{
 									"eventType": "block",
@@ -4187,7 +4028,7 @@
 										{
 											"id": "compare-instance-variable",
 											"objectClass": "InvisibleTracker",
-											"sid": 765379293202367,
+											"sid": 917322753374505,
 											"parameters": {
 												"instance-variable": "Value1",
 												"comparison": 5,
@@ -4197,7 +4038,7 @@
 										{
 											"id": "compare-instance-variable",
 											"objectClass": "InvisibleTracker",
-											"sid": 603585040124194,
+											"sid": 114440911747931,
 											"parameters": {
 												"instance-variable": "Value1",
 												"comparison": 2,
@@ -4208,7 +4049,7 @@
 									"actions": [
 										{
 											"callFunction": "CreateText",
-											"sid": 701733204749422,
+											"sid": 438552299224395,
 											"parameters": [
 												"\"HUD Below\"",
 												"\"64,60\"",
@@ -4221,7 +4062,7 @@
 											]
 										}
 									],
-									"sid": 587706024795429
+									"sid": 613557250551545
 								},
 								{
 									"eventType": "block",
@@ -4229,7 +4070,7 @@
 										{
 											"id": "compare-instance-variable",
 											"objectClass": "InvisibleTracker",
-											"sid": 410838430467802,
+											"sid": 579289123377901,
 											"parameters": {
 												"instance-variable": "Value1",
 												"comparison": 5,
@@ -4239,7 +4080,7 @@
 										{
 											"id": "compare-instance-variable",
 											"objectClass": "InvisibleTracker",
-											"sid": 624960206710896,
+											"sid": 695782237330648,
 											"parameters": {
 												"instance-variable": "Value1",
 												"comparison": 2,
@@ -4250,7 +4091,7 @@
 									"actions": [
 										{
 											"callFunction": "CreateText",
-											"sid": 403065244605705,
+											"sid": 690668612536428,
 											"parameters": [
 												"\"HUD Below\"",
 												"\"64,60\"",
@@ -4263,7 +4104,7 @@
 											]
 										}
 									],
-									"sid": 321720193002941
+									"sid": 428267774238833
 								},
 								{
 									"eventType": "block",
@@ -4271,7 +4112,7 @@
 										{
 											"id": "compare-instance-variable",
 											"objectClass": "InvisibleTracker",
-											"sid": 687534297418733,
+											"sid": 220145377772129,
 											"parameters": {
 												"instance-variable": "Value1",
 												"comparison": 5,
@@ -4282,7 +4123,7 @@
 									"actions": [
 										{
 											"callFunction": "CreateText",
-											"sid": 837582330775921,
+											"sid": 360654318924289,
 											"parameters": [
 												"\"HUD Below\"",
 												"\"64,60\"",
@@ -4295,7 +4136,7 @@
 											]
 										}
 									],
-									"sid": 528946616797218
+									"sid": 908180806689082
 								},
 								{
 									"eventType": "block",
@@ -4304,14 +4145,505 @@
 										{
 											"id": "set-instvar-value",
 											"objectClass": "InvisibleTracker",
-											"sid": 136184023115304,
+											"sid": 824415720655764,
 											"parameters": {
 												"instance-variable": "Value1",
 												"value": "0"
 											}
 										}
 									],
-									"sid": 209300100511035
+									"sid": 417834631578676
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 370350400165274,
+									"parameters": {
+										"variable": "MiniGame",
+										"comparison": 0,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 405008014447274,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "for-each",
+											"objectClass": "System",
+											"sid": 319860210132676,
+											"parameters": {
+												"object": "MG1_Rings"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "destroy",
+											"objectClass": "MG1_Rings",
+											"sid": 552051744308960
+										},
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 918795582822013,
+											"parameters": {
+												"seconds": "0"
+											}
+										},
+										{
+											"id": "destroy",
+											"objectClass": "MG1_Rings",
+											"sid": 998907688124081
+										}
+									],
+									"sid": 392804713378884
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "InvisibleTracker",
+											"sid": 777252183400425,
+											"parameters": {
+												"instance-variable": "Value1",
+												"comparison": 2,
+												"value": "0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "CreateText",
+											"sid": 546476736662651,
+											"parameters": [
+												"\"HUD Below\"",
+												"\"64,60\"",
+												"\"192,60\"",
+												"\"DeathText\"",
+												"\"How did THIS happen!?\" & newline & \nnewline &\n\"(Press LEFT-CLICK to restart or RIGHT-CLICK to exit)\"",
+												"\"200,150,255\"",
+												"\"Middle\"",
+												"66"
+											]
+										}
+									],
+									"sid": 661907518062366
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "InvisibleTracker",
+											"sid": 979370033312856,
+											"parameters": {
+												"instance-variable": "Value1",
+												"comparison": 5,
+												"value": "0"
+											}
+										},
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "InvisibleTracker",
+											"sid": 311655843758544,
+											"parameters": {
+												"instance-variable": "Value1",
+												"comparison": 2,
+												"value": "17000"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "CreateText",
+											"sid": 203011814161584,
+											"parameters": [
+												"\"HUD Below\"",
+												"\"64,60\"",
+												"\"192,60\"",
+												"\"DeathText\"",
+												"\"I should work on my aim.\" & newline & \nnewline &\n\"(Press LEFT-CLICK to restart or RIGHT-CLICK to exit)\"",
+												"\"200,150,255\"",
+												"\"Middle\"",
+												"66"
+											]
+										}
+									],
+									"sid": 338930006481115
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "InvisibleTracker",
+											"sid": 476286727643940,
+											"parameters": {
+												"instance-variable": "Value1",
+												"comparison": 5,
+												"value": "17000"
+											}
+										},
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "InvisibleTracker",
+											"sid": 649535285326432,
+											"parameters": {
+												"instance-variable": "Value1",
+												"comparison": 2,
+												"value": "34000"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "CreateText",
+											"sid": 609825270090940,
+											"parameters": [
+												"\"HUD Below\"",
+												"\"64,60\"",
+												"\"192,60\"",
+												"\"DeathText\"",
+												"\"This does not meet my standards.\" & newline & \nnewline &\n\"(Press LEFT-CLICK to restart or RIGHT-CLICK to exit)\"",
+												"\"200,150,255\"",
+												"\"Middle\"",
+												"66"
+											]
+										}
+									],
+									"sid": 888235600169198
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "InvisibleTracker",
+											"sid": 491575999038212,
+											"parameters": {
+												"instance-variable": "Value1",
+												"comparison": 5,
+												"value": "34000"
+											}
+										},
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "InvisibleTracker",
+											"sid": 181458379090541,
+											"parameters": {
+												"instance-variable": "Value1",
+												"comparison": 2,
+												"value": "51000"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "CreateText",
+											"sid": 136124841513253,
+											"parameters": [
+												"\"HUD Below\"",
+												"\"64,60\"",
+												"\"192,60\"",
+												"\"DeathText\"",
+												"\"I can surely do better than that.\" & newline & \nnewline &\n\"(Press LEFT-CLICK to restart or RIGHT-CLICK to exit)\"",
+												"\"200,150,255\"",
+												"\"Middle\"",
+												"66"
+											]
+										}
+									],
+									"sid": 258333421582684
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "InvisibleTracker",
+											"sid": 563502384584528,
+											"parameters": {
+												"instance-variable": "Value1",
+												"comparison": 5,
+												"value": "51000"
+											}
+										},
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "InvisibleTracker",
+											"sid": 304784626324783,
+											"parameters": {
+												"instance-variable": "Value1",
+												"comparison": 2,
+												"value": "68000"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "CreateText",
+											"sid": 340035036460740,
+											"parameters": [
+												"\"HUD Below\"",
+												"\"64,60\"",
+												"\"192,60\"",
+												"\"DeathText\"",
+												"\"Pretty good.\" & newline & \nnewline &\n\"(Press LEFT-CLICK to restart or RIGHT-CLICK to exit)\"",
+												"\"200,150,255\"",
+												"\"Middle\"",
+												"66"
+											]
+										}
+									],
+									"sid": 556614260437619
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "InvisibleTracker",
+											"sid": 881569996588817,
+											"parameters": {
+												"instance-variable": "Value1",
+												"comparison": 5,
+												"value": "68000"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "CreateText",
+											"sid": 926938930888891,
+											"parameters": [
+												"\"HUD Below\"",
+												"\"64,60\"",
+												"\"192,60\"",
+												"\"DeathText\"",
+												"\"How thrilling!\" & newline & \nnewline &\n\"(Press LEFT-CLICK to restart or RIGHT-CLICK to exit)\"",
+												"\"200,150,255\"",
+												"\"Middle\"",
+												"66"
+											]
+										}
+									],
+									"sid": 902620062752219
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "set-instvar-value",
+											"objectClass": "InvisibleTracker",
+											"sid": 469958916321790,
+											"parameters": {
+												"instance-variable": "Value1",
+												"value": "1000"
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "InvisibleTracker",
+											"sid": 795557884862465,
+											"parameters": {
+												"instance-variable": "Value2",
+												"value": "60"
+											}
+										}
+									],
+									"sid": 806039860715264
+								}
+							]
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 952078819700266,
+							"parameters": {
+								"variable": "isDead"
+							}
+						},
+						{
+							"id": "is-timer-running",
+							"objectClass": "InvisibleTracker",
+							"sid": 372813772769660,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"PreventSkipDeathScreen\""
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [],
+					"sid": 425635268611755,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-click",
+									"objectClass": "Mouse",
+									"sid": 459558824923165,
+									"parameters": {
+										"mouse-button": "left",
+										"click-type": "clicked"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 440062839280410,
+									"parameters": {
+										"seconds": "0"
+									}
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 475871288954574,
+									"parameters": {
+										"variable": "isDead",
+										"value": "false"
+									}
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 727779504774293,
+									"parameters": {
+										"variable": "isMinigameActive",
+										"value": "true"
+									}
+								}
+							],
+							"sid": 758192599848030,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "Font_Folder",
+											"sid": 800290340557144,
+											"parameters": {
+												"instance-variable": "Mode",
+												"comparison": 0,
+												"value": "\"DeathText\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "destroy",
+											"objectClass": "Pixel",
+											"sid": 838509651120225
+										},
+										{
+											"id": "destroy",
+											"objectClass": "Font_Folder",
+											"sid": 958429613384998
+										}
+									],
+									"sid": 584680764807649
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-click",
+									"objectClass": "Mouse",
+									"sid": 173846222276503,
+									"parameters": {
+										"mouse-button": "right",
+										"click-type": "clicked"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 216691442876848,
+									"parameters": {
+										"seconds": "0"
+									}
+								},
+								{
+									"callFunction": "CallTransition",
+									"sid": 828294519579672,
+									"parameters": [
+										"\"Start\""
+									]
+								},
+								{
+									"id": "start-timer",
+									"objectClass": "InvisibleTrackerFree",
+									"sid": 930879784569625,
+									"behaviorType": "Timer",
+									"parameters": {
+										"duration": "0.5",
+										"type": "once",
+										"tag": "\"SwitchLayoutToMainMenu\""
+									}
+								}
+							],
+							"sid": 285796853584388,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "Font_Folder",
+											"sid": 925272950326880,
+											"parameters": {
+												"instance-variable": "Mode",
+												"comparison": 0,
+												"value": "\"DeathText\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 334301547835117,
+											"parameters": {
+												"seconds": "0.4"
+											}
+										},
+										{
+											"id": "destroy",
+											"objectClass": "Pixel",
+											"sid": 366061949963664
+										},
+										{
+											"id": "destroy",
+											"objectClass": "Font_Folder",
+											"sid": 958708782163711
+										}
+									],
+									"sid": 481265276028007
 								}
 							]
 						}

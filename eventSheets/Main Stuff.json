@@ -2025,6 +2025,20 @@
 									]
 								},
 								{
+									"callFunction": "CreateText",
+									"sid": 141084559076781,
+									"parameters": [
+										"\"HUD Below\"",
+										"\"0,0\"",
+										"\"320,180\"",
+										"\"MG0Explain\"",
+										"\"Shoot the targets to get points.\" \n& newline &\n\"Hit the [color=#FF0000]middle[/color] for the best results.\" \n& newline &\n\"----------------------------------------------\" \n& newline &\n\"[color=#FFFF00]Left-click to start the game.\" \n",
+										"\"255,255,255\"",
+										"\"Middle\"",
+										"66"
+									]
+								},
+								{
 									"callFunction": "CallTransition",
 									"sid": 925923078300315,
 									"parameters": [
@@ -2049,6 +2063,40 @@
 									"parameters": {
 										"variable": "MiniGameLevel",
 										"value": "choose(0,1)"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "InvisibleTracker",
+									"sid": 891451840084797,
+									"parameters": {
+										"instance-variable": "Value2",
+										"value": "60"
+									}
+								},
+								{
+									"callFunction": "CreateText",
+									"sid": 246329811431597,
+									"parameters": [
+										"\"HUD Below\"",
+										"\"1,162\"",
+										"\"200,10\"",
+										"\"Timer\"",
+										"\"Time: \"&InvisibleTracker.Value2",
+										"\"200,150,255\"",
+										"\"\"",
+										"66"
+									]
+								},
+								{
+									"id": "start-timer",
+									"objectClass": "InvisibleTracker",
+									"sid": 388754790327414,
+									"behaviorType": "Timer",
+									"parameters": {
+										"duration": "1",
+										"type": "regular",
+										"tag": "\"TimerMG1\""
 									}
 								}
 							],
@@ -2171,10 +2219,10 @@
 								},
 								{
 									"callFunction": "PlaySound",
-									"sid": 849872065075764,
+									"sid": 130388679004164,
 									"parameters": [
 										"\"sound_enemy_sniper_shot_0\"&choose(1,2,3)",
-										"-5",
+										"-7.5",
 										"0"
 									]
 								}
@@ -2224,6 +2272,103 @@
 								}
 							],
 							"sid": 755535117193629
+						},
+						{
+							"eventType": "comment",
+							"text": "Timer"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-timer",
+									"objectClass": "InvisibleTracker",
+									"sid": 787009939258412,
+									"behaviorType": "Timer",
+									"parameters": {
+										"tag": "\"TimerMG1\""
+									}
+								},
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 339042225579097,
+									"parameters": {
+										"variable": "isMinigameActive"
+									}
+								},
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 961050389689635,
+									"parameters": {
+										"variable": "isDead"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "InvisibleTracker",
+									"sid": 206421035511469,
+									"parameters": {
+										"instance-variable": "Value2",
+										"value": "InvisibleTracker.Value2 - 1"
+									}
+								}
+							],
+							"sid": 604908636682690,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "Font_Folder",
+											"sid": 884890883894022,
+											"parameters": {
+												"instance-variable": "Mode",
+												"comparison": 0,
+												"value": "\"Timer\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-text",
+											"objectClass": "Font_Folder",
+											"sid": 643524653452704,
+											"parameters": {
+												"text": "\"Time: \"&InvisibleTracker.Value2"
+											}
+										}
+									],
+									"sid": 313902175794535
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "InvisibleTracker",
+											"sid": 736666007496321,
+											"parameters": {
+												"instance-variable": "Value2",
+												"comparison": 3,
+												"value": "0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "CallDeath",
+											"sid": 777051771416593
+										}
+									],
+									"sid": 533718600590196
+								}
+							]
 						},
 						{
 							"functionName": "UpdateScoreMG1",
@@ -2504,18 +2649,76 @@
 											"isInverted": true
 										}
 									],
-									"actions": [
+									"actions": [],
+									"sid": 281795268895306,
+									"children": [
 										{
-											"callFunction": "UpdateScoreMG1",
-											"sid": 721929856660993,
-											"parameters": [
-												"-1000",
-												"\"150,150,255\"",
-												false
-											]
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-boolean-eventvar",
+													"objectClass": "System",
+													"sid": 746449437184512,
+													"parameters": {
+														"variable": "isMinigameActive"
+													}
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "UpdateScoreMG1",
+													"sid": 215757262363647,
+													"parameters": [
+														"-1000",
+														"\"150,150,255\"",
+														false
+													]
+												}
+											],
+											"sid": 923863016126309
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-boolean-eventvar",
+													"objectClass": "System",
+													"sid": 337501817420028,
+													"parameters": {
+														"variable": "isMinigameActive"
+													},
+													"isInverted": true
+												},
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "Font_Folder",
+													"sid": 876221215059669,
+													"parameters": {
+														"instance-variable": "Mode",
+														"comparison": 0,
+														"value": "\"MG0Explain\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-boolean-eventvar",
+													"objectClass": "System",
+													"sid": 475019115017551,
+													"parameters": {
+														"variable": "isMinigameActive",
+														"value": "true"
+													}
+												},
+												{
+													"id": "destroy",
+													"objectClass": "Font_Folder",
+													"sid": 731446103302751
+												}
+											],
+											"sid": 913356312110753
 										}
-									],
-									"sid": 281795268895306
+									]
 								},
 								{
 									"eventType": "block",
@@ -3687,196 +3890,222 @@
 							"text": "[h4] Patterns [h4]"
 						},
 						{
-							"eventType": "comment",
-							"text": "0"
-						},
-						{
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "compare-eventvar",
+									"id": "compare-boolean-eventvar",
 									"objectClass": "System",
-									"sid": 580219761467014,
+									"sid": 378264148596350,
 									"parameters": {
-										"variable": "MiniGameLevel",
-										"comparison": 0,
-										"value": "0"
+										"variable": "isMinigameActive"
 									}
 								},
 								{
-									"id": "trigger-once-while-true",
+									"id": "compare-boolean-eventvar",
 									"objectClass": "System",
-									"sid": 104844206991825
-								}
-							],
-							"actions": [
-								{
-									"id": "start-timer",
-									"objectClass": "InvisibleTracker",
-									"sid": 473457682351003,
-									"behaviorType": "Timer",
+									"sid": 307578192453364,
 									"parameters": {
-										"duration": "3.75",
-										"type": "once",
-										"tag": "\"NewWave\""
-									}
+										"variable": "isDead"
+									},
+									"isInverted": true
 								}
 							],
-							"sid": 954195754280341,
+							"actions": [],
+							"sid": 816614719206681,
 							"children": [
 								{
-									"eventType": "variable",
-									"name": "i",
-									"type": "number",
-									"initialValue": "0",
-									"comment": "",
-									"isStatic": false,
-									"isConstant": false,
-									"sid": 622706309784397
-								},
-								{
-									"eventType": "variable",
-									"name": "j",
-									"type": "number",
-									"initialValue": "0",
-									"comment": "",
-									"isStatic": false,
-									"isConstant": false,
-									"sid": 677530425853147
+									"eventType": "comment",
+									"text": "0"
 								},
 								{
 									"eventType": "block",
 									"conditions": [
 										{
-											"id": "repeat",
+											"id": "compare-eventvar",
 											"objectClass": "System",
-											"sid": 105592943159689,
+											"sid": 270930734655602,
 											"parameters": {
-												"count": "5"
+												"variable": "MiniGameLevel",
+												"comparison": 0,
+												"value": "0"
 											}
+										},
+										{
+											"id": "trigger-once-while-true",
+											"objectClass": "System",
+											"sid": 166323004459703
 										}
 									],
 									"actions": [
 										{
+											"id": "start-timer",
+											"objectClass": "InvisibleTracker",
+											"sid": 321769880789287,
+											"behaviorType": "Timer",
+											"parameters": {
+												"duration": "3.75",
+												"type": "once",
+												"tag": "\"NewWave\""
+											}
+										}
+									],
+									"sid": 900776773019794,
+									"children": [
+										{
+											"eventType": "variable",
+											"name": "i",
+											"type": "number",
+											"initialValue": "0",
+											"comment": "",
+											"isStatic": false,
+											"isConstant": false,
+											"sid": 610687644298514
+										},
+										{
+											"eventType": "variable",
+											"name": "j",
+											"type": "number",
+											"initialValue": "0",
+											"comment": "",
+											"isStatic": false,
+											"isConstant": false,
+											"sid": 461859494167145
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "repeat",
+													"objectClass": "System",
+													"sid": 553269195386180,
+													"parameters": {
+														"count": "5"
+													}
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "SpawnTarget",
+													"sid": 378366961619320,
+													"parameters": [
+														"\"30,147\"",
+														"\"2,0\"",
+														"\"0,0\"",
+														"0.4 * i",
+														"0"
+													]
+												},
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 465723755260077,
+													"parameters": {
+														"variable": "i",
+														"value": "i+1"
+													}
+												}
+											],
+											"sid": 616370073187220
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "repeat",
+													"objectClass": "System",
+													"sid": 859094505252624,
+													"parameters": {
+														"count": "5"
+													}
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "SpawnTarget",
+													"sid": 706401388156520,
+													"parameters": [
+														"\"290,35\"",
+														"\"-2,0\"",
+														"\"0,0\"",
+														"0.4 * j",
+														"180"
+													]
+												},
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 938932220336544,
+													"parameters": {
+														"variable": "j",
+														"value": "j+1"
+													}
+												}
+											],
+											"sid": 899137657260773
+										}
+									]
+								},
+								{
+									"eventType": "comment",
+									"text": "1"
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 294724405939921,
+											"parameters": {
+												"variable": "MiniGameLevel",
+												"comparison": 0,
+												"value": "1"
+											}
+										},
+										{
+											"id": "trigger-once-while-true",
+											"objectClass": "System",
+											"sid": 291276751197066
+										}
+									],
+									"actions": [
+										{
+											"id": "start-timer",
+											"objectClass": "InvisibleTracker",
+											"sid": 459584070653079,
+											"behaviorType": "Timer",
+											"parameters": {
+												"duration": "0.1",
+												"type": "once",
+												"tag": "\"NewWave\""
+											}
+										},
+										{
 											"callFunction": "SpawnTarget",
-											"sid": 956822550311886,
+											"sid": 162387506099779,
 											"parameters": [
 												"\"30,147\"",
-												"\"1,0\"",
+												"\"4,0\"",
 												"\"0,0\"",
-												"0.75 * i",
+												"0",
 												"0"
 											]
 										},
 										{
-											"id": "set-eventvar-value",
-											"objectClass": "System",
-											"sid": 861826950428332,
-											"parameters": {
-												"variable": "i",
-												"value": "i+1"
-											}
-										}
-									],
-									"sid": 956765111147815
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "repeat",
-											"objectClass": "System",
-											"sid": 728257558323979,
-											"parameters": {
-												"count": "5"
-											}
-										}
-									],
-									"actions": [
-										{
 											"callFunction": "SpawnTarget",
-											"sid": 666023414810889,
+											"sid": 496346182966465,
 											"parameters": [
 												"\"290,35\"",
-												"\"-1,0\"",
+												"\"-4,0\"",
 												"\"0,0\"",
-												"0.75 * j",
+												"0",
 												"180"
 											]
-										},
-										{
-											"id": "set-eventvar-value",
-											"objectClass": "System",
-											"sid": 145348176899697,
-											"parameters": {
-												"variable": "j",
-												"value": "j+1"
-											}
 										}
 									],
-									"sid": 502033461517484
+									"sid": 714847481567130
 								}
 							]
-						},
-						{
-							"eventType": "comment",
-							"text": "1"
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-eventvar",
-									"objectClass": "System",
-									"sid": 558566111457163,
-									"parameters": {
-										"variable": "MiniGameLevel",
-										"comparison": 0,
-										"value": "1"
-									}
-								},
-								{
-									"id": "trigger-once-while-true",
-									"objectClass": "System",
-									"sid": 557668811754680
-								}
-							],
-							"actions": [
-								{
-									"id": "start-timer",
-									"objectClass": "InvisibleTracker",
-									"sid": 905724858576077,
-									"behaviorType": "Timer",
-									"parameters": {
-										"duration": "0.1",
-										"type": "once",
-										"tag": "\"NewWave\""
-									}
-								},
-								{
-									"callFunction": "SpawnTarget",
-									"sid": 895889393913880,
-									"parameters": [
-										"\"30,147\"",
-										"\"3,0\"",
-										"\"0,0\"",
-										"0",
-										"0"
-									]
-								},
-								{
-									"callFunction": "SpawnTarget",
-									"sid": 523732881792712,
-									"parameters": [
-										"\"290,35\"",
-										"\"-3,0\"",
-										"\"0,0\"",
-										"0",
-										"180"
-									]
-								}
-							],
-							"sid": 494255176077776
 						}
 					]
 				}
