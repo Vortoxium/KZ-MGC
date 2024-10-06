@@ -3514,33 +3514,77 @@
 							"parameters": {
 								"animation": "\"End\""
 							}
-						},
-						{
-							"id": "compare-animation-frame",
-							"objectClass": "Transition",
-							"sid": 943604189821259,
-							"parameters": {
-								"comparison": 0,
-								"number": "13"
-							}
-						},
-						{
-							"id": "trigger-once-while-true",
-							"objectClass": "System",
-							"sid": 945496654968937
 						}
 					],
-					"actions": [
+					"actions": [],
+					"sid": 449018716679543,
+					"children": [
 						{
-							"id": "signal",
-							"objectClass": "System",
-							"sid": 653000583089795,
-							"parameters": {
-								"tag": "\"DestroyTransition\""
-							}
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-animation-frame",
+									"objectClass": "Transition",
+									"sid": 986684220137547,
+									"parameters": {
+										"comparison": 0,
+										"number": "13"
+									}
+								},
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 213914487734773
+								}
+							],
+							"actions": [
+								{
+									"id": "signal",
+									"objectClass": "System",
+									"sid": 389046322684152,
+									"parameters": {
+										"tag": "\"DestroyTransition\""
+									}
+								}
+							],
+							"sid": 734364884222492
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-animation-frame",
+									"objectClass": "Transition",
+									"sid": 717748026403998,
+									"parameters": {
+										"comparison": 0,
+										"number": "4"
+									}
+								},
+								{
+									"id": "is-animation-playing",
+									"objectClass": "backgrounds",
+									"sid": 661045360458111,
+									"parameters": {
+										"animation": "\"bg-2\""
+									}
+								},
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 952803725436064
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "backgrounds",
+									"sid": 151155318578072
+								}
+							],
+							"sid": 562284650527050
 						}
-					],
-					"sid": 449018716679543
+					]
 				},
 				{
 					"eventType": "block",

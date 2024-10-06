@@ -93,35 +93,6 @@
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "is-animation-playing",
-									"objectClass": "backgrounds",
-									"sid": 335215738208394,
-									"parameters": {
-										"animation": "\"bg-2\""
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "wait",
-									"objectClass": "System",
-									"sid": 351660505458444,
-									"parameters": {
-										"seconds": "0.08"
-									}
-								},
-								{
-									"id": "destroy",
-									"objectClass": "backgrounds",
-									"sid": 245240674354752
-								}
-							],
-							"sid": 633088278683329
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
 									"id": "compare-boolean-eventvar",
 									"objectClass": "System",
 									"sid": 726220726841832,

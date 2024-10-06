@@ -188,35 +188,6 @@
 									"eventType": "block",
 									"conditions": [
 										{
-											"id": "is-animation-playing",
-											"objectClass": "backgrounds",
-											"sid": 459741631432458,
-											"parameters": {
-												"animation": "\"bg-2\""
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "wait",
-											"objectClass": "System",
-											"sid": 844776876382177,
-											"parameters": {
-												"seconds": "0.08"
-											}
-										},
-										{
-											"id": "destroy",
-											"objectClass": "backgrounds",
-											"sid": 895894671582889
-										}
-									],
-									"sid": 412492874625125
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
 											"id": "compare-boolean-eventvar",
 											"objectClass": "System",
 											"sid": 403797435271990,
@@ -2102,35 +2073,6 @@
 							],
 							"sid": 532461071879254,
 							"children": [
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "is-animation-playing",
-											"objectClass": "backgrounds",
-											"sid": 564454729763982,
-											"parameters": {
-												"animation": "\"bg-2\""
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "wait",
-											"objectClass": "System",
-											"sid": 846786692003187,
-											"parameters": {
-												"seconds": "0.08"
-											}
-										},
-										{
-											"id": "destroy",
-											"objectClass": "backgrounds",
-											"sid": 594319931360329
-										}
-									],
-									"sid": 261901688643914
-								},
 								{
 									"eventType": "block",
 									"conditions": [
@@ -4252,9 +4194,9 @@
 										},
 										{
 											"callFunction": "SpawnTarget",
-											"sid": 717558400297432,
+											"sid": 352502559234696,
 											"parameters": [
-												"\"160,0\"",
+												"\"160,2\"",
 												"\"0,5\"",
 												"\"0,0.1\"",
 												"0",
