@@ -397,19 +397,19 @@
 										{
 											"id": "set-instvar-value",
 											"objectClass": "mg0_items",
-											"sid": 337299932520625,
+											"sid": 114490321935497,
 											"parameters": {
 												"instance-variable": "HorizontalMovement",
-												"value": "mg0_items.HorizontalMovement*0.99"
+												"value": "mg0_items.HorizontalMovement*(1-((1-0.99)*(dt*60)))"
 											}
 										},
 										{
 											"id": "set-instvar-value",
 											"objectClass": "mg0_items",
-											"sid": 550912749439025,
+											"sid": 150967564487930,
 											"parameters": {
 												"instance-variable": "VerticalMovement",
-												"value": "mg0_items.VerticalMovement+(3*(1+(MiniGameLevel/10)-0.1)-mg0_items.VerticalMovement)*0.06"
+												"value": "mg0_items.VerticalMovement+(3*(1+(MiniGameLevel/10)-0.1)-mg0_items.VerticalMovement)*(0.06*(dt*60))"
 											}
 										},
 										{
@@ -611,9 +611,9 @@
 														{
 															"id": "compare-two-values",
 															"objectClass": "System",
-															"sid": 110658847784598,
+															"sid": 841882997160372,
 															"parameters": {
-																"first-value": "tickcount % (17-(floor(MiniGameLevel)*2))",
+																"first-value": "tickcount % round((17-(floor(MiniGameLevel)*2))/(dt*60))",
 																"comparison": 0,
 																"second-value": "1"
 															}
@@ -650,9 +650,9 @@
 														{
 															"id": "compare-two-values",
 															"objectClass": "System",
-															"sid": 341939298326870,
+															"sid": 884020700627966,
 															"parameters": {
-																"first-value": "tickcount % 2",
+																"first-value": "tickcount % round(2/(dt*60))",
 																"comparison": 0,
 																"second-value": "1"
 															}
@@ -702,9 +702,9 @@
 												{
 													"id": "compare-two-values",
 													"objectClass": "System",
-													"sid": 881584233682561,
+													"sid": 347214148089000,
 													"parameters": {
-														"first-value": "tickcount % 2",
+														"first-value": "tickcount % round(2/(dt*60))",
 														"comparison": 0,
 														"second-value": "1"
 													}
@@ -746,9 +746,9 @@
 										{
 											"id": "compare-two-values",
 											"objectClass": "System",
-											"sid": 974209845970816,
+											"sid": 699736328792617,
 											"parameters": {
-												"first-value": "tickcount % 8",
+												"first-value": "tickcount % round(8/(dt*60))",
 												"comparison": 0,
 												"second-value": "1"
 											}
@@ -3801,10 +3801,10 @@
 										{
 											"id": "set-instvar-value",
 											"objectClass": "mg1_items_0",
-											"sid": 146763337574176,
+											"sid": 875673823099828,
 											"parameters": {
 												"instance-variable": "VectorX",
-												"value": "mg1_items_0.VectorX * (0.99*(dt*60))"
+												"value": "mg1_items_0.VectorX *(1-((1-0.99)*(dt*60)))"
 											}
 										},
 										{

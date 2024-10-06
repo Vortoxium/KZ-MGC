@@ -350,6 +350,7 @@
 							"id": "set-silent",
 							"objectClass": "Audio",
 							"sid": 425737794903237,
+							"disabled": true,
 							"parameters": {
 								"mode": "silent"
 							}
@@ -799,19 +800,19 @@
 								{
 									"id": "set-instvar-value",
 									"objectClass": "particles",
-									"sid": 831250098682347,
+									"sid": 964071265574478,
 									"parameters": {
 										"instance-variable": "HorizontalMovement",
-										"value": "Particles.HorizontalMovement*0.99"
+										"value": "Particles.HorizontalMovement*(1-((1-0.99)*(dt*60)))"
 									}
 								},
 								{
 									"id": "set-instvar-value",
 									"objectClass": "particles",
-									"sid": 643348173173722,
+									"sid": 703289121731987,
 									"parameters": {
 										"instance-variable": "VerticalMovement",
-										"value": "Particles.VerticalMovement+(((6-Particles.VerticalMovement)*0.06)*particles.HasGravity)"
+										"value": "Particles.VerticalMovement+(((6-Particles.VerticalMovement)*(0.06*(dt*60)))*particles.HasGravity)"
 									}
 								},
 								{
