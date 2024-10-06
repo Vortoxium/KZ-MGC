@@ -1997,13 +1997,13 @@
 								},
 								{
 									"callFunction": "CreateText",
-									"sid": 141084559076781,
+									"sid": 661909831767025,
 									"parameters": [
 										"\"HUD Below\"",
 										"\"0,0\"",
 										"\"320,180\"",
 										"\"MG0Explain\"",
-										"\"Shoot the targets to get points.\" \n& newline &\n\"Hit the [color=#FF0000]middle[/color] for the best results.\" \n& newline &\n\"----------------------------------------------\" \n& newline &\n\"[color=#FFFF00]Left-click to start the game.\" \n",
+										"\"Shoot the targets to get points.\" \n& newline &\n\"Hit the [color=#FF0000]middle[/color] for the best results.\"\n& newline &\n\"You have [color=#00FFFF]60 seconds[/color].\" \n& newline &\n\"----------------------------------------------\" \n& newline &\n\"[color=#FFFF00]Left-click to start the game.\" \n",
 										"\"255,255,255\"",
 										"\"Middle\"",
 										"66"
@@ -2030,10 +2030,10 @@
 								{
 									"id": "set-eventvar-value",
 									"objectClass": "System",
-									"sid": 678759480026208,
+									"sid": 744325033426795,
 									"parameters": {
 										"variable": "MiniGameLevel",
-										"value": "choose(0,1,2,3,4)"
+										"value": "choose(0,1,2,3,4,5)"
 									}
 								},
 								{
@@ -2892,7 +2892,8 @@
 													"sid": 117100744123128,
 													"parameters": [
 														true,
-														"mg1_items_Stick.UID"
+														"mg1_items_Stick.UID",
+														true
 													]
 												}
 											],
@@ -2913,7 +2914,8 @@
 													"sid": 286300152957999,
 													"parameters": [
 														false,
-														"MG1_Rings.ConnectedUID"
+														"MG1_Rings.ConnectedUID",
+														true
 													]
 												}
 											],
@@ -2948,6 +2950,13 @@
 									"initialValue": "0",
 									"comment": "",
 									"sid": 708988429368863
+								},
+								{
+									"name": "StickParticles",
+									"type": "boolean",
+									"initialValue": "true",
+									"comment": "",
+									"sid": 364995185351192
 								}
 							],
 							"eventType": "function-block",
@@ -2975,30 +2984,45 @@
 											}
 										}
 									],
-									"actions": [
-										{
-											"callFunction": "SpawnParticles",
-											"sid": 663326034361877,
-											"parameters": [
-												"\"mg0_item_glass\"",
-												"\"0,5\"",
-												"\"60,54,51\"",
-												"\"-6,6\"",
-												"\"-6,6\"",
-												"0",
-												"distance(0,mg1_items_Stick.Y,0,Mouse.Y)",
-												"1",
-												"0",
-												"random(10,15)",
-												"mg1_items_Stick.UID",
-												true,
-												false,
-												"\"\""
-											]
-										}
-									],
+									"actions": [],
 									"sid": 245544067934878,
 									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-boolean-eventvar",
+													"objectClass": "System",
+													"sid": 708221790791669,
+													"parameters": {
+														"variable": "StickParticles"
+													}
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "SpawnParticles",
+													"sid": 768025836490283,
+													"parameters": [
+														"\"mg0_item_glass\"",
+														"\"0,5\"",
+														"\"60,54,51\"",
+														"\"-6,6\"",
+														"\"-6,6\"",
+														"0",
+														"distance(0,mg1_items_Stick.Y,0,Mouse.Y)",
+														"1",
+														"0",
+														"random(10,15)",
+														"mg1_items_Stick.UID",
+														true,
+														false,
+														"\"\""
+													]
+												}
+											],
+											"sid": 777443089020168
+										},
 										{
 											"eventType": "block",
 											"conditions": [
@@ -3293,10 +3317,10 @@
 										{
 											"id": "set-eventvar-value",
 											"objectClass": "System",
-											"sid": 504849696446449,
+											"sid": 381477516497587,
 											"parameters": {
 												"variable": "MiniGameLevel",
-												"value": "choose(0,1,2,3,4)"
+												"value": "choose(0,1,2,3,4,5)"
 											}
 										}
 									],
@@ -3621,10 +3645,11 @@
 												},
 												{
 													"callFunction": "DestroyTarget",
-													"sid": 557399720815749,
+													"sid": 210580186204046,
 													"parameters": [
 														true,
-														"mg1_items_Stick.UID"
+														"mg1_items_Stick.UID",
+														false
 													]
 												}
 											],
@@ -4413,6 +4438,93 @@
 										}
 									],
 									"sid": 846340982707063
+								},
+								{
+									"eventType": "comment",
+									"text": "5"
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 983406426649312,
+											"parameters": {
+												"variable": "MiniGameLevel",
+												"comparison": 0,
+												"value": "5"
+											}
+										},
+										{
+											"id": "trigger-once-while-true",
+											"objectClass": "System",
+											"sid": 234527986801221
+										}
+									],
+									"actions": [
+										{
+											"id": "start-timer",
+											"objectClass": "InvisibleTracker",
+											"sid": 625379207120661,
+											"behaviorType": "Timer",
+											"parameters": {
+												"duration": "3.5",
+												"type": "once",
+												"tag": "\"NewWave\""
+											}
+										}
+									],
+									"sid": 314043886634303,
+									"children": [
+										{
+											"eventType": "variable",
+											"name": "i",
+											"type": "number",
+											"initialValue": "0",
+											"comment": "",
+											"isStatic": false,
+											"isConstant": false,
+											"sid": 795584982424657
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "repeat",
+													"objectClass": "System",
+													"sid": 818797211453628,
+													"parameters": {
+														"count": "10"
+													}
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "SpawnTarget",
+													"sid": 368338862583581,
+													"parameters": [
+														"round(random(67,257)) & \",2\"",
+														"\"0,0.5\"",
+														"\"0,0\"",
+														"0.35 * i",
+														"180",
+														true
+													]
+												},
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 615523427515599,
+													"parameters": {
+														"variable": "i",
+														"value": "i+1"
+													}
+												}
+											],
+											"sid": 716266067437581
+										}
+									]
 								}
 							]
 						}
