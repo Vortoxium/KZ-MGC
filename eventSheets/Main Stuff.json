@@ -3448,175 +3448,194 @@
 									"parameters": {
 										"seconds": "1 * DelayMultiplier"
 									}
-								},
-								{
-									"id": "create-object",
-									"objectClass": "System",
-									"sid": 805848255978988,
-									"parameters": {
-										"object-to-create": "mg1_items_Stick",
-										"layer": "\"Objects\"",
-										"x": "int(tokenat(SpawnPOS,0,\",\"))",
-										"y": "int(tokenat(SpawnPOS,1,\",\"))",
-										"create-hierarchy": false,
-										"template-name": "\"\""
-									}
-								},
-								{
-									"id": "set-angle",
-									"objectClass": "mg1_items_Stick",
-									"sid": 959789229287972,
-									"parameters": {
-										"angle": "StickRotation"
-									}
-								},
-								{
-									"id": "set-instvar-value",
-									"objectClass": "mg1_items_Stick",
-									"sid": 309020044853186,
-									"parameters": {
-										"instance-variable": "ConnectedUID",
-										"value": "mg1_items_Stick.UID"
-									}
-								},
-								{
-									"id": "set-instvar-value",
-									"objectClass": "mg1_items_Stick",
-									"sid": 549786126502168,
-									"parameters": {
-										"instance-variable": "VectorX",
-										"value": "float(tokenat(VectorXY,0,\",\"))"
-									}
-								},
-								{
-									"id": "set-instvar-value",
-									"objectClass": "mg1_items_Stick",
-									"sid": 293024367738081,
-									"parameters": {
-										"instance-variable": "VectorY",
-										"value": "float(tokenat(VectorXY,1,\",\"))"
-									}
-								},
-								{
-									"id": "set-instvar-value",
-									"objectClass": "mg1_items_Stick",
-									"sid": 888468440369542,
-									"parameters": {
-										"instance-variable": "ThrottleX",
-										"value": "float(tokenat(ThrottleXY,0,\",\"))"
-									}
-								},
-								{
-									"id": "set-instvar-value",
-									"objectClass": "mg1_items_Stick",
-									"sid": 273108586731834,
-									"parameters": {
-										"instance-variable": "ThrottleY",
-										"value": "float(tokenat(ThrottleXY,1,\",\"))"
-									}
 								}
 							],
 							"sid": 810663304683233,
 							"children": [
 								{
-									"eventType": "variable",
-									"name": "MG1_Items",
-									"type": "string",
-									"initialValue": "P,0,1,2,3",
-									"comment": "",
-									"isStatic": false,
-									"isConstant": true,
-									"sid": 165030990193246
-								},
-								{
-									"eventType": "variable",
-									"name": "i",
-									"type": "number",
-									"initialValue": "0",
-									"comment": "",
-									"isStatic": false,
-									"isConstant": false,
-									"sid": 692225490052341
-								},
-								{
 									"eventType": "block",
 									"conditions": [
 										{
-											"id": "repeat",
+											"id": "compare-boolean-eventvar",
 											"objectClass": "System",
-											"sid": 862053233626565,
+											"sid": 881064022313016,
 											"parameters": {
-												"count": "5"
-											}
+												"variable": "isDead"
+											},
+											"isInverted": true
 										}
 									],
 									"actions": [
 										{
-											"id": "create-object-by-name",
+											"id": "create-object",
 											"objectClass": "System",
-											"sid": 608142180599565,
+											"sid": 165680068812300,
 											"parameters": {
-												"object-name": "\"mg1_items_\" & tokenat(MG1_Items,i,\",\")",
+												"object-to-create": "mg1_items_Stick",
 												"layer": "\"Objects\"",
-												"x": "mg1_items_Stick.X",
-												"y": "mg1_items_Stick.Y",
+												"x": "int(tokenat(SpawnPOS,0,\",\"))",
+												"y": "int(tokenat(SpawnPOS,1,\",\"))",
 												"create-hierarchy": false,
 												"template-name": "\"\""
 											}
+										},
+										{
+											"id": "set-angle",
+											"objectClass": "mg1_items_Stick",
+											"sid": 226264609441894,
+											"parameters": {
+												"angle": "StickRotation"
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "mg1_items_Stick",
+											"sid": 203600825162721,
+											"parameters": {
+												"instance-variable": "ConnectedUID",
+												"value": "mg1_items_Stick.UID"
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "mg1_items_Stick",
+											"sid": 797977816638288,
+											"parameters": {
+												"instance-variable": "VectorX",
+												"value": "float(tokenat(VectorXY,0,\",\"))"
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "mg1_items_Stick",
+											"sid": 659703287590837,
+											"parameters": {
+												"instance-variable": "VectorY",
+												"value": "float(tokenat(VectorXY,1,\",\"))"
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "mg1_items_Stick",
+											"sid": 665948772804979,
+											"parameters": {
+												"instance-variable": "ThrottleX",
+												"value": "float(tokenat(ThrottleXY,0,\",\"))"
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "mg1_items_Stick",
+											"sid": 179615135665168,
+											"parameters": {
+												"instance-variable": "ThrottleY",
+												"value": "float(tokenat(ThrottleXY,1,\",\"))"
+											}
 										}
 									],
-									"sid": 519073971272845,
+									"sid": 486659416668325,
 									"children": [
+										{
+											"eventType": "variable",
+											"name": "MG1_Items",
+											"type": "string",
+											"initialValue": "P,0,1,2,3",
+											"comment": "",
+											"isStatic": false,
+											"isConstant": true,
+											"sid": 926337670373133
+										},
+										{
+											"eventType": "variable",
+											"name": "i",
+											"type": "number",
+											"initialValue": "0",
+											"comment": "",
+											"isStatic": false,
+											"isConstant": false,
+											"sid": 639195192451818
+										},
 										{
 											"eventType": "block",
 											"conditions": [
 												{
-													"id": "pick-last-created",
+													"id": "repeat",
 													"objectClass": "System",
-													"sid": 764540097867364,
+													"sid": 420101915287878,
 													"parameters": {
-														"object": "MG1_Rings"
+														"count": "5"
 													}
 												}
 											],
 											"actions": [
 												{
-													"id": "set-instvar-value",
-													"objectClass": "MG1_Rings",
-													"sid": 569637638624743,
-													"parameters": {
-														"instance-variable": "ConnectedUID",
-														"value": "mg1_items_Stick.UID"
-													}
-												},
-												{
-													"id": "add-child",
-													"objectClass": "mg1_items_Stick",
-													"sid": 645130860742880,
-													"parameters": {
-														"child": "MG1_Rings",
-														"transform-x": true,
-														"transform-y": true,
-														"transform-w": false,
-														"transform-h": false,
-														"transform-a": false,
-														"transform-o": false,
-														"transform-z-elevation": true,
-														"transform-visibility": true,
-														"destroy-with-parent": false
-													}
-												},
-												{
-													"id": "set-eventvar-value",
+													"id": "create-object-by-name",
 													"objectClass": "System",
-													"sid": 444372848710541,
+													"sid": 422474691148962,
 													"parameters": {
-														"variable": "i",
-														"value": "i + 1"
+														"object-name": "\"mg1_items_\" & tokenat(MG1_Items,i,\",\")",
+														"layer": "\"Objects\"",
+														"x": "mg1_items_Stick.X",
+														"y": "mg1_items_Stick.Y",
+														"create-hierarchy": false,
+														"template-name": "\"\""
 													}
 												}
 											],
-											"sid": 974684476765977
+											"sid": 396703061388252,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "pick-last-created",
+															"objectClass": "System",
+															"sid": 585763710316024,
+															"parameters": {
+																"object": "MG1_Rings"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-instvar-value",
+															"objectClass": "MG1_Rings",
+															"sid": 379708085474304,
+															"parameters": {
+																"instance-variable": "ConnectedUID",
+																"value": "mg1_items_Stick.UID"
+															}
+														},
+														{
+															"id": "add-child",
+															"objectClass": "mg1_items_Stick",
+															"sid": 119305844473383,
+															"parameters": {
+																"child": "MG1_Rings",
+																"transform-x": true,
+																"transform-y": true,
+																"transform-w": false,
+																"transform-h": false,
+																"transform-a": false,
+																"transform-o": false,
+																"transform-z-elevation": true,
+																"transform-visibility": true,
+																"destroy-with-parent": false
+															}
+														},
+														{
+															"id": "set-eventvar-value",
+															"objectClass": "System",
+															"sid": 635396074315770,
+															"parameters": {
+																"variable": "i",
+																"value": "i + 1"
+															}
+														}
+													],
+													"sid": 547917422676149
+												}
+											]
 										}
 									]
 								}
@@ -4023,9 +4042,9 @@
 											"actions": [
 												{
 													"callFunction": "SpawnTarget",
-													"sid": 938235096123458,
+													"sid": 455106757903027,
 													"parameters": [
-														"\"30,147\"",
+														"\"34,147\"",
 														"\"1.5,0\"",
 														"\"0,0\"",
 														"0.5 * i",
