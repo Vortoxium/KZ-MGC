@@ -350,6 +350,7 @@
 							"id": "set-silent",
 							"objectClass": "Audio",
 							"sid": 425737794903237,
+							"disabled": true,
 							"parameters": {
 								"mode": "silent"
 							}
@@ -3555,10 +3556,10 @@
 								{
 									"id": "compare-animation-frame",
 									"objectClass": "Transition",
-									"sid": 717748026403998,
+									"sid": 397651079959501,
 									"parameters": {
 										"comparison": 0,
-										"number": "4"
+										"number": "5"
 									}
 								},
 								{
