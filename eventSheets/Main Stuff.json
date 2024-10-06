@@ -200,9 +200,9 @@
 										{
 											"id": "wait",
 											"objectClass": "System",
-											"sid": 612360228970257,
+											"sid": 844776876382177,
 											"parameters": {
-												"seconds": "0.075"
+												"seconds": "0.08"
 											}
 										},
 										{
@@ -2059,10 +2059,10 @@
 								{
 									"id": "set-eventvar-value",
 									"objectClass": "System",
-									"sid": 740251374551959,
+									"sid": 999087439195094,
 									"parameters": {
 										"variable": "MiniGameLevel",
-										"value": "choose(0,1)"
+										"value": "choose(0,1,2)"
 									}
 								},
 								{
@@ -2118,9 +2118,9 @@
 										{
 											"id": "wait",
 											"objectClass": "System",
-											"sid": 612409440477602,
+											"sid": 846786692003187,
 											"parameters": {
-												"seconds": "0.075"
+												"seconds": "0.08"
 											}
 										},
 										{
@@ -3351,10 +3351,10 @@
 										{
 											"id": "set-eventvar-value",
 											"objectClass": "System",
-											"sid": 179332755013292,
+											"sid": 954269212606172,
 											"parameters": {
 												"variable": "MiniGameLevel",
-												"value": "choose(0,1)"
+												"value": "choose(0,1,2)"
 											}
 										}
 									],
@@ -3530,6 +3530,17 @@
 											"parameters": {
 												"instance-variable": "ThrottleY",
 												"value": "float(tokenat(ThrottleXY,1,\",\"))"
+											}
+										},
+										{
+											"id": "start-timer",
+											"objectClass": "mg1_items_Stick",
+											"sid": 319561817500315,
+											"behaviorType": "Timer",
+											"parameters": {
+												"duration": "0.5",
+												"type": "once",
+												"tag": "\"Don'tDespawn\""
 											}
 										}
 									],
@@ -3875,6 +3886,16 @@
 											"eventType": "block",
 											"conditions": [
 												{
+													"id": "is-timer-running",
+													"objectClass": "mg1_items_Stick",
+													"sid": 958147143707494,
+													"behaviorType": "Timer",
+													"parameters": {
+														"tag": "\"Don'tDespawn\""
+													},
+													"isInverted": true
+												},
+												{
 													"id": "for-each",
 													"objectClass": "System",
 													"sid": 938666442121545,
@@ -4033,6 +4054,42 @@
 												{
 													"id": "repeat",
 													"objectClass": "System",
+													"sid": 664489811475529,
+													"parameters": {
+														"count": "5"
+													}
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "SpawnTarget",
+													"sid": 449242209063610,
+													"parameters": [
+														"\"290,35\"",
+														"\"-1.5,0\"",
+														"\"0,0\"",
+														"0.5 * j",
+														"180"
+													]
+												},
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 350249154777204,
+													"parameters": {
+														"variable": "j",
+														"value": "j+1"
+													}
+												}
+											],
+											"sid": 536678544176584
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "repeat",
+													"objectClass": "System",
 													"sid": 553269195386180,
 													"parameters": {
 														"count": "5"
@@ -4062,42 +4119,6 @@
 												}
 											],
 											"sid": 616370073187220
-										},
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "repeat",
-													"objectClass": "System",
-													"sid": 859094505252624,
-													"parameters": {
-														"count": "5"
-													}
-												}
-											],
-											"actions": [
-												{
-													"callFunction": "SpawnTarget",
-													"sid": 961015602137425,
-													"parameters": [
-														"\"290,35\"",
-														"\"-1.5,0\"",
-														"\"0,0\"",
-														"0.5 * j",
-														"180"
-													]
-												},
-												{
-													"id": "set-eventvar-value",
-													"objectClass": "System",
-													"sid": 938932220336544,
-													"parameters": {
-														"variable": "j",
-														"value": "j+1"
-													}
-												}
-											],
-											"sid": 899137657260773
 										}
 									]
 								},
@@ -4138,18 +4159,7 @@
 										},
 										{
 											"callFunction": "SpawnTarget",
-											"sid": 459934275926282,
-											"parameters": [
-												"\"30,147\"",
-												"\"3,0\"",
-												"\"0,0\"",
-												"0",
-												"0"
-											]
-										},
-										{
-											"callFunction": "SpawnTarget",
-											"sid": 694471901852243,
+											"sid": 136197681392732,
 											"parameters": [
 												"\"290,35\"",
 												"\"-3,0\"",
@@ -4157,9 +4167,102 @@
 												"0",
 												"180"
 											]
+										},
+										{
+											"callFunction": "SpawnTarget",
+											"sid": 698816808823519,
+											"parameters": [
+												"\"34,147\"",
+												"\"3,0\"",
+												"\"0,0\"",
+												"0",
+												"0"
+											]
 										}
 									],
 									"sid": 714847481567130
+								},
+								{
+									"eventType": "comment",
+									"text": "2"
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 888857537448385,
+											"parameters": {
+												"variable": "MiniGameLevel",
+												"comparison": 0,
+												"value": "2"
+											}
+										},
+										{
+											"id": "trigger-once-while-true",
+											"objectClass": "System",
+											"sid": 158925695773040
+										}
+									],
+									"actions": [
+										{
+											"id": "start-timer",
+											"objectClass": "InvisibleTracker",
+											"sid": 586514049805629,
+											"behaviorType": "Timer",
+											"parameters": {
+												"duration": "0.1",
+												"type": "once",
+												"tag": "\"NewWave\""
+											}
+										},
+										{
+											"callFunction": "SpawnTarget",
+											"sid": 548613409897822,
+											"parameters": [
+												"\"290,90\"",
+												"\"-5,0\"",
+												"\"0.1,0\"",
+												"0",
+												"270"
+											]
+										},
+										{
+											"callFunction": "SpawnTarget",
+											"sid": 158497860698338,
+											"parameters": [
+												"\"34,90\"",
+												"\"5,0\"",
+												"\"0.1,0\"",
+												"0",
+												"90"
+											]
+										},
+										{
+											"callFunction": "SpawnTarget",
+											"sid": 527813370697697,
+											"parameters": [
+												"\"160,180\"",
+												"\"0,-5\"",
+												"\"0,0.1\"",
+												"0",
+												"0"
+											]
+										},
+										{
+											"callFunction": "SpawnTarget",
+											"sid": 717558400297432,
+											"parameters": [
+												"\"160,0\"",
+												"\"0,5\"",
+												"\"0,0.1\"",
+												"0",
+												"180"
+											]
+										}
+									],
+									"sid": 923290855776813
 								}
 							]
 						}
