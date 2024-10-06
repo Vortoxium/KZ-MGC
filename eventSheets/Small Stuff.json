@@ -118,7 +118,7 @@
 							"eventType": "variable",
 							"name": "MG_MedalValues",
 							"type": "string",
-							"initialValue": "60,120,180,300|20000,40000,60000,80000",
+							"initialValue": "60,120,180,240|20000,40000,60000,80000",
 							"comment": "",
 							"isStatic": false,
 							"isConstant": true,
@@ -350,7 +350,6 @@
 							"id": "set-silent",
 							"objectClass": "Audio",
 							"sid": 425737794903237,
-							"disabled": true,
 							"parameters": {
 								"mode": "silent"
 							}
@@ -4124,11 +4123,11 @@
 										{
 											"id": "compare-instance-variable",
 											"objectClass": "InvisibleTracker",
-											"sid": 695782237330648,
+											"sid": 149082463360523,
 											"parameters": {
 												"instance-variable": "Value1",
 												"comparison": 2,
-												"value": "300"
+												"value": "240"
 											}
 										}
 									],
@@ -4156,11 +4155,11 @@
 										{
 											"id": "compare-instance-variable",
 											"objectClass": "InvisibleTracker",
-											"sid": 220145377772129,
+											"sid": 299553767344167,
 											"parameters": {
 												"instance-variable": "Value1",
 												"comparison": 5,
-												"value": "300"
+												"value": "240"
 											}
 										}
 									],

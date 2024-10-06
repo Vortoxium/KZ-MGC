@@ -784,7 +784,7 @@
 							"eventType": "variable",
 							"name": "MG0_Items_Chance",
 							"type": "string",
-							"initialValue": "0,0,0,0,0,0,0,0,0,3|0,0,0,0,0,0,0,1,1,3|0,0,0,0,0,0,1,1,2,3|0,0,0,0,0,1,1,2,2,3",
+							"initialValue": "0,0,0,0,0,0,0,0,1,3|0,0,0,0,0,0,0,1,2,3|0,0,0,0,0,0,1,1,2,3|0,0,0,0,0,1,1,2,2,3",
 							"comment": "",
 							"isStatic": false,
 							"isConstant": true,
@@ -3712,10 +3712,10 @@
 										{
 											"id": "set-instvar-value",
 											"objectClass": "mg1_items_Stick",
-											"sid": 282191594366570,
+											"sid": 274633892908517,
 											"parameters": {
 												"instance-variable": "VectorX",
-												"value": "mg1_items_Stick.VectorX * (1-mg1_items_Stick.ThrottleX)"
+												"value": "mg1_items_Stick.VectorX * (1-(mg1_items_Stick.ThrottleX*(dt*60)))"
 											}
 										}
 									],
@@ -3739,10 +3739,10 @@
 										{
 											"id": "set-instvar-value",
 											"objectClass": "mg1_items_Stick",
-											"sid": 937060202816936,
+											"sid": 910058679956446,
 											"parameters": {
 												"instance-variable": "VectorY",
-												"value": "mg1_items_Stick.VectorY * (1-mg1_items_Stick.ThrottleY)"
+												"value": "mg1_items_Stick.VectorY * (1-(mg1_items_Stick.ThrottleY*(dt*60)))"
 											}
 										}
 									],
@@ -3801,19 +3801,19 @@
 										{
 											"id": "set-instvar-value",
 											"objectClass": "mg1_items_0",
-											"sid": 889958369678869,
+											"sid": 146763337574176,
 											"parameters": {
 												"instance-variable": "VectorX",
-												"value": "mg1_items_0.VectorX * 0.99"
+												"value": "mg1_items_0.VectorX * (0.99*(dt*60))"
 											}
 										},
 										{
 											"id": "set-instvar-value",
 											"objectClass": "mg1_items_0",
-											"sid": 250842442420097,
+											"sid": 333869618758383,
 											"parameters": {
 												"instance-variable": "VectorY",
-												"value": "mg1_items_0.VectorY + ((distance(mg1_items_0.VectorY,0,6.67,0)) * 0.01)"
+												"value": "mg1_items_0.VectorY + ((distance(mg1_items_0.VectorY,0,6.67,0)) * (0.01*(dt*60)))"
 											}
 										},
 										{
