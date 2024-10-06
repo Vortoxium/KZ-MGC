@@ -2030,10 +2030,10 @@
 								{
 									"id": "set-eventvar-value",
 									"objectClass": "System",
-									"sid": 999087439195094,
+									"sid": 678759480026208,
 									"parameters": {
 										"variable": "MiniGameLevel",
-										"value": "choose(0,1,2)"
+										"value": "choose(0,1,2,3,4)"
 									}
 								},
 								{
@@ -3293,10 +3293,10 @@
 										{
 											"id": "set-eventvar-value",
 											"objectClass": "System",
-											"sid": 954269212606172,
+											"sid": 504849696446449,
 											"parameters": {
 												"variable": "MiniGameLevel",
-												"value": "choose(0,1,2)"
+												"value": "choose(0,1,2,3,4)"
 											}
 										}
 									],
@@ -3329,7 +3329,8 @@
 										"\"0,0\"",
 										"\"\"",
 										"0",
-										"0"
+										"0",
+										false
 									]
 								}
 							],
@@ -3378,6 +3379,13 @@
 									"initialValue": "0",
 									"comment": "",
 									"sid": 678164469930577
+								},
+								{
+									"name": "BreakStick",
+									"type": "boolean",
+									"initialValue": "false",
+									"comment": "",
+									"sid": 533782903293723
 								}
 							],
 							"eventType": "function-block",
@@ -3589,6 +3597,38 @@
 													"sid": 547917422676149
 												}
 											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-boolean-eventvar",
+													"objectClass": "System",
+													"sid": 140439073725823,
+													"parameters": {
+														"variable": "BreakStick"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "wait",
+													"objectClass": "System",
+													"sid": 989584224998425,
+													"parameters": {
+														"seconds": "0"
+													}
+												},
+												{
+													"callFunction": "DestroyTarget",
+													"sid": 557399720815749,
+													"parameters": [
+														true,
+														"mg1_items_Stick.UID"
+													]
+												}
+											],
+											"sid": 277077205282490
 										}
 									]
 								}
@@ -3736,7 +3776,7 @@
 										{
 											"id": "set-instvar-value",
 											"objectClass": "mg1_items_0",
-											"sid": 724353941717200,
+											"sid": 889958369678869,
 											"parameters": {
 												"instance-variable": "VectorX",
 												"value": "mg1_items_0.VectorX * 0.99"
@@ -3745,10 +3785,10 @@
 										{
 											"id": "set-instvar-value",
 											"objectClass": "mg1_items_0",
-											"sid": 695940672704507,
+											"sid": 250842442420097,
 											"parameters": {
 												"instance-variable": "VectorY",
-												"value": "mg1_items_0.VectorY + ((distance(mg1_items_0.VectorY,0,6.67,0)) * 0.015)"
+												"value": "mg1_items_0.VectorY + ((distance(mg1_items_0.VectorY,0,6.67,0)) * 0.01)"
 											}
 										},
 										{
@@ -4011,7 +4051,8 @@
 														"\"-1.5,0\"",
 														"\"0,0\"",
 														"0.5 * j",
-														"180"
+														"180",
+														false
 													]
 												},
 												{
@@ -4047,7 +4088,8 @@
 														"\"1.5,0\"",
 														"\"0,0\"",
 														"0.5 * i",
-														"0"
+														"0",
+														false
 													]
 												},
 												{
@@ -4107,7 +4149,8 @@
 												"\"-3,0\"",
 												"\"0,0\"",
 												"0",
-												"180"
+												"180",
+												false
 											]
 										},
 										{
@@ -4118,7 +4161,8 @@
 												"\"3,0\"",
 												"\"0,0\"",
 												"0",
-												"0"
+												"0",
+												false
 											]
 										}
 									],
@@ -4167,7 +4211,8 @@
 												"\"-5,0\"",
 												"\"0.1,0\"",
 												"0",
-												"270"
+												"270",
+												false
 											]
 										},
 										{
@@ -4178,7 +4223,8 @@
 												"\"5,0\"",
 												"\"0.1,0\"",
 												"0",
-												"90"
+												"90",
+												false
 											]
 										},
 										{
@@ -4189,7 +4235,8 @@
 												"\"0,-5\"",
 												"\"0,0.1\"",
 												"0",
-												"0"
+												"0",
+												false
 											]
 										},
 										{
@@ -4200,11 +4247,172 @@
 												"\"0,5\"",
 												"\"0,0.1\"",
 												"0",
-												"180"
+												"180",
+												false
 											]
 										}
 									],
 									"sid": 923290855776813
+								},
+								{
+									"eventType": "comment",
+									"text": "3"
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 871564521524892,
+											"parameters": {
+												"variable": "MiniGameLevel",
+												"comparison": 0,
+												"value": "3"
+											}
+										},
+										{
+											"id": "trigger-once-while-true",
+											"objectClass": "System",
+											"sid": 945794264987280
+										}
+									],
+									"actions": [
+										{
+											"id": "start-timer",
+											"objectClass": "InvisibleTracker",
+											"sid": 876202101414852,
+											"behaviorType": "Timer",
+											"parameters": {
+												"duration": "0.1",
+												"type": "once",
+												"tag": "\"NewWave\""
+											}
+										},
+										{
+											"callFunction": "SpawnTarget",
+											"sid": 237603308201307,
+											"parameters": [
+												"\"290,147\"",
+												"\"-1.5,0\"",
+												"\"0,0\"",
+												"0",
+												"0",
+												false
+											]
+										},
+										{
+											"callFunction": "SpawnTarget",
+											"sid": 333150073198730,
+											"parameters": [
+												"\"67,180\"",
+												"\"0,-1.05\"",
+												"\"0,0\"",
+												"0",
+												"90",
+												false
+											]
+										},
+										{
+											"callFunction": "SpawnTarget",
+											"sid": 759204945954263,
+											"parameters": [
+												"\"34,35\"",
+												"\"1.5,0\"",
+												"\"0,0\"",
+												"0",
+												"180",
+												false
+											]
+										},
+										{
+											"callFunction": "SpawnTarget",
+											"sid": 976763708373402,
+											"parameters": [
+												"\"257,2\"",
+												"\"0,1.05\"",
+												"\"0,0\"",
+												"0",
+												"270",
+												false
+											]
+										}
+									],
+									"sid": 285026484226571
+								},
+								{
+									"eventType": "comment",
+									"text": "4"
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 586686215408614,
+											"parameters": {
+												"variable": "MiniGameLevel",
+												"comparison": 0,
+												"value": "4"
+											}
+										},
+										{
+											"id": "trigger-once-while-true",
+											"objectClass": "System",
+											"sid": 992837138884113
+										}
+									],
+									"actions": [
+										{
+											"id": "start-timer",
+											"objectClass": "InvisibleTracker",
+											"sid": 724918102068978,
+											"behaviorType": "Timer",
+											"parameters": {
+												"duration": "0.1",
+												"type": "once",
+												"tag": "\"NewWave\""
+											}
+										},
+										{
+											"callFunction": "SpawnTarget",
+											"sid": 918444788976286,
+											"parameters": [
+												"\"100,180\"",
+												"\"0,-4\"",
+												"\"0,0\"",
+												"0",
+												"0",
+												true
+											]
+										},
+										{
+											"callFunction": "SpawnTarget",
+											"sid": 485615122509243,
+											"parameters": [
+												"\"160,180\"",
+												"\"0,-5\"",
+												"\"0,0\"",
+												"0",
+												"0",
+												true
+											]
+										},
+										{
+											"callFunction": "SpawnTarget",
+											"sid": 705114044387019,
+											"parameters": [
+												"\"220,180\"",
+												"\"0,-4\"",
+												"\"0,0\"",
+												"0",
+												"0",
+												true
+											]
+										}
+									],
+									"sid": 846340982707063
 								}
 							]
 						}
