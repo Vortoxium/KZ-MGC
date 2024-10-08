@@ -1060,7 +1060,7 @@
 					"comment": "",
 					"isStatic": true,
 					"isConstant": false,
-					"sid": 642314745383912
+					"sid": 351487013907605
 				},
 				{
 					"eventType": "block",
@@ -1115,10 +1115,10 @@
 					"actions": [
 						{
 							"callFunction": "PlayMusic",
-							"sid": 604439222920404,
+							"sid": 549163306157250,
 							"parameters": [
 								"\"song_silhouette\"",
-								"0",
+								"-3.5",
 								"4"
 							]
 						}
@@ -2499,19 +2499,19 @@
 					"actions": [
 						{
 							"callFunction": "PlaySound",
-							"sid": 421247217728925,
+							"sid": 228732156815484,
 							"parameters": [
 								"\"sound_menubeep_1\"",
-								"-7.5",
+								"-11",
 								"0"
 							]
 						},
 						{
 							"callFunction": "PlaySound",
-							"sid": 485991501701105,
+							"sid": 467733184779124,
 							"parameters": [
 								"\"sound_eject_tape\"",
-								"-2.5",
+								"-6",
 								"0.5"
 							]
 						}
@@ -2642,19 +2642,19 @@
 					"actions": [
 						{
 							"callFunction": "PlaySound",
-							"sid": 922774486648198,
+							"sid": 181611116426295,
 							"parameters": [
 								"\"sound_menubeep_2\"",
-								"-2.5",
+								"-7.5",
 								"0"
 							]
 						},
 						{
 							"callFunction": "PlaySound",
-							"sid": 335682991077185,
+							"sid": 687720518516038,
 							"parameters": [
 								"\"sound_tape_move\"&choose(1,2,3)",
-								"-2.5",
+								"-7.5",
 								"0"
 							]
 						},
@@ -3660,10 +3660,10 @@
 							"actions": [
 								{
 									"callFunction": "PlaySound",
-									"sid": 673655285023730,
+									"sid": 336824211627632,
 									"parameters": [
 										"\"sound_transition_begin\"",
-										"-7.5",
+										"-10",
 										"0"
 									]
 								}
@@ -3687,10 +3687,10 @@
 							"actions": [
 								{
 									"callFunction": "PlaySound",
-									"sid": 613626955967021,
+									"sid": 431943295644196,
 									"parameters": [
 										"\"sound_transition_end\"",
-										"-7.5",
+										"-10",
 										"0"
 									]
 								}

@@ -199,10 +199,10 @@
 									"actions": [
 										{
 											"callFunction": "PlayMusic",
-											"sid": 304818333134565,
+											"sid": 472574002119400,
 											"parameters": [
 												"\"song_snow\"",
-												"-5",
+												"-9",
 												"0"
 											]
 										}
@@ -1382,10 +1382,10 @@
 										},
 										{
 											"callFunction": "PlaySound",
-											"sid": 182652076386590,
+											"sid": 849544502652065,
 											"parameters": [
 												"\"sound_object_light_shatter_0\"&choose(1,2)",
-												"0",
+												"-5",
 												"0"
 											]
 										},
@@ -1451,10 +1451,10 @@
 												},
 												{
 													"callFunction": "PlaySound",
-													"sid": 534017564775137,
+													"sid": 393643252018531,
 													"parameters": [
 														"\"sound_clatter_brick3\"",
-														"0",
+														"-5",
 														"0"
 													]
 												},
@@ -1501,10 +1501,10 @@
 												},
 												{
 													"callFunction": "PlaySound",
-													"sid": 299331027675389,
+													"sid": 513576091410706,
 													"parameters": [
 														"\"sound_clatter_brick\"&choose(1,2)",
-														"0",
+														"-5",
 														"0"
 													]
 												},
@@ -1698,10 +1698,10 @@
 									"actions": [
 										{
 											"callFunction": "PlaySound",
-											"sid": 791925746985369,
+											"sid": 698311329243152,
 											"parameters": [
 												"\"sound_vial_explosive\"",
-												"0",
+												"-5",
 												"0"
 											]
 										}
@@ -1791,10 +1791,10 @@
 									"actions": [
 										{
 											"callFunction": "PlaySound",
-											"sid": 240877653277314,
+											"sid": 355399381196037,
 											"parameters": [
 												"\"sound_vial_smoke\"",
-												"0",
+												"-5",
 												"0"
 											]
 										}
@@ -2088,10 +2088,10 @@
 									"actions": [
 										{
 											"callFunction": "PlayMusic",
-											"sid": 841294766903919,
+											"sid": 143566264480020,
 											"parameters": [
 												"\"song_slaughterhouse\"",
-												"-2",
+												"-7.5",
 												"0"
 											]
 										}
@@ -2161,10 +2161,10 @@
 								},
 								{
 									"callFunction": "PlaySound",
-									"sid": 130388679004164,
+									"sid": 102050931239106,
 									"parameters": [
 										"\"sound_enemy_sniper_shot_0\"&choose(1,2,3)",
-										"-7.5",
+										"-10",
 										"0"
 									]
 								}

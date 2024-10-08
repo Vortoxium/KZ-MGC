@@ -104,10 +104,10 @@
 							"actions": [
 								{
 									"callFunction": "PlayMusic",
-									"sid": 687831778308272,
+									"sid": 144987964111979,
 									"parameters": [
 										"\"song_silhouette\"",
-										"0",
+										"-3.5",
 										"4"
 									]
 								}
