@@ -469,42 +469,28 @@
 			"subLayers": [],
 			"instances": [
 				{
-					"type": "backgrounds",
+					"type": "Transition",
 					"properties": {
 						"initially-visible": true,
-						"initial-animation": "bg-2",
+						"initial-animation": "Start",
 						"initial-frame": 0,
 						"enable-collisions": true,
 						"live-preview": false
 					},
-					"uid": 36,
-					"sid": 773771817323352,
+					"uid": 37,
+					"sid": 740963902813727,
 					"tags": "",
-					"instanceVariables": {
-						"PosX": 0,
-						"PosY": 0,
-						"Parallax": 100
-					},
+					"instanceVariables": {},
 					"behaviors": {},
-					"effects": {
-						"GlowHorizontal": {
-							"isEnabled": false,
-							"parameters": {
-								"intensity": 1
-							}
-						},
-						"GlowVertical": {
-							"isEnabled": false,
-							"parameters": {
-								"intensity": 1
-							}
-						}
+					"instanceFolderItem": {
+						"sid": 740963902813727,
+						"expanded": true
 					},
 					"world": {
-						"x": 160,
-						"y": 90,
-						"width": 320,
-						"height": 180,
+						"x": 144,
+						"y": -8,
+						"width": 16,
+						"height": 16,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [

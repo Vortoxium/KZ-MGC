@@ -3513,7 +3513,7 @@
 								{
 									"id": "compare-animation-frame",
 									"objectClass": "Transition",
-									"sid": 986684220137547,
+									"sid": 271325554974866,
 									"parameters": {
 										"comparison": 0,
 										"number": "13"
@@ -3536,41 +3536,6 @@
 								}
 							],
 							"sid": 734364884222492
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-animation-frame",
-									"objectClass": "Transition",
-									"sid": 397651079959501,
-									"parameters": {
-										"comparison": 0,
-										"number": "5"
-									}
-								},
-								{
-									"id": "is-animation-playing",
-									"objectClass": "backgrounds",
-									"sid": 661045360458111,
-									"parameters": {
-										"animation": "\"bg-2\""
-									}
-								},
-								{
-									"id": "trigger-once-while-true",
-									"objectClass": "System",
-									"sid": 952803725436064
-								}
-							],
-							"actions": [
-								{
-									"id": "destroy",
-									"objectClass": "backgrounds",
-									"sid": 151155318578072
-								}
-							],
-							"sid": 562284650527050
 						}
 					]
 				},
@@ -3698,27 +3663,6 @@
 							"sid": 943886590111489
 						},
 						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "for-each",
-									"objectClass": "System",
-									"sid": 496055157574889,
-									"parameters": {
-										"object": "Transition"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "destroy",
-									"objectClass": "Transition",
-									"sid": 852795424153694
-								}
-							],
-							"sid": 115371605484749
-						},
-						{
 							"eventType": "variable",
 							"name": "i",
 							"type": "number",
@@ -3726,7 +3670,7 @@
 							"comment": "",
 							"isStatic": false,
 							"isConstant": false,
-							"sid": 985411859351626
+							"sid": 823644252767485
 						},
 						{
 							"eventType": "variable",
@@ -3736,7 +3680,7 @@
 							"comment": "",
 							"isStatic": false,
 							"isConstant": false,
-							"sid": 336275335533853
+							"sid": 471866021635047
 						},
 						{
 							"eventType": "block",
@@ -3744,7 +3688,7 @@
 								{
 									"id": "repeat",
 									"objectClass": "System",
-									"sid": 745140755990261,
+									"sid": 794735231414354,
 									"parameters": {
 										"count": "20"
 									}
@@ -3754,7 +3698,7 @@
 								{
 									"id": "set-eventvar-value",
 									"objectClass": "System",
-									"sid": 139609113722669,
+									"sid": 713393717284493,
 									"parameters": {
 										"variable": "j",
 										"value": "0"
@@ -3763,14 +3707,14 @@
 								{
 									"id": "set-eventvar-value",
 									"objectClass": "System",
-									"sid": 551907696390390,
+									"sid": 770643480161469,
 									"parameters": {
 										"variable": "i",
 										"value": "i+1"
 									}
 								}
 							],
-							"sid": 822876905939060,
+							"sid": 739886716079158,
 							"children": [
 								{
 									"eventType": "block",
@@ -3778,7 +3722,7 @@
 										{
 											"id": "repeat",
 											"objectClass": "System",
-											"sid": 670162998529373,
+											"sid": 218744579575464,
 											"parameters": {
 												"count": "12"
 											}
@@ -3788,7 +3732,7 @@
 										{
 											"id": "set-eventvar-value",
 											"objectClass": "System",
-											"sid": 181189935134792,
+											"sid": 202184556341476,
 											"parameters": {
 												"variable": "j",
 												"value": "j+1"
@@ -3797,7 +3741,7 @@
 										{
 											"id": "create-object",
 											"objectClass": "System",
-											"sid": 225824563571313,
+											"sid": 627803752560943,
 											"parameters": {
 												"object-to-create": "Transition",
 												"layer": "\"HUD\"",
@@ -3810,7 +3754,7 @@
 										{
 											"id": "set-object-time-scale",
 											"objectClass": "System",
-											"sid": 315164489023263,
+											"sid": 132025859599747,
 											"parameters": {
 												"object": "Transition",
 												"time-scale": "1"
@@ -3819,14 +3763,14 @@
 										{
 											"id": "set-animation",
 											"objectClass": "Transition",
-											"sid": 650673941087131,
+											"sid": 343312856840903,
 											"parameters": {
 												"animation": "TransitionMode",
 												"from": "beginning"
 											}
 										}
 									],
-									"sid": 681536643388579
+									"sid": 361835279002129
 								}
 							]
 						}

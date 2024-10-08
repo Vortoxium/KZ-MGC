@@ -19,7 +19,7 @@
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
 						"fileType": "image/png",
-						"imageSpriteId": 5458130,
+						"imageSpriteId": 2190330,
 						"collisionPoly": {
 							"points": [
 								0.46875,
@@ -286,7 +286,7 @@
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
 						"fileType": "image/png",
-						"imageSpriteId": 9750982,
+						"imageSpriteId": 612741,
 						"useCollisionPoly": true,
 						"duration": 1,
 						"tag": ""
