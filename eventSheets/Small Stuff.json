@@ -1984,7 +1984,7 @@
 												{
 													"id": "every-tick",
 													"objectClass": "System",
-													"sid": 425109513845581
+													"sid": 917939874945393
 												}
 											],
 											"actions": [],
@@ -2022,9 +2022,9 @@
 														{
 															"id": "repeat",
 															"objectClass": "System",
-															"sid": 995232408332123,
+															"sid": 576934096150603,
 															"parameters": {
-																"count": "40"
+																"count": "30"
 															}
 														},
 														{
@@ -2073,15 +2073,15 @@
 														{
 															"id": "set-width",
 															"objectClass": "Pixel",
-															"sid": 622157206771136,
+															"sid": 737365552592915,
 															"parameters": {
-																"width": "round(random(1,21))"
+																"width": "round(random(1,26))"
 															}
 														},
 														{
 															"id": "wait",
 															"objectClass": "System",
-															"sid": 763028424153290,
+															"sid": 678736169233028,
 															"parameters": {
 																"seconds": "0"
 															}
@@ -2089,7 +2089,7 @@
 														{
 															"id": "destroy",
 															"objectClass": "Pixel",
-															"sid": 694031259092483
+															"sid": 152563495792845
 														}
 													],
 													"sid": 927509249446145
@@ -2100,9 +2100,9 @@
 														{
 															"id": "repeat",
 															"objectClass": "System",
-															"sid": 498893224190174,
+															"sid": 277748014948396,
 															"parameters": {
-																"count": "20"
+																"count": "15"
 															}
 														},
 														{
@@ -2141,15 +2141,15 @@
 														{
 															"id": "set-width",
 															"objectClass": "Pixel",
-															"sid": 883816644316373,
+															"sid": 556578725439399,
 															"parameters": {
-																"width": "round(random(1,21))"
+																"width": "round(random(1,26))"
 															}
 														},
 														{
 															"id": "wait",
 															"objectClass": "System",
-															"sid": 967170996422515,
+															"sid": 732368742768752,
 															"parameters": {
 																"seconds": "0"
 															}
@@ -2157,7 +2157,7 @@
 														{
 															"id": "destroy",
 															"objectClass": "Pixel",
-															"sid": 221435319816108
+															"sid": 425077442975440
 														}
 													],
 													"sid": 408150320675464
@@ -2168,9 +2168,9 @@
 														{
 															"id": "repeat",
 															"objectClass": "System",
-															"sid": 804067769984754,
+															"sid": 387956682106054,
 															"parameters": {
-																"count": "20"
+																"count": "15"
 															}
 														},
 														{
@@ -2231,7 +2231,7 @@
 														{
 															"id": "wait",
 															"objectClass": "System",
-															"sid": 457815747654249,
+															"sid": 725586539165416,
 															"parameters": {
 																"seconds": "0"
 															}
@@ -2239,7 +2239,7 @@
 														{
 															"id": "destroy",
 															"objectClass": "Pixel",
-															"sid": 321426595939471
+															"sid": 268942166239872
 														}
 													],
 													"sid": 546823735484297
