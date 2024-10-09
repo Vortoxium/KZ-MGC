@@ -213,6 +213,20 @@
 									]
 								},
 								{
+									"callFunction": "CreateText",
+									"sid": 729214378508986,
+									"parameters": [
+										"\"HUD Below\"",
+										"\"1,171\"",
+										"\"200,10\"",
+										"\"MenuText\"",
+										"\"V\" & projectversion",
+										"\"255,255,255\"",
+										"\"\"",
+										"50"
+									]
+								},
+								{
 									"id": "wait",
 									"objectClass": "System",
 									"sid": 997090689576828,
