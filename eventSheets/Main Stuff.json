@@ -3011,15 +3011,15 @@
 											"actions": [
 												{
 													"callFunction": "SpawnParticles",
-													"sid": 768025836490283,
+													"sid": 302795961368955,
 													"parameters": [
 														"\"mg0_item_glass\"",
 														"\"0,5\"",
 														"\"60,54,51\"",
 														"\"-6,6\"",
 														"\"-6,6\"",
-														"0",
-														"distance(0,mg1_items_Stick.Y,0,Mouse.Y)",
+														"distance(0,mg1_items_Stick.X,0,Mouse.X) * cos(mg1_items_Stick.Angle + 90)",
+														"distance(0,mg1_items_Stick.Y,0,Mouse.Y) * cos(mg1_items_Stick.Angle)",
 														"1",
 														"0",
 														"random(10,15)",
