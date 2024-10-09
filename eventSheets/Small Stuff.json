@@ -2772,6 +2772,14 @@
 							],
 							"actions": [
 								{
+									"callFunction": "SaveCurrentData",
+									"sid": 113522426220812,
+									"parameters": [
+										"\"MG\"&MiniGame",
+										"InvisibleTracker.Value1"
+									]
+								},
+								{
 									"id": "set-boolean-eventvar",
 									"objectClass": "System",
 									"sid": 277864694310713,
@@ -2818,41 +2826,32 @@
 							"actions": [
 								{
 									"callFunction": "SaveCurrentData",
-									"sid": 950447678209138,
+									"sid": 973566290326786,
 									"parameters": [
 										"\"MG\"&MiniGame",
 										"InvisibleTracker.Value1"
 									]
+								},
+								{
+									"callFunction": "CallTransition",
+									"sid": 172483362443881,
+									"parameters": [
+										"\"Start\""
+									]
+								},
+								{
+									"id": "start-timer",
+									"objectClass": "InvisibleTrackerFree",
+									"sid": 555446805181964,
+									"behaviorType": "Timer",
+									"parameters": {
+										"duration": "0.5",
+										"type": "once",
+										"tag": "\"SwitchLayoutToMainMenu\""
+									}
 								}
 							],
-							"sid": 526658151951771,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [],
-									"actions": [
-										{
-											"callFunction": "CallTransition",
-											"sid": 621896059397608,
-											"parameters": [
-												"\"Start\""
-											]
-										},
-										{
-											"id": "start-timer",
-											"objectClass": "InvisibleTrackerFree",
-											"sid": 708907123155208,
-											"behaviorType": "Timer",
-											"parameters": {
-												"duration": "0.5",
-												"type": "once",
-												"tag": "\"SwitchLayoutToMainMenu\""
-											}
-										}
-									],
-									"sid": 707202275838755
-								}
-							]
+							"sid": 526658151951771
 						}
 					]
 				},
