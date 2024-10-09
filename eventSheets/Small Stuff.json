@@ -2,6 +2,16 @@
 	"name": "Small Stuff",
 	"events": [
 		{
+			"eventType": "variable",
+			"name": "MG_MedalValues",
+			"type": "string",
+			"initialValue": "60,120,180,240|15000,30000,45000,60000",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 411753044439714
+		},
+		{
 			"eventType": "group",
 			"disabled": false,
 			"title": "Savedata",
@@ -114,16 +124,6 @@
 					],
 					"sid": 327248426594289,
 					"children": [
-						{
-							"eventType": "variable",
-							"name": "MG_MedalValues",
-							"type": "string",
-							"initialValue": "60,120,180,240|15000,30000,45000,60000",
-							"comment": "",
-							"isStatic": false,
-							"isConstant": true,
-							"sid": 154515750680027
-						},
 						{
 							"eventType": "variable",
 							"name": "i",
@@ -1631,6 +1631,11 @@
 							"sid": 994975893129678
 						},
 						{
+							"id": "destroy",
+							"objectClass": "Medal",
+							"sid": 170751308148014
+						},
+						{
 							"id": "set-time-scale",
 							"objectClass": "System",
 							"sid": 485772565319054,
@@ -1648,7 +1653,32 @@
 							}
 						}
 					],
-					"sid": 680864137689678
+					"sid": 680864137689678,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Font_Folder",
+									"sid": 771209197532654,
+									"parameters": {
+										"instance-variable": "Mode",
+										"comparison": 0,
+										"value": "\"PauseMedalText\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "Font_Folder",
+									"sid": 983902740599616
+								}
+							],
+							"sid": 426941832526041
+						}
+					]
 				},
 				{
 					"eventType": "block",
@@ -2128,6 +2158,197 @@
 												}
 											],
 											"sid": 330194468080232
+										},
+										{
+											"eventType": "variable",
+											"name": "ScoreCurrency",
+											"type": "string",
+											"initialValue": "Sec.|Pt.",
+											"comment": "",
+											"isStatic": false,
+											"isConstant": true,
+											"sid": 329169243895532
+										},
+										{
+											"eventType": "variable",
+											"name": "MedalBackgroundColours",
+											"type": "string",
+											"initialValue": "255,0,255|155,0,155|255,0,255|155,0,155",
+											"comment": "",
+											"isStatic": false,
+											"isConstant": true,
+											"sid": 309547657960507
+										},
+										{
+											"eventType": "variable",
+											"name": "i",
+											"type": "number",
+											"initialValue": "0",
+											"comment": "",
+											"isStatic": false,
+											"isConstant": false,
+											"sid": 935698935573879
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "repeat",
+													"objectClass": "System",
+													"sid": 910095305295209,
+													"parameters": {
+														"count": "4"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "create-object",
+													"objectClass": "System",
+													"sid": 173219310181797,
+													"parameters": {
+														"object-to-create": "Pixel",
+														"layer": "\"HUD\"",
+														"x": "220",
+														"y": "31 + (i*17)",
+														"create-hierarchy": false,
+														"template-name": "\"\""
+													}
+												},
+												{
+													"id": "set-instvar-value",
+													"objectClass": "Pixel",
+													"sid": 883500708495495,
+													"parameters": {
+														"instance-variable": "Mode",
+														"value": "\"MedalBackground\""
+													}
+												},
+												{
+													"id": "set-opacity",
+													"objectClass": "Pixel",
+													"sid": 616354961457631,
+													"parameters": {
+														"opacity": "50"
+													}
+												},
+												{
+													"id": "set-size",
+													"objectClass": "Pixel",
+													"sid": 155554997690530,
+													"parameters": {
+														"width": "82",
+														"height": "17"
+													}
+												},
+												{
+													"id": "set-default-color",
+													"objectClass": "Pixel",
+													"sid": 140687992144760,
+													"parameters": {
+														"color": "rgb(\nint(tokenat(tokenat(MedalBackgroundColours,i,\"|\"),0,\",\")),\nint(tokenat(tokenat(MedalBackgroundColours,i,\"|\"),1,\",\")),\nint(tokenat(tokenat(MedalBackgroundColours,i,\"|\"),2,\",\"))\n)"
+													}
+												},
+												{
+													"id": "create-object",
+													"objectClass": "System",
+													"sid": 405861866986603,
+													"parameters": {
+														"object-to-create": "Medal",
+														"layer": "\"HUD\"",
+														"x": "228",
+														"y": "43 + (i*17)",
+														"create-hierarchy": false,
+														"template-name": "\"\""
+													}
+												},
+												{
+													"id": "set-animation-frame",
+													"objectClass": "Medal",
+													"sid": 931266323562481,
+													"parameters": {
+														"frame-number": "i + 1"
+													}
+												},
+												{
+													"callFunction": "CreateText",
+													"sid": 717332245369329,
+													"parameters": [
+														"\"HUD\"",
+														"\"242,\" & 36+(i*17)",
+														"\"200,10\"",
+														"\"PauseMedalText\"",
+														"tokenat(tokenat(MG_MedalValues,MiniGame,\"|\"),i,\",\") & \" \" & tokenat(ScoreCurrency,MiniGame,\"|\")\n",
+														"\"255,255,255\"",
+														"\"left\"",
+														"66"
+													]
+												},
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 596771301337498,
+													"parameters": {
+														"variable": "i",
+														"value": "i + 1"
+													}
+												}
+											],
+											"sid": 869474144894803
+										},
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"id": "create-object",
+													"objectClass": "System",
+													"sid": 950302182004842,
+													"parameters": {
+														"object-to-create": "Pixel",
+														"layer": "\"HUD\"",
+														"x": "236",
+														"y": "31",
+														"create-hierarchy": false,
+														"template-name": "\"\""
+													}
+												},
+												{
+													"id": "set-instvar-value",
+													"objectClass": "Pixel",
+													"sid": 182198359911358,
+													"parameters": {
+														"instance-variable": "Mode",
+														"value": "\"MedalBackground\""
+													}
+												},
+												{
+													"id": "set-opacity",
+													"objectClass": "Pixel",
+													"sid": 553600337689446,
+													"parameters": {
+														"opacity": "66"
+													}
+												},
+												{
+													"id": "set-size",
+													"objectClass": "Pixel",
+													"sid": 944659887727131,
+													"parameters": {
+														"width": "2",
+														"height": "68"
+													}
+												},
+												{
+													"id": "set-default-color",
+													"objectClass": "Pixel",
+													"sid": 617947582568968,
+													"parameters": {
+														"color": "rgb(255,255,255)"
+													}
+												}
+											],
+											"sid": 885861064276584
 										}
 									]
 								},
@@ -2742,14 +2963,6 @@
 									}
 								},
 								{
-									"id": "set-y",
-									"objectClass": "Pixel",
-									"sid": 545030697774491,
-									"parameters": {
-										"y": "Font_VHS.Y - 1"
-									}
-								},
-								{
 									"id": "tween-one-property",
 									"objectClass": "Font_VHS",
 									"sid": 520254019108196,
@@ -2767,7 +2980,36 @@
 									}
 								}
 							],
-							"sid": 801142755924219
+							"sid": 801142755924219,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "Pixel",
+											"sid": 223832422724837,
+											"parameters": {
+												"instance-variable": "Mode",
+												"comparison": 0,
+												"value": "\"MedalBackground\""
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "set-y",
+											"objectClass": "Pixel",
+											"sid": 661886823119829,
+											"parameters": {
+												"y": "Font_VHS.Y - 1"
+											}
+										}
+									],
+									"sid": 745917578332512
+								}
+							]
 						},
 						{
 							"eventType": "block",
