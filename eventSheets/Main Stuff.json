@@ -180,6 +180,15 @@
 										"type": "regular",
 										"tag": "\"TimerMG0\""
 									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 849922840127255,
+									"parameters": {
+										"variable": "MiniGameLevel",
+										"value": "1"
+									}
 								}
 							],
 							"sid": 998425120620862,
