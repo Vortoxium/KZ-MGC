@@ -3893,6 +3893,15 @@
 									"id": "destroy",
 									"objectClass": "mg0_items",
 									"sid": 114976757386581
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 115004940994511,
+									"parameters": {
+										"variable": "MiniGameLevel",
+										"value": "1"
+									}
 								}
 							],
 							"sid": 190356575889205,
