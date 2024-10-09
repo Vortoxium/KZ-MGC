@@ -1265,6 +1265,56 @@
 						}
 					],
 					"sid": 414966208628388
+				},
+				{
+					"functionName": "UpdateMasterVolume",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": true,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-master-volume",
+							"objectClass": "Audio",
+							"sid": 830614711257880,
+							"parameters": {
+								"db": "-(1.5^abs(MasterVolume))"
+							}
+						}
+					],
+					"sid": 792200117031080,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Font_Folder",
+									"sid": 539117803018877,
+									"parameters": {
+										"instance-variable": "Mode",
+										"comparison": 0,
+										"value": "\"MenuTextAudio\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "Font_Folder",
+									"sid": 150092393285029,
+									"parameters": {
+										"text": "\"Press -/+ to adjust Volume: \" & MasterVolume + 10"
+									}
+								}
+							],
+							"sid": 700191029454167
+						}
+					]
 				}
 			],
 			"sid": 131944663447881
@@ -1333,6 +1383,120 @@
 							"sid": 541985652056574
 						}
 					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-code-pressed",
+							"objectClass": "Keyboard",
+							"sid": 551870633666065,
+							"parameters": {
+								"keycode": "107"
+							}
+						},
+						{
+							"id": "on-key-code-pressed",
+							"objectClass": "Keyboard",
+							"sid": 731502151140072,
+							"parameters": {
+								"keycode": "187"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 593000122661936,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 772988439456382,
+									"parameters": {
+										"variable": "MasterVolume",
+										"comparison": 2,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 407667731228145,
+									"parameters": {
+										"variable": "MasterVolume",
+										"value": "MasterVolume + 1"
+									}
+								},
+								{
+									"callFunction": "UpdateMasterVolume",
+									"sid": 134541763644841
+								}
+							],
+							"sid": 350466879645222
+						}
+					],
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-code-pressed",
+							"objectClass": "Keyboard",
+							"sid": 160433180091075,
+							"parameters": {
+								"keycode": "109"
+							}
+						},
+						{
+							"id": "on-key-code-pressed",
+							"objectClass": "Keyboard",
+							"sid": 826142553979795,
+							"parameters": {
+								"keycode": "189"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 383832768182124,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 343367337164525,
+									"parameters": {
+										"variable": "MasterVolume",
+										"comparison": 4,
+										"value": "-10"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 984086879803975,
+									"parameters": {
+										"variable": "MasterVolume",
+										"value": "MasterVolume - 1"
+									}
+								},
+								{
+									"callFunction": "UpdateMasterVolume",
+									"sid": 512671179394393
+								}
+							],
+							"sid": 805158339969638
+						}
+					],
+					"isOrBlock": true
 				},
 				{
 					"eventType": "block",

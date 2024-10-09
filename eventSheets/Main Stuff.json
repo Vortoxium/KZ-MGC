@@ -56,6 +56,16 @@
 			"sid": 841101681803991
 		},
 		{
+			"eventType": "variable",
+			"name": "MasterVolume",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 835466510161783
+		},
+		{
 			"eventType": "group",
 			"disabled": false,
 			"title": "Minigame 0",

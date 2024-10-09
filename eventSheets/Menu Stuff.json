@@ -214,6 +214,20 @@
 								},
 								{
 									"callFunction": "CreateText",
+									"sid": 399524870187715,
+									"parameters": [
+										"\"HUD Below\"",
+										"\"1,11\"",
+										"\"200,10\"",
+										"\"MenuTextAudio\"",
+										"\"Press -/+ to adjust Volume: \" & MasterVolume + 10",
+										"\"255,255,255\"",
+										"\"\"",
+										"50"
+									]
+								},
+								{
+									"callFunction": "CreateText",
 									"sid": 729214378508986,
 									"parameters": [
 										"\"HUD Below\"",
