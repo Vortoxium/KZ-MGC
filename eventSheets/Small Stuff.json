@@ -2811,33 +2811,142 @@
 								{
 									"id": "compare-boolean-eventvar",
 									"objectClass": "System",
-									"sid": 534015762480101,
+									"sid": 571204496627900,
 									"parameters": {
 										"variable": "IsPaused"
 									},
 									"isInverted": true
 								}
 							],
-							"actions": [
+							"actions": [],
+							"sid": 610889255872279,
+							"children": [
 								{
-									"id": "set-eventvar-value",
-									"objectClass": "System",
-									"sid": 761810679356628,
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "Font_VHS",
+											"sid": 186519055718830,
+											"parameters": {
+												"instance-variable": "ButtonNumber",
+												"comparison": 0,
+												"value": "CurrentButton"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "PressButton",
+											"sid": 245101838634209
+										}
+									],
+									"sid": 861191649215424
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "Font_VHS",
+											"sid": 290468061708604,
+											"parameters": {
+												"instance-variable": "ButtonNumber",
+												"comparison": 0,
+												"value": "CurrentButton"
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 236615917587484,
+											"parameters": {
+												"variable": "CurrentButton",
+												"value": "Font_VHS.ButtonNumber"
+											}
+										},
+										{
+											"callFunction": "HighlightButton",
+											"sid": 676735224908940
+										}
+									],
+									"sid": 768682964200948
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-tap-object",
+									"objectClass": "Touch",
+									"sid": 544950809377952,
 									"parameters": {
-										"variable": "CurrentButton",
-										"value": "Font_VHS.ButtonNumber"
+										"object": "Font_VHS"
 									}
-								},
-								{
-									"callFunction": "HighlightButton",
-									"sid": 944046047740733
-								},
-								{
-									"callFunction": "PressButton",
-									"sid": 243222110041703
 								}
 							],
-							"sid": 610889255872279
+							"actions": [],
+							"sid": 712435889635931,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "Font_VHS",
+											"sid": 452096692006158,
+											"parameters": {
+												"instance-variable": "ButtonNumber",
+												"comparison": 0,
+												"value": "CurrentButton"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "PressButton",
+											"sid": 166458322776203
+										}
+									],
+									"sid": 264570509285692
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "Font_VHS",
+											"sid": 524636808013210,
+											"parameters": {
+												"instance-variable": "ButtonNumber",
+												"comparison": 0,
+												"value": "CurrentButton"
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 115519346888268,
+											"parameters": {
+												"variable": "CurrentButton",
+												"value": "Font_VHS.ButtonNumber"
+											}
+										},
+										{
+											"callFunction": "HighlightButton",
+											"sid": 629959761641540
+										}
+									],
+									"sid": 916950988701587
+								}
+							]
 						},
 						{
 							"eventType": "block",
@@ -4898,6 +5007,11 @@
 										"mouse-button": "left",
 										"click-type": "clicked"
 									}
+								},
+								{
+									"id": "on-tap",
+									"objectClass": "Touch",
+									"sid": 135890866700707
 								}
 							],
 							"actions": [
@@ -4985,7 +5099,8 @@
 									],
 									"sid": 411738486505984
 								}
-							]
+							],
+							"isOrBlock": true
 						},
 						{
 							"eventType": "block",
@@ -4998,6 +5113,11 @@
 										"mouse-button": "right",
 										"click-type": "clicked"
 									}
+								},
+								{
+									"id": "on-hold",
+									"objectClass": "Touch",
+									"sid": 248406195648387
 								}
 							],
 							"actions": [
@@ -5066,7 +5186,8 @@
 									],
 									"sid": 481265276028007
 								}
-							]
+							],
+							"isOrBlock": true
 						}
 					]
 				}
@@ -5098,18 +5219,66 @@
 							"sid": 428624269597605
 						}
 					],
-					"actions": [
+					"actions": [],
+					"sid": 769322955551292,
+					"children": [
 						{
-							"id": "set-position",
-							"objectClass": "cursor",
-							"sid": 882913379217646,
-							"parameters": {
-								"x": "Mouse.X",
-								"y": "Mouse.Y"
-							}
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-tap",
+									"objectClass": "Touch",
+									"sid": 147957434881565
+								},
+								{
+									"id": "is-in-touch",
+									"objectClass": "Touch",
+									"sid": 642276753921737
+								}
+							],
+							"actions": [
+								{
+									"id": "set-position",
+									"objectClass": "cursor",
+									"sid": 715305868636040,
+									"parameters": {
+										"x": "Touch.X",
+										"y": "Touch.Y"
+									}
+								}
+							],
+							"sid": 113677318138795,
+							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-movement",
+									"objectClass": "Mouse",
+									"sid": 815422753681404
+								},
+								{
+									"id": "is-on-mobile",
+									"objectClass": "PlatformInfo",
+									"sid": 202083533359453,
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "set-position",
+									"objectClass": "cursor",
+									"sid": 944763947749005,
+									"parameters": {
+										"x": "Mouse.X",
+										"y": "Mouse.Y"
+									}
+								}
+							],
+							"sid": 454721945637099
 						}
-					],
-					"sid": 769322955551292
+					]
 				}
 			],
 			"sid": 980464952264092

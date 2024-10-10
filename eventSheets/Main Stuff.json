@@ -972,13 +972,9 @@
 									}
 								},
 								{
-									"id": "compare-boolean-eventvar",
-									"objectClass": "System",
-									"sid": 814011060221728,
-									"parameters": {
-										"variable": "IsPaused"
-									},
-									"isInverted": true
+									"id": "is-in-touch",
+									"objectClass": "Touch",
+									"sid": 807215340469336
 								}
 							],
 							"actions": [],
@@ -988,150 +984,169 @@
 									"eventType": "block",
 									"conditions": [
 										{
-											"id": "trigger-once-while-true",
+											"id": "compare-boolean-eventvar",
 											"objectClass": "System",
-											"sid": 360643092396811
-										}
-									],
-									"actions": [
-										{
-											"id": "create-object",
-											"objectClass": "System",
-											"sid": 386625634779520,
+											"sid": 316653513053023,
 											"parameters": {
-												"object-to-create": "slash_marker",
-												"layer": "\"HUD Below\"",
-												"x": "Mouse.X",
-												"y": "Mouse.Y",
-												"create-hierarchy": false,
-												"template-name": "\"\""
-											}
-										},
-										{
-											"id": "create-object",
-											"objectClass": "System",
-											"sid": 342010552300826,
-											"parameters": {
-												"object-to-create": "slash_marker",
-												"layer": "\"HUD Below\"",
-												"x": "Mouse.X",
-												"y": "Mouse.Y",
-												"create-hierarchy": false,
-												"template-name": "\"\""
-											}
-										},
-										{
-											"id": "set-animation-frame",
-											"objectClass": "slash_marker",
-											"sid": 631796636636983,
-											"parameters": {
-												"frame-number": "1"
-											}
-										},
-										{
-											"id": "create-object",
-											"objectClass": "System",
-											"sid": 134281783077250,
-											"parameters": {
-												"object-to-create": "slash_helper",
-												"layer": "\"HUD Below\"",
-												"x": "slash_marker.X",
-												"y": "slash_marker.Y",
-												"create-hierarchy": false,
-												"template-name": "\"\""
-											}
-										},
-										{
-											"id": "set-width",
-											"objectClass": "slash_helper",
-											"sid": 202260154699406,
-											"parameters": {
-												"width": "0"
-											}
-										},
-										{
-											"id": "move-to-bottom",
-											"objectClass": "slash_helper",
-											"sid": 326903325176490
-										}
-									],
-									"sid": 745016445937925
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "every-tick",
-											"objectClass": "System",
-											"sid": 625087120867054
+												"variable": "IsPaused"
+											},
+											"isInverted": true
 										}
 									],
 									"actions": [],
-									"sid": 220835646084088,
+									"sid": 692919719651667,
 									"children": [
 										{
 											"eventType": "block",
 											"conditions": [
 												{
-													"id": "compare-animation-frame",
-													"objectClass": "slash_marker",
-													"sid": 537789914235001,
-													"parameters": {
-														"comparison": 0,
-														"number": "0"
-													}
+													"id": "trigger-once-while-true",
+													"objectClass": "System",
+													"sid": 155661588549109
 												}
 											],
 											"actions": [
 												{
-													"id": "set-width",
-													"objectClass": "slash_helper",
-													"sid": 582492836901133,
+													"id": "create-object",
+													"objectClass": "System",
+													"sid": 580414552685847,
 													"parameters": {
-														"width": "distance(slash_marker.X,slash_marker.Y,Mouse.X,Mouse.Y)"
+														"object-to-create": "slash_marker",
+														"layer": "\"HUD Below\"",
+														"x": "cursor.X",
+														"y": "cursor.Y",
+														"create-hierarchy": false,
+														"template-name": "\"\""
 													}
 												},
 												{
-													"id": "set-angle-toward-position",
-													"objectClass": "slash_helper",
-													"sid": 982346330353947,
+													"id": "create-object",
+													"objectClass": "System",
+													"sid": 236393730607054,
 													"parameters": {
-														"x": "Mouse.X",
-														"y": "Mouse.Y"
+														"object-to-create": "slash_marker",
+														"layer": "\"HUD Below\"",
+														"x": "cursor.X",
+														"y": "cursor.Y",
+														"create-hierarchy": false,
+														"template-name": "\"\""
 													}
+												},
+												{
+													"id": "set-animation-frame",
+													"objectClass": "slash_marker",
+													"sid": 618696666403781,
+													"parameters": {
+														"frame-number": "1"
+													}
+												},
+												{
+													"id": "create-object",
+													"objectClass": "System",
+													"sid": 294728243311342,
+													"parameters": {
+														"object-to-create": "slash_helper",
+														"layer": "\"HUD Below\"",
+														"x": "slash_marker.X",
+														"y": "slash_marker.Y",
+														"create-hierarchy": false,
+														"template-name": "\"\""
+													}
+												},
+												{
+													"id": "set-width",
+													"objectClass": "slash_helper",
+													"sid": 905256622988257,
+													"parameters": {
+														"width": "0"
+													}
+												},
+												{
+													"id": "move-to-bottom",
+													"objectClass": "slash_helper",
+													"sid": 693563187906509
 												}
 											],
-											"sid": 775577450747805
+											"sid": 644201604235175
 										},
 										{
 											"eventType": "block",
 											"conditions": [
 												{
-													"id": "compare-animation-frame",
-													"objectClass": "slash_marker",
-													"sid": 574677096959292,
-													"parameters": {
-														"comparison": 0,
-														"number": "1"
-													}
+													"id": "every-tick",
+													"objectClass": "System",
+													"sid": 141805775198746
 												}
 											],
-											"actions": [
+											"actions": [],
+											"sid": 695722296584911,
+											"children": [
 												{
-													"id": "set-position",
-													"objectClass": "slash_marker",
-													"sid": 442842360103832,
-													"parameters": {
-														"x": "Mouse.X",
-														"y": "Mouse.Y"
-													}
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-animation-frame",
+															"objectClass": "slash_marker",
+															"sid": 174524435233471,
+															"parameters": {
+																"comparison": 0,
+																"number": "0"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-width",
+															"objectClass": "slash_helper",
+															"sid": 266719171920979,
+															"parameters": {
+																"width": "distance(slash_marker.X,slash_marker.Y,cursor.X,cursor.Y)"
+															}
+														},
+														{
+															"id": "set-angle-toward-position",
+															"objectClass": "slash_helper",
+															"sid": 716218501882911,
+															"parameters": {
+																"x": "cursor.X",
+																"y": "cursor.Y"
+															}
+														}
+													],
+													"sid": 528238357274226
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-animation-frame",
+															"objectClass": "slash_marker",
+															"sid": 566247776968226,
+															"parameters": {
+																"comparison": 0,
+																"number": "1"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-position",
+															"objectClass": "slash_marker",
+															"sid": 240386142740908,
+															"parameters": {
+																"x": "cursor.X",
+																"y": "cursor.Y"
+															}
+														}
+													],
+													"sid": 987278326260229
 												}
-											],
-											"sid": 864101472820781
+											]
 										}
 									]
 								}
-							]
+							],
+							"isOrBlock": true
 						},
 						{
 							"eventType": "block",
@@ -1145,13 +1160,9 @@
 									}
 								},
 								{
-									"id": "compare-boolean-eventvar",
-									"objectClass": "System",
-									"sid": 446632438515462,
-									"parameters": {
-										"variable": "IsPaused"
-									},
-									"isInverted": true
+									"id": "on-any-touch-end",
+									"objectClass": "Touch",
+									"sid": 251516129595970
 								}
 							],
 							"actions": [],
@@ -1161,155 +1172,174 @@
 									"eventType": "block",
 									"conditions": [
 										{
-											"id": "compare-animation-frame",
-											"objectClass": "slash_marker",
-											"sid": 119131288934749,
-											"parameters": {
-												"comparison": 0,
-												"number": "0"
-											}
-										},
-										{
-											"id": "compare-two-values",
+											"id": "compare-boolean-eventvar",
 											"objectClass": "System",
-											"sid": 747184872431968,
+											"sid": 462682552394210,
 											"parameters": {
-												"first-value": "Mouse.X",
-												"comparison": 1,
-												"second-value": "slash_marker.X"
-											}
-										},
-										{
-											"id": "compare-two-values",
-											"objectClass": "System",
-											"sid": 747338958315656,
-											"parameters": {
-												"first-value": "Mouse.Y",
-												"comparison": 1,
-												"second-value": "slash_marker.Y"
-											}
+												"variable": "IsPaused"
+											},
+											"isInverted": true
 										}
 									],
-									"actions": [
-										{
-											"id": "create-object",
-											"objectClass": "System",
-											"sid": 684769273589719,
-											"parameters": {
-												"object-to-create": "slash",
-												"layer": "\"HUD Below\"",
-												"x": "slash_marker.x",
-												"y": "slash_marker.y",
-												"create-hierarchy": false,
-												"template-name": "\"\""
-											}
-										},
-										{
-											"id": "set-width",
-											"objectClass": "slash",
-											"sid": 992237889522630,
-											"parameters": {
-												"width": "distance(slash_marker.X,slash_marker.Y,Mouse.X,Mouse.Y)"
-											}
-										},
-										{
-											"id": "set-angle-toward-position",
-											"objectClass": "slash",
-											"sid": 859797359381188,
-											"parameters": {
-												"x": "Mouse.X",
-												"y": "Mouse.Y"
-											}
-										}
-									],
-									"sid": 135661011418603,
+									"actions": [],
+									"sid": 927328628044682,
 									"children": [
 										{
 											"eventType": "block",
 											"conditions": [
 												{
-													"id": "compare-boolean-eventvar",
-													"objectClass": "System",
-													"sid": 778483228158196,
+													"id": "compare-animation-frame",
+													"objectClass": "slash_marker",
+													"sid": 535161674342784,
 													"parameters": {
-														"variable": "isMinigameActive"
-													},
-													"isInverted": true
+														"comparison": 0,
+														"number": "0"
+													}
 												},
 												{
-													"id": "compare-instance-variable",
-													"objectClass": "Font_Folder",
-													"sid": 167447291570978,
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 874510192825884,
 													"parameters": {
-														"instance-variable": "Mode",
-														"comparison": 0,
-														"value": "\"MG0Explain\""
+														"first-value": "cursor.X",
+														"comparison": 1,
+														"second-value": "slash_marker.X"
+													}
+												},
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 510995091063413,
+													"parameters": {
+														"first-value": "cursor.Y",
+														"comparison": 1,
+														"second-value": "slash_marker.Y"
 													}
 												}
 											],
 											"actions": [
 												{
-													"id": "set-boolean-eventvar",
+													"id": "create-object",
 													"objectClass": "System",
-													"sid": 885382955809918,
+													"sid": 242312134608056,
 													"parameters": {
-														"variable": "isMinigameActive",
-														"value": "true"
+														"object-to-create": "slash",
+														"layer": "\"HUD Below\"",
+														"x": "slash_marker.x",
+														"y": "slash_marker.y",
+														"create-hierarchy": false,
+														"template-name": "\"\""
 													}
 												},
 												{
-													"id": "destroy",
-													"objectClass": "Font_Folder",
-													"sid": 542656621181773
+													"id": "set-width",
+													"objectClass": "slash",
+													"sid": 890965776833487,
+													"parameters": {
+														"width": "distance(slash_marker.X,slash_marker.Y,cursor.X,cursor.Y)"
+													}
+												},
+												{
+													"id": "set-angle-toward-position",
+													"objectClass": "slash",
+													"sid": 125351707196332,
+													"parameters": {
+														"x": "cursor.X",
+														"y": "cursor.Y"
+													}
 												}
 											],
-											"sid": 575067074117514
+											"sid": 968545650543615,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-boolean-eventvar",
+															"objectClass": "System",
+															"sid": 296496289473978,
+															"parameters": {
+																"variable": "isMinigameActive"
+															},
+															"isInverted": true
+														},
+														{
+															"id": "compare-instance-variable",
+															"objectClass": "Font_Folder",
+															"sid": 612631517471394,
+															"parameters": {
+																"instance-variable": "Mode",
+																"comparison": 0,
+																"value": "\"MG0Explain\""
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-boolean-eventvar",
+															"objectClass": "System",
+															"sid": 884687824729307,
+															"parameters": {
+																"variable": "isMinigameActive",
+																"value": "true"
+															}
+														},
+														{
+															"id": "destroy",
+															"objectClass": "Font_Folder",
+															"sid": 200219127430276
+														}
+													],
+													"sid": 956515625577130
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "for-each",
+													"objectClass": "System",
+													"sid": 168574931709149,
+													"parameters": {
+														"object": "slash_marker"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "destroy",
+													"objectClass": "slash_marker",
+													"sid": 861579725887340
+												}
+											],
+											"sid": 105036001015927
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "for-each",
+													"objectClass": "System",
+													"sid": 591413386434455,
+													"parameters": {
+														"object": "slash_helper"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "destroy",
+													"objectClass": "slash_helper",
+													"sid": 371608570926931
+												}
+											],
+											"sid": 431792775440378
 										}
 									]
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "for-each",
-											"objectClass": "System",
-											"sid": 610847731807552,
-											"parameters": {
-												"object": "slash_marker"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "destroy",
-											"objectClass": "slash_marker",
-											"sid": 534225124175623
-										}
-									],
-									"sid": 134993388754978
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "for-each",
-											"objectClass": "System",
-											"sid": 837562195614295,
-											"parameters": {
-												"object": "slash_helper"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "destroy",
-											"objectClass": "slash_helper",
-											"sid": 226221363138130
-										}
-									],
-									"sid": 255349668884272
 								}
-							]
+							],
+							"isOrBlock": true
 						},
 						{
 							"eventType": "block",
@@ -2148,47 +2178,62 @@
 									}
 								},
 								{
-									"id": "compare-boolean-eventvar",
-									"objectClass": "System",
-									"sid": 945452382135934,
-									"parameters": {
-										"variable": "IsPaused"
-									},
-									"isInverted": true
+									"id": "on-any-touch-end",
+									"objectClass": "Touch",
+									"sid": 879923460476594
 								}
 							],
-							"actions": [
+							"actions": [],
+							"sid": 100745805378705,
+							"children": [
 								{
-									"callFunction": "SpawnParticles",
-									"sid": 543744248802661,
-									"parameters": [
-										"\"mg1_sniperbullet\"",
-										"\"0,0\"",
-										"\"255,255,255\"",
-										"\"0,0\"",
-										"\"0,0\"",
-										"0",
-										"0",
-										"1",
-										"0",
-										"1",
-										"cursor.UID",
-										false,
-										false,
-										"\"\""
-									]
-								},
-								{
-									"callFunction": "PlaySound",
-									"sid": 102050931239106,
-									"parameters": [
-										"\"sound_enemy_sniper_shot_0\"&choose(1,2,3)",
-										"-10",
-										"0"
-									]
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 726989342508089,
+											"parameters": {
+												"variable": "IsPaused"
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "SpawnParticles",
+											"sid": 790094690871156,
+											"parameters": [
+												"\"mg1_sniperbullet\"",
+												"\"0,0\"",
+												"\"255,255,255\"",
+												"\"0,0\"",
+												"\"0,0\"",
+												"0",
+												"0",
+												"1",
+												"0",
+												"1",
+												"cursor.UID",
+												false,
+												false,
+												"\"\""
+											]
+										},
+										{
+											"callFunction": "PlaySound",
+											"sid": 221571253531916,
+											"parameters": [
+												"\"sound_enemy_sniper_shot_0\"&choose(1,2,3)",
+												"-10",
+												"0"
+											]
+										}
+									],
+									"sid": 635260245371740
 								}
 							],
-							"sid": 100745805378705
+							"isOrBlock": true
 						},
 						{
 							"eventType": "block",
@@ -3021,15 +3066,15 @@
 											"actions": [
 												{
 													"callFunction": "SpawnParticles",
-													"sid": 302795961368955,
+													"sid": 509583766098281,
 													"parameters": [
 														"\"mg0_item_glass\"",
 														"\"0,5\"",
 														"\"60,54,51\"",
 														"\"-6,6\"",
 														"\"-6,6\"",
-														"distance(0,mg1_items_Stick.X,0,Mouse.X) * cos(mg1_items_Stick.Angle + 90)",
-														"distance(0,mg1_items_Stick.Y,0,Mouse.Y) * cos(mg1_items_Stick.Angle)",
+														"distance(0,mg1_items_Stick.X,0,cursor.X) * cos(mg1_items_Stick.Angle + 90)",
+														"distance(0,mg1_items_Stick.Y,0,cursor.Y) * cos(mg1_items_Stick.Angle)",
 														"1",
 														"0",
 														"random(10,15)",
