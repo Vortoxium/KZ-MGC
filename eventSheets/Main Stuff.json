@@ -143,6 +143,20 @@
 								},
 								{
 									"callFunction": "CreateText",
+									"sid": 347968511043659,
+									"parameters": [
+										"\"HUD Below\"",
+										"\"285,171\"",
+										"\"35,10\"",
+										"\"Pause\"",
+										"\"Pause\"",
+										"\"255,150,255\"",
+										"\"\"",
+										"66"
+									]
+								},
+								{
+									"callFunction": "CreateText",
 									"sid": 430966553885542,
 									"parameters": [
 										"\"HUD Below\"",
@@ -2032,6 +2046,20 @@
 								},
 								{
 									"callFunction": "CreateText",
+									"sid": 738266011967383,
+									"parameters": [
+										"\"HUD Below\"",
+										"\"285,171\"",
+										"\"35,10\"",
+										"\"Pause\"",
+										"\"Pause\"",
+										"\"200,150,255\"",
+										"\"\"",
+										"66"
+									]
+								},
+								{
+									"callFunction": "CreateText",
 									"sid": 195073822100372,
 									"parameters": [
 										"\"HUD Below\"",
@@ -2178,9 +2206,9 @@
 									}
 								},
 								{
-									"id": "on-any-touch-end",
+									"id": "on-any-touch-start",
 									"objectClass": "Touch",
-									"sid": 879923460476594
+									"sid": 406847158411041
 								}
 							],
 							"actions": [],
@@ -2200,6 +2228,10 @@
 										}
 									],
 									"actions": [
+										{
+											"callFunction": "MoveCursorEarly",
+											"sid": 345284221308872
+										},
 										{
 											"callFunction": "SpawnParticles",
 											"sid": 790094690871156,
@@ -2668,6 +2700,37 @@
 													"parameters": {
 														"variable": "isMinigameActive"
 													}
+												},
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "Font_Folder",
+													"sid": 719896488109824,
+													"parameters": {
+														"instance-variable": "Mode",
+														"comparison": 0,
+														"value": "\"Score\""
+													},
+													"isInverted": true
+												},
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "Font_Folder",
+													"sid": 695096196677463,
+													"parameters": {
+														"instance-variable": "Mode",
+														"comparison": 0,
+														"value": "\"Timer\""
+													},
+													"isInverted": true
+												},
+												{
+													"id": "is-overlapping-another-object",
+													"objectClass": "particles",
+													"sid": 286677012732039,
+													"parameters": {
+														"object": "Font_Folder"
+													},
+													"isInverted": true
 												}
 											],
 											"actions": [

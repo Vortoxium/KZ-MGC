@@ -1939,6 +1939,80 @@
 							"eventType": "block",
 							"conditions": [
 								{
+									"id": "on-object-clicked",
+									"objectClass": "Mouse",
+									"sid": 849630610348632,
+									"parameters": {
+										"mouse-button": "left",
+										"click-type": "clicked",
+										"object-clicked": "Font_Folder"
+									}
+								},
+								{
+									"id": "on-touched-object",
+									"objectClass": "Touch",
+									"sid": 475340694149559,
+									"parameters": {
+										"object": "Font_Folder",
+										"type": "start"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 868312346366214,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "Font_Folder",
+											"sid": 575507972481209,
+											"parameters": {
+												"instance-variable": "Mode",
+												"comparison": 0,
+												"value": "\"Pause\""
+											}
+										},
+										{
+											"id": "compare-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 500723390346825,
+											"parameters": {
+												"variable": "isDead"
+											},
+											"isInverted": true
+										},
+										{
+											"id": "compare-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 568341266867554,
+											"parameters": {
+												"variable": "IsPaused"
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "set-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 589780136904516,
+											"parameters": {
+												"variable": "IsPaused",
+												"value": "true"
+											}
+										}
+									],
+									"sid": 390377690663509
+								}
+							],
+							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
 									"id": "compare-boolean-eventvar",
 									"objectClass": "System",
 									"sid": 294978531978700,
@@ -2881,11 +2955,12 @@
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "on-tap-object",
+									"id": "on-touched-object",
 									"objectClass": "Touch",
-									"sid": 544950809377952,
+									"sid": 734119484166789,
 									"parameters": {
-										"object": "Font_VHS"
+										"object": "Font_VHS",
+										"type": "start"
 									}
 								}
 							],
@@ -3428,6 +3503,16 @@
 										"comparison": 0,
 										"value": "\"MG0Explain\""
 									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Font_Folder",
+									"sid": 654464462262099,
+									"parameters": {
+										"instance-variable": "Mode",
+										"comparison": 0,
+										"value": "\"Pause\""
+									}
 								}
 							],
 							"actions": [
@@ -3517,6 +3602,16 @@
 										"instance-variable": "Mode",
 										"comparison": 0,
 										"value": "\"MG0Explain\""
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Font_Folder",
+									"sid": 746408310312103,
+									"parameters": {
+										"instance-variable": "Mode",
+										"comparison": 0,
+										"value": "\"Pause\""
 									}
 								}
 							],
@@ -5201,6 +5296,35 @@
 			"description": "",
 			"isActiveOnStart": true,
 			"children": [
+				{
+					"functionName": "MoveCursorEarly",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [
+						{
+							"id": "is-in-touch",
+							"objectClass": "Touch",
+							"sid": 549873818249780
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "cursor",
+							"sid": 906235233259824,
+							"parameters": {
+								"x": "Touch.X",
+								"y": "Touch.Y"
+							}
+						}
+					],
+					"sid": 233732194308590
+				},
 				{
 					"eventType": "block",
 					"conditions": [
